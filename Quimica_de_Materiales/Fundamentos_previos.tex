@@ -1,0 +1,111 @@
+\phantomsection
+\addcontentsline{toc}{subsection}{Fundamentos Previos}
+\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{QUÍMICA DE MATERIALES}}}
+\subsection*{\textcolor{blueunam}{Fundamentos Previos}}
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Tipos de enlace}
+\subsubsection*{\textcolor{blueunam}{Tipos de enlace}}
+
+\textbf{Enlace covalente:} interacción entre dos átomos en la que sus 
+orbitales atómicos se solapan en fase, sumando constructivamente las 
+funciones de onda y aumentando la densidad electrónica entre los núcleos. 
+Esa densidad es atraída por ambos núcleos positivos, bajando la energía 
+potencial del sistema. Si esa estabilización supera la repulsión 
+núcleo-núcleo, el sistema se estabiliza y existe el enlace. Los átomos 
+comparten uno o más pares de electrones, generalmente uno por átomo. 
+Se considera covalente cuando la diferencia de electronegatividad es 
+menor a 1.7.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H-C(-[2]H)(-[6]H)-H}}{Metano \ce{CH4}}
+\schemestop
+\end{center}
+
+\textbf{Enlace sencillo:} enlace covalente en el que dos átomos comparten 
+exactamente un par de electrones mediante solapamiento frontal de orbitales, 
+formando un enlace $\sigma$. Es el enlace de menor orden (O.E.$=1$) y 
+permite rotación libre alrededor del eje internuclear.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H-H}}{\ce{H2}, enlace $\sigma$}
+\schemestop
+\end{center}
+
+\textbf{Enlace polar:} enlace covalente en el que los electrones no se 
+distribuyen simétricamente porque los átomos tienen distinta 
+electronegatividad. El más electronegativo concentra mayor densidad 
+electrónica ($\delta^-$) y el otro queda con una deficiencia ($\delta^+$), 
+generando un dipolo de enlace. Si los dipolos se cancelan vectorialmente 
+por la geometría molecular, la molécula tiene momento dipolar neto igual 
+a cero.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H-[104.5]\charge{45=\:,135=\:}{O}-[-104.5]H}}{Ejemplo: \ce{H2O}, geometría angular, dipolos no se cancelan, $\mu \neq 0$}
+\schemestop
+\end{center}
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{O=C=O}}{Contraejemplo: \ce{CO2}, geometría lineal, dipolos se cancelan, $\mu = 0$}
+\schemestop
+\end{center}
+
+\textbf{Estructura de Lewis:} representación que muestra explícitamente 
+todos los electrones de valencia de una molécula o ion. Los compartidos 
+se representan como líneas entre átomos, cada una valiendo 2 electrones, 
+y los no compartidos como pares libres sobre cada átomo. Se construye 
+distribuyendo los electrones de valencia totales minimizando cargas formales.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H-\charge{90=\:}{N}(-[6]H)-H}}{\ce{NH3}: $e^-_T = 5+(1\times3) = 8$, C.F. N $= 5-2-3 = 0$, C.F. H $= 0$}
+\schemestop
+\end{center}
+
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Carga formal vs densidad electrónica real}
+\subsubsection*{\textcolor{blueunam}{Carga formal vs densidad electrónica real}}
+
+La \textbf{carga formal} es un conteo entero: cuántos electrones completos 
+le sobran o faltan a un átomo respecto a su estado neutro, asumiendo que 
+los electrones enlazantes se dividen exactamente a la mitad. Es una 
+convención útil para verificar estructuras de Lewis, no una medida de 
+distribución real.
+
+En realidad los electrones no ``pertenecen'' fijamente a ningún átomo: 
+son probabilísticos. Lo que sí es real es que estadísticamente, en promedio, 
+ciertos átomos concentran más densidad electrónica que otros. Eso se 
+describe con la carga parcial $\delta$: un átomo con más densidad promedio 
+tiene $\delta^-$, uno con menos tiene $\delta^+$. Si la diferencia es mayor, 
+la carga parcial es mayor, pero siempre es un promedio estadístico, nunca 
+un valor discreto fijo como en la carga iónica real.
+
+\textbf{En enlaces iónicos} como \ce{NaCl}, la carga sí es real: el 
+\ce{Na+} físicamente perdió un electrón y tiene 10 electrones. En 
+covalente, la carga formal \ce{+1} o \ce{-1} no implica transferencia 
+real, solo un déficit en el conteo convencional.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|L{3.5cm}|L{4cm}|L{4cm}|}
+\hline
+\textbf{Concepto} & \textbf{Qué describe} & \textbf{Ejemplo} \\
+\hline
+Carga formal & Conteo entero de electrones de más o de menos & 
+\ce{O} en \ce{OH-}: C.F. $= -1$ \\
+\hline
+Carga parcial $\delta$ & Probabilidad de encontrar densidad en un átomo & 
+\ce{C-O}: $\delta^+$ en C, $\delta^-$ en O \\
+\hline
+Carga iónica real & Transferencia física de un electrón completo & 
+\ce{Na+} en \ce{NaCl}: realmente tiene 10 $e^-$ \\
+\hline
+\end{tabular}
+\normalsize
+\end{center}

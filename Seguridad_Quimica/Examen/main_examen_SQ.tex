@@ -1,0 +1,283 @@
+\documentclass[12pt]{article}
+
+% ══════════════════════════════════════════════════════════════
+%  FORMATO Y DISEÑO
+% ══════════════════════════════════════════════════════════════
+\usepackage[top=2.5cm, bottom=3.2cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{ragged2e}
+\usepackage[spanish]{babel}
+\usepackage[defaultfam,tabular,lining]{montserrat}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{makeidx}
+\makeindex
+
+% ══════════════════════════════════════════════════════════════
+%  TABLAS
+% ══════════════════════════════════════════════════════════════
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{multicol}
+
+% ══════════════════════════════════════════════════════════════
+%  GRÁFICOS Y FIGURAS
+% ══════════════════════════════════════════════════════════════
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\AtBeginDocument{\shorthandoff{>}}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, decorations.markings}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ══════════════════════════════════════════════════════════════
+%  MATEMÁTICAS
+% ══════════════════════════════════════════════════════════════
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{nccmath}
+\usepackage{bbm}
+\usepackage{esint}
+\usepackage{cancel}
+\usepackage{braket}
+\usepackage{tensor}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={.}, group-separator={,}}
+\setcounter{MaxMatrixCols}{30}
+
+% ══════════════════════════════════════════════════════════════
+%  QUÍMICA
+% ══════════════════════════════════════════════════════════════
+\usepackage{chemfig}
+\usepackage[version=4]{mhchem}
+% chemmacros v6.2a (texlive 2026) rompe el índice al cargar módulo nomenclature
+% internamente — reactivar cuando se actualice a v6.3+
+% \usepackage{chemmacros}
+% \usepackage{chemgreek}
+% \chemsetup{modules={redox,thermodynamics,isotopes,iupac}}
+\usepackage{elements}
+\usepackage{chemnum}
+% chemarr rompe el índice en combinación con tocloft — reactivar con chemmacros
+% \usepackage{chemarr}
+\usepackage{chemplants}
+\usepackage{carbohydrates}
+\usepackage{chemobabel}
+\usepackage{tikzorbital}
+\usepackage{modiagram}
+% ghsystem rompe el índice vía módulo nomenclature de chemmacros
+% Usar PNGs de /usr/share/texmf-dist/tex/latex/ghsystem/pictures/ con \includegraphics
+% o cargar manualmente en documentos sin \tableofcontents
+% \usepackage{ghsystem}
+
+% -- Estilo ddbond: enlace deslocalizado --
+\catcode`\_=11
+\tikzset{
+ddbond/.style args={#1}{
+draw=none,
+decoration={%
+markings,
+mark=at position 0 with {
+\coordinate (CF@startdeloc) at (0,\dimexpr#1\CF_doublesep/2)
+coordinate (CF@startaxis) at (0,\dimexpr-#1\CF_doublesep/2);
+},
+mark=at position 1 with {
+\coordinate (CF@enddeloc) at (0,\dimexpr#1\CF_doublesep/2)
+coordinate (CF@endaxis) at (0,\dimexpr-#1\CF_doublesep/2);
+\draw[dash pattern=on 2pt off 1.5pt] (CF@startdeloc)--(CF@enddeloc);
+\draw (CF@startaxis)--(CF@endaxis);
+}
+},
+postaction={decorate}
+}
+}
+\catcode`\_=8
+
+% ══════════════════════════════════════════════════════════════
+%  DIAMANTE NFPA 704
+% ══════════════════════════════════════════════════════════════
+% Uso: \NFPAdiamond{salud}{inflamab}{reactividad}{especial}
+\newcommand{\NFPAdiamond}[4]{%
+    \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
+        \draw[thick, line width=1.5pt] (0,2) -- (2,4) -- (4,2) -- (2,0) -- cycle;
+        \draw[thick] (0,2) -- (4,2);
+        \draw[thick] (2,0) -- (2,4);
+        \fill[red]    (2,4) -- (1,3) -- (2,2) -- (3,3) -- cycle;
+        \node[text=white, font=\bfseries\Large] at (2,3.1)  {#2};
+        \fill[blue]   (0,2) -- (1,3) -- (2,2) -- (1,1) -- cycle;
+        \node[text=white, font=\bfseries\Large] at (0.9,2)  {#1};
+        \fill[yellow] (4,2) -- (3,3) -- (2,2) -- (3,1) -- cycle;
+        \node[text=black, font=\bfseries\Large] at (3.1,2)  {#3};
+        \fill[white]  (2,0) -- (1,1) -- (2,2) -- (3,1) -- cycle;
+        \node[text=black, font=\bfseries\large] at (2,0.9)  {#4};
+        \draw[thick, line width=1.5pt] (0,2) -- (2,4) -- (4,2) -- (2,0) -- cycle;
+    \end{tikzpicture}%
+}
+
+% ══════════════════════════════════════════════════════════════
+%  CAJAS Y RESALTADO
+% ══════════════════════════════════════════════════════════════
+\usepackage[most]{tcolorbox}
+
+% ══════════════════════════════════════════════════════════════
+%  REFERENCIAS Y ENLACES
+% ══════════════════════════════════════════════════════════════
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+\usepackage{cleveref}
+\usepackage{witharrows}
+\usepackage{microtype}
+\usepackage[backend=biber, style=apa, language=spanish]{biblatex}
+
+\allowdisplaybreaks
+
+% ══════════════════════════════════════════════════════════════
+%  COLORES
+% ══════════════════════════════════════════════════════════════
+\definecolor{blueunam}{RGB}{50, 70, 90}
+\definecolor{catred}{RGB}{192,57,43}
+\definecolor{anblue}{RGB}{41,128,185}
+\definecolor{col1}{RGB}{210,228,255}
+\definecolor{col2}{RGB}{200,238,210}
+\definecolor{trans}{RGB}{255,238,200}
+\definecolor{trans2}{RGB}{255,220,185}
+\definecolor{pos}{RGB}{228,218,255}
+\definecolor{especial}{RGB}{235,235,235}
+
+% ══════════════════════════════════════════════════════════════
+%  ENCABEZADO Y PIE DE PÁGINA
+% ══════════════════════════════════════════════════════════════
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+% -- Encabezado con materia y sección activa (descomentar para activar) --
+% \fancyhead[L]{\small\textcolor{blueunam}{Nombre de la materia}}
+% \fancyhead[R]{\small\textcolor{blueunam}{\leftmark}}
+% \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\headrule}{\hbox to\headwidth{\color{blueunam}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\headrulewidth}{0pt}
+
+\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
+
+% ══════════════════════════════════════════════════════════════
+%  ÍNDICE Y BIBLIOGRAFÍA
+% ══════════════════════════════════════════════════════════════
+\AtBeginDocument{
+    \renewcommand{\contentsname}{
+        \centering\fontsize{12}{18}\selectfont
+        \textcolor{blueunam}{\textbf{ÍNDICE}}
+    }
+}
+\AtBeginDocument{
+    \renewcommand{\bibname}{
+        \centering\fontsize{12}{18}\selectfont
+        \textcolor{blueunam}{\textbf{REFERENCIAS}}
+    }
+}
+\renewcommand{\cftsecfont}{\color{blueunam}}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% ══════════════════════════════════════════════════════════════
+%  COLUMNAS PERSONALIZADAS
+% ══════════════════════════════════════════════════════════════
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% ══════════════════════════════════════════════════════════════
+%  CELDAS DE TABLA DE CATIONES
+% ══════════════════════════════════════════════════════════════
+% Uso: \catcell{color}{símbolo}{Z}{carga/nombre}
+\newcommand{\catcell}[4]{%
+    \cellcolor{#1}%
+    \begin{minipage}[t][1.8cm][t]{1.6cm}%
+        \centering\vspace{3pt}%
+        {\small\textbf{#2}}\\[2pt]%
+        {\tiny\color{gray}#3}\\[3pt]%
+        {\footnotesize\color{blueunam}#4}%
+    \end{minipage}}
+
+\newcommand{\emptycell}{%
+    \cellcolor{white}%
+    \begin{minipage}[t][1.8cm][t]{1.6cm}\end{minipage}}
+
+% ══════════════════════════════════════════════════════════════
+%  AMBIENTE DE EJERCICIOS
+% ══════════════════════════════════════════════════════════════
+\newtcbtheorem{exercise}{Ejercicio}{
+    enhanced,frame empty,interior empty,
+    colframe=blueunam,
+    borderline west={1pt}{0pt}{blueunam},
+    left=0.2cm,
+    attach boxed title to top left={yshift=-2mm,xshift=-2mm},
+    coltitle=black,
+    fonttitle=\bfseries,
+    colbacktitle=white,
+    boxed title style={boxrule=.4pt,sharp corners}}{exercise}
+
+% ══════════════════════════════════════════════════════════════
+%  PIES DE FIGURA Y TABLA (APA)
+% ══════════════════════════════════════════════════════════════
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,
+  singlelinecheck=false,labelsep=spaced,skip=0pt}
+\captionsetup[figure]{labelsep=period,labelfont=bf,justification=justified,
+  singlelinecheck=false,font=doublespacing}
+
+\setlength{\parindent}{0pt}
+
+% ══════════════════════════════════════════════════════════════
+%  DOCUMENTO
+% ══════════════════════════════════════════════════════════════
+\begin{document}
+
+%---------- Portada ----------%
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{2cm}
+\fontsize{14}{30}\selectfont\textbf{Universidad Nacional Autónoma de México} \\
+\vspace{1cm}
+\fontsize{14}{30}\selectfont\textbf{Química e Ingeniería en Materiales} \\
+\vspace{1cm}
+\fontsize{14}{30}\selectfont\textbf{Seguridad Química} \\
+\end{center}
+\vspace{2cm}
+\begin{flushright}
+    \fontsize{14}{30}\selectfont
+        \hspace{2cm} Nombre: Uriel Sánchez Méndez \\
+        \hspace{2cm} Matrícula: 322647576 \\
+        \hspace{2cm} PRIMER EXAMEN PARCIAL \\
+        \hspace{2cm} Fecha: \today \\
+\end{flushright}
+\end{titlepage}
+
+%---------- Tabla de contenido ----------%
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+%---------- Apuntes ----------%
+\spacing{1.5}
+\input{Ex_SQ}
+
+%---------- Final del documento ----------%
+\end{document}

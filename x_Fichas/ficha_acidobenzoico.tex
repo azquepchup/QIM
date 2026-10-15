@@ -1,0 +1,149 @@
+% ficha_acidobenzoico.tex
+% Compilar con main_fichas.tex (latexmk -pdf)
+
+\noindent
+\begin{tikzpicture}[x=1cm, y=1cm]
+
+  %-- Fondo general
+  \fill[fichabg] (0,0) rectangle (11.7,19.2);
+
+  %-- Franja clasificacion: 18.4 a 19.2
+  \fill[blueunam!20] (0,18.4) rectangle (11.7,19.2);
+
+  %-- Franja nomenclaturas: 17.5 a 18.4
+  \fill[blueunam!8] (0,17.5) rectangle (11.7,18.4);
+
+  %-- Franja inferior: 0 a 1.0
+  \fill[blueunam!10] (0,0) rectangle (11.7,1.0);
+
+  %-- Lineas horizontales
+  \draw[blueunam, line width=0.7pt] (0,18.4) -- (11.7,18.4);
+  \draw[blueunam, line width=0.7pt] (0,17.5) -- (11.7,17.5);
+  \draw[blueunam, line width=0.7pt] (0,1.0)  -- (11.7,1.0);
+
+  %-- Separadores verticales
+  \draw[blueunam!35, line width=0.4pt] (3.1,1.0) -- (3.1,17.5);
+  \draw[blueunam!35, line width=0.4pt] (8.6,1.0) -- (8.6,17.5);
+
+  % ══ FRANJA CLASIFICACION ══
+  \node[anchor=west, text width=11.3cm, inner sep=0pt]
+    at (0.2,18.8) {%
+      {\tiny\color{blueunam}\textbf{Org\'anico}}\;$\cdot$\;%
+      {\tiny\color{blueunam}\textbf{\'Acido carbox\'ilico}}\;$\cdot$\;%
+      {\tiny\color{blueunam}\textbf{Arom\'atico}}\;$\cdot$\;%
+      {\tiny No i\'onico}\;$\cdot$\;%
+      {\tiny Acicl\'ico (cadena lat.)}%
+    };
+
+  % ══ FRANJA NOMENCLATURAS ══
+  \node[anchor=west, text width=11.3cm, inner sep=0pt]
+    at (0.2,17.95) {%
+      {\tiny\color{blueunam}\textbf{IUPAC:}}\;{\tiny \'acido benzo\'ico}\enspace$\cdot$\enspace%
+      {\tiny\color{blueunam}\textbf{Tradicional:}}\;{\tiny \'acido benc\'oico}\enspace$\cdot$\enspace%
+      {\tiny\color{blueunam}\textbf{EN:}}\;{\tiny benzoic acid}\enspace$\cdot$\enspace%
+      {\tiny\color{blueunam}\textbf{Stock:}}\;{\tiny N/A}%
+    };
+
+  % ══ COLUMNA IZQ: propiedades fisicas ══
+  \node[anchor=north west, text width=2.85cm, inner sep=4pt]
+    at (0,17.5) {%
+      {\scriptsize\color{blueunam}\textbf{Prop.\ f\'isicas}}\\[3pt]%
+      {\tiny%
+        \textbf{PF:} $122{,}4\,^{\circ}$C\\[2pt]%
+        \textbf{PE:} $250\,^{\circ}$C\\[2pt]%
+        \textbf{P.\ sublim.:} $100\,^{\circ}$C\\[2pt]%
+        $\boldsymbol{\rho}$\textbf{:} $1{,}27$\,g/mL\\[2pt]%
+        \textbf{Estado:} s\'olido\\[2pt]%
+        \textbf{Color:} blanco\\[2pt]%
+        \textbf{Olor:} suave, arom\'atico\\[2pt]%
+        $\boldsymbol{n_D}$\textbf{:} $1{,}504$\\[2pt]%
+        $\boldsymbol{P_{vap}}$\textbf{:} $0{,}09$\,mmHg\\[1pt]%
+        \phantom{x}(25\,$^{\circ}$C)\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Solubilidad}}\\[2pt]%
+        \textbf{Agua:} escasa\\[1pt]%
+        \phantom{x}($3{,}4$\,g/L, 25\,$^{\circ}$C)\\[2pt]%
+        \textbf{EtOH:} muy soluble\\[2pt]%
+        \textbf{\'Eter:} muy soluble\\[2pt]%
+        \textbf{Hexano:} poco\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Disolvente}}\\[2pt]%
+        Polar pr\'otico\\[2pt]%
+        Puente H: s\'i%
+      }%
+    };
+
+  % ══ COLUMNA CENTRAL ══
+  \node[anchor=north, text width=5.3cm, align=center, inner sep=4pt]
+    at (5.85,17.5) {%
+      {\normalsize\color{blueunam}\textbf{\'Acido Benzo\'ico}}\\[4pt]%
+      {\tiny\color{blueunam!70} estructura completa}\\[3pt]%
+      \scalebox{1.0}{%
+        \chemfig{*6(=-=-(-C(=[:90]O)-[:-30]O-[:30]H)=-=)}%
+      }\\[5pt]%
+      \textcolor{blueunam!40}{\rule{4.8cm}{0.3pt}}\\[3pt]%
+      {\tiny\color{blueunam!70} estructura esquel\'etica}\\[3pt]%
+      \scalebox{1.0}{%
+        \chemfig{*6(=-=-(-C(=[:90]O)-[:-30]OH)=-=)}%
+      }\\[5pt]%
+      \textcolor{blueunam!40}{\rule{4.8cm}{0.3pt}}\\[4pt]%
+      {\scriptsize\ce{C6H5COOH}\quad\textbf{MM:} $122{,}12$\,g/mol}\\[4pt]%
+      {\tiny%
+        \textbf{Grupo funcional:} $-$COOH\\[2pt]%
+        \textbf{Hibridaci\'on C carbonilo:} $sp^2$\\[2pt]%
+        \textbf{Hibridaci\'on C arom.:} $sp^2$\\[2pt]%
+        \textbf{Enlace pred.:} $\sigma$ + $\pi$\\[2pt]%
+        \textbf{Hetero\'atomos:} O (x2)\\[2pt]%
+        \textbf{Estereoquim.:} aquiral\\[2pt]%
+        \textbf{Resonancia:} s\'i\\[1pt]%
+        \phantom{x}anillo + carbonilo\\[2pt]%
+        \textbf{Arom\'atico:} s\'i%
+      }%
+    };
+
+  % ══ COLUMNA DER: reactividad ══
+  \node[anchor=north east, text width=2.85cm, inner sep=4pt]
+    at (11.7,17.5) {%
+      {\scriptsize\color{blueunam}\textbf{Reactividad}}\\[3pt]%
+      {\tiny%
+        \textbf{Nuc./elec.:} electr\'ofilo\\%
+        \phantom{x}(C carbonilo)\\[2pt]%
+        $\boldsymbol{pK_a}$\textbf{:} $4{,}20$\\[2pt]%
+        \textbf{Car\'acter:} \'acido\\%
+        \phantom{x}moderado\\[2pt]%
+        \textbf{\'Ac./base Lewis:}\\%
+        \phantom{x}\'acido (C=O)\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Mecanismos}}\\[2pt]%
+        \textbf{SN1:} no (arom.)\\[1pt]%
+        \textbf{SN2:} no (arom.)\\[1pt]%
+        \textbf{SEA:} s\'i\\[1pt]%
+        \phantom{x}(anillo activ.\\%
+        \phantom{x}desactiv.\ por COOH)\\[1pt]%
+        \textbf{Adic.\ nucl.:} s\'i\\%
+        \phantom{x}(sobre C=O)\\[1pt]%
+        \textbf{E1/E2:} no aplica\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{An\'alisis}}\\[2pt]%
+        \textbf{Gpo.\ saliente:} N/A\\[2pt]%
+        \textbf{Carboc.:} N/A\\[2pt]%
+        \textbf{Trasposi.:} no\\[2pt]%
+        \textbf{Especie react.:}\\%
+        \phantom{x}ninguna t\'ipica\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Reacciones}}\\[2pt]%
+        esterificaci\'on\\[1pt]%
+        reducci\'on\\[1pt]%
+        SEA (meta dir.)\\[1pt]%
+        formaci\'on de sal%
+      }%
+    };
+
+  % ══ FRANJA INFERIOR ══
+  \node[anchor=west, text width=11.3cm, inner sep=0pt]
+    at (0.2,0.5) {%
+      {\tiny\color{blueunam}\textbf{S\'intesis:}}\;%
+      {\tiny oxidaci\'on de tolueno o bencaldeh\'ido.}\enspace%
+      {\tiny\color{blueunam}\textbf{Uso:}}\;%
+      {\tiny conservador, recristalizaci\'on, s\'intesis.}\enspace%
+      {\tiny\color{blueunam}\textbf{Seg.:}}\;%
+      {\tiny irritante\,(GHS07).}%
+    };
+
+\end{tikzpicture}
+\newpage

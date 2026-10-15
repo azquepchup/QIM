@@ -1,0 +1,2211 @@
+\phantomsection
+\addcontentsline{toc}{section}{Apuntes}
+\begin{center}
+\end{center}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Unidad 1. Fundamentos de Química}
+\subsection*{\textcolor{blueunam}{Unidad 1. Fundamentos de Química}}
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 1 -- 18/08/2026: Definiciones y conceptos básicos}
+\subsubsection*{\textcolor{blueunam}{Clase 1 -- 18/08/2026: Definiciones y conceptos básicos}}
+
+Reactivo: Sustancia que puede interactuar o reaccionar con otra sustancia. (Se transforma --> Proceso de una sustancia para formar otra.) Un producto también puede actuar como reactivo A + B $\longleftrightarrow$  C $\rightarrow$ D \\
+Sustrato o Materia prima: es la especie o reactivo específico sobre el cual actúa otro compuesto (un reactivo o catalizador) para transformarse en un producto, mientras que la materia prima química es el insumo base general. \\
+
+Ejemplo:
+\begin{center}
+\schemestart
+\chemfig{*6(-=-=-=)}
+\arrow{->[\ce{HNO3}][\ce{H2SO4}]}
+\chemfig{*6(-=(-NO_2)-=-=)}
+\schemestop
+\end{center}
+
+El sustrato o Materia prima es la que se conserva en este caso la molécula de benceno es la que se conserva \\
+Reactivo: Benceno, ácido nítrico y ácido sulfúrico \\
+Producto: Nitrobenceno \\
+
+Todo sustrato es un Reactivo, pero no todo Reactivo es un Sustrato. \\
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{*6(-=*5(-N(-H)-==-)-=-=-)}}{Indol}
+\arrow{->[\shortstack{\ce{NBS}\\\small reactivo}][\shortstack{\ce{DMF}\\\small medio}]}
+\chemname{\chemfig{*6(-=*5(-N(-H)-==-)-=(-Br)-=-)}}{5-bromoindol}
+\+
+\chemname{\chemfig{*6(-=*5(-N(-H)-=(-Br)=-)-=(-Br)-=-)}}{3,5-dibromoindol}
+\schemestop
+\end{center}
+
+Producto: Sustancia final de la reacción ``(Es de interés)'' \\
+Subproducto: Sustancia residual o no deseada de la reacción \\
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 2 -- 20/08/2026: Especies reactivas}
+\subsubsection*{\textcolor{blueunam}{Clase 2 -- 20/08/2026: Especies reactivas}}
+
+A $\rightarrow$ B (70\,\%) + C (20\,\%) + D (10\,\%) \\
+Producto de interés $\neq$ Producto principal \\ 
+
+Especies Reactivas: Especies que aparecen durante la reacción, pero desaparece al final. \\
+
+\begin{itemize}
+    \item \textcolor{blueunam}{\textbf{1- Carbocationes}}
+    \item \textcolor{blueunam}{\textbf{2- Carbaniones}}
+    \item \textcolor{blueunam}{\textbf{3- Radicales}}
+    \item \textcolor{blueunam}{\textbf{4- Carbenos}}
+\end{itemize}
+
+\textcolor{blueunam}{\textbf{1- Carbocationes}}
+
+\begin{center}
+\schemestart
+\chemfig{R-C^{\color{catred}+}(-[2]R)(-[6]R)}
+\schemestop
+\end{center}
+
+\ce{e^{\color{anblue}-}} $-$ \ce{e^{\color{anblue}-}} libres $-$ \#enlaces $=$ Carga del átomo
+
+Geometría (E.V.) \\
+
+Repaso E.V.: 
+Flujo de trabajo: \\
+\begin{itemize}
+    \item 1-Lewis
+    \item 2-TRPECV
+    \item 3-T.E.V.
+    \item 4-T.O.M.
+\end{itemize}
+
+Lewis: \\
+\begin{center}
+\begin{tabular}{ll}
+$\text{H}_2\text{O}$ & \\[6pt]
+$\begin{array}{r}
+2\,\ce{e^{\color{anblue}-}} \\
++\,6\,\ce{e^{\color{anblue}-}} \\
+\hline
+8\,\ce{e^{\color{anblue}-}} \\
+-\,4\,\ce{e^{\color{anblue}-}} \\
+\hline
+4\,\ce{e^{\color{anblue}-}} \\
+-\,4\,\ce{e^{\color{anblue}-}} \\
+\hline
+0\,\ce{e^{\color{anblue}-}}
+\end{array}$
+&
+\chemfig{H-\charge{45=\:,135=\:}{O}-H}
+\end{tabular}
+\end{center}
+
+\[
+\begin{array}{rl}
+\text{C.F. O} & = 6 - 2 - 4 = 0 \\
+\text{C.F. H} & = (1 - 1 - 0) \times 2 = 0 \\
+\hline
+\text{Carga total} & = 0
+\end{array}
+\]
+
+TRPECV: \\
+Debido a que tiene 4 especies y 2 de ellas son pares de electrones
+libres entonces la geometría es angular y podríamos sacar la hibridación
+esperada que sería la $sp^3$ \\
+\begin{center}
+\chemfig{H-[104.5]\charge{45=\:,135=\:}{O}-[-104.5]H}
+\end{center}
+
+T.E.V.: \\
+\ce{O}:$1s^2 2s^2 2p^4$ 
+
+
+\begin{center}
+\begin{tikzpicture}
+\shorthandoff{>}
+
+% --- Configuración original ---
+% 1s
+\draw (0,0) rectangle (0.8,0.8);
+\node at (0.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (0.4,-0.3) {\small 1s};
+
+% 2s
+\draw (1.2,0) rectangle (2,0.8);
+\node at (1.6,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (1.6,-0.3) {\small 2s};
+
+% 2px
+\draw (2.4,0) rectangle (3.2,0.8);
+\node at (2.8,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (2.8,-0.3) {\small $2p_x$};
+
+% 2py
+\draw (3.4,0) rectangle (4.2,0.8);
+\node at (3.8,0.4) {$\upharpoonleft$};
+\node at (3.8,-0.3) {\small $2p_y$};
+
+% 2pz
+\draw (4.6,0) rectangle (5.4,0.8);
+\node at (5,0.4) {$\upharpoonleft$};
+\node at (5,-0.3) {\small $2p_z$};
+
+% Flecha hibridación
+\draw[-{Stealth}, thick] (5.8,0.4) -- (8.6,0.4);
+\node at (7.2,0.7) {Hibridación};
+
+% --- Configuración hibridada ---
+% 1s (no cambia)
+\draw (9.0,0) rectangle (9.8,0.8);
+\node at (9.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (9.4,-0.3) {\small 1s};
+
+% sp2 - caja 1
+\draw (10.2,0) rectangle (11.0,0.8);
+\node at (10.6,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (10.6,-0.3) {\small $sp^3$};
+
+% sp2 - caja 2
+\draw (11.4,0) rectangle (12.2,0.8);
+\node at (11.8,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (11.8,-0.3) {\small $sp^3$};
+
+% sp2 - caja 3
+\draw (12.6,0) rectangle (13.4,0.8);
+\node at (13.0,0.4) {$\upharpoonleft$};
+\node at (13.0,-0.3) {\small $sp^3$};
+
+% 2pz
+\draw (13.8,0) rectangle (14.6,0.8);
+\node at (14.2,0.4) {$\upharpoonleft$};
+\node at (14.2,-0.3) {\small $sp^3$};
+
+\end{tikzpicture}
+\end{center}
+
+Sé que es sp³ porque el átomo central tiene 4 grupos (2 pares libres + 2 enlaces). 
+El número de grupos debe coincidir con el número de orbitales híbridos. 
+El 1s no participa porque es un orbital de core (baja energía, no de valencia). 
+Se hibridan 2s + 2px + 2py + 2pz: 1 orbital s y 3 orbitales p → sp³. \\
+
+\textbf{La hibridación del carbono en el carbocatión:} \\
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{R-C^{\color{catred}+}(-[2]R)(-[6]R)}}{Carbocatión}
+\schemestop
+\end{center}
+
+E.V. del carbocatión: \\
+\ce{C}: $1s^2\,2s^2\,2p^2$ \textit{\textbf{(importante recordar que el carbono está cargado positivamente, así que la configuración cambia)}} $\rightarrow$ C$^{\color{catred}+}$: $1s^2\,2s^2\,2p^1$
+
+\begin{center}
+\begin{tikzpicture}
+\shorthandoff{>}
+
+% --- Fila 1: Original → Promoción ---
+% 1s
+\draw (0,0) rectangle (0.8,0.8);
+\node at (0.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (0.4,-0.3) {\small 1s};
+
+% 2s
+\draw (1.2,0) rectangle (2,0.8);
+\node at (1.6,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (1.6,-0.3) {\small 2s};
+
+% 2px
+\draw (2.4,0) rectangle (3.2,0.8);
+\node at (2.8,0.4) {$\upharpoonleft$};
+\node at (2.8,-0.3) {\small $2p_x$};
+
+% 2py vacío
+\draw (3.4,0) rectangle (4.2,0.8);
+\node at (3.8,-0.3) {\small $2p_y$};
+
+% 2pz vacío
+\draw (4.6,0) rectangle (5.4,0.8);
+\node at (5,-0.3) {\small $2p_z$};
+
+% Flecha promoción
+\draw[-{Stealth}, thick] (5.8,0.4) -- (8.6,0.4);
+\node at (7.2,0.7) {Promoción};
+
+% --- Configuración promovida ---
+% 1s
+\draw (9.0,0) rectangle (9.8,0.8);
+\node at (9.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (9.4,-0.3) {\small 1s};
+
+% 2s con 1 electrón
+\draw (10.2,0) rectangle (11.0,0.8);
+\node at (10.6,0.4) {$\upharpoonleft$};
+\node at (10.6,-0.3) {\small 2s};
+
+% 2px
+\draw (11.4,0) rectangle (12.2,0.8);
+\node at (11.8,0.4) {$\upharpoonleft$};
+\node at (11.8,-0.3) {\small $2p_x$};
+
+% 2py
+\draw (12.6,0) rectangle (13.4,0.8);
+\node at (13.0,0.4) {$\upharpoonleft$};
+\node at (13.0,-0.3) {\small $2p_y$};
+
+% 2pz vacío
+\draw (13.8,0) rectangle (14.6,0.8);
+\node at (14.2,-0.3) {\small $2p_z$};
+
+% --- Fila 2: Promoción → Hibridación ---
+% 1s
+\draw (0,-2.5) rectangle (0.8,-1.7);
+\node at (0.4,-2.1) {$\upharpoonleft\downharpoonright$};
+\node at (0.4,-2.8) {\small 1s};
+
+% 2s
+\draw (1.2,-2.5) rectangle (2,-1.7);
+\node at (1.6,-2.1) {$\upharpoonleft$};
+\node at (1.6,-2.8) {\small 2s};
+
+% 2px
+\draw (2.4,-2.5) rectangle (3.2,-1.7);
+\node at (2.8,-2.1) {$\upharpoonleft$};
+\node at (2.8,-2.8) {\small $2p_x$};
+
+% 2py
+\draw (3.4,-2.5) rectangle (4.2,-1.7);
+\node at (3.8,-2.1) {$\upharpoonleft$};
+\node at (3.8,-2.8) {\small $2p_y$};
+
+% 2pz vacío
+\draw (4.6,-2.5) rectangle (5.4,-1.7);
+\node at (5,-2.8) {\small $2p_z$};
+
+% Flecha hibridación
+\draw[-{Stealth}, thick] (5.8,-2.1) -- (8.6,-2.1);
+\node at (7.2,-1.8) {Hibridación};
+
+% --- Configuración hibridada sp2 ---
+% 1s (no cambia)
+\draw (9.0,-2.5) rectangle (9.8,-1.7);
+\node at (9.4,-2.1) {$\upharpoonleft\downharpoonright$};
+\node at (9.4,-2.8) {\small 1s};
+
+% sp2 - caja 1
+\draw (10.2,-2.5) rectangle (11.0,-1.7);
+\node at (10.6,-2.1) {$\upharpoonleft$};
+\node at (10.6,-2.8) {\small $sp^2$};
+
+% sp2 - caja 2
+\draw (11.4,-2.5) rectangle (12.2,-1.7);
+\node at (11.8,-2.1) {$\upharpoonleft$};
+\node at (11.8,-2.8) {\small $sp^2$};
+
+% sp2 - caja 3
+\draw (12.6,-2.5) rectangle (13.4,-1.7);
+\node at (13.0,-2.1) {$\upharpoonleft$};
+\node at (13.0,-2.8) {\small $sp^2$};
+
+% 2pz vacío
+\draw (13.8,-2.5) rectangle (14.6,-1.7);
+\node at (14.2,-2.8) {\small $2p_z$};
+
+\end{tikzpicture}
+\end{center}
+
+Geometría trigonal plana, 120° por ángulo \\
+
+
+Electrófilo — especie que busca electrones (electron-lover).
+Puede ser catión, molécula con carga parcial positiva o átomo
+con orbital vacío. No necesariamente tiene carga formal positiva,
+solo tiene deficiencia electrónica. \\
+
+Nucleófilo — especie que dona electrones (nucleus-lover).
+Tiene par de electrones disponible para compartir. Puede
+ser anión, molécula con pares libres o enlace $\pi$. \\
+
+\begin{center}
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {R};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {R};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {R};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {C$^{\color{catred}+}$};
+
+    % Etiqueta
+    \node[right] at (0.2,1.0) {\small $2p_z$ vacío};
+
+\end{tikzpicture}
+
+\small Carbocatión --- trigonal plana, $sp^2$, $2p_z$ vacío perpendicular al plano
+\end{center}
+
+\textbf{Efecto inductivo:} redistribución de densidad
+electrónica a través de enlaces $\sigma$ por diferencia de
+electronegatividad entre átomos. El átomo más electronegativo
+polariza el enlace hacia sí, transmitiendo el efecto a lo largo
+de la cadena con intensidad decreciente. Puede ser estabilizador
+(grupos electrodonadores) o desestabilizador (grupos electroatractores)
+según la dirección del jalón electrónico. \\
+
+\textbf{Hiperconjugación:} deslocalización parcial de electrones
+de un enlace $\sigma$ (C--H o C--C) hacia un orbital $p$ vacío
+adyacente mediante solapamiento lateral. Requiere alineación paralela
+entre el enlace $\sigma$ y el orbital $p$. Estabiliza al sistema al
+aumentar la deslocalización electrónica, reduciendo la energía total.
+No es un enlace $\pi$ completo sino una interacción $\sigma \rightarrow p$
+de tres centros y dos electrones. \\
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4]
+\shorthandoff{>}
+
+% --- Carbocatión C+ ---
+\draw (0,0) -- (-0.75,1.3) node[above left] {H};
+\draw (0,0) -- (-0.75,-1.3) node[below left] {H};
+
+% Lóbulo superior pz
+\draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+% Lóbulo inferior pz
+\draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+% Enlace C+--CH3
+\draw (0,0) -- (2.0,0);
+\node[fill=white] at (0,0) {C$^{\color{catred}+}$};
+
+% --- CH3 adyacente ---
+\draw (2.0,0) -- (2.0,1.3) node[above] {H};
+\draw (2.0,0) -- (2.0,-1.3) node[below] {H};
+\draw (2.0,0) -- (3.3,0) node[right] {H};
+\node[fill=white] at (2.0,0) {C};
+
+% Etiqueta pz
+\node[right] at (0.2,1.0) {\small $2p_z$ vacío};
+
+% Flecha 1: C-H superior → lóbulo superior pz
+\draw[-{Stealth}, thick] (2.0,1.1) .. controls (1.2,1.8) and (0.4,1.6) .. (0.1,1.0);
+
+% Flecha 2: C-H inferior → lóbulo inferior pz
+\draw[-{Stealth}, thick] (2.0,-1.1) .. controls (1.2,-1.8) and (0.4,-1.6) .. (0.1,-1.0);
+
+\node at (1.0,2.0) {\small Hiperconjugación};
+
+% Puntos enlace C+-C (centrados en el enlace)
+\filldraw (0.9,0) circle (1.2pt);
+\filldraw (1.1,0) circle (1.2pt);
+
+% Puntos enlace C-H superior (centrados en el enlace)
+\filldraw (2.0,0.6) circle (1.2pt);
+\filldraw (2.0,0.8) circle (1.2pt);
+
+% Puntos enlace C-H inferior
+\filldraw (2.0,-0.6) circle (1.2pt);
+\filldraw (2.0,-0.8) circle (1.2pt);
+
+% Puntos enlace C-H lateral
+\filldraw (2.6,0) circle (1.2pt);
+\filldraw (2.8,0) circle (1.2pt);
+
+\end{tikzpicture}
+\end{center}
+
+Tipos de Carbocatión: \\
+
+\begin{center}
+\textbf{Carbocatión Primario} \\[6pt]
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {H};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {$CH_3$};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {H};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {C$^{\color{catred}+}$};
+
+    % Etiqueta
+    \node[right] at (0.2,1.0) {\small $2p_z$ vacío};
+
+\end{tikzpicture}
+
+\small Carbocatión de tipo primario, tiene 3 interacciones
+de hiperconjugación posibles, una por cada enlace C-H del $CH_3$,
+que contribuyen por rotación libre del grupo metilo.
+\end{center}
+
+\begin{center}
+\textbf{Carbocatión Secundario} \\[6pt]
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {$CH_3$};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {$CH_3$};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {H};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {C$^{\color{catred}+}$};
+
+    % Etiqueta
+    \node[right] at (0.2,1.0) {\small $2p_z$ vacío};
+
+\end{tikzpicture}
+
+\small Tiene 6 interacciones de hiperconjugación posibles.
+\end{center}
+
+\begin{center}
+\textbf{Carbocatión Terciario} \\[6pt]
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {$CH_3$};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {$CH_3$};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {$CH_3$};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {C$^{\color{catred}+}$};
+
+    % Etiqueta
+    \node[right] at (0.2,1.0) {\small $2p_z$ vacío};
+
+\end{tikzpicture}
+
+\small Tiene 9 interacciones de hiperconjugación posibles.
+\end{center}
+
+\begin{center}
+\textbf{Carbocatión metílico} \\[6pt]
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {$H$};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {$H$};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {$H$};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {C$^{\color{catred}+}$};
+
+    % Etiqueta
+    \node[right] at (0.2,1.0) {\small $2p_z$ vacío};
+
+\end{tikzpicture}
+
+\small Tiene 0 interacciones de hiperconjugación posibles.
+\end{center}
+
+Como nota, para nombrarlos solo hay que contar cuántos carbonos
+hay enlazados directamente con el carbono que nos interesa, en este caso carbocatión. \\
+
+Otros tipos serían:
+
+\begin{center}
+\textbf{Carbocatión Primario} \\[6pt]
+\schemestart
+\chemname[1pt]{\chemfig{CH_3-CH_2-CH_2^{\color{catred}+}}}{Propilcarbocatión}
+\schemestop
+\\[2pt]
+\small Tiene 2 interacciones de hiperconjugación posibles.
+\end{center}
+
+Entonces de saber que la hiperconjugación para este tipo de moléculas hace que sean más estables y entre más interacciones de hiperconjugación tengamos podemos decir que es más estable, por lo que el orden de estabilidad sería el siguiente: \\
+\textit{Estabilidad} : $T > S > P > M$
+
+\textbf{Nota:} La hiperconjugación también se observa en aromáticos. En el tolueno:
+
+\begin{center}
+\chemname{\chemfig{*6(=-=-(-CH_3)=-)}}{Tolueno}
+\end{center}
+
+Los enlaces C--H del \ce{CH3} se deslocalizan hacia el sistema $\pi$ del anillo, aumentando la densidad electrónica y haciendo al anillo más reactivo hacia electrófilos (sustitución electrofílica aromática). \\
+
+\textbf{Resonancia}: fenómeno donde los electrones $\pi$ o pares libres no están localizados en un enlace específico sino deslocalizados sobre varios átomos. La molécula real no es ninguna de las estructuras resonantes sino el híbrido de todas ellas.
+
+\textbf{Estabilidad}: la deslocalización reduce la energía del sistema porque los electrones ocupan un volumen mayor, lo que es energéticamente favorable. A más estructuras resonantes equivalentes → más deslocalización → más estabilidad.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{=[1]-[-1]C^{\color{catred}+}(-[9]H)-[6]H}}{Catión alílico}
+\qquad
+\chemname{\chemfig{*6(=-=(-[1]CH_2^{\color{catred}+})-=-=-)}}{Catión bencílico}
+\schemestop
+\end{center}
+
+Resonancia del Catión alílico:
+\begin{center}
+\schemestart
+\chemfig{@{a1}=_[@{db}::30]-[@{sb}::-60]@{dnl}{\color{red}C^{\color{catred}+}}}
+\arrow{<->}
+\chemfig{@{c1}-[@{ab}::30]=_[@{pb}::-60]@{c2}{\color{red}C^{\color{catred}+}}}
+\schemestop
+\chemmove{
+\draw[->](db)..controls +(-80:5mm) and +(-90:5mm)..(sb);}
+\chemmove{
+\draw[<-](ab)..controls +(-80:5mm) and +(-90:5mm)..(pb);}
+\end{center}
+
+Híbrido de resonancia del Catión alílico: \\
+\begin{center}
+$\left[\chemfig{-[1,,,,ddbond={-}]-[-1,,,,ddbond={-}]}\right]^{\color{catred}+}$
+\end{center}
+
+Resonancia del Catión Bencilico:
+
+\begin{center}
+\begin{tikzpicture}
+\shorthandoff{>}
+
+% Esquina superior izquierda - \textit{orto}1
+\node at (-4,4) {\chemfig{*6(=-=(-[1]{\color{red}+})-=-=-)}};
+
+% Esquina superior derecha - \textit{orto}2
+\node at (4,4) {\chemfig{*6(=-{\color{red}+}-(=[1])-=-)}};
+
+% Esquina inferior izquierda - CH2+
+\node at (-4,-4) {\chemfig{*6(-=-(=[1])-{\color{red}+}-=)}};
+
+% Esquina inferior derecha - para
+\node at (4,-4) {\chemfig{*6({\color{red}+}-=-(=[1])-=-)}};
+
+% Híbrido en el centro
+\node at (0,0) {$\chemleft[\chemfig{**6(---(-[1,,,,ddbond={+}])---)}\chemright]^{\color{catred}+}$};
+
+% Flechas horizontales
+\draw[<->] (-2,4) -- (2,4);
+\draw[<->] (-2,-4) -- (2,-4);
+
+% Flechas verticales
+\draw[<->] (-4,2) -- (-4,-2);
+\draw[<->] (4,2) -- (4,-2);
+
+\end{tikzpicture}
+\end{center}
+
+Fenilo:
+\begin{center}
+    \chemfig{*6(=-={\color{red}+}-=-)}
+\end{center}
+
+Vinílico:
+\begin{center}
+\chemfig{H-[:320]C(-[:220]H)=C^{\color{catred}+}-[:40]H}
+\end{center}
+
+Con base en los ejemplos anteriores, el orden de estabilidad de los carbocationes es: \\
+\textit{Estabilidad}: $3^\circ \thickapprox B > 2^\circ \thickapprox A > 1^\circ > M \thickapprox V \thickapprox F$
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 3 -- 25/08/2026: Especies Reactivas}
+\subsubsection*{\textcolor{blueunam}{Clase 3 -- 25/08/2026: Especies Reactivas}}
+
+\textcolor{blueunam}{\textbf{2- Carbaniones}}
+
+\begin{center}
+    \schemestart
+    \chemfig{R-C^{\color{anblue}-}(-[:90]R)(-[:270]R)}
+    \schemestop
+\end{center}
+
+La hibridación del carbono en el carbanión: \\
+
+E.V. del carbanión: \\
+\ce{C}: $1s^2\,2s^2\,2p^2$ \textit{\textbf{(importante recordar que el carbono está cargado negativamente, así que la configuración cambia)}} $\rightarrow$ \ce{C^{\color{anblue}-}}: $1s^2\,2s^2\,2p^3$
+
+
+\begin{center}
+\begin{tikzpicture}
+\shorthandoff{>}
+
+% --- Fila 1: Original → Promoción ---
+% 1s
+\draw (0,0) rectangle (0.8,0.8);
+\node at (0.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (0.4,-0.3) {\small 1s};
+
+% 2s
+\draw (1.2,0) rectangle (2,0.8);
+\node at (1.6,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (1.6,-0.3) {\small 2s};
+
+% 2px
+\draw (2.4,0) rectangle (3.2,0.8);
+\node at (2.8,0.4) {$\upharpoonleft$};
+\node at (2.8,-0.3) {\small $2p_x$};
+
+% 2py vacío
+\draw (3.4,0) rectangle (4.2,0.8);
+\node at (3.8,0.4) {$\upharpoonleft$};
+\node at (3.8,-0.3) {\small $2p_y$};
+
+% 2pz vacío
+\draw (4.6,0) rectangle (5.4,0.8);
+\node at (5,0.4) {$\upharpoonleft$};
+\node at (5,-0.3) {\small $2p_z$};
+
+% Flecha promoción
+\draw[-{Stealth}, thick] (5.8,0.4) -- (8.6,0.4);
+\node at (7.2,0.7) {Hibridación};
+
+% --- Configuración promovida ---
+% 1s
+\draw (9.0,0) rectangle (9.8,0.8);
+\node at (9.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (9.4,-0.3) {\small 1s};
+
+% 2s con 1 electrón
+\draw (10.2,0) rectangle (11.0,0.8);
+\node at (10.6,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (10.6,-0.3) {\small $sp^3$};
+
+% 2px
+\draw (11.4,0) rectangle (12.2,0.8);
+\node at (11.8,0.4) {$\upharpoonleft$};
+\node at (11.8,-0.3) {\small $sp^3$};
+
+% 2py
+\draw (12.6,0) rectangle (13.4,0.8);
+\node at (13.0,0.4) {$\upharpoonleft$};
+\node at (13.0,-0.3) {\small $sp^3$};
+
+% 2pz vacío
+\draw (13.8,0) rectangle (14.6,0.8);
+\node at (14.2,0.4) {$\upharpoonleft$};
+\node at (14.2,-0.3) {\small $sp^3$};
+
+\end{tikzpicture}
+\end{center}
+
+
+
+\begin{center}
+\schemestart
+\chemfig{
+\charge{90=\:}{C}
+(-[:330]R)
+(<[:210]R)
+(<:[:270]R)
+}
+\schemestop
+
+\small Carbanión --- piramidal, $sp^3$, par libre en orbital $sp^3$ \\
+Geometría Pirámide triangular, ángulo $<109.5^\circ$
+\end{center}
+
+\textbf{Efecto inductivo:} redistribución de densidad electrónica a 
+través de enlaces $\sigma$ por diferencia de electronegatividad. 
+En carbaniones, grupos electroatractores (\ce{-Cl}, \ce{-F}, \ce{-NO2}) 
+estabilizan al retirar el exceso de carga negativa. Grupos electrodonadores 
+(\ce{-CH3}, \ce{-OR}) desestabilizan al aumentarla. El efecto decae con la distancia. \\
+
+\textbf{Hiperconjugación:} en carbaniones desestabiliza. Los enlaces $\sigma$ 
+adyacentes donan densidad electrónica hacia el orbital $sp^3$ que ya contiene 
+el par libre, incrementando el exceso de carga negativa en lugar de aliviarlo. 
+(Véase \hyperref[sec:anexo:tom]{Anexo A.1.8} para el análisis completo de los 
+mecanismos en competencia.) \\
+
+Ejemplo: \\
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{\charge{90=\:}{C}
+(-[:330]CH_3)
+(<[:210]CH_3)
+(<:[:270]CH_3)}}{Trimetilcarbanión}
+\qquad\qquad
+\chemname{\chemfig{\charge{90=\:}{C}
+(-[:330]Cl)
+(<[:210]Cl)
+(<:[:270]Cl)}}{Triclorometil carbanión}
+\schemestop
+\\
+
+\small El más estable de estos dos es el Triclorometil carbanión, porque los cloros alivian el exceso de carga del carbono.
+\end{center}
+
+El efecto de resonancia estabiliza: \\
+
+Resonancia del Anión alílico:
+\begin{center}
+\schemestart
+\chemfig{@{a1}=_[@{db}::30]-[@{sb}::-60]@{dnl}{\color{anblue}C^{\color{anblue}-}}}
+\arrow{<->}
+\chemfig{@{c1}-[@{ab}::30]=_[@{pb}::-60]@{c2}{\color{anblue}C^{\color{anblue}-}}}
+\schemestop
+\chemmove{
+\draw[->](db)..controls +(-80:5mm) and +(-90:5mm)..(sb);}
+\chemmove{
+\draw[<-](ab)..controls +(-80:5mm) and +(-90:5mm)..(pb);}
+\end{center}
+
+Híbrido de resonancia del Anión alílico: \\
+\begin{center}
+$\left[\chemfig{-[1,,,,ddbond={-}]-[-1,,,,ddbond={-}]}\right]^{\color{anblue}-}$
+\end{center}
+
+
+Resonancia del Anión Bencilico:
+
+\begin{center}
+\begin{tikzpicture}
+\shorthandoff{>}
+
+% Esquina superior izquierda - \textit{orto}1
+\node at (-4,4) {\chemfig{*6(=-=(-[1]{\color{anblue}-})-=-=-)}};
+
+% Esquina superior derecha - \textit{orto}2
+\node at (4,4) {\chemfig{*6(=-{\color{anblue}-}-(=[1])-=-)}};
+
+% Esquina inferior izquierda - CH2+
+\node at (-4,-4) {\chemfig{*6(-=-(=[1])-{\color{anblue}-}-=)}};
+
+% Esquina inferior derecha - para
+\node at (4,-4) {\chemfig{*6({\color{anblue}-}-=-(=[1])-=-)}};
+
+% Híbrido en el centro
+\node at (0,0) {$\chemleft[\chemfig{**6(---(-[1,,,,ddbond={+}])---)}\chemright]^{\color{anblue}-}$};
+
+% Flechas horizontales
+\draw[<->] (-2,4) -- (2,4);
+\draw[<->] (-2,-4) -- (2,-4);
+
+% Flechas verticales
+\draw[<->] (-4,2) -- (-4,-2);
+\draw[<->] (4,2) -- (4,-2);
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{Orden de estabilidad de carbaniones:}
+
+La estabilidad depende de dos factores principales:
+\begin{itemize}
+    \item \textbf{Resonancia:} deslocaliza la carga negativa sobre varios átomos. Muy estabilizante. Bencilo y alílico quedan arriba por este efecto.
+    \item \textbf{Efecto inductivo:} compite entre dos mecanismos (Coulomb y Heisenberg, véase \hyperref[sec:anexo:tom:heisenberg]{Anexo A.1.8}). En grupos alquilo el neto es desestabilizante.
+\end{itemize}
+
+Entre alquílicos simples el orden es inverso al de los carbocationes: más grupos alquilo donando carga, menos estable.
+
+\textit{Estabilidad}: $B \thickapprox A > M > 1^\circ > 2^\circ > 3^\circ > V \thickapprox F$
+
+\textcolor{blueunam}{\textbf{3- Radicales}}
+
+\begin{center}
+    \schemestart
+    \chemfig{R-\charge{0=\.}{C}(-[:90]R)(-[:270]R)}
+    \schemestop
+\end{center}
+
+La hibridación del carbono en los radicales: \\
+
+E.V. del radical: \\
+$1s^2 2s^2 2p^2$ \\
+\textbf{Nota:} La carga formal se determina respecto al átomo neutro. 
+El carbono neutro tiene 6 electrones. El radical tiene 6 electrones 
+(carga 0), el carbanión tiene 7 (carga $-1$) y el carbocatión tiene 
+5 (carga $+1$). El electrón desapareado del radical ya era propio del 
+carbono neutro por Hund, no es un electrón ganado.
+
+
+\begin{center}
+\begin{tikzpicture}
+\shorthandoff{>}
+
+% --- Fila 1: Original → Promoción ---
+% 1s
+\draw (0,0) rectangle (0.8,0.8);
+\node at (0.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (0.4,-0.3) {\small 1s};
+
+% 2s
+\draw (1.2,0) rectangle (2,0.8);
+\node at (1.6,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (1.6,-0.3) {\small 2s};
+
+% 2px
+\draw (2.4,0) rectangle (3.2,0.8);
+\node at (2.8,0.4) {$\upharpoonleft$};
+\node at (2.8,-0.3) {\small $2p_x$};
+
+% 2py vacío
+\draw (3.4,0) rectangle (4.2,0.8);
+\node at (3.8,0.4) {$\upharpoonleft$};
+\node at (3.8,-0.3) {\small $2p_y$};
+
+% 2pz vacío
+\draw (4.6,0) rectangle (5.4,0.8);
+\node at (5,0.4) {};
+\node at (5,-0.3) {\small $2p_z$};
+
+% Flecha promoción
+\draw[-{Stealth}, thick] (5.8,0.4) -- (8.6,0.4);
+\node at (7.2,0.7) {Promoción};
+
+% --- Configuración promovida ---
+% 1s
+\draw (9.0,0) rectangle (9.8,0.8);
+\node at (9.4,0.4) {$\upharpoonleft\downharpoonright$};
+\node at (9.4,-0.3) {\small 1s};
+
+% 2s con 1 electrón
+\draw (10.2,0) rectangle (11.0,0.8);
+\node at (10.6,0.4) {$\upharpoonleft$};
+\node at (10.6,-0.3) {\small 2s};
+
+% 2px
+\draw (11.4,0) rectangle (12.2,0.8);
+\node at (11.8,0.4) {$\upharpoonleft$};
+\node at (11.8,-0.3) {\small $2p_x$};
+
+% 2py
+\draw (12.6,0) rectangle (13.4,0.8);
+\node at (13.0,0.4) {$\upharpoonleft$};
+\node at (13.0,-0.3) {\small $2p_y$};
+
+% 2pz vacío
+\draw (13.8,0) rectangle (14.6,0.8);
+\node at (14.2,0.4) {$\upharpoonleft$};
+\node at (14.2,-0.3) {\small $2p_z$};
+
+% --- Fila 2: Promoción → Hibridación ---
+% 1s
+\draw (0,-2.5) rectangle (0.8,-1.7);
+\node at (0.4,-2.1) {$\upharpoonleft\downharpoonright$};
+\node at (0.4,-2.8) {\small 1s};
+
+% 2s
+\draw (1.2,-2.5) rectangle (2,-1.7);
+\node at (1.6,-2.1) {$\upharpoonleft$};
+\node at (1.6,-2.8) {\small 2s};
+
+% 2px
+\draw (2.4,-2.5) rectangle (3.2,-1.7);
+\node at (2.8,-2.1) {$\upharpoonleft$};
+\node at (2.8,-2.8) {\small $2p_x$};
+
+% 2py
+\draw (3.4,-2.5) rectangle (4.2,-1.7);
+\node at (3.8,-2.1) {$\upharpoonleft$};
+\node at (3.8,-2.8) {\small $2p_y$};
+
+% 2pz vacío
+\draw (4.6,-2.5) rectangle (5.4,-1.7);
+\node at (5,-2.1) {$\upharpoonleft$};
+\node at (5,-2.8) {\small $2p_z$};
+
+% Flecha hibridación
+\draw[-{Stealth}, thick] (5.8,-2.1) -- (8.6,-2.1);
+\node at (7.2,-1.8) {Hibridación};
+
+% --- Configuración hibridada sp2 ---
+% 1s (no cambia)
+\draw (9.0,-2.5) rectangle (9.8,-1.7);
+\node at (9.4,-2.1) {$\upharpoonleft\downharpoonright$};
+\node at (9.4,-2.8) {\small 1s};
+
+% sp2 - caja 1
+\draw (10.2,-2.5) rectangle (11.0,-1.7);
+\node at (10.6,-2.1) {$\upharpoonleft$};
+\node at (10.6,-2.8) {\small $sp^2$};
+
+% sp2 - caja 2
+\draw (11.4,-2.5) rectangle (12.2,-1.7);
+\node at (11.8,-2.1) {$\upharpoonleft$};
+\node at (11.8,-2.8) {\small $sp^2$};
+
+% sp2 - caja 3
+\draw (12.6,-2.5) rectangle (13.4,-1.7);
+\node at (13.0,-2.1) {$\upharpoonleft$};
+\node at (13.0,-2.8) {\small $sp^2$};
+
+% 2pz vacío
+\draw (13.8,-2.5) rectangle (14.6,-1.7);
+\node at (14.2,-2.1) {$\upharpoonleft$};
+\node at (14.2,-2.8) {\small $2p_z$};
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\schemestart
+\chemfig{
+\charge{90=\.}{C}
+(-[:330]R)
+(<[:210]R)
+(<:[:270]R)
+}
+\schemestop
+
+
+\small Su geometría oscila entre Triangular y Tetraédrica y depende de los sustituyentes. \\
+\end{center}
+
+Ejemplos de radicales y comparación de su estabilidad:
+
+\begin{center}
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {$F$};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {$CH_3$};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {$CH_3$};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {\charge{90[yshift=20pt]=\.}{C}};
+
+    \node at (0,-2.0) {\small 2-fluoropropan-2-ilo};
+\end{tikzpicture}
+
+\qquad
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {$F$};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {$CH_3$};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {$F$};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {\charge{90[yshift=20pt]=\.}{C}};
+
+    \node at (0,-2.0) {\small 1,1-difluoroetan-1-ilo};
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+    % Tres enlaces a 120°
+    \draw (0,0) -- (1.5,0) node[right] {$F$};
+    \draw (0,0) -- (-0.75,1.3) node[above left] {$F$};
+    \draw (0,0) -- (-0.75,-1.3) node[below left] {$F$};
+
+    % Lóbulo superior
+    \draw[dashed] (0,0.15) .. controls (-0.35,0.7) and (-0.35,1.3) .. (0,1.4)
+                  .. controls (0.35,1.3) and (0.35,0.7) .. (0,0.15);
+
+    % Lóbulo inferior
+    \draw[dashed] (0,-0.15) .. controls (-0.35,-0.7) and (-0.35,-1.3) .. (0,-1.4)
+                  .. controls (0.35,-1.3) and (0.35,-0.7) .. (0,-0.15);
+
+    % Átomo central encima de todo
+    \node[fill=white] at (0,0) {\charge{90[yshift=20pt]=\.}{C}};
+
+    \node at (0,-2.0) {\small trifluorometilo};
+\end{tikzpicture}
+
+\end{center}
+
+La estabilidad de los radicales depende de la competencia entre efectos electrónicos que pueden
+estabilizar o desestabilizar según el contexto y los sustituyentes presentes. Antes de describirlos,
+una aclaración terminológica importante: el término \textbf{resonancia} se usa con tres significados
+distintos en química orgánica.
+\begin{enumerate}
+    \item \textit{Estructuras resonantes}: el doble enlace se desplaza entre posiciones (catión
+    alílico, benceno). Es el concepto clásico de resonancia.
+    \item \textit{Efecto de resonancia}: donación de un par libre hacia un orbital $p$ semiocupado
+    o vacío por solapamiento lateral. No hay desplazamiento de doble enlace.
+    \item \textit{Resonancia en \textsc{tom}}: todos los efectos de deslocalización electrónica
+    son manifestaciones del mismo fenómeno fundamental, el solapamiento de orbitales. La distinción
+    entre hiperconjugación, efecto de resonancia e inductivo es didáctica, no física.
+\end{enumerate}
+
+En la Teoría de Orbitales Moleculares (\textsc{tom}), todos estos efectos son el mismo fenómeno:
+solapamiento de orbitales que extiende la nube electrónica del electrón desapareado hacia mayor
+volumen. Por el principio de incertidumbre de Heisenberg, mayor volumen implica menor energía
+cinética promedio del electrón, lo que estabiliza al sistema (véase
+\hyperref[sec:anexo:tom]{Anexo~TOM}). El \textsc{somo}\footnote{\textsc{somo} (del inglés
+\textit{Singly Occupied Molecular Orbital}): orbital molecular con exactamente un electrón. Distinto
+del \textsc{homo} (lleno, dos electrones) y del \textsc{lumo} (vacío). Es el orbital del electrón
+desapareado del radical. Energéticamente se ubica entre ambos. El estado semilleno es un estado
+estable: añadirle un electrón lo acercaría a un carbanión (menos estable) y quitarle el único que
+tiene lo convertiría en un carbocatión. Cualquier desviación del estado semilleno desestabiliza.} es
+el orbital del electrón desapareado. \\
+
+\textbf{Hiperconjugación positiva} ($\sigma \rightarrow$ \textsc{somo})\textbf{:} cuando la
+geometría permite la alineación de los enlaces $\sigma$ adyacentes (C--H o C--C) con el
+\textsc{somo}, el electrón desapareado se deslocaliza hacia esos enlaces, extendiendo su nube
+electrónica hacia mayor volumen y bajando la energía cinética del sistema por Heisenberg. Los
+enlaces C--C actúan como puentes; los electrones con efecto real son los de los enlaces C--H en
+posición $\boldsymbol{\beta}$ al carbono radical (carbono directamente unido al carbono
+radical).\footnote{Las posiciones $\alpha$ y $\beta$ son nomenclatura general en química orgánica, no
+exclusiva de radicales. Posición $\alpha$: átomos directamente unidos al grupo funcional o centro
+de interés (aquí, el carbono que porta el electrón desapareado). Posición $\beta$: átomos unidos
+al carbono $\alpha$, es decir a dos enlaces del grupo funcional. En hiperconjugación los que
+importan son los \textbf{hidrógenos $\beta$}: los H unidos al carbono $\beta$, que son los que se
+alinean geométricamente con el \textsc{somo} y solapan con él. Resultados espectroscópicos y
+teóricos indican que aproximadamente el 15\,\% del electrón desapareado en el radical etilo se
+deslocaliza hacia los tres hidrógenos $\beta$.} \textbf{La geometría es prerequisito, no consecuencia:} sin alineación
+no hay solapamiento. A mayor número de enlaces C--H en posición $\beta$ disponibles, mayor
+deslocalización y mayor estabilidad.
+
+\textbf{Nota sobre carbocationes:} en carbocationes el \textsc{somo} está vacío, por lo que la
+hiperconjugación positiva estabiliza por dos mecanismos simultáneos: deslocalización de la nube
+(Heisenberg) y dispersión de la carga positiva. En radicales el \textsc{somo} ya contiene un
+electrón, por lo que el único mecanismo estabilizador es la deslocalización. Por eso las diferencias
+de estabilidad T/S/P/M son menores en radicales que en carbocationes. 
+(Véase \hyperref[sec:anexo:tom:somo]{Anexo A.1.9} y \hyperref[sec:anexo:tom:heisenberg]{Anexo A.1.8}.)\\
+
+\textbf{Hiperconjugación negativa} (\textsc{somo} $\rightarrow \sigma^*$)\textbf{:} el electrón
+del \textsc{somo} puede extenderse hacia orbitales $\sigma^*$ antienlazantes vacíos de los enlaces
+C--H vecinos alineados. La dirección es opuesta a la positiva, pero el mecanismo estabilizador es
+el mismo: el electrón ocupa mayor volumen y baja su energía cinética. El $\sigma^*$ está disponible como aceptor porque el $\sigma$ ya está lleno con 
+2 electrones. Por el principio de exclusión de Pauli, no caben más electrones en el 
+$\sigma$ enlazante, así que cualquier electrón adicional que quiera deslocalizarse 
+hacia ese enlace debe ocupar el $\sigma^*$ antienlazante. La hiperconjugación negativa contribuye a la
+geometría ligeramente piramidal de los radicales alquilo simples.\footnote{Investigación reciente
+(\textit{J. Org. Chem.}, 2026) demuestra mediante cálculos NBO que para radicales alquilo simples,
+la hiperconjugación negativa es principalmente responsable de su geometría ligeramente piramidal.
+La diferencia de energía entre la forma plana y piramidal es pequeña, por lo que en la práctica se
+tratan como $sp^2$.} \\
+
+\textbf{Efecto inductivo:} un átomo electronegativo en posición $\alpha$ (directamente unido al
+carbono radical) atrae la densidad electrónica del \textsc{somo} hacia sí por diferencia de
+electronegatividad, polarizando la nube sin cambio de orbital. A diferencia de la deslocalización,
+la polarización \textit{confina} al electrón en un volumen menor, aumentando su energía cinética
+promedio por Heisenberg y desestabilizando al radical. El electrón no se transfiere al átomo
+electronegativo: sigue perteneciendo al carbono radical, pero su densidad de probabilidad se
+desplaza hacia él.\footnote{Distinción clave: deslocalización = el electrón cambia de orbital y
+ocupa mayor volumen, energía cinética baja, estabiliza. Polarización = el electrón permanece en el
+mismo orbital pero su distribución espacial se contrae hacia el átomo electronegativo, energía
+cinética sube, desestabiliza en radicales. En carbaniones el inductivo sí estabiliza porque alivia
+el exceso de carga negativa, mecanismo distinto.} \\
+
+\textbf{Donación por resonancia del par libre} (efecto de resonancia)\textbf{:} cualquier átomo
+con pares libres puede donar al \textsc{somo} por solapamiento lateral, extendiendo la nube del
+electrón desapareado hacia mayor volumen. El mecanismo estabilizador es idéntico a la
+hiperconjugación: deslocalización, no donación de carga neta. El \textsc{somo} semilleno no
+necesita ni se beneficia de carga adicional; lo que lo estabiliza es que su electrón ocupe mayor
+volumen. Requiere alineación geométrica del par libre con el orbital $p$ del \textsc{somo}. \\
+
+\textbf{Caso específico: F en posición $\beta$}\footnote{Este caso es distinto a los diagramas
+mostrados arriba, donde el F está en posición $\alpha$ (directamente unido al carbono radical).
+Aquí se describe una molécula tipo \ce{R-\dot{C}(-R)-CH2F}, donde el F está en el carbono
+$\beta$.} Cuando el F está en posición $\beta$, coexisten dos efectos sobre el radical: la
+donación del par libre del F al \textsc{somo} por resonancia (estabiliza, extiende la nube) y el
+efecto inductivo del F (desestabiliza, contrae la nube). El resultado neto depende de cuál predomina.
+Con uno o dos F en $\beta$, la resonancia domina. A medida que aumentan los F, el inductivo
+acumulado puede superar a la resonancia. La geometría piramidal que genera el inductivo reduce
+además el solapamiento del par libre con el \textsc{somo}, retroalimentando la desestabilización. \\
+
+\textbf{Caso de los diagramas: F en posición $\alpha$} En los tres radicales de los diagramas
+anteriores, el F está directamente unido al carbono radical (posición $\alpha$). En esta
+configuración:
+\begin{itemize}
+    \item El par libre del F no puede donar efectivamente al \textsc{somo} en posición
+    $\alpha$ porque el enlace C--F es $\sigma$ y el par libre del F está en el plano
+    de los enlaces $\sigma$, mientras que el \textsc{somo} es un orbital $p$
+    perpendicular a ese plano. La geometría no permite el solapamiento lateral
+    necesario para la donación por resonancia.
+    \item El efecto inductivo del F desestabiliza al radical por confinamiento de la nube.
+    \item La hiperconjugación de los grupos CH$_3$ en posición $\beta$ estabiliza.
+    \item El resultado neto depende de cuántos F hay vs cuántos H$_\beta$ disponibles.
+\end{itemize}
+
+Cuando coexisten efectos en la misma especie, el resultado neto depende de cuál predomina. Regla
+práctica del curso: comparar cuántas interacciones de cada tipo están disponibles. El efecto con
+más interacciones domina. El análisis en casos mixtos es una pregunta abierta que depende de la
+intensidad relativa de cada efecto. \\
+
+\textbf{Geometría y carácter $s$:} la geometría del radical oscila entre plana y piramidal según
+los sustituyentes. El electrón desapareado repele menos que un par completo, por lo que el radical
+tiende más a plano que el carbanión, pero no completamente. Cuando la deslocalización domina, el
+electrón se extiende y su efecto de repulsión sobre los enlaces no está concentrado, favoreciendo
+geometría plana (mayor carácter $s$, tendencia $sp^2$). Cuando el inductivo domina, el electrón
+se contrae y su repulsión es más localizada, favoreciendo geometría piramidal (menor carácter $s$,
+tendencia $sp^3$). Hablar de $sp^2$ o $sp^3$ para radicales es una aproximación didáctica: la
+geometría real es un punto en ese continuo determinado por el balance de efectos electrónicos. \\
+
+Para radicales hidrocarbonados (sin halógenos), donde solo opera la hiperconjugación:
+
+\textit{Estabilidad}: $T > S > P > M$
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 4 -- 27/08/2026: Tipos de reacciones orgánicas}
+\subsubsection*{\textcolor{blueunam}{Clase 4 -- 27/08/2026: Tipos de reacciones orgánicas}}
+
+Sustituciones sobre C $sp^3$: \\
+Tipos de sustituciones: \\
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Tipo} & \textbf{Mecanismo} & \textbf{Subtipos} & \textbf{Cinética} \\
+\hline
+Iónica & Heterolítica & $S_N2$ & Concertada, bimolecular \\
+\cline{3-4}
+       &               & $S_N1$ & Por pasos, unimolecular \\
+\hline
+Radicalaria & Homolítica & Iniciación & Unimolecular \\
+\cline{3-4}
+            &            & Propagación & Bimolecular \\
+\cline{3-4}
+            &            & Terminación & Bimolecular \\
+\hline
+Pericíclica & Concertada cíclica & --- & Unimolecular \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Bimolecular:} la velocidad depende de la concentración de dos 
+especies. \textbf{Unimolecular:} depende solo de una. \textbf{Concertada:} 
+un solo paso, sin intermediario entre reactivos y productos. \textbf{Por 
+pasos:} hay al menos un intermediario real entre reactivos y productos.
+
+\textbf{Intermediarios.} En $S_N1$ el intermediario es el carbocatión. En 
+reacciones radicalarias es el radical, generado en la iniciación y consumido 
+en la terminación. En $S_N2$ y en pericíclicas no hay intermediario, solo un 
+estado de transición. Tanto los carbocationes como los radicales ya se 
+describieron con detalle en las clases anteriores.
+
+\textbf{Ruptura heterolítica:} los dos electrones del enlace C--X se van con el halógeno,
+formando X$^{\color{anblue}-}$. El carbono queda con deficiencia electrónica. Es el tipo de ruptura que ocurre en $S_N1$ y $S_N2$. \\
+\textbf{Ruptura homolítica:} cada átomo se lleva un electrón del enlace, formando dos radicales.
+Es la ruptura característica de las reacciones radicalarias. \\
+
+Haluros de alquilo como sustratos: \\
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-Br}}{Metílico}
+\qquad
+\chemname{\chemfig{CH_3-CH_2-Br}}{Primario}
+\qquad
+\chemname{\chemfig{CH_3-CH(-[2]CH_3)-Br}}{Secundario}
+\qquad
+\chemname{\chemfig{CH_3-C(-[2]CH_3)(-[6]CH_3)-Br}}{Terciario}
+\schemestop
+\end{center}
+
+\textcolor{blueunam}{\textbf{Sustitución Nucleofílica Bimolecular ($S_N2$)}} \\
+
+Mecanismo de un solo paso. El nucleófilo ataca por el lado opuesto al halógeno
+(\textit{ataque anti}) simultáneamente mientras el halógeno se va como X$^{\color{anblue}-}$. Nunca
+se forma un carbocatión libre. \\
+
+% --- Línea 1: Reactivos → Estado de transición ---
+\begin{center}
+\schemestart
+$Na^{\color{catred}+}$
+\+
+$\underbrace{\textcolor{anblue}{OH^{\color{anblue}-}}}_{\text{Nucleófilo}}$
+\quad
+\chemname{
+    \chemfig{
+        \overset{\delta^{\color{catred}+}}{C}(-[2]H)(-[6]H)(-[180]H)-[0]\underset{\delta^{\color{anblue}-}}{Br}
+    }
+}{Sustrato}
+\arrow{->}
+$\underbrace{
+    \left[\,
+        \textcolor{anblue}{HO}
+        \cdots
+        \chemfig{C(-[90]H)(-[270]H)(-[45]H)}
+        \cdots
+        Br
+    \,\right]^{\ddagger}
+}_{\text{Estado de transición}\footnotemark}$
+\schemestop
+\end{center}
+
+% --- Línea 2: Estado de transición → Productos ---
+\begin{center}
+\schemestart
+$\left[\,
+    \textcolor{anblue}{HO}
+    \cdots C \cdots
+    Br
+\,\right]^{\ddagger}$
+\arrow{->}
+\chemname{
+    \chemfig{
+        \textcolor{anblue}{HO}-[:0]C(-[:90]H)(<[:270]H)(<:[:150]H)
+    }
+}{Inversión\footnotemark}
+\+
+$\textcolor{anblue}{Br^{\color{anblue}-}}$
+\+
+$Na^{\color{catred}+}$
+\schemestop
+\end{center}
+
+\footnotetext[1]{\textbf{Estado de transición ($\ddagger$):} especie hipotética de máxima
+energía que no puede ser aislada. Representa el instante en que el enlace C--O se está
+formando y el C--Br se está rompiendo simultáneamente. Los puntos ($\cdots$) indican
+enlaces parciales. Es el máximo de la coordenada de reacción.}
+
+\footnotetext[2]{\textbf{Inversión de Walden:} el nucleófilo ataca por el lado opuesto
+al grupo saliente. Los tres sustituyentes del carbono se invierten como un paraguas que
+se voltea. Si el carbono es quiral, el producto tiene configuración R/S opuesta al reactivo.}
+
+\textbf{Quiralidad:} un carbono es quiral cuando tiene cuatro sustituyentes diferentes.
+Solo en ese caso la inversión de configuración produce un estereoisómero distinto.
+(Véase \hyperref[sec:anexo:quiralidad:quiral]{Anexo A.2.2} para la discusión completa.) \\
+
+\textbf{Favorecida en:} haluros metílicos y primarios (menor impedimento estérico). \\
+
+\textbf{Impedimento estérico:} obstáculo al acceso de un reactivo a una 
+posición o átomo de la molécula generado por la presencia de átomos, grupos 
+o nubes electrónicas que bloquean la aproximación. Tiene dos componentes 
+que suelen ir juntos:
+\begin{itemize}
+\item \textbf{Geométrico:} el grupo ocupa espacio físico impidiendo que el 
+reactivo se aproxime lo suficiente para que ocurra el solapamiento orbital 
+necesario para la reacción.
+\item \textbf{Electrónico:} grupos grandes y polarizables generan nubes 
+electrónicas difusas que repelen al reactivo antes de que llegue al sitio 
+de reacción.
+\end{itemize}
+A mayor tamaño del sustituyente, mayor impedimento estérico y menor 
+reactividad en esa posición.
+
+
+
+\begin{center}
+\includegraphics[width=0.75\textwidth]{/home/azquepchup/IQM/Quimica_de_Materiales/Imagenes_QM/coordenada_SN2.pdf}
+\end{center}
+
+\small La gráfica muestra la coordenada de reacción para una sustitución exotérmica
+(línea continua) y endotérmica (línea punteada). El símbolo $\ddagger$ indica el estado
+de transición. $E_a$ es la energía de activación y $\Delta H$ indica si la reacción
+libera o absorbe energía neta. \\
+
+\normalsize
+\textcolor{blueunam}{\textbf{Sustitución Nucleofílica Unimolecular ($S_N1$)}} \\
+
+Mecanismo de dos pasos. En el primer paso (lento, determinante) el halógeno se va solo
+formando un carbocatión como intermedio real. En el segundo paso (rápido) el nucleófilo
+ataca al carbocatión. \\
+
+Ejemplos de intermedios carbocatión: \\
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-C^{\color{catred}+}(-[2]H)(-[6]H)}}{\footnotesize Metilcarbocatión}
+\qquad
+\qquad
+\chemname{\chemfig{CH_3-C^{\color{catred}+}(-[2]CH_3)(-[6]H)}}{\footnotesize Isopropilcarbocatión}
+\qquad
+\qquad
+\chemname{\chemfig{CH_3-C^{\color{catred}+}(-[2]CH_3)(-[6]CH_3)}}{\footnotesize Terc-butilcarbocatión}
+\schemestop
+\end{center}
+
+\textbf{Favorecida en:} haluros terciarios (el carbocatión terciario es más estable
+por mayor hiperconjugación). No hay inversión de configuración definida: el carbocatión
+es plano ($sp^2$) y el nucleófilo puede atacar por cualquier lado. \\
+
+\textbf{Nucleofilía} — capacidad de una especie para donar un par de electrones a un
+centro electrofílico: \\
+
+\begin{center}
+\begin{tabular}{cccccccc}
+$\underbrace{OH^{\color{anblue}-} \quad HS^{\color{anblue}-} \quad NH_2^{\color{anblue}-}}_{\text{más fuertes (carga negativa)}}$
+& $H_2O$ & $R_3P$ & $R$--$OH$ & $NH_3$ & $H_2S$
+\end{tabular}
+\end{center}
+
+Todos son nucleofílicos por carga negativa o pares libres. Los más fuertes tienen carga
+negativa concentrada. Entre los cargados negativamente, el más fuerte es el que tiene la
+carga más polarizable (menos electronegativo y más grande). \\
+
+\textbf{Electrófilo:} especie con deficiencia de electrones. \\
+\textbf{Nucleófilo:} especie con par de electrones disponible para donar. \\
+\textbf{Sitio electrofílico:} zona de mayor densidad de carga positiva en la molécula,
+donde el nucleófilo ataca.
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 5 -- 01/09/2026: Sustituciones en C $sp^3$}
+\subsubsection*{\textcolor{blueunam}{Clase 5 -- 01/09/2026: Sustituciones en C $sp^3$}}
+
+\begin{itemize}
+\item Sustitución Nucleofílica Bimolecular ($S_N2$):
+    haluros de alquilo primarios, secundarios y metílicos.
+\item Sustitución Nucleofílica Unimolecular ($S_N1$):
+    haluros de alquilo terciarios y secundarios, bencílicos y alílicos.
+\end{itemize}
+
+$S_N2$: No se forma carbocatión porque el carbono primario o metílico
+no tiene suficiente estabilización para sostener esa carga,
+prefieren pasar por el estado de transición, se llama Bimolecular
+porque en el estado de transición participan dos moléculas, el nucleófilo y el sustrato
+y sustitución porque se sustituye un grupo por otro. \\
+
+
+$S_N1$: Se forma un carbocatión, es Unimolecular porque el paso determinante es la formación del carbocatión, y sustitución porque se sustituye un grupo por otro. \\
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-C(-[:90]CH_3)(-[:0]x)(-[6]CH_3)}}{\footnotesize Haluro de alquilo terciario}
+\qquad
+\qquad
+\chemname{\chemfig{=[:30]-[:-30]-[:30]x}}{\footnotesize Haluro alílico primario}
+\qquad
+\qquad
+\chemname{\chemfig{*6(=-=(-[:30](-[:-30]x))-=-)}}{\footnotesize Haluro bencílico primario}
+\schemestop
+\end{center}
+
+\begin{center}
+\schemestart
+$Na^{\color{catred}+}$
+\+
+$\underbrace{\textcolor{anblue}{OH^{\color{anblue}-}}}_{\text{Nucleófilo}}$
+\quad
+\chemname{
+    \chemfig{
+        \overset{\delta^{\color{catred}+}}{C}(-[2]H)(-[6]H)(-[180]H)-[0]\underset{\delta^{\color{anblue}-}}{x}
+    }
+}{\footnotesize Sustrato \\ \scriptsize (Ruptura heterolítica)}
+\arrow{->}
+$\underbrace{
+    \chemfig{C^{\color{catred}+}(-[:90]H)(-[:270]H)(-[:180]H)} + \textcolor{anblue}{x^{\color{anblue}-}}
+}_{\text{Intermediario}}$
+\schemestop
+\end{center} 
+
+
+
+\begin{center}
+\schemestart
+\chemfig{C(-[:0]OH)(-[:90]H)(-[:270]H)(-[:180]H)}
+\+ $Na^{\color{catred}+}$
+\+ $\textcolor{anblue}{x^{\color{anblue}-}}$
+\schemestop
+\end{center}
+
+\includegraphics[width=0.8\textwidth]{/home/azquepchup/IQM/Quimica_de_Materiales/Imagenes_QM/coordenada_SN1.pdf}
+
+$S_N1$ genera mezclas racémicas porque el carbocatión intermedio es plano ($sp^2$):
+el nucleófilo puede atacar con igual probabilidad por la cara superior o inferior
+del orbital $p$ vacío, produciendo ambos enantiómeros R y S en proporción aproximadamente
+1:1.\footnotemark
+\footnotetext{Véase \hyperref[sec:anexo:quiralidad:rac]{Anexo A.2.4} para mezclas racémicas.}
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 6 -- 03/09/2026: Reacciones $S_N1$ y $S_N2$}
+\subsubsection*{\textcolor{blueunam}{Clase 6 -- 03/09/2026: Reacciones $S_N1$ y $S_N2$}}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.6}
+\setlength{\LTleft}{0pt}
+\begin{longtable}{|p{2.5cm}|p{5cm}|p{5cm}|}
+\hline
+\rule{0pt}{14pt} & \textbf{$S_N1$} & \textbf{$S_N2$} \\
+\hline
+\endhead
+\hline
+\textbf{Sustrato} &
+Terciario, bencílico, alílico. El carbocatión formado debe ser estable. &
+Metílico, primario, secundario. Carbono accesible para el ataque del nucleófilo. \\
+\hline
+\textbf{Disolvente} &
+Polar prótico (agua, alcoholes). Solvatiza el carbocatión y el grupo saliente,
+favoreciendo la ionización y separando el par iónico. &
+Polar aprótico (acetona, DMF, DMSO). No solvatiza al nucleófilo, lo deja libre y reactivo. \\
+\hline
+\textbf{Nucleófilo} &
+Débil o fuerte (no importa). El paso lento es la ionización, no el ataque. &
+Fuerte y poco voluminoso. Debe atacar al carbono central en un solo paso. \\
+\hline
+\textbf{Estereo-\linebreak química} &
+Mezcla racémica $(\pm)$. El carbocatión plano ($sp^2$) puede ser atacado por ambas caras.
+Con par iónico íntimo puede haber exceso enantiomérico parcial. &
+Inversión de configuración (inversión de Walden). El ataque anti produce el enantiómero opuesto. \\
+\hline
+\textbf{Mecanismo} &
+Dos pasos: (1)~ionización lenta $\rightarrow$ carbocatión (paso determinante);
+(2)~ataque del nucleófilo rápido.
+Unimolecular: velocidad $= k[\text{sustrato}]$. &
+Un solo paso: el nucleófilo ataca mientras el grupo saliente se va simultáneamente.
+Bimolecular: velocidad $= k[\text{sustrato}][\text{Nu}]$. \\
+\hline
+\textbf{Estados de\linebreak transición} &
+Dos TS: TS$_1$ (ionización, paso lento) y TS$_2$ (ataque nucleofílico, paso rápido).
+El carbocatión es el intermediario real entre ambos. &
+Un único TS pentacoordinado (complejo activado de Walden): nucleófilo entra y grupo saliente
+sale simultáneamente. No hay intermediario. \\
+\hline
+\end{longtable}
+\normalsize
+\end{center}
+
+
+$S_N1$:
+\begin{center}
+\schemestart
+\chemname{\chemfig{(-[2])(-[6])(-[4])-I}}{\footnotesize Haluro terciario}
+\+
+\ce{NaCN}
+\arrow{->[\footnotesize \chemfig{C^{\color{catred}+}(-[2])(-[6])(-[4])} \+ $\textcolor{anblue}{I^{\color{anblue}-}}$][\footnotesize \ce{H2O}]}
+\chemname{\chemfig{(-[2])(-[6])(-[4])-CN}}{\footnotesize Producto}
+\+
+\ce{NaI}
+\schemestop
+\end{center}
+
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Polar prótico} & \textbf{Polar aprótico} & \textbf{Aprótico no polar} \\
+\hline
+Agua (\ce{H2O}) & Acetona (\ce{Me2CO}) & Hexano \\
+Metanol (MeOH) & DMF (dimetilformamida) & Benceno \\
+Etanol (EtOH) & DMSO (dimetilsulfóxido) & Tolueno \\
+Isopropanol (iPrOH) & Acetonitrilo (MeCN) & Éter dietílico (\ce{Et2O}) \\
+Ácido acético (AcOH) & THF (tetrahidrofurano) & \\
+Ácido fórmico (HCOOH) & Diclorometano (DCM) & \\
+\hline
+\multicolumn{1}{|p{4cm}|}{\small Donan H, forman puentes de hidrógeno.
+Favorecen \textbf{$S_N1$}.} &
+\multicolumn{1}{p{4cm}|}{\small Sin H donables. No solvatan al nucleófilo.
+Favorecen \textbf{$S_N2$}.} &
+\multicolumn{1}{p{4cm}|}{\small Baja polaridad. No favorecen reacciones iónicas.} \\
+\hline
+\end{tabular}
+\normalsize
+\end{center}
+
+\textbf{Solvatación}
+
+La solvatación es el proceso por el cual las moléculas del disolvente rodean 
+a una especie iónica o polar, estabilizándola electrostáticamente. Para un 
+catión, el disolvente orienta su parte negativa (dipolo $\delta^{\color{anblue}-}$) hacia él; 
+para un anión, orienta su parte positiva ($\delta^{\color{catred}+}$).
+
+En disolventes \textbf{polares próticos} (agua, alcoholes), la solvatación 
+es especialmente efectiva porque el H unido a O o N tiene carga parcial 
+positiva $\delta^{\color{catred}+}$ que forma \textbf{puentes de hidrógeno} directamente 
+con los aniones:
+
+\[
+\text{X}^{\color{anblue}-} \cdots \text{H--O--R}
+\]
+
+El H es el átomo más pequeño que existe: puede acercarse íntimamente al 
+anión sin impedimento estérico, rodeándolo y estabilizándolo fuertemente. 
+Esto no puede hacerlo cualquier $\delta^{\color{catred}+}$: el $\delta^{\color{catred}+}$ del C en la 
+acetona o del S en el DMSO está en átomos más grandes que no pueden 
+acercarse al anión con esa intimidad. Por eso solo el prótico estabiliza 
+eficazmente los aniones.
+
+Esta interacción específica y fuerte envuelve al anión con una capa de 
+moléculas de disolvente, reduciendo su reactividad como nucleófilo. 
+En disolventes \textbf{polares apróticos} (acetona, DMF, DMSO), no hay 
+H disponible para el puente de hidrógeno: la solvatación del anión es 
+débil, el nucleófilo queda ``desnudo'' y mucho más reactivo.
+
+\textbf{Resumen:}
+\begin{itemize}
+\item \textbf{Prótico:} estabiliza aniones por puente de H (H desnudo 
+$\delta^{\color{catred}+}$) y cationes por $\delta^{\color{anblue}-}$ del O. Nucleófilo solvatado = 
+menos reactivo. Favorece $S_N1$.
+\item \textbf{Aprótico polar:} estabiliza cationes por $\delta^{\color{anblue}-}$ pero 
+no solvatiza bien los aniones. Nucleófilo libre = más reactivo. 
+Favorece $S_N2$.
+\end{itemize}
+
+\textbf{Nota:} ``prótico'' no se refiere a que el protón haga algo activo. 
+Se refiere a que el H desnudo por electronegatividad genera un $\delta^{\color{catred}+}$ 
+lo suficientemente pequeño y accesible para formar puentes de hidrógeno 
+con aniones. Es electrostática pura mediada por el tamaño del H. \\
+
+\begin{center}
+\includegraphics[width=0.85\textwidth]{/home/azquepchup/IQM/Quimica_de_Materiales/Imagenes_QM/solvatar.png}
+\end{center}
+
+\textbf{Pares iónicos en $S_N1$: íntimo, separado y libre}
+
+En $S_N1$, cuando el grupo saliente X$^{\color{anblue}-}$ abandona el sustrato no siempre se aleja
+completamente de inmediato. Dependiendo de la velocidad de solvatación del disolvente,
+se pueden formar tres situaciones distintas en secuencia:
+
+\begin{enumerate}
+\item \textbf{Par iónico íntimo} (contacto): el X$^{\color{anblue}-}$ permanece muy cerca del carbocatión,
+    bloqueando parcialmente una de sus caras. El nucleófilo ataca preferentemente por el
+    lado opuesto, produciendo un exceso enantiomérico (resultado más parecido a $S_N2$ 
+    que a una racémica perfecta).
+
+\item \textbf{Par iónico separado} (solvent-separated): el disolvente se ha intercalado
+    entre el carbocatión y el X$^{\color{anblue}-}$, separándolos parcialmente. La selectividad facial
+    disminuye pero no desaparece. Se produce mezcla con algo de exceso enantiomérico.
+
+\item \textbf{Carbocatión libre}: el X$^{\color{anblue}-}$ se ha alejado completamente. El carbocatión
+    es plano ($sp^2$) y simétrico. El nucleófilo ataca con igual probabilidad por ambas
+    caras: \textbf{mezcla racémica perfecta} (50\% R, 50\% S).
+\end{enumerate}
+
+\begin{center}
+\small
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{Especie} & \textbf{Descripción} & \textbf{Resultado estereoquímico} \\
+\hline
+Par iónico íntimo & X$^{\color{anblue}-}$ junto al C$^{\color{catred}+}$, sin disolvente entre ellos &
+Exceso enantiomérico parcial \\
+\hline
+Par iónico separado & Disolvente intercalado entre X$^{\color{anblue}-}$ y C$^{\color{catred}+}$ &
+Mezcla con algo de selectividad \\
+\hline
+Carbocatión libre & X$^{\color{anblue}-}$ completamente alejado & Mezcla racémica $(\pm)$ 50:50 \\
+\hline
+\end{tabular}
+\normalsize
+\end{center}
+
+El disolvente polar prótico acelera la separación del par iónico porque solvatiza
+rápidamente tanto al carbocatión como al X$^{\color{anblue}-}$. Cuanto más rápida es la separación,
+más se acerca el resultado a la racémica perfecta. Por eso en disolventes próticos
+muy ionizantes como el agua, $S_N1$ produce mezclas casi perfectamente racémicas.
+
+Grupo saliente: Un grupo saliente (abreviado como $LG$, del inglés \textit{leaving group}) es un átomo
+o fragmento molecular que se separa de la molécula original durante una reacción de sustitución
+($S_N1$ o $S_N2$) o de eliminación ($E1$ o $E2$), llevándose consigo el par de electrones del enlace
+$\sigma$ que lo unía al carbono.
+
+La calidad de un grupo saliente está determinada por su capacidad para estabilizar la carga negativa
+que adquiere al salir. Cuanto más débil sea su base conjugada, mejor será como grupo saliente.
+Esto se cuantifica mediante el $pK_a$ del ácido conjugado ($H-LG$): a menor $pK_a$, mejor es el grupo
+saliente. Por ejemplo, el yoduro ($I^{\color{anblue}-}$) es un excelente grupo saliente porque su ácido conjugado ($HI$)
+tiene un $pK_a \approx -10$, mientras que el hidróxido ($OH^{\color{anblue}-}$) es un pésimo grupo saliente porque su ácido
+conjugado ($H_2O$) tiene un $pK_a \approx 15.7$.
+
+Además de la basicidad, la polarizabilidad y la estabilización por resonancia facilitan la salida, tal como se explica a continuación:
+
+\begin{center}
+    \schemestart
+    \chemname{\chemfig{(-[:0]x)(-[:90])(-[:180])(-[:270])}}{Haluro de alquilo}
+    \schemestop
+\end{center}
+Los grupos salientes son mejores si son muy polarizables, esto se puede saber con la diferencia de tamaño
+entre más tamaño más polarizable, por ejemplo el yodo es mejor que el bromo y este mejor que el cloro, la 
+polarizabilidad estabiliza sus electrones lo que hace que tenga menos energía de enlace y más fácil de romper
+por lo que son mejores grupos salientes\\
+
+También se pueden tener grupos salientes con carga negativa como por ejemplo:
+\begin{center}
+    \schemestart
+    \chemname{\chemfig{O^{\color{anblue}-}-S(=[:90]O)(=[:270]O)(-([:0]*6(=-=-=-)))}}{Tosilato}
+    \schemestop
+\end{center}
+Estos se estabilizan con resonancia lo que lo hace más estable
+y son mejores grupos salientes que los haluros, 
+por ejemplo el grupo tosilato es mejor que el bromo.\\
+
+Cinética:
+$V = k[R-x][Nu]$
+$k$: Constante cinética
+$R-x$:Haluro de alquilo
+$Nu$:Nucleofilo
+
+Para la reacción $S_N2$ la velocidad depende 
+de la concentración del nucleofilo y del haluro de alquilo, 
+mientras que para la reacción $S_N1$ la velocidad depende 
+solo de la concentración del haluro de alquilo.\\
+
+Esto se debe a que el mecanismo de la reacción $S_N2$ es concertado:
+el ataque del nucleófilo y la salida del grupo saliente ocurren en 
+un solo paso a través de un estado de transición. En ese estado de 
+transición, tanto el haluro de alquilo como el nucleófilo están involucrados 
+simultáneamente, por lo que la velocidad depende de la concentración de ambos 
+reactivos (es una reacción bimolecular).
+
+En cambio, en la reacción $S_N1$ el mecanismo ocurre en dos pasos. El paso lento 
+(etapa determinante de la velocidad) es la ruptura del enlace $C-X$ para formar 
+un carbocatión y el grupo saliente. En este paso solo participa el haluro de alquilo; 
+el nucleófilo aún no ha intervenido. El paso rápido es el ataque del nucleófilo al carbocatión. 
+Como el paso lento solo involucra al haluro de alquilo, la concentración del nucleófilo no afecta 
+la velocidad global, por lo que su ecuación cinética es $V = k[R-X]$ (reacción unimolecular). \\
+
+\textbf{Para una discusión más profunda sobre polarizabilidad, nucleofilicidad 
+y la base orbital de $S_N2$, véase} (Véase \hyperref[sec:anexo:nucleofilicidad:polar]{Anexo A.3.1} para polarizabilidad, 
+\hyperref[sec:anexo:nucleofilicidad:carga]{Anexo A.3.2} para nucleofilicidad, y 
+\hyperref[sec:anexo:nucleofilicidad:homo]{Anexo A.3.5} para la base orbital de SN2.).
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 7 -- 08/09/2026: Sustitución Electrofílica Aromática}
+\subsubsection*{\textcolor{blueunam}{Clase 7 -- 08/09/2026: Sustitución Electrofílica Aromática}}
+
+Los compuestos aromáticos son notablemente poco reactivos frente a reactivos electrofílicos en 
+comparación con sus análogos no aromáticos. Un ejemplo ilustrativo es la reacción con \ce{Br2}:
+el benceno no reacciona con \ce{Br2} bajo condiciones normales, mientras que su análogo lineal 
+con el mismo número de carbonos e hidrógenos, el 1,3,5-hexatrieno, sí reacciona por adición 
+electrofílica directa.
+
+\begin{center}
+\schemestart
+\chemfig{*6(=-=-=-)}
+\+
+\ce{Br2}
+\arrow{->}
+\text{No reacciona}
+\schemestop
+\end{center}
+\begin{center}
+\schemestart
+\chemfig{=[:30]-[:-30]=[:30]-[:-30]=[:30]}
+\+
+\ce{Br2}
+\arrow{->}
+\chemfig{(-[:270]Br)-[:30](-[:90]Br)-[:-30](-[:270]Br)-[:30](-[:90]Br)-[:-30](-[:270]Br)-[:30](-[:90]Br)}
+\schemestop
+\end{center}
+
+Para que una molécula sea aromática tiene que cumplir con 4 criterios:
+\begin{enumerate}
+\item \textbf{Cíclica:} los átomos deben formar un anillo cerrado.
+\item \textbf{Conjugación:} cada átomo del anillo debe aportar un orbital $p$ 
+perpendicular al plano, ya sea por doble enlace, par libre (pirrol) u orbital 
+vacío (cationes aromáticos). El patrón enlace--no enlace es la forma más común 
+pero no la única.
+\item \textbf{Plana:} todos los átomos del anillo deben estar en el mismo plano 
+para que el solapamiento lateral de los orbitales $p$ sea efectivo.
+\item \textbf{Regla de Hückel:} el número de electrones $\pi$ debe satisfacer 
+$4n + 2$ con $n \in \mathbb{Z}_{\geq 0}$:
+\[
+n = \frac{e^{\color{anblue}-}_\pi - 2}{4}
+\]
+\end{enumerate}
+
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|C{3.5cm}|C{1.8cm}|C{2cm}|C{1.8cm}|C{1.8cm}|C{2cm}|}
+\hline
+\textbf{Molécula} & \textbf{Cíclica} & \textbf{Conjugada} & \textbf{Plana} & \textbf{Hückel} & \textbf{Aromática} \\
+\hline
+\shortstack{1,3-butadieno \\ \small\chemfig{=[:30]-[:-30]=[:30]}} & No & Sí & No & No & No \\
+\hline
+\shortstack{Ciclopentadieno \\ \small\chemfig{*5(-=-=-)}} & Sí & No & No & No & No \\
+\hline
+\shortstack{Benceno \\ \small\chemfig{*6(=-=-=-)}} & Sí & Sí & Sí & Sí & Sí \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\textbf{Notas:}
+
+\textbf{Observación sobre $n$:} en policíclicos aromáticos fusionados simples 
+(naftaleno, antraceno), $n$ en la regla de Hückel coincide numéricamente con 
+el número de anillos fusionados. No es una definición general sino una 
+coincidencia de estos casos.
+
+\textbf{Planaridad geométrica vs planaridad electrónica:} son dos conceptos distintos.
+\begin{itemize}
+\item \textbf{Geométrica:} todos los átomos en el mismo plano en un instante dado. 
+Un enlace $\sigma$ puede rotar y sacar átomos de ese plano.
+\item \textbf{Electrónica:} todos los átomos del anillo tienen orbitales $p$ 
+perpendiculares al plano disponibles para el sistema $\pi$. Depende de la 
+hibridación, no de la rotación instantánea.
+\end{itemize}
+El criterio de planaridad en aromaticidad se refiere a la \textbf{electrónica}: 
+los orbitales $p$ deben estar alineados para solapar. En práctica esto exige 
+también planaridad geométrica, por eso ambas van juntas en aromáticos.
+
+\textbf{Rotación del enlace $\sigma$:} es un proceso dinámico. La molécula no adopta 
+una conformación fija sino una mezcla estadística ponderada por energía. Las 
+conformaciones más estables se populan más. A temperatura baja se pueden ``congelar'' 
+y detectar por separado; a temperatura ambiente interconvierten tan rápido que solo 
+se observa el promedio. \\ 
+
+\textbf{Grupos activantes (donadores) y Grupos desactivantes (electroatractores)} \\
+
+DG = Grupo donador
+WG = Grupo electroatractor
+
+\begin{center}
+\chemfig{*6(=-=-(-DG)=-)} \\
+\quad
+DG = 
+\chemfig{\charge{90=\:,270=\:}{-O}H},
+\chemfig{\charge{90=\:}{-N}H_2},
+\chemfig{\charge{90=\:,270=\:}{-O}R},
+\chemfig{\charge{90=\:}{-N}R_2},
+\chemfig{\charge{90=\:,270=\:}{-S}H},
+\chemfig{\charge{90=\:,270=\:}{-O}CH_3},
+\chemfig{-CH_3}
+\end{center}
+
+\begin{center}
+\chemfig{*6(=-=-(-WG)=-)} \\
+\quad
+WG = \ce{-CN}, \chemfig{-C(=[:90]O)-H}, \chemfig{-C(=[:90]O)-R}, 
+\chemfig{-N^{\textcolor{catred}{+}}(=[:90]O)-O^{\textcolor{anblue}{-}}}
+\end{center}
+
+\textbf{Activaciones y desactivaciones y donde se realizan} \\
+
+\begin{center}
+\chemfig{*6(C_5=C_4-C_3=C_2-C_1=C_6-)}
+\end{center}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|C{2cm}|C{2cm}|C{4cm}|}
+\hline
+\textbf{Posición} & \textbf{Nombre} & \textbf{Descripción} \\
+\hline
+1 & \textit{ipso} & Carbono que porta el sustituyente \\
+\hline
+2 y 6 & \textit{orto} & Adyacentes al $C_1$ \\
+\hline
+3 y 5 & \textit{meta} & Separados por un C del $C_1$ \\
+\hline
+4 & \textit{para} & Opuesto al $C_1$ \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Nota:} la numeración indica la posición del \textbf{carbono} en el anillo, 
+no del sustituyente. El $C_1$ es el carbono que porta el sustituyente. La numeración 
+parte del $C_1$ (carbono que porta el sustituyente) y avanza en cualquier dirección 
+de forma creciente alrededor del anillo hasta regresar al $C_1$. Se elige la dirección
+que dé los números más bajos a los demás sustituyentes presentes. \\
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|L{3cm}|L{4cm}|L{4cm}|L{4cm}|}
+\hline
+\textbf{Propiedad} & \textbf{DG} & \textbf{WG} & \textbf{Halógenos} \\
+\hline
+\textbf{Mecanismo} & 
+Donación de par libre al sistema $\pi$ del anillo por resonancia o hiperconjugación & 
+Retiro de densidad $\pi$ del anillo por resonancia retractora o inductivo & 
+Desactivan por inductivo (electronegatividad), donan por resonancia de par libre \\
+\hline
+\textbf{Efecto en anillo} & 
+Activa, anillo más rico en electrones & 
+Desactiva, anillo más pobre en electrones & 
+Desactiva globalmente \\
+\hline
+\textbf{Dirige a} & 
+\textit{orto} y \textit{para} & 
+\textit{meta} & 
+\textit{orto} y \textit{para} \\
+\hline
+\textbf{Ejemplos} & 
+\ce{-OH}, \ce{-NH2}, \ce{-OR}, \ce{-NR2}, \ce{-CH3} & 
+\ce{-NO2}, \ce{-CN}, \ce{-CHO}, \ce{-COR}, \ce{-COOH}, \ce{-CF3} & 
+\ce{-F}, \ce{-Cl}, \ce{-Br}, \ce{-I} \\
+\hline
+\end{tabular}
+\end{center}
+
+\quad
+
+
+\textbf{Ejemplo de un grupo activante:} \\
+\schemestart
+\chemname{\chemfig{*6(=-=-(-\charge{0=\:,180=\:}{O}-[:40]H)=-)}}{Fenol}
+\arrow{<->}
+\chemname{\chemfig{*6(=-=-(=\charge{180=\:}{\textcolor{catred}{O^{\color{catred}+}}}-[:40]H)-{\color{anblue}-}-)}}{\textit{orto}}
+\arrow{<->}
+\chemname{\chemfig{*6(={\color{anblue}-}-=-(=\charge{180=\:}{\textcolor{catred}{O^{\color{catred}+}}}-[:40]H)=-)}}{\textit{para}}
+\arrow{<->}
+\chemname{\chemfig{*6(=-={\color{anblue}-}-(=\charge{180=\:}{\textcolor{catred}{O^{\color{catred}+}}}-[:40]H)--)}}{\textit{orto}}
+\schemestop \\
+
+La densidad electrónica donada por el par libre del \ce{O} se deslocaliza 
+por resonancia a través del sistema $\pi$ del anillo, enriqueciendo 
+específicamente las posiciones \textit{orto} y \textit{para} por el patrón alternado 
+de la conjugación. \\
+\quad
+
+\schemestart
+\chemname{\chemfig{*6(=-=-(-N(=[:140]\charge{40=\:,140=\:}{O})-[:40]O)=-)}}{Nitrobenceno}
+\arrow{<->}
+\chemname{\chemfig{*6(=-=-(=N(-[:140]\charge{40=\:,140=\:,220=\:}{O^{\color{anblue}-}})-[:40]O)-{\color{catred}+}-)}}{Orto}
+\arrow{<->}
+\chemname{\chemfig{*6(-{\color{catred}+}-=-(=N(-[:140]\charge{40=\:,140=\:,220=\:}{O^{\color{anblue}-}})-[:40]O)-=)}}{Para}
+\arrow{<->}
+\chemname{\chemfig{*6(-=-{\color{catred}+}-(=N(-[:140]\charge{40=\:,140=\:,220=\:}{O^{\color{anblue}-}})-[:40]O)-=)}}{Orto}
+\schemestop \\
+
+
+Los WG no activan la posición \textit{meta}. La desactivan menos 
+que las posiciones \textit{orto} y \textit{para}. El electrófilo prefiere el \textit{meta} no porque esté 
+enriquecido sino porque es la posición relativamente menos empobrecida. \\
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 8 -- 10/09/2026: Sustitución electrofílica Aromática}
+\subsubsection*{\textcolor{blueunam}{Clase 8 -- 10/09/2026: Sustitución electrofílica Aromática}}
+
+\textbf{Convención de flechas curvas (eventos electrónicos):} las flechas curvas 
+representan el movimiento de electrones, no de átomos. Siempre salen desde donde 
+hay densidad electrónica (par libre, enlace $\pi$, enlace $\sigma$) y apuntan hacia 
+donde hay deficiencia electrónica. Nunca al revés. Una flecha representa el 
+movimiento de un par de electrones. \\
+
+En reacciones entre especies, el nucleófilo (densidad negativa, par libre) 
+ataca al electrófilo (deficiencia electrónica, carga positiva o $\delta^{\color{catred}+}$). 
+La flecha sale del nucleófilo y apunta al electrófilo. Ejemplo: en 
+\ce{OH^{\color{anblue}-} + H^{\color{catred}+}}, la flecha sale del par libre del \ce{O^{\color{anblue}-}} y apunta al \ce{H^{\color{catred}+}}.
+La atracción es mutua por electrostática, pero la convención sigue 
+el movimiento de los electrones, no del ``hueco'' electrónico. \\
+
+\textbf{Sustitución electrofílica Aromática} \\
+
+\begin{center}
+\schemestart
+\chemfig{*6(=-=-(-\charge{0=\:,180=\:}{O}-[:40]H)=-)}
+\+
+$E^{\color{catred}+}$
+\arrow{}
+\chemname{\chemfig{*6(=-=-(=\charge{180=\:}{\textcolor{catred}{O^{\color{catred}+}}}-[:40]H)-(-[:180]H)(-[:140]E)-)}}{Complejo sigma}
+\arrow{}
+\chemfig{*6(=-=-(-\charge{0=\:,180=\:}{O}-[:40]H)=(-E)-)}
+\+
+$H^{\color{catred}+}$
+\schemestop
+\end{center}
+
+La \textbf{Sustitución Electrofílica Aromática (SEA)} consiste en sustituir 
+un hidrógeno del anillo por un electrófilo entrante $E^{\color{catred}+}$, conservando la 
+aromaticidad al final. El mecanismo ocurre en dos pasos: primero el sistema 
+$\pi$ del anillo ataca al $E^{\color{catred}+}$ formando el complejo sigma (el anillo pierde 
+aromaticidad temporalmente), luego se pierde el $H^{\color{catred}+}$ del carbono atacado 
+restaurando la aromaticidad.
+
+En el ejemplo, el \ce{OH} es un DG que dirige a \textit{orto} y \textit{para}. Se muestra la 
+sustitución en \textit{orto}, pero en la práctica el producto mayoritario es el \textit{para} 
+por menor impedimento estérico del grupo \ce{OH}. En reacciones más complejas 
+o cuando se busca controlar el producto obtenido, conocer la regioquímica 
+(\textit{orto}, \textit{meta}, \textit{para}) y el efecto del impedimento estérico es indispensable para 
+predecir qué compuesto predominará. \\
+
+\textbf{Más ejemplos de SEA}
+
+\textbf{Nitración}
+\begin{center}
+\schemestart
+\chemfig{*6(=-=-=-)}
+\arrow{->[\ce{HNO3}][\ce{H2SO4}, $\Delta$]}[0,1.5]
+\chemfig{*6(=-=(-NO_2)-=-)}
+\schemestop
+\end{center}
+
+\textbf{Sulfonación}
+\begin{center}
+\schemestart
+\chemfig{*6(=-=-=-)}
+\arrow{->[\ce{SO3}][\ce{H2SO4}]}[0,1.5]
+\chemfig{*6(=-=(-S(=[:120]O)(=[:300]O)(-OH))-=-)}
+\schemestop
+\end{center}
+
+\textbf{Halogenación}
+\begin{center}
+\schemestart
+\chemfig{*6(=-=(-NO_2)-=-)}
+\arrow{->[1-\ce{Cl2}, \ce{AlCl3}][2-\ce{Br2}, \ce{FeBr3}]}[0,1.5]
+\chemfig{*6(=-=(-Cl)-=-)}, 
+\chemfig{*6(=-=(-Br)-=-)}
+\schemestop
+\end{center}
+
+\textbf{Alquilación}
+\begin{center}
+\schemestart
+\chemfig{*6(=-=-=-)}
+\arrow{->[\ce{R-X}][\ce{AlCl3}]}[0,1.5]
+\chemfig{*6(=-=(-R)-=-)}
+\schemestop
+\end{center}
+
+\textbf{Acilación}
+\begin{center}
+\schemestart
+\chemfig{*6(=-=-=-)}
+\arrow{->[\chemfig{R-[:30](=[:90]O)-[:330]Cl}][\ce{AlCl3}]}[0,1.5]
+\chemfig{*6(=-=(-[:30](=[:90]O)-[:330]R)-=-)}
+\schemestop
+\end{center}
+
+\textbf{Sandmeyer}
+\begin{center}
+\schemestart
+\chemfig{*6(=-=(-NO_2)-=-)}
+\arrow{->[\ce{Sn}][\ce{HCl}]}[0,1.5]
+\chemfig{*6(=-=(-NH_2)-=-)}
+\arrow{->[\ce{HCl}][\ce{NaNO2}]}[0,1.5]
+\schemestop
+\end{center}
+\begin{center}
+\schemestart
+\chemname[-1cm]{\chemfig{*6(=-=(-N^{\textcolor{catred}{+}}~[:0]N)-=-)}}{Sal de diazonio}
+\+
+$\text{Cl}^{\textcolor{anblue}{-}}$
+\arrow{->[\ce{CuX}][\ce{HX}]}[0,1.5]
+\chemfig{*6(=-=(-X)-=-)}
+\schemestop
+\end{center}
+Donde \ce{X} = \ce{Cl}, \ce{Br}, \ce{CN}, \ce{I} \\
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 9 -- 24/09/2026: Clasificación de las reacciones químicas inorgánicas}
+\subsubsection*{\textcolor{blueunam}{Clase 9 -- 24/09/2026: Clasificación de las reacciones químicas inorgánicas}}
+
+\begin{itemize}
+    \item \textbf{Combinación:} dos o más sustancias se unen para formar un único producto.
+    \begin{center}
+    \schemestart
+    \chemfig{A} \+ \chemfig{B} \arrow{->} \chemfig{A-B}
+    \schemestop
+    \end{center}
+    Ejemplo: \ce{2H2 + O2 -> 2H2O}
+
+    \item \textbf{Descomposición:} una sustancia se rompe en dos o más productos más simples.
+    \begin{center}
+    \schemestart
+    \chemfig{A} \arrow{->} \chemfig{B} \+ \chemfig{C}
+    \schemestop
+    \end{center}
+    Ejemplo: \ce{2NaN3 -> 3N2 + 2Na}
+
+    \item \textbf{Desplazamiento:} un elemento más reactivo sustituye a otro dentro de un compuesto.
+    \begin{center}
+    \schemestart
+    \chemfig{A-B} \+ \chemfig{C} \arrow{->} \chemfig{A-C} \+ \chemfig{B}
+    \schemestop
+    \end{center}
+    Ejemplo: \ce{Zn + CuSO4 -> ZnSO4 + Cu}
+\end{itemize}
+
+\textbf{Nota:} Las descomposiciones orgánicas son raras, pero pueden darse, como en las aminas.
+\begin{center}
+\schemestart
+\chemfig{*6(=-=(-N=[:0]N^{\color{catred}+}=[:0]N^{\color{anblue}-})-=-)} \arrow{->} \chemfig{2N_2} \+ \chemfig{*6(=-=(-[:30]N-[:330]N-[:30]*6(=-=-=-))-=-)}
+\schemestop
+\end{center}
+
+Por intercambio de partícula: \\
+\begin{itemize}
+    \item Ácido-base
+    \begin{itemize}
+        \item Brønsted --- Intercambio de protones (H$^{\color{catred}{+}}$)
+        \item Lewis --- Donación de par libre (complejación)
+    \end{itemize}
+    \item Redox --- Intercambio de electrones (\ce{e^{\color{anblue}{-}}})
+\end{itemize}
+
+\begin{enumerate}[label=\alph*)]
+    \item \schemestart
+$\underbrace{\chemfig{*6(=-=-N=-)}}_{\text{Base}}$
+\+
+$\underbrace{\chemfig{HBr}}_{\text{Ácido}}$
+\arrow{->}
+$\underbrace{\chemfig{*6(=-=-N^{\color{catred}+}(-[:90]H)=-)}}_{\text{Ácido conjugado}}$
+\+
+$\underbrace{\chemfig{Br^{\color{anblue}-}}}_{\text{Base conjugada}}$
+\schemestop : Ácido --- Base
+    \item \schemestart
+\chemfig{Zn^{0}}
+\+
+\chemfig{Cu^{\color{catred}{2+}}SO_{4}}
+\arrow{->}
+\chemfig{Zn^{\color{catred}{2+}}SO_{4}}
+\+
+\chemfig{Cu^{0}}
+\schemestop : Redox
+    \item \schemestart
+\chemfig{NH3}
+\+
+\chemfig{BH3}
+\arrow{->}
+\chemfig{H_3N-BH_3}
+\schemestop : Ácido-base de Lewis
+
+\begin{center}
+\begin{tikzpicture}
+% NH3
+\node (nh3) at (0,0) {%
+\chemfig{\charge{90=\:}{N}(-[:210]H)(-[:330]H)(-[:90]H)}%
+    };
+\node[below] at (0,-1.2) {\small Base de Lewis};
+
+% Flecha de reacción
+\draw[-{Stealth}, thick] (1.5,0) -- (2.5,0);
+
+% BH3
+\node (bh3) at (4.2,0) {%
+\chemfig{B(-[:30]H)(-[:150]H)(-[:270]H)}%
+    };
+\node[below] at (4.2,-1.2) {\small Ácido de Lewis};
+
+% Orbital pz vacío sobre B
+\orbital[pos={(4.2, 0.4)}, pcolor=gray!50, ncolor=gray!30, 
+             opacity=0.8, scale=1.2]{pz}
+\node[above] at (4.2, 1.4) {\small $2p_z$ vacío};
+
+% Segunda flecha de reacción
+\draw[-{Stealth}, thick] (7.2,0) -- (8.2,0);
+
+% Producto H3N+-B-H3
+\node at (11.2,0) {%
+\chemfig{(N^{\color{catred}{+}}(-[:100]H)(<:[:210]H)(<[:230]H)-B^{\color{anblue}{-}}(<:[:30]H)(<[:10]H)(-[:280]H))}%
+    };
+\node[below] at (11.2,-1.2) {\small Complejo o aducto};
+
+\end{tikzpicture}
+\end{center}
+
+    \item \schemestart
+\chemfig{CuCl2}
+\+
+2\,\chemfig{NH3}
+\arrow{->}
+\ce{[Cu(NH3)2Cl2]}
+\schemestop :\\ Es una complejación. Expliquemos cómo sucede para este caso, que se puede extrapolar a cualquier complejación \\
+
+\vspace{1cm}
+
+\schemestart
+\chemfig{@{cl1}Cl^{\color{anblue}-}-Cu^{\color{catred}{2+}}-@{cl2}Cl^{\color{anblue}-}}
+\+
+\chemname{%
+\begin{tikzpicture}[baseline=-0.5ex]
+    \node (nh3) at (0,0) {%
+        \chemfig{N(-[:200]H)(<[:250]H)(<:[:330]H)}%
+    };
+    \orbital[pos={(0.1, 0.3)}, color=anblue, nelec=2, opacity=0.6, scale=0.8, rotate=90]{lobe}
+    \node[above] at (0.1, 1) {\small HOMO ($n$)};
+\end{tikzpicture}%
+}{$L^0$}
+\arrow{->}
+\chemfig{@{cu2}Cu^{\color{catred}{2+}}(-[:0]Cl)(-[:180]Cl)(-[:90]@{n1}NH_3)(-[:270]@{n2}NH_3)}
+\schemestop
+\chemmove{
+    \draw[-{Stealth}, thick] (cl1) .. controls +(90:0.8cm) .. +(-0.8, 1.2)
+        node[above] {\small $L^{\color{anblue}-}$};
+    \draw[-{Stealth}, thick] (cl2) .. controls +(90:0.8cm) .. +(0.8, 1.2)
+        node[above] {\small $L^{\color{anblue}-}$};
+    \draw[-{Stealth}, black] (cu2) -- +(2.0, 0.6)
+        node[right]{\small Centro metálico};
+    \draw[-{Stealth}, black] ($0.5*(cu2)+0.5*(n1)$) -- +(1, 0.8)
+        node[right]{\small Enlace de coordinación};
+    \draw[-{Stealth}, black] ($0.5*(cu2)+0.5*(n2)$) -- +(1,-0.8)
+        node[right]{\small Enlace de coordinación};
+} \\
+
+El \ce{Cu^{2+}} tiene orbitales $d$ con espacio disponible para aceptar 
+pares de electrones. El \ce{NH3} dona su par libre formando un enlace 
+dativo: ambos electrones provienen del ligante. Como no hay transferencia 
+real de electrones, el estado de oxidación del Cu no cambia. \\
+
+\textbf{Nota:} Todos los metales de transición son del bloque $d$, pero 
+no todos los del bloque $d$ son metales de transición. El Zn, Cd y Hg 
+tienen la subcapa $d$ completamente llena (d$^{10}$) en todos sus estados 
+de oxidación comunes, por lo que quedan excluidos por definición IUPAC.
+
+
+    \item \schemestart
+\ce{PdCl2}
+\+
+\ce{2PPh3}
+\arrow{->}
+\ce{PdCl2(PPh3)2}
+\schemestop :\\ Es una complejación. Expliquemos cómo sucede: \\
+\textbf{Nota:} El Ph es un fenilo igual se puede escribir como $\varnothing$ :
+\schemestart
+\chemfig{*6(=-=(-)-=-)}
+\schemestop
+\vspace{1cm}
+
+\schemestart
+\chemfig{@{cl1}Cl^{\color{anblue}-}-Pd^{\color{catred}{2+}}-@{cl2}Cl^{\color{anblue}-}}
+\+
+\chemname{%
+\begin{tikzpicture}[baseline=-0.5ex]
+    \node (nh3) at (0,0) {%
+        \chemfig{P(-[:200]Ph)(<[:250]Ph)(<:[:330]Ph)}%
+    };
+    \orbital[pos={(0.1, 0.3)}, color=anblue, nelec=2, opacity=0.6, scale=0.8, rotate=90]{lobe}
+    \node[above] at (0.1, 1) {\small HOMO ($n$)};
+\end{tikzpicture}%
+}{$L^0$}
+\arrow{->}
+\chemfig{@{cu2}Pd^{\color{catred}{2+}}(-[:0]Cl)(-[:180]Cl)(-[:90]@{n1}PPh_3)(-[:270]@{n2}PPh_3)}
+\schemestop
+\chemmove{
+    \draw[-{Stealth}, thick] (cl1) .. controls +(90:0.8cm) .. +(-0.8, 1.2)
+        node[above] {\small $L^{\color{anblue}-}$};
+    \draw[-{Stealth}, thick] (cl2) .. controls +(90:0.8cm) .. +(0.8, 1.2)
+        node[above] {\small $L^{\color{anblue}-}$};
+    \draw[-{Stealth}, black] (cu2) -- +(2.0, 0.6)
+        node[right]{\small Centro metálico};
+    \draw[-{Stealth}, black] ($0.5*(cu2)+0.5*(n1)$) -- +(1, 0.8)
+        node[right]{\small Enlace de coordinación};
+    \draw[-{Stealth}, black] ($0.5*(cu2)+0.5*(n2)$) -- +(1,-0.8)
+        node[right]{\small Enlace de coordinación};
+} \\
+\end{enumerate}
+
+\textbf{Nota:} Todo lo que rodea al metal es la esfera de coordinación \\
+\textbf{Nota sobre el par libre del N y P:} La notación $2p_z$ sería 
+una simplificación incorrecta. El N en \ce{NH3} tiene configuración 
+$1s^2 2s^2 2p^3$ y forma 3 enlaces, por lo que el par libre proviene 
+de electrones originalmente en el $2s$, no en un $2p$ puro. En el modelo 
+de hibridación sp$^3$ (modelo matemático, no entidad física real) el par 
+libre ocupa un orbital híbrido. En TOM, lo correcto es identificarlo como 
+el \textbf{HOMO} (\textit{Highest Occupied Molecular Orbital}, el orbital 
+lleno de mayor energía; véase \hyperref[sec:anexo:tom:frontera]{Anexo A.1.12}), 
+orbital no enlazante ($n$): tiene predominantemente carácter $s$ con 
+contribución $p$, forma asimétrica similar a un lóbulo $p$ pero más 
+compacta. Se representa como un lóbulo tipo $p$ por convención didáctica, 
+no porque sea un $p$ puro. Lo mismo aplica para el P en \ce{PPh3} con su 
+orbital $3s$ de origen, cuyo HOMO ($n$) tiene aún más carácter $s$ que el 
+del N, lo que lo hace más esférico y menos disponible para resonancia con 
+sistemas $\pi$, pero mejor ligante por su mayor polarizabilidad.

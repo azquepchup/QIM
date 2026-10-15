@@ -1,0 +1,778 @@
+% Configuración global de tablas
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.3}
+
+% Color para átomo central
+% Añadir en el preámbulo del main: \definecolor{atomo}{RGB}{128,0,128}
+% y \newcommand{\ac}[1]{{\color{atomo}#1}}
+% y \newcommand{\carga}[1]{{\color{anblue}#1}}
+
+%---------- NOTA INTRODUCTORIA ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Nota sobre los sistemas de nomenclatura}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{NOTA SOBRE LOS SISTEMAS DE NOMENCLATURA}}}}
+
+En química inorgánica existen formalmente tres sistemas de nomenclatura:
+
+\begin{itemize}
+  \item \textbf{Stock:} indica el estado de oxidación del catión mediante número romano entre paréntesis. No modifica el nombre del anión. Ejemplo: \ce{FeCl2} = cloruro de hierro(II).
+  \item \textbf{Tradicional (clásica):} usa sufijos y prefijos tanto para el catión (-oso/-ico) como para el anión (-ito/-ato, hipo-, per-). Ejemplo: \ce{FeCl2} = cloruro ferroso.
+  \item \textbf{IUPAC:} indica la carga de cada ion entre paréntesis con números arábigos y signo después. Ejemplo: \ce{FeCl2} = cloruro(1$-$) de hierro(2+).
+\end{itemize}
+
+\textbf{El problema real:} ningún profesor, libro de texto o laboratorio utiliza ninguno de estos tres sistemas de forma pura. Lo que se usa en la práctica es un sistema híbrido: el anión se nombra en tradicional (hipoclorito, sulfato, nitrito) y el catión se nombra con número romano cuando tiene más de un estado de oxidación (hierro(II), cobre(II)), pero se omite el romano cuando solo tiene uno (sodio, aluminio, plata).
+
+Este sistema híbrido no tiene nombre oficial en ningún libro. Se le llama aquí \textbf{Usual} porque es el nombre más honesto para lo que realmente se practica, sin pretender que es Stock puro ni Tradicional puro. En la mayoría de libros de texto y en la práctica universitaria (Chang, Petrucci, apuntes UNAM) este sistema híbrido se conoce simplemente como \textbf{Stock}, aunque técnicamente Stock puro usaría el romano también para los aniones. La confusión persiste porque los libros enseñan los sistemas formales pero los aplican mezclados, sin admitirlo.
+
+Las tablas de este documento usan tres columnas: \textbf{Usual} (el sistema híbrido real), \textbf{IUPAC} (el sistema formal internacional) e \textbf{Inglés} (nombre en inglés según IUPAC).
+
+Para las reglas completas y oficiales de nomenclatura inorgánica, ver:\\
+\textbf{Libro Rojo IUPAC:} Nomenclature of Inorganic Chemistry. IUPAC Recommendations 2005.\\
+Disponible en: \url{https://iupac.org/what-we-do/books/redbook/}
+
+\newpage
+
+%---------- REGLAS DE CONSTRUCCIÓN ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Reglas de Construcción de Nombres}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{REGLAS DE CONSTRUCCIÓN DE NOMBRES}}}}
+
+\subsection*{\textcolor{blueunam}{Sistema Usual}}
+
+\textbf{Aniones monoatómicos:} raíz del elemento + \textbf{-uro}. Excepción: \ce{O^{2-}} = óxido (no oxuro).
+
+\textbf{Oxoaniones:} el nombre depende del número de oxígenos respecto al anión de referencia (-ato):
+\begin{itemize}
+  \item Un O menos que -ato: \textbf{hipo-\ldots-ito}
+  \item -ato menos un O: \textbf{-ito}
+  \item Referencia: \textbf{-ato}
+  \item Un O más que -ato: \textbf{per-\ldots-ato}
+\end{itemize}
+Cada paso sube el E.O. del átomo central en 2 unidades. El patrón completo solo aplica a halógenos; azufre, nitrógeno y fósforo solo tienen -ito y -ato.
+
+\textbf{Cationes:} nombre del elemento. Se agrega número romano entre paréntesis \textbf{solo si el elemento tiene más de un estado de oxidación común}. Si tiene uno solo, se omite el romano: \ce{Na+} = sodio, \ce{Al^{3+}} = aluminio, \ce{Fe^{2+}} = hierro(II).
+
+\textbf{Sales y compuestos:} anión primero + ``de'' + catión. Ejemplo: \ce{Fe2(SO4)3} = sulfato de hierro(III).
+
+\textbf{Oxácidos:} -ato del anión $\to$ ácido \ldots-ico; \quad -ito del anión $\to$ ácido \ldots-oso.\\
+Ejemplo: nitrato $\to$ ácido nítrico; nitrito $\to$ ácido nitroso.
+
+\textbf{Hidrácidos:} en disolución acuosa: ácido + raíz + \textbf{-hídrico}.\\
+Ejemplo: \ce{HCl}(aq) = ácido clorhídrico.
+
+\vspace{0.5em}
+
+\subsection*{\textcolor{blueunam}{Sistema IUPAC}}
+
+\textbf{Prefijos para número de átomos:}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{C{1.4cm} C{1.8cm} C{1.4cm} C{1.8cm} C{1.4cm} C{1.8cm} C{1.4cm} C{1.8cm}}
+\toprule
+\textbf{N} & \textbf{Prefijo} & \textbf{N} & \textbf{Prefijo} & \textbf{N} & \textbf{Prefijo} & \textbf{N} & \textbf{Prefijo} \\
+\midrule
+1 & mono* & 3 & tri  & 5 & penta & 7 & hepta \\
+2 & di    & 4 & tetra& 6 & hexa  & 8 & octa  \\
+\bottomrule
+\end{longtable}
+{\small *mono se omite cuando hay un solo átomo del elemento central. No se omite para los oxígenos si hay uno solo: \ce{ClO-} = oxoclorato(1$-$), no monooxoclorato.}
+
+\vspace{0.4em}
+
+\textbf{Aniones monoatómicos:} nombre del elemento + carga entre paréntesis con signo después.\\
+\ce{Cl-} = cloruro(1$-$); \quad \ce{O^{2-}} = óxido(2$-$); \quad \ce{Fe^{3+}} = hierro(3+).
+
+\textbf{Oxoaniones:} prefijo oxo $\times$ número de O + raíz del elemento central + \textbf{-ato} + carga entre paréntesis.\\
+Construcción paso a paso:
+\begin{enumerate}
+  \item Contar los oxígenos: $n$ oxígenos $\to$ prefijo griego + ``oxo''
+  \item Raíz del elemento central
+  \item Terminación \textbf{-ato} siempre
+  \item Carga del ion entre paréntesis: número arábigo + signo después
+\end{enumerate}
+Ejemplo: \ce{SO4^{2-}} $\to$ 4 O = tetraoxo + sulfato + (2$-$) = \textbf{tetraoxosulfato(2$-$)}.\\
+Ejemplo con dos metales: \ce{Cr2O7^{2-}} $\to$ 7 O + 2 Cr = heptaoxo\textbf{di}cromato(2$-$).
+
+\textbf{Oxácidos IUPAC:} ácido + prefijos oxo + raíz + \textbf{-ico} + E.O. del átomo central en romano.\\
+Ejemplo: \ce{H2SO4}: S en 6+ $\to$ 4 O $\to$ \textbf{ácido tetraoxosulfúrico(VI)}.
+
+\textbf{Diferencia clave:} en oxoaniones la carga es la del \textit{ion}; en oxácidos el paréntesis indica el E.O. del átomo central en romano.
+
+\textbf{Sales IUPAC:} anión(carga) + ``de'' + catión(carga).\\
+Ejemplo: \ce{FeCl2} = cloruro(1$-$) de hierro(2+).
+
+\newpage
+
+%---------- OXOANIONES ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Oxoaniones}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{OXOANIONES}}}}
+
+Los oxoaniones son aniones poliatómicos que contienen oxígeno. El patrón para halógenos es:
+\textbf{hipo$\cdots$ito} $\to$ \textbf{$\cdots$ito} $\to$ \textbf{$\cdots$ato} $\to$ \textbf{per$\cdots$ato},
+donde cada paso agrega un O y sube el E.O. en 2 unidades.
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{5pt}
+
+\vspace{0.3em}
+\textbf{Halógenos ({\color{atomo}Cl, Br, I})}
+
+\newgeometry{top=2cm, bottom=2cm, left=1.5cm, right=1.5cm}
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule
+\endfirsthead
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule
+\endhead
+\endlastfoot
+$\ac{Cl}O\carga{^{-}}$ & 1+ & Hipoclorito & Oxoclorato(1$-$)       & Hypochlorite \\
+$\ac{Cl}O_2\carga{^{-}}$ & 3+ & Clorito     & Dioxoclorato(1$-$)     & Chlorite \\
+$\ac{Cl}O_3\carga{^{-}}$ & 5+ & Clorato     & Trioxoclorato(1$-$)    & Chlorate \\
+$\ac{Cl}O_4\carga{^{-}}$ & 7+ & Perclorato  & Tetraoxoclorato(1$-$)  & Perchlorate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Br}O\carga{^{-}}$ & 1+ & Hipobromito & Oxobromato(1$-$)       & Hypobromite \\
+$\ac{Br}O_2\carga{^{-}}$ & 3+ & Bromito     & Dioxobromato(1$-$)     & Bromite \\
+$\ac{Br}O_3\carga{^{-}}$ & 5+ & Bromato     & Trioxobromato(1$-$)    & Bromate \\
+$\ac{Br}O_4\carga{^{-}}$ & 7+ & Perbromato  & Tetraoxobromato(1$-$)  & Perbromate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{I}O\carga{^{-}}$ & 1+ & Hipoyodito  & Oxoyodato(1$-$)        & Hypoiodite \\
+$\ac{I}O_2\carga{^{-}}$ & 3+ & Yodito      & Dioxoyodato(1$-$)      & Iodite \\
+$\ac{I}O_3\carga{^{-}}$ & 5+ & Yodato      & Trioxoyodato(1$-$)     & Iodate \\
+$\ac{I}O_4\carga{^{-}}$ & 7+ & Peryodato   & Tetraoxoyodato(1$-$)   & Periodate \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Anfígenos ({\color{atomo}S, Se, Te})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{S}O_3\carga{^{2-}}$ & 4+ & Sulfito   & Trioxosulfato(2$-$)    & Sulfite \\
+$\ac{S}O_4\carga{^{2-}}$ & 6+ & Sulfato   & Tetraoxosulfato(2$-$)  & Sulfate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Se}O_3\carga{^{2-}}$ & 4+ & Selenito  & Trioxoselenato(2$-$)   & Selenite \\
+$\ac{Se}O_4\carga{^{2-}}$ & 6+ & Selenato  & Tetraoxoselenato(2$-$) & Selenate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Te}O_3\carga{^{2-}}$ & 4+ & Telurito  & Trioxotelurato(2$-$)   & Tellurite \\
+$\ac{Te}O_4\carga{^{2-}}$ & 6+ & Telurato  & Tetraoxotelurato(2$-$) & Tellurate \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Nitrogenoides ({\color{atomo}N, P, As, Sb})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{N}O_2\carga{^{-}}$ & 3+ & Nitrito      & Dioxonitrato(1$-$)        & Nitrite \\
+$\ac{N}O_3\carga{^{-}}$ & 5+ & Nitrato      & Trioxonitrato(1$-$)       & Nitrate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{P}O_3\carga{^{3-}}$ & 3+ & Fosfito      & Trioxofosfato(3$-$)       & Phosphite \\
+$\ac{P}O_4\carga{^{3-}}$ & 5+ & Fosfato      & Tetraoxofosfato(3$-$)     & Phosphate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{As}O_3\carga{^{3-}}$ & 3+ & Arsenito     & Trioxoarseniato(3$-$)     & Arsenite \\
+$\ac{As}O_4\carga{^{3-}}$ & 5+ & Arseniato    & Tetraoxoarseniato(3$-$)   & Arsenate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Sb}O_3\carga{^{3-}}$ & 3+ & Antimonito   & Trioxoantimoniato(3$-$)   & Antimonite \\
+$\ac{Sb}O_4\carga{^{3-}}$ & 5+ & Antimoniato  & Tetraoxoantimoniato(3$-$) & Antimonate \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Carbonoideos ({\color{atomo}C, Si})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{C}O_3\carga{^{2-}}$ & 4+ & Carbonato    & Trioxocarbonato(2$-$)     & Carbonate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Si}O_3\carga{^{2-}}$ & 4+ & Silicato     & Trioxosilicato(2$-$)      & Silicate \\
+$\ac{Si}O_4\carga{^{4-}}$ & 4+ & Ortosilicato & Tetraoxosilicato(4$-$)    & Orthosilicate \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Metales de transición ({\color{atomo}Cr, Mn, V, Mo, W})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{V}O_3\carga{^{-}}$ & 5+ & Vanadato      & Trioxovanadato(1$-$)       & Vanadate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Cr}O_4\carga{^{2-}}$ & 6+ & Cromato       & Tetraoxocromato(2$-$)      & Chromate \\
+$\ac{Cr}_2O_7\carga{^{2-}}$ & 6+ & Dicromato     & Heptaoxodicromato(2$-$)    & Dichromate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Mn}O_4\carga{^{-}}$ & 7+ & Permanganato  & Tetraoxomanganato(1$-$)    & Permanganate \\
+$\ac{Mn}O_4\carga{^{2-}}$ & 6+ & Manganato     & Tetraoxomanganato(2$-$)    & Manganate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Mo}O_4\carga{^{2-}}$ & 6+ & Molibdato     & Tetraoxomolibdato(2$-$)    & Molybdate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{W}O_4\carga{^{2-}}$ & 6+ & Tungstato     & Tetraoxotungstato(2$-$)    & Tungstate \\
+\end{longtable}
+
+\newpage
+
+%---------- ANIONES MONOATÓMICOS ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Aniones Monoatómicos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ANIONES MONOATÓMICOS}}}}
+
+Terminación característica: \textbf{-uro}. Excepción: oxígeno forma \textbf{óxido} (no oxuro).
+
+\vspace{0.3em}
+\textbf{Halógenos ({\color{atomo}F, Cl, Br, I})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{F}\carga{^{-}}$ & 1$-$ & Fluoruro & Fluoruro(1$-$) & Fluoride \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Cl}\carga{^{-}}$ & 1$-$ & Cloruro  & Cloruro(1$-$)  & Chloride \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Br}\carga{^{-}}$ & 1$-$ & Bromuro  & Bromuro(1$-$)  & Bromide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{I}\carga{^{-}}$ & 1$-$ & Yoduro   & Yoduro(1$-$)   & Iodide \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Anfígenos ({\color{atomo}O, S, Se, Te}) + Peróxido ($\ac{O}_2\carga{^{2-}}$)}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{O}\carga{^{2-}}$ & 2$-$     & Óxido    & Óxido(2$-$)    & Oxide \\
+$\ac{O}_2\carga{^{2-}}$ & 1$-$/cad & Peróxido & Peróxido(2$-$) & Peroxide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{S}\carga{^{2-}}$ & 2$-$     & Sulfuro    & Sulfuro(2$-$)    & Sulfide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Se}\carga{^{2-}}$ & 2$-$     & Selenuro   & Selenuro(2$-$)   & Selenide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Te}\carga{^{2-}}$ & 2$-$     & Telururo   & Telururo(2$-$)   & Telluride \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Nitrogenoides ({\color{atomo}N, P, As, Sb})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{N}\carga{^{3-}}$ & 3$-$ & Nitruro     & Nitruro(3$-$)     & Nitride \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{P}\carga{^{3-}}$ & 3$-$ & Fosfuro     & Fosfuro(3$-$)     & Phosphide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{As}\carga{^{3-}}$ & 3$-$ & Arseniuro   & Arseniuro(3$-$)   & Arsenide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Sb}\carga{^{3-}}$ & 3$-$ & Antimoniuro & Antimoniuro(3$-$) & Antimonide \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Carbonoideos ({\color{atomo}C, Si})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{C}\carga{^{4-}}$ & 4$-$ & Carburo   & Carburo(4$-$)   & Carbide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{Si}\carga{^{4-}}$ & 4$-$ & Siliciuro & Siliciuro(4$-$) & Silicide \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Hidrógeno (H)}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H\carga{^{-}}$ & 1$-$ & Hidruro & Hidruro(1$-$) & Hydride \\
+\end{longtable}
+
+\newpage
+
+%---------- ANIONES COMPUESTOS ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Aniones Compuestos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ANIONES COMPUESTOS}}}}
+
+\vspace{0.3em}
+\textbf{Cianuros y derivados ({\color{atomo}C, N, S, O})}
+
+\begin{longtable}{C{2.2cm} L{4.8cm} >{\color{iupacgreen}}L{6.4cm} L{3.2cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{C}N\carga{^{-}}$ & Cianuro    & Cianuro(1$-$)    & Cyanide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{S}CN\carga{^{-}}$ & Tiocianato & Tiocianato(1$-$) & Thiocyanate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$O\ac{C}N\carga{^{-}}$ & Cianato    & Cianato(1$-$)    & Cyanate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{C}NO\carga{^{-}}$ & Fulminato  & Fulminato(1$-$)  & Fulminate \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Tiosales ({\color{atomo}S})}
+
+\begin{longtable}{C{2.2cm} L{4.8cm} >{\color{iupacgreen}}L{6.4cm} L{3.2cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{S}_2O_3\carga{^{2-}}$ & Tiosulfato   & Tiosulfato(2$-$)      & Thiosulfate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{S}_2O_8\carga{^{2-}}$ & Persulfato   & Peroxodisulfato(2$-$) & Persulfate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{S}_2O_4\carga{^{2-}}$ & Ditionito    & Ditionito(2$-$)       & Dithionite \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{S}_4O_6\carga{^{2-}}$ & Tetrationato & Tetrationato(2$-$)    & Tetrathionate \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Hidróxido y azidas}
+
+\begin{longtable}{C{2.2cm} L{4.8cm} >{\color{iupacgreen}}L{6.4cm} L{3.2cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{O}H\carga{^{-}}$ & Hidróxido & Hidróxido(1$-$) & Hydroxide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{N}_3\carga{^{-}}$ & Azida     & Azida(1$-$)     & Azide \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$\ac{N}H_2\carga{^{-}}$ & Amiduro   & Amiduro(1$-$)   & Amide \\
+$\ac{N}H\carga{^{2-}}$ & Imiduro   & Imiduro(2$-$)   & Imide \\
+\end{longtable}
+
+\newpage
+
+%---------- SALES ÁCIDAS ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Sales Ácidas}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{SALES ÁCIDAS}}}}
+
+El prefijo \textbf{hidrógeno-} o \textbf{dihidrógeno-} en IUPAC indica cuántos H ionizables quedan sin sustituir.
+
+\vspace{0.3em}
+\textbf{Derivados del carbono ({\color{atomo}C})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H\ac{C}O_3\carga{^{-}}$ & 4+ & Bicarbonato & Hidrogenocarbonato(1$-$) & Hydrogen carbonate \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Derivados del azufre ({\color{atomo}S})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H\ac{S}O_4\carga{^{-}}$ & 6+ & Bisulfato  & Hidrogenosulfato(1$-$)  & Hydrogen sulfate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{S}O_3\carga{^{-}}$ & 4+ & Bisulfito  & Hidrogenosulfito(1$-$)  & Hydrogen sulfite \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Derivados del fósforo ({\color{atomo}P})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H_2\ac{P}O_4\carga{^{-}}$ & 5+ & Fosfato diácido   & Dihidrogenofosfato(1$-$)  & Dihydrogen phosphate \\
+$H\ac{P}O_4\carga{^{2-}}$ & 5+ & Fosfato monoácido & Hidrogenofosfato(2$-$)    & Hydrogen phosphate \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{P}O_3\carga{^{-}}$ & 3+ & Fosfito diácido   & Dihidrogenofosfito(1$-$)  & Dihydrogen phosphite \\
+$H\ac{P}O_3\carga{^{2-}}$ & 3+ & Fosfito monoácido & Hidrogenofosfito(2$-$)    & Hydrogen phosphite \\
+\end{longtable}
+
+\newpage
+
+%---------- ÁCIDOS OXÁCIDOS ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Ácidos Oxácidos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ÁCIDOS OXÁCIDOS}}}}
+
+Usual: \textbf{-ato} $\to$ \textbf{-ico}; \quad \textbf{-ito} $\to$ \textbf{-oso}.\quad
+IUPAC: ácido + $n\times$oxo + raíz + -ico + (E.O. en romano).
+
+\vspace{0.3em}
+\textbf{Oxácidos: Halógenos ({\color{atomo}Cl, Br, I})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H\ac{Cl}O$ & 1+ & Ácido hipocloroso  & Ácido oxoclórico(I)        & Hypochlorous acid \\
+$H\ac{Cl}O_2$ & 3+ & Ácido cloroso      & Ácido dioxoclórico(III)    & Chlorous acid \\
+$H\ac{Cl}O_3$ & 5+ & Ácido clórico      & Ácido trioxoclórico(V)     & Chloric acid \\
+$H\ac{Cl}O_4$ & 7+ & Ácido perclórico   & Ácido tetraoxoclórico(VII) & Perchloric acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{Br}O$ & 1+ & Ácido hipobromoso  & Ácido oxobrómico(I)        & Hypobromous acid \\
+$H\ac{Br}O_2$ & 3+ & Ácido bromoso      & Ácido dioxobrómico(III)    & Bromous acid \\
+$H\ac{Br}O_3$ & 5+ & Ácido brómico      & Ácido trioxobrómico(V)     & Bromic acid \\
+$H\ac{Br}O_4$ & 7+ & Ácido perbrómico   & Ácido tetraoxobrómico(VII) & Perbromic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{I}O$ & 1+ & Ácido hipoyodoso   & Ácido oxoyódico(I)         & Hypoiodous acid \\
+$H\ac{I}O_2$ & 3+ & Ácido yodoso       & Ácido dioxoyódico(III)     & Iodous acid \\
+$H\ac{I}O_3$ & 5+ & Ácido yódico       & Ácido trioxoyódico(V)      & Iodic acid \\
+$H\ac{I}O_4$ & 7+ & Ácido peryódico    & Ácido tetraoxoyódico(VII)  & Periodic acid \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Oxácidos: Anfígenos ({\color{atomo}S, Se, Te})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H_2\ac{S}O_3$ & 4+ & Ácido sulfuroso   & Ácido trioxosulfúrico(IV)   & Sulfurous acid \\
+$H_2\ac{S}O_4$ & 6+ & Ácido sulfúrico   & Ácido tetraoxosulfúrico(VI) & Sulfuric acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{Se}O_3$ & 4+ & Ácido selenoso    & Ácido trioxoselénico(IV)    & Selenous acid \\
+$H_2\ac{Se}O_4$ & 6+ & Ácido selénico    & Ácido tetraoxoselénico(VI)  & Selenic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{Te}O_3$ & 4+ & Ácido teluroso    & Ácido trioxotelúrico(IV)    & Tellurous acid \\
+$H_2\ac{Te}O_4$ & 6+ & Ácido telúrico    & Ácido tetraoxotelúrico(VI)  & Telluric acid \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Oxácidos: Nitrogenoides ({\color{atomo}N, P, As})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H\ac{N}O_2$ & 3+ & Ácido nitroso      & Ácido dioxonítrico(III)      & Nitrous acid \\
+$H\ac{N}O_3$ & 5+ & Ácido nítrico      & Ácido trioxonítrico(V)       & Nitric acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_3\ac{P}O_3$ & 3+ & Ácido fosforoso    & Ácido trioxofosfórico(III)   & Phosphorous acid \\
+$H_3\ac{P}O_4$ & 5+ & Ácido fosfórico    & Ácido tetraoxofosfórico(V)   & Phosphoric acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_3\ac{As}O_3$ & 3+ & Ácido arsenioso    & Ácido trioxoarsénico(III)    & Arsenious acid \\
+$H_3\ac{As}O_4$ & 5+ & Ácido arsénico     & Ácido tetraoxoarsénico(V)    & Arsenic acid \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Carbonoideos ({\color{atomo}C, Si})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H_2\ac{C}O_3$ & 4+ & Ácido carbónico & Ácido trioxocarbónico(IV)  & Carbonic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{Si}O_3$ & 4+ & Ácido silícico  & Ácido trioxosilícico(IV)   & Silicic acid \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Oxácidos: Metales de transición ({\color{atomo}Cr, Mn, V, Mo, W})}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H_2\ac{Cr}O_4$ & 6+ & Ácido crómico      & Ácido tetraoxocrómico(VI)     & Chromic acid \\
+$H_2\ac{Cr}_2O_7$ & 6+ & Ácido dicrómico    & Ácido heptaoxodicrómico(VI)   & Dichromic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{Mn}O_4$ & 7+ & Ácido permangánico & Ácido tetraoxomangánico(VII)  & Permanganic acid \\
+$H_2\ac{Mn}O_4$ & 6+ & Ácido mangánico    & Ácido tetraoxomangánico(VI)   & Manganic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{V}O_3$ & 5+ & Ácido vanádico     & Ácido trioxovanádico(V)       & Vanadic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{Mo}O_4$ & 6+ & Ácido molíbdico    & Ácido tetraoxomolíbdico(VI)   & Molybdic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{W}O_4$ & 6+ & Ácido túngstico    & Ácido tetraoxotúngstico(VI)   & Tungstic acid \\
+\end{longtable}
+
+\newpage
+
+%---------- ÁCIDOS HIDRÁCIDOS ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Ácidos Hidrácidos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ÁCIDOS HIDRÁCIDOS}}}}
+
+Compuesto puro (gas): anión + ``de hidrógeno'' (IUPAC). En solución acuosa: ácido + raíz + \textbf{-hídrico} (Usual). El \ce{H+} real en solución es \ce{H3O+}; se escribe \ce{H+} como simplificación.
+
+\vspace{0.3em}
+\textbf{Halógenos ({\color{atomo}F, Cl, Br, I})}
+
+\begin{longtable}{C{1.6cm} C{1.8cm} >{\color{catred}}C{1.2cm} L{3.6cm} >{\color{iupacgreen}}L{5.0cm} L{3.4cm}}
+\rule{0pt}{2.8ex}\textbf{F.(g)} & \textbf{F.(ac)} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual (ac)}} & \textcolor{nerde}{\textbf{IUPAC (puro)}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H\ac{F}$ & H\ac{F}(aq)  & 1$-$ & Ácido fluorhídrico  & Fluoruro de hidrógeno  & Hydrofluoric acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{Cl}$ & $H\ac{Cl}(aq)$ & 1$-$ & Ácido clorhídrico   & Cloruro de hidrógeno   & Hydrochloric acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{Br}$ & $H\ac{Br}(aq)$ & 1$-$ & Ácido bromhídrico   & Bromuro de hidrógeno   & Hydrobromic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{I}$ & H\ac{I}(aq)  & 1$-$ & Ácido yodhídrico    & Yoduro de hidrógeno    & Hydroiodic acid \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Anfígenos ({\color{atomo}S, Se, Te})}
+
+\begin{longtable}{C{1.6cm} C{1.8cm} >{\color{catred}}C{1.2cm} L{3.6cm} >{\color{iupacgreen}}L{5.0cm} L{3.4cm}}
+\rule{0pt}{2.8ex}\textbf{F.(g)} & \textbf{F.(ac)} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual (ac)}} & \textcolor{nerde}{\textbf{IUPAC (puro)}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H_2\ac{S}$  & $H_2\ac{S}$(aq)  & 2$-$ & Ácido sulfhídrico   & Sulfuro de hidrógeno   & Hydrosulfuric acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{Se}$ & $H_2\ac{Se}$(aq) & 2$-$ & Ácido selenhídrico  & Seleniuro de hidrógeno & Hydroselenic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_2\ac{Te}$ & $H_2\ac{Te}$(aq) & 2$-$ & Ácido telurhídrico  & Telururo de hidrógeno  & Hydrotelluric acid \\
+\end{longtable}
+
+\vspace{0.3em}
+\textbf{Nitrogenoides y carbonoideos ({\color{atomo}N, C})}
+
+\begin{longtable}{C{1.6cm} C{1.8cm} >{\color{catred}}C{1.2cm} L{3.6cm} >{\color{iupacgreen}}L{5.0cm} L{3.4cm}}
+\rule{0pt}{2.8ex}\textbf{F.(g)} & \textbf{F.(ac)} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual (ac)}} & \textcolor{nerde}{\textbf{IUPAC (puro)}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$H\ac{N}_3$ & $H\ac{N}_3$(aq) & 1$-$ & Ácido hidrazoico  & Azida de hidrógeno   & Hydrazoic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H\ac{C}N$  & $H\ac{C}N$(aq)  & 1$-$ & Ácido cianhídrico & Cianuro de hidrógeno & Hydrocyanic acid \\
+\end{longtable}
+
+\newpage
+
+%---------- CATIONES ----------%
+\begin{landscape}
+\phantomsection
+\addcontentsline{toc}{section}{Cationes Comunes}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{CATIONES COMUNES}}}}
+
+\vspace*{0.2cm}
+\begin{center}
+{\large\textbf{\textcolor{blueunam}{Cationes}}}
+\end{center}
+
+\vspace{0.3em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+\small
+
+\noindent
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\rowcolor{blueunam}
+\textcolor{white}{\scriptsize\textbf{Per.}} &
+\textcolor{white}{\scriptsize\textbf{G1}} &
+\textcolor{white}{\scriptsize\textbf{G2}} &
+\textcolor{white}{\scriptsize\textbf{G3}} &
+\textcolor{white}{\scriptsize\textbf{G4}} &
+\textcolor{white}{\scriptsize\textbf{G5}} &
+\textcolor{white}{\scriptsize\textbf{G6}} &
+\textcolor{white}{\scriptsize\textbf{G7}} &
+\textcolor{white}{\scriptsize\textbf{G8}} &
+\textcolor{white}{\scriptsize\textbf{G9}} &
+\textcolor{white}{\scriptsize\textbf{G10}} &
+\textcolor{white}{\scriptsize\textbf{G11}} &
+\textcolor{white}{\scriptsize\textbf{G12}} &
+\textcolor{white}{\scriptsize\textbf{G13}} &
+\textcolor{white}{\scriptsize\textbf{G14}} &
+\textcolor{white}{\scriptsize\textbf{G15}} \\
+\hline
+{\scriptsize\textbf{1}} &
+\catcell{col1}{\ce{H+}}{}{1+} &
+\multicolumn{14}{c|}{\cellcolor{white}} \\
+\hline
+{\scriptsize\textbf{2}} &
+\catcell{col1}{\ce{Li+}}{}{1+} &
+\catcell{col2}{\ce{Be^{2+}}}{}{2+} &
+\multicolumn{10}{c|}{\cellcolor{white}} &
+\catcell{pos}{\ce{B^{3+}}}{}{3+} &
+\multicolumn{2}{c|}{\cellcolor{white}} \\
+\hline
+{\scriptsize\textbf{3}} &
+\catcell{col1}{\ce{Na+}}{}{1+} &
+\catcell{col2}{\ce{Mg^{2+}}}{}{2+} &
+\multicolumn{10}{c|}{\cellcolor{white}} &
+\catcell{pos}{\ce{Al^{3+}}}{}{3+} &
+\multicolumn{2}{c|}{\cellcolor{white}} \\
+\hline
+{\scriptsize\textbf{4}} &
+\catcell{col1}{\ce{K+}}{}{1+} &
+\catcell{col2}{\ce{Ca^{2+}}}{}{2+} &
+\catcell{trans}{\ce{Sc^{3+}}}{}{3+} &
+\catcell{trans}{\ce{Ti^{4+}}}{}{4+} &
+\catcell{trans}{\ce{V^{5+}}}{}{5+} &
+\catcell{trans}{\ce{Cr^{3+}}}{}{3+} &
+\catcell{trans}{\ce{Mn^{2+}}}{}{2+} &
+\catcell{trans}{\ce{Fe^{2+}/Fe^{3+}}}{}{2+,3+} &
+\catcell{trans}{\ce{Co^{2+}}}{}{2+} &
+\catcell{trans}{\ce{Ni^{2+}}}{}{2+} &
+\catcell{trans}{\ce{Cu+/Cu^{2+}}}{}{1+,2+} &
+\catcell{trans}{\ce{Zn^{2+}}}{}{2+} &
+\catcell{pos}{\ce{Ga^{3+}}}{}{3+} &
+\catcell{pos}{\ce{Ge^{4+}}}{}{4+} &
+\catcell{pos}{\ce{As^{3+}}}{}{3+} \\
+\hline
+{\scriptsize\textbf{5}} &
+\catcell{col1}{\ce{Rb+}}{}{1+} &
+\catcell{col2}{\ce{Sr^{2+}}}{}{2+} &
+\catcell{trans}{\ce{Y^{3+}}}{}{3+} &
+\catcell{trans}{\ce{Zr^{4+}}}{}{4+} &
+\catcell{trans}{\ce{Nb^{5+}}}{}{5+} &
+\catcell{trans2}{\ce{Mo^{6+}}}{}{6+} &
+\multicolumn{3}{c|}{\cellcolor{white}} &
+\catcell{trans2}{\ce{Pd^{2+}}}{}{2+} &
+\catcell{trans2}{\ce{Ag+}}{}{1+} &
+\catcell{trans2}{\ce{Cd^{2+}}}{}{2+} &
+\catcell{pos}{\ce{In^{3+}}}{}{3+} &
+\catcell{pos}{\ce{Sn^{2+}/Sn^{4+}}}{}{2+,4+} &
+\catcell{pos}{\ce{Sb^{3+}}}{}{3+} \\
+\hline
+{\scriptsize\textbf{6}} &
+\catcell{col1}{\ce{Cs+}}{}{1+} &
+\catcell{col2}{\ce{Ba^{2+}}}{}{2+} &
+\catcell{trans}{\ce{La^{3+}}}{}{3+} &
+\catcell{trans}{\ce{Hf^{4+}}}{}{4+} &
+\catcell{trans}{\ce{Ta^{5+}}}{}{5+} &
+\catcell{trans2}{\ce{W^{6+}}}{}{6+} &
+\multicolumn{2}{c|}{\cellcolor{white}} &
+\multicolumn{1}{c|}{\cellcolor{white}} &
+\catcell{trans2}{\ce{Pt^{2+}/Pt^{4+}}}{}{2+,4+} &
+\catcell{trans2}{\ce{Au+/Au^{3+}}}{}{1+,3+} &
+\catcell{trans2}{\ce{Hg2^{2+}/Hg^{2+}}}{}{(I)*,(II)} &
+\catcell{pos}{\ce{Tl+/Tl^{3+}}}{}{1+,3+} &
+\catcell{pos}{\ce{Pb^{2+}/Pb^{4+}}}{}{2+,4+} &
+\catcell{pos}{\ce{Bi^{3+}}}{}{3+} \\
+\hline
+{\scriptsize\textbf{7}} &
+\catcell{col1}{\ce{Fr+}}{}{1+} &
+\catcell{col2}{\ce{Ra^{2+}}}{}{2+} &
+\multicolumn{13}{c|}{\cellcolor{white}} \\
+\hline
+\end{tabular}
+
+\vspace{0.4em}
+{\small
+*\ce{Hg2^{2+}}: catión impar, no se simplifica a \ce{Hg+}. Los cationes pares sí se simplifican.\\
+Cr también forma Cr$^{2+}$; Fe, Co, Ni también tienen estados 3+; detalle en tabla siguiente.
+}
+
+\vspace{0.8em}
+
+\textbf{Cationes fuera de la tabla periódica}
+
+\begin{longtable}{C{2.2cm} >{\color{catred}}C{1.4cm} L{4.0cm} >{\color{iupacgreen}}L{6.2cm} L{2.8cm}}
+\rule{0pt}{2.8ex}\textbf{Fórmula} & \textcolor{nerde}{\textbf{E.O.}} & \textcolor{nerde}{\textbf{Usual}} & \textcolor{nerde}{\textbf{IUPAC}} & \textcolor{nerde}{\textbf{Inglés}} \\
+\midrule\endhead\endlastfoot
+$\ac{N}H_4\carga{^{+}}$ & 1+ & Amonio   & Amonio(1+)   & Ammonium(1+) \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+$H_3\ac{O}\carga{^{+}}$ & 1+ & Hidronio & Hidronio(1+) & Hydronium(1+) \\
+\end{longtable}
+
+\end{landscape}
+
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{5pt}
+
+\newpage
+
+\restoregeometry
+%---------- REGLAS DE NOMENCLATURA ----------%
+\phantomsection
+\addcontentsline{toc}{section}{Reglas de Nomenclatura: Formación de Fórmulas y Sales}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{REGLAS DE NOMENCLATURA: FORMACIÓN DE FÓRMULAS Y SALES}}}}
+
+\subsection*{\textcolor{blueunam}{Principio de neutralidad y formación de fórmulas}}
+
+La carga total del compuesto debe ser \textbf{cero}. Procedimiento: (1) escribir las cargas, (2) intercambiarlas como subíndices sin signos, (3) simplificar si ambos son divisibles, (4) anión poliatómico repetido va entre paréntesis.
+
+\begin{longtable}{C{2.4cm} C{2.4cm} C{2.8cm} C{2.4cm}}
+\toprule
+\textbf{Catión} & \textbf{Anión} & \textbf{Intercambio} & \textbf{Fórmula} \\
+\midrule\endfirsthead\toprule
+\textbf{Catión} & \textbf{Anión} & \textbf{Intercambio} & \textbf{Fórmula} \\
+\midrule\endhead\bottomrule\endlastfoot
+\ce{Na+} (1+)     & \ce{Cl-} (1$-$)       & 1 y 1 & NaCl \\
+\ce{Ca^{2+}} (2+) & \ce{Cl-} (1$-$)       & 2 y 1 & \ce{CaCl2} \\
+\ce{Al^{3+}} (3+) & \ce{O^{2-}} (2$-$)    & 3 y 2 & \ce{Al2O3} \\
+\ce{Fe^{3+}} (3+) & \ce{SO4^{2-}} (2$-$)  & 3 y 2 & \ce{Fe2(SO4)3} \\
+\ce{NH4+} (1+)    & \ce{NO3-} (1$-$)      & 1 y 1 & \ce{NH4NO3} \\
+\ce{Ca^{2+}} (2+) & \ce{OH-} (1$-$)       & 2 y 1 & \ce{Ca(OH)2} \\
+\bottomrule
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Nomenclatura de sales}}
+
+Nombre Usual: \textbf{anión + ``de'' + catión (con romano si aplica)}.
+
+\begin{longtable}{C{2.0cm} L{2.6cm} L{2.6cm} L{4.4cm}}
+\toprule
+\textbf{Tipo} & \textbf{Anión} & \textbf{Catión} & \textbf{Nombre Usual} \\
+\midrule\endfirsthead\toprule
+\textbf{Tipo} & \textbf{Anión} & \textbf{Catión} & \textbf{Nombre Usual} \\
+\midrule\endhead\bottomrule\endlastfoot
+Binaria     & \ce{Cl-} (cloruro)       & \ce{Na+} (sodio)          & Cloruro de sodio \\
+Binaria     & \ce{O^{2-}} (óxido)      & \ce{Fe^{2+}} (hierro(II)) & Óxido de hierro(II) \\
+Ternaria    & \ce{SO4^{2-}} (sulfato)  & \ce{Cu^{2+}} (cobre(II))  & Sulfato de cobre(II) \\
+Ternaria    & \ce{NO3-} (nitrato)      & \ce{Ag+} (plata)          & Nitrato de plata \\
+Ácida       & \ce{HCO3-} (bicarbonato) & \ce{Na+} (sodio)          & Bicarbonato de sodio \\
+Hidróxido   & \ce{OH-} (hidróxido)     & \ce{Ca^{2+}} (calcio)     & Hidróxido de calcio \\
+\bottomrule
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Hidróxidos}}
+
+\begin{longtable}{C{2.8cm} L{4.2cm}}
+\toprule
+\textbf{Fórmula} & \textbf{Nombre Usual} \\
+\midrule\endfirsthead\toprule
+\textbf{Fórmula} & \textbf{Nombre Usual} \\
+\midrule\endhead\bottomrule\endlastfoot
+NaOH          & Hidróxido de sodio \\
+\ce{Ca(OH)2}  & Hidróxido de calcio \\
+\ce{Fe(OH)3}  & Hidróxido de hierro(III) \\
+\ce{Al(OH)3}  & Hidróxido de aluminio \\
+\bottomrule
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Óxidos}}
+
+\begin{longtable}{C{2.0cm} L{2.8cm} L{4.0cm} L{3.6cm}}
+\toprule
+\textbf{Tipo} & \textbf{Fórmula} & \textbf{Nombre Usual} & \textbf{IUPAC} \\
+\midrule\endfirsthead\toprule
+\textbf{Tipo} & \textbf{Fórmula} & \textbf{Nombre Usual} & \textbf{IUPAC} \\
+\midrule\endhead\bottomrule\endlastfoot
+Básico & FeO        & Óxido de hierro(II)  & Óxido de hierro(2+) \\
+Básico & \ce{Fe2O3} & Óxido de hierro(III) & Óxido de hierro(3+) \\
+Ácido  & \ce{CO2}   & Óxido de carbono(IV) & Óxido de carbono(4+) \\
+Ácido  & \ce{SO3}   & Óxido de azufre(VI)  & Óxido de azufre(6+) \\
+\bottomrule
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Peróxidos}}
+
+\begin{longtable}{C{2.4cm} L{3.6cm} L{3.6cm}}
+\toprule
+\textbf{Fórmula} & \textbf{Nombre Usual} & \textbf{IUPAC} \\
+\midrule\endfirsthead\toprule
+\textbf{Fórmula} & \textbf{Nombre Usual} & \textbf{IUPAC} \\
+\midrule\endhead\bottomrule\endlastfoot
+\ce{H2O2}  & Peróxido de hidrógeno & Peróxido de hidrógeno \\
+\ce{Na2O2} & Peróxido de sodio     & Peróxido de sodio \\
+\ce{BaO2}  & Peróxido de bario     & Peróxido de bario \\
+\bottomrule
+\end{longtable}
+
+El ion es \ce{O2^{2-}}, no \ce{O^{2-}}. El oxígeno está en estado $-1$, no $-2$.
+
+\subsection*{\textcolor{blueunam}{Hidruros}}
+
+\begin{longtable}{C{2.0cm} L{2.8cm} L{5.4cm}}
+\toprule
+\textbf{Tipo} & \textbf{Fórmula} & \textbf{Nombre} \\
+\midrule\endfirsthead\toprule
+\textbf{Tipo} & \textbf{Fórmula} & \textbf{Nombre} \\
+\midrule\endhead\bottomrule\endlastfoot
+Metálico    & NaH       & Hidruro de sodio (Usual e IUPAC) \\
+Metálico    & \ce{CaH2} & Hidruro de calcio \\
+No metálico & \ce{NH3}  & Amoníaco (nombre especial) \\
+No metálico & \ce{H2O}  & Agua (nombre especial) \\
+\bottomrule
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Resumen de los tres sistemas}}
+
+\begin{longtable}{L{2.4cm} L{4.6cm} L{4.8cm}}
+\toprule
+\textbf{Sistema} & \textbf{Cómo nombra} & \textbf{Ejemplo: \ce{Fe2(SO4)3}} \\
+\midrule\endfirsthead\toprule
+\textbf{Sistema} & \textbf{Cómo nombra} & \textbf{Ejemplo: \ce{Fe2(SO4)3}} \\
+\midrule\endhead\bottomrule\endlastfoot
+Tradicional & Prefijos y sufijos para catión y anión      & Sulfato férrico \\
+Usual       & Tradicional para anión + romano para catión  & Sulfato de hierro(III) \\
+IUPAC       & Carga entre paréntesis con arábigos          & Sulfato(2$-$) de hierro(3+) \\
+\bottomrule
+\end{longtable}
+
+\textbf{Regla de oro:} anión primero, catión después, unidos por ``de''. El anión lleva sufijo -uro, -ato, -ito u -óxido según su tipo. El catión lleva número romano solo si tiene más de un estado de oxidación (en Usual). En IUPAC, aniones y cationes llevan su carga entre paréntesis; en oxácidos el E.O. va en romano.

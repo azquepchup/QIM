@@ -1,0 +1,12 @@
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.blg
+*.bbl
+*.bbl-SAVE-ERROR
+*.out
+*.toc
+w_Laboratorio/
+.vscode/

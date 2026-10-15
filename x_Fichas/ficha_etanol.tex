@@ -1,0 +1,147 @@
+% ficha_etanol.tex
+% Compilar con main_fichas.tex (latexmk -pdf)
+
+\noindent
+\begin{tikzpicture}[x=1cm, y=1cm]
+
+  % Canvas: 11.7cm ancho x 19.2cm alto
+
+  %-- Fondo general
+  \fill[fichabg] (0,0) rectangle (11.7,19.2);
+
+  %-- Franja clasificacion (top): 18.4 a 19.2
+  \fill[blueunam!20] (0,18.4) rectangle (11.7,19.2);
+
+  %-- Franja nomenclaturas: 17.5 a 18.4
+  \fill[blueunam!8] (0,17.5) rectangle (11.7,18.4);
+
+  %-- Franja inferior: 0 a 1.0
+  \fill[blueunam!10] (0,0) rectangle (11.7,1.0);
+
+  %-- Lineas horizontales
+  \draw[blueunam, line width=0.7pt] (0,18.4) -- (11.7,18.4);
+  \draw[blueunam, line width=0.7pt] (0,17.5) -- (11.7,17.5);
+  \draw[blueunam, line width=0.7pt] (0,1.0)  -- (11.7,1.0);
+
+  %-- Separadores verticales
+  \draw[blueunam!35, line width=0.4pt] (3.1,1.0) -- (3.1,17.5);
+  \draw[blueunam!35, line width=0.4pt] (8.6,1.0) -- (8.6,17.5);
+
+  % ══ FRANJA CLASIFICACION ══
+  \node[anchor=west, text width=11.3cm, inner sep=0pt]
+    at (0.2,18.8) {%
+      {\tiny\color{blueunam}\textbf{Org\'anico}}\;$\cdot$\;%
+      {\tiny Compuesto carbonado}\;$\cdot$\;%
+      {\tiny\color{blueunam}\textbf{Alcohol}}\;$\cdot$\;%
+      {\tiny\color{blueunam}\textbf{Primario}}\;$\cdot$\;%
+      {\tiny No arom\'atico}\;$\cdot$\;%
+      {\tiny No i\'onico}\;$\cdot$\;%
+      {\tiny Acicl\'ico}%
+    };
+
+  % ══ FRANJA NOMENCLATURAS ══
+  \node[anchor=west, text width=11.3cm, inner sep=0pt]
+    at (0.2,17.95) {%
+      {\tiny\color{blueunam}\textbf{IUPAC:}}\;{\tiny etanol}\enspace$\cdot$\enspace%
+      {\tiny\color{blueunam}\textbf{Tradicional:}}\;{\tiny alcohol et\'ilico}\enspace$\cdot$\enspace%
+      {\tiny\color{blueunam}\textbf{EN:}}\;{\tiny ethanol}\enspace$\cdot$\enspace%
+      {\tiny\color{blueunam}\textbf{Stock:}}\;{\tiny N/A}%
+    };
+
+  % ══ COLUMNA IZQ: propiedades fisicas ══
+  \node[anchor=north west, text width=2.85cm, inner sep=4pt]
+    at (0,17.5) {%
+      {\scriptsize\color{blueunam}\textbf{Prop.\ f\'isicas}}\\[3pt]%
+      {\tiny%
+        \textbf{PF:} $-114{,}1\,^{\circ}$C\\[2pt]%
+        \textbf{PE:} $78{,}4\,^{\circ}$C\\[2pt]%
+        \textbf{P.\ inflam.:} $13\,^{\circ}$C\\[2pt]%
+        $\boldsymbol{\rho}$\textbf{:} $0{,}789$\,g/mL\\[2pt]%
+        \textbf{Estado:} l\'iquido\\[2pt]%
+        \textbf{Color:} incoloro\\[2pt]%
+        \textbf{Olor:} caracter\'istico\\[2pt]%
+        $\boldsymbol{n_D}$\textbf{:} $1{,}361$\\[2pt]%
+        $\boldsymbol{P_{vap}}$\textbf{:} $5{,}95$\,kPa\\[1pt]%
+        \phantom{x}(25\,$^{\circ}$C)\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Solubilidad}}\\[2pt]%
+        \textbf{Agua:} miscible\\[2pt]%
+        \textbf{Hexano:} miscible\\[2pt]%
+        \textbf{DCM:} miscible\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Disolvente}}\\[2pt]%
+        Polar pr\'otico\\[2pt]%
+        Puente H: s\'i%
+      }%
+    };
+
+  % ══ COLUMNA CENTRAL ══
+  \node[anchor=north, text width=5.3cm, align=center, inner sep=4pt]
+    at (5.85,17.5) {%
+      {\normalsize\color{blueunam}\textbf{Etanol}}\\[4pt]%
+      {\tiny\color{blueunam!70} estructura completa}\\[3pt]%
+      \scalebox{0.9}{%
+        \chemfig{C([:90]-H)(-[:180]H)(-[:0]H)-[:270]C(-[:180]H)(-[:0]H)-[:270]O-[:180]H}%
+      }\\[5pt]%
+      \textcolor{blueunam!40}{\rule{4.8cm}{0.3pt}}\\[3pt]%
+      {\tiny\color{blueunam!70} estructura esquel\'etica}\\[3pt]%
+      \scalebox{1.1}{%
+        \chemfig{-[:30]-[:-30]OH}%
+      }\\[5pt]%
+      \textcolor{blueunam!40}{\rule{4.8cm}{0.3pt}}\\[4pt]%
+      {\scriptsize\ce{C2H5OH}\quad\textbf{MM:} $46{,}07$\,g/mol}\\[4pt]%
+      {\tiny%
+        \textbf{Grupo funcional:} $-$OH\,(alcohol\,1\textdegree)\\[2pt]%
+        \textbf{Hibridaci\'on C:} $sp^3$\\[2pt]%
+        \textbf{Enlace pred.:} $\sigma$\\[2pt]%
+        \textbf{Hetero\'atomos:} O\\[2pt]%
+        \textbf{Estereoquim.:} aquiral\\[2pt]%
+        \textbf{Resonancia:} no\\[2pt]%
+        \textbf{Arom\'atico:} no%
+      }%
+    };
+
+  % ══ COLUMNA DER: reactividad ══
+  \node[anchor=north east, text width=2.85cm, inner sep=4pt]
+    at (11.7,17.5) {%
+      {\scriptsize\color{blueunam}\textbf{Reactividad}}\\[3pt]%
+      {\tiny%
+        \textbf{Nuc./elec.:} neutro\\%
+        \phantom{x}(O nucleof\'ilico)\\[2pt]%
+        $\boldsymbol{pK_a}$\textbf{:} $15{,}9$\\[2pt]%
+        \textbf{Car\'acter:} d\'eb.\ \'acido\\[2pt]%
+        \textbf{\'Ac./base Lewis:}\\%
+        \phantom{x}base (par libre O)\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Mecanismos}}\\[2pt]%
+        \textbf{SN1:} desfavorece\\[1pt]%
+        \textbf{SN2:} req.\ activaci\'on\\[1pt]%
+        \textbf{E1:} posible con\\%
+        \phantom{x}\'ac.\ fuerte\\[1pt]%
+        \textbf{E2:} posible con\\%
+        \phantom{x}base fuerte\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{An\'alisis}}\\[2pt]%
+        \textbf{Gpo.\ saliente:} malo\\%
+        \phantom{x}(act.\ con TsCl)\\[2pt]%
+        \textbf{Carboc.:} 1\textdegree\,(inestable)\\[2pt]%
+        \textbf{Trasposi.:} no\\[2pt]%
+        \textbf{Especie react.:}\\%
+        \phantom{x}carboc.\ 1\textdegree\\[5pt]%
+        {\scriptsize\color{blueunam}\textbf{Reacciones}}\\[2pt]%
+        oxidaci\'on\\[1pt]%
+        esterificaci\'on\\[1pt]%
+        deshidrataci\'on\\[1pt]%
+        fermentaci\'on%
+      }%
+    };
+
+  % ══ FRANJA INFERIOR ══
+  \node[anchor=west, text width=11.3cm, inner sep=0pt]
+    at (0.2,0.5) {%
+      {\tiny\color{blueunam}\textbf{S\'intesis:}}\;%
+      {\tiny hidrataci\'on de etileno o fermentaci\'on.}\enspace%
+      {\tiny\color{blueunam}\textbf{Uso:}}\;%
+      {\tiny disolvente, limpieza, recristalizaci\'on.}\enspace%
+      {\tiny\color{blueunam}\textbf{Seg.:}}\;%
+      {\tiny flamable\,(GHS02), irritante.}%
+    };
+
+\end{tikzpicture}
+\newpage

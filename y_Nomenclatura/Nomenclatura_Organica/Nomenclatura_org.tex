@@ -1,0 +1,1558 @@
+% Configuración global de tablas
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.3}
+\setlength{\parindent}{0pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 0 — FUNDAMENTOS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Fundamentos de nomenclatura IUPAC}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{FUNDAMENTOS DE NOMENCLATURA IUPAC}}}}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{El carbono y su valencia}
+\subsection*{\textcolor{blueunam}{El carbono y su valencia}}
+
+Todo lo demás en este documento parte de una sola propiedad del carbono: forma exactamente
+\textbf{4 enlaces}. Siempre. Sin excepción en química orgánica básica. Esos 4 enlaces pueden
+ser con otros carbonos (\ce{C-C}), con hidrógenos (\ce{C-H}), o con heteroátomos como O, N,
+S, Cl, etc.
+
+Cuando un carbono usa sus 4 enlaces para conectarse con H y con otros C en cadena simple,
+forma un \textbf{alcano}. Cada C interno de la cadena tiene 2 enlaces \ce{C-C} (uno a cada
+lado) y por tanto 2 enlaces \ce{C-H}. Cada C en los extremos tiene 1 enlace \ce{C-C} y 3
+enlaces \ce{C-H}.
+
+Esto es importante porque cada vez que un C forma un enlace \ce{C-C} adicional (doble enlace,
+triple enlace, o unión a otra cadena como sustituyente), pierde el mismo número de enlaces
+\ce{C-H}. Esa pérdida es lo que cambia el nombre.
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Formas de representar una molécula orgánica}
+\subsection*{\textcolor{blueunam}{Formas de representar una molécula orgánica}}
+
+Una misma molécula puede escribirse de varias maneras equivalentes. La elección depende del
+contexto. El ejemplo usa \textbf{butano} (\ce{C4H10}).
+
+\vspace{0.5em}
+\textbf{1. Fórmula molecular} --- solo indica cuántos átomos de cada elemento hay.
+\begin{center}{\Large \ce{C4H10}}\end{center}
+
+\vspace{0.5em}
+\textbf{2. Fórmula desarrollada} --- todos los átomos y enlaces explícitos.
+\begin{center}
+\chemfig{H-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]H)-H}
+\end{center}
+
+\vspace{0.5em}
+\textbf{3. Fórmula condensada (semidesarrollada)} --- los H agrupados junto a su C.
+\begin{center}{\Large \ce{CH3-CH2-CH2-CH3}}\end{center}
+
+\vspace{0.5em}
+\textbf{4. Fórmula esqueletal (de línea o zigzag)} --- solo el esqueleto carbónico.
+Los H no se escriben: están implícitos. Cada vértice y extremo es un C.
+\begin{center}\chemfig{-[1]-[-1]-[1]-[-1]}\end{center}
+
+\vspace{0.5em}
+\textbf{4b. Fórmula híbrida (semidesarrollada en zigzag)} --- puente didáctico entre
+la condensada y la esqueletal: el esqueleto en zigzag, pero con los H escritos
+explícitamente en cada carbono. Deja claro que los H existen aunque no aparezcan
+en la esqueletal pura.
+\begin{center}
+\chemfig{H_3C-[1](-[2]H)(-[6]H)-[-1](-[2]H)(-[6]H)-[1](-[2]H)(-[6]H)-[-1]CH_3}
+\end{center}
+
+Regla de H implícitos: cada C forma 4 enlaces. Resta los dibujados a 4.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{longtable}{L{4.5cm} C{4.0cm} C{4.5cm}}
+\toprule
+\textbf{Posición en la cadena} & \textbf{Enlaces dibujados} & \textbf{H implícitos} \\
+\midrule\endhead\bottomrule\endlastfoot
+Extremo (terminal)       & 1 & 3 \quad (\ce{CH3}) \\
+Intermedio (interno)     & 2 & 2 \quad (\ce{CH2}) \\
+Ramificación (3 cadenas) & 3 & 1 \quad (\ce{CH})  \\
+Cuaternario (4 cadenas)  & 4 & 0 \quad (\ce{C})   \\
+\end{longtable}
+\end{center}
+
+\begin{tcolorbox}[colback=col1, colframe=blueunam, left=4pt, right=4pt, top=4pt, bottom=4pt]
+\textbf{Nota:} los H de heteroátomos (como \ce{-OH}, \ce{-NH2}, \ce{-COOH}) sí se escriben
+siempre porque pertenecen al heteroátomo, no al carbono.
+\end{tcolorbox}
+
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Cómo se construye un nombre IUPAC}
+\subsection*{\textcolor{blueunam}{Cómo se construye un nombre IUPAC}}
+
+\[
+\underbrace{\text{prefijo}}_{\text{número de C}}
+\;+\;
+\underbrace{\text{sufijo de enlace}}_{\text{tipo de enlace C--C}}
+\;+\;
+\underbrace{\text{sufijo de función}}_{\text{grupo funcional principal}}
+\]
+
+\vspace{0.6em}
+\textbf{Pieza 1 --- Prefijos: número de carbonos de la cadena principal}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{C{1.3cm} C{1.6cm} C{1.3cm} C{1.6cm} C{1.3cm} C{1.6cm} C{1.3cm} C{1.6cm} C{1.3cm} C{1.6cm}}
+\toprule
+\textbf{N C} & \textbf{Prefijo} & \textbf{N C} & \textbf{Prefijo} &
+\textbf{N C} & \textbf{Prefijo} & \textbf{N C} & \textbf{Prefijo} &
+\textbf{N C} & \textbf{Prefijo} \\
+\midrule\endhead\bottomrule\endlastfoot
+1 & met-  & 3 & prop- & 5 & pent- & 7 & hept- & 9  & non- \\
+2 & et-   & 4 & but-  & 6 & hex-  & 8 & oct-  & 10 & dec- \\
+\end{longtable}
+
+\vspace{0.4em}
+\textbf{Pieza 2 --- Sufijos de enlace: tipo de enlace C--C}
+
+Con enlace simple (\ce{C-C}), todos los H posibles: \textbf{alcano}, sufijo \textbf{-ano}.
+Con doble enlace (\ce{C=C}), cada C pierde un \ce{C-H}: \textbf{alqueno}, sufijo \textbf{-eno}.
+Con triple enlace ($\ce{C}\equiv\ce{C}$), cada C pierde dos \ce{C-H}: \textbf{alquino}, sufijo \textbf{-ino}.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{C{2.6cm} C{1.8cm} C{2.2cm} C{2.6cm} L{4.3cm}}
+\toprule
+\textbf{Enlace C--C} & \textbf{Sufijo} & \textbf{Clase} & \textbf{C--H perdidos} & \textbf{Ejemplo (3 C)} \\
+\midrule\endhead\bottomrule\endlastfoot
+Simple \ce{C-C}              & \textbf{-ano} & Alcano  & 0                        & propano \quad \chemfig{-[1]-[-1]} \\
+Doble \ce{C=C}               & \textbf{-eno} & Alqueno & 1 por C del doble enlace & propeno \quad \chemfig{=[1]-[-1]} \\
+Triple $\ce{C}\equiv\ce{C}$  & \textbf{-ino} & Alquino & 2 por C del triple enlace & propino \quad \chemfig{~[1]-[-1]} \\
+\end{longtable}
+
+Combinaciones prefijo + sufijo de enlace. El localizador solo aparece cuando hay
+ambigüedad: con 3~C solo hay una posición posible para el doble o triple enlace,
+por eso eteno, propeno y propino no lo necesitan. Con 4~C o más hay varias
+posiciones posibles, por eso se indica: but-1-eno, but-2-eno, etc.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{C{2.0cm} C{3.5cm} C{3.5cm} C{3.5cm}}
+\toprule
+\textbf{Prefijo} & \textbf{-ano} & \textbf{-eno} & \textbf{-ino} \\
+\midrule\endhead\bottomrule\endlastfoot
+et-   & etano   & eteno      & etino      \\
+prop- & propano & propeno    & propino    \\
+but-  & butano  & but-1-eno  & but-1-ino  \\
+pent- & pentano & pent-1-eno & pent-1-ino \\
+hex-  & hexano  & hex-1-eno  & hex-1-ino  \\
+\end{longtable}
+
+\textbf{De alcano a grupo alquilo:} cuando un fragmento cuelga de otra cadena como
+sustituyente, pierde un \ce{C-H} en el punto de unión. Por eso cambia el sufijo de
+\textbf{-ano} a \textbf{-il}: el fragmento ya no es un alcano completo.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{longtable}{L{6.5cm} L{6.5cm}}
+\toprule
+\textbf{Cadena independiente (alcano)} & \textbf{Sustituyente colgando (alquilo)} \\
+\midrule\endhead\bottomrule\endlastfoot
+\ce{CH3-CH2-CH3} --- propano \newline Molécula completa, todos los C con sus H.
+& \ce{CH3-CH2-CH2-} --- propilo \newline Le falta 1 H en el extremo de unión. Sufijo -il. \\
+\end{longtable}
+\end{center}
+
+\textbf{Grupos alquilo lineales (prefijo + -il)}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{C{1.4cm} C{1.8cm} C{3.0cm} L{7.3cm}}
+\toprule
+\textbf{N C} & \textbf{Prefijo} & \textbf{Grupo alquilo} & \textbf{Fórmula condensada} \\
+\midrule\endhead\bottomrule\endlastfoot
+1  & met-  & Metilo  & \ce{CH3-} \\
+2  & et-   & Etilo   & \ce{CH3CH2-} \\
+3  & prop- & Propilo & \ce{CH3CH2CH2-} \\
+4  & but-  & Butilo  & \ce{CH3(CH2)2CH2-} \\
+5  & pent- & Pentilo & \ce{CH3(CH2)3CH2-} \\
+6  & hex-  & Hexilo  & \ce{CH3(CH2)4CH2-} \\
+7  & hept- & Heptilo & \ce{CH3(CH2)5CH2-} \\
+8  & oct-  & Octilo  & \ce{CH3(CH2)6CH2-} \\
+9  & non-  & Nonilo  & \ce{CH3(CH2)7CH2-} \\
+10 & dec-  & Decilo  & \ce{CH3(CH2)8CH2-} \\
+\end{longtable}
+
+\textbf{Grupos alquilo ramificados frecuentes:}
+
+\begin{longtable}{C{3.0cm} C{5.5cm} C{5.0cm}}
+\toprule
+\textbf{Nombre común} & \textbf{Estructura} & \textbf{Nombre IUPAC} \\
+\midrule\endhead\bottomrule\endlastfoot
+Isopropilo        & \scalebox{0.72}{\chemfig{CH_3-CH(-[2]CH_3)-}}             & (propan-2-il) \\
+\textit{tert}-butilo & \scalebox{0.72}{\chemfig{CH_3-C(-[2]CH_3)(-[6]CH_3)-}} & (2-metilpropan-2-il) \\
+Isobutilo         & \scalebox{0.72}{\chemfig{CH_3-CH(-[2]CH_3)-CH_2-}}        & (2-metilpropil) \\
+\textit{sec}-butilo  & \scalebox{0.72}{\chemfig{CH_3-CH_2-CH(-[2]CH_3)-}}     & (butan-2-il) \\
+Neopentilo        & \scalebox{0.72}{\chemfig{CH_3-C(-[2]CH_3)(-[6]CH_3)-CH_2-}} & (2,2-dimetilpropil) \\
+Fenilo            & \scalebox{0.72}{\chemfig{*6(=-=-(-R)=-)}}                     & (fenil) \\
+Bencilo           & \scalebox{0.72}{\chemfig{*6(=-=-(-CH_2-[:30])=-)}}                & (fenilmetil) \\
+\end{longtable}
+
+\vspace{0.4em}
+\textbf{Pieza 3 --- Sufijos de función: el grupo funcional principal}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{C{0.6cm} L{4.2cm} C{2.8cm} C{5.9cm}}
+\toprule
+\textbf{\#} & \textbf{Grupo funcional} & \textbf{Sufijo} & \textbf{Prefijo (si es secundario)} \\
+\midrule\endhead\bottomrule\endlastfoot
+1  & Ácido carboxílico \mbox{--COOH}         & -oico              & carboxi- \\
+2  & Éster \mbox{--COOR}                     & -oato              & (alcoxicarbonil-) \\
+3  & Haluro de acilo \mbox{--COX}            & -oílo              & --- \\
+4  & Anhídrido \mbox{--CO--O--CO--}          & anhídrido de\ldots & --- \\
+5  & Amida \mbox{--CONH\textsubscript{2}}    & -amida             & carbamoil- \\
+6  & Nitrilo \mbox{--C$\equiv$N}             & -nitrilo           & ciano- \\
+7  & Aldehído \mbox{--CHO}                   & -al                & formil- \\
+8  & Cetona \mbox{--CO--}                    & -ona               & oxo- \\
+9  & Alcohol \mbox{--OH}                     & -ol                & hidroxi- \\
+10 & Tiol \mbox{--SH}                        & -tiol              & mercapto- \\
+11 & Amina \mbox{--NH\textsubscript{2}}      & -amina             & amino- \\
+12 & Alqueno \mbox{C=C}                      & -eno               & --- \\
+13 & Alquino \mbox{C$\equiv$C}               & -ino               & --- \\
+14 & Alcano \mbox{C--C}                      & -ano               & --- \\
+\end{longtable}
+
+\begin{tcolorbox}[colback=col2, colframe=blueunam, left=4pt, right=4pt, top=4pt, bottom=4pt]
+\textbf{Cómo leer un nombre desconocido:} de derecha a izquierda: sufijo de función
+(-ol, -al, -ona, -oico\ldots) $\to$ sufijo de enlace (-ano, -eno, -ino) $\to$ prefijo (N de C).\\[4pt]
+Ejemplo: \textbf{but-2-en-1-ol} = 4 C (but-) $+$ doble enlace en C2 (-en-) $+$ alcohol en C1 (-ol).
+\end{tcolorbox}
+
+\vspace{0.5em}
+\textbf{El grupo sustituyente R}
+
+R es el símbolo genérico para cualquier grupo orgánico. R puede ser desde \ce{CH3}
+hasta una cadena compleja. Con más de un grupo diferente: R, R$'$, R$''$, etc.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{R-\ac{O}H}}{Alcohol genérico}
+\qquad\qquad
+\chemname{\chemfig{R-\ac{O}-R'}}{Éter genérico}
+\qquad\qquad
+\chemname{\chemfig{R-\ac{C}(=[:90]O)-R'}}{Cetona genérica}
+\schemestop
+\end{center}
+
+\vspace{0.5em}
+\textbf{Pasos para nombrar un compuesto orgánico}
+\begin{enumerate}
+\item Identificar el grupo funcional de mayor prioridad.
+\item Elegir la cadena principal: la más larga que lo contenga.
+\item Numerar desde el extremo más cercano al grupo de mayor prioridad.
+\item Nombrar sustituyentes con prefijo y localizador.
+\item Ensamblar: prefijos (alfabético) $+$ raíz $+$ sufijo de enlace $+$ sufijo de función.
+\item Ciclos: agregar ciclo-. Aromáticos: benceno o nombre aceptado.
+\end{enumerate}
+
+\newpage
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Qué es X: el comodín de los halógenos}
+\subsection*{\textcolor{blueunam}{Qué es X: el comodín de los halógenos}}
+
+En fórmulas como \mbox{--COX} o \mbox{R--X}, la \textbf{X} no es un elemento: es un
+comodín que representa cualquier halógeno del grupo 17. Igual que R representa cualquier
+grupo orgánico, X representa cualquiera de estos cuatro:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{longtable}{C{1.2cm} C{2.5cm} C{2.8cm} L{6.5cm}}
+\toprule
+\textbf{X} & \textbf{Átomo} & \textbf{Prefijo IUPAC} & \textbf{Ejemplo} \\
+\midrule\endhead\bottomrule\endlastfoot
+F  & Flúor  & fluoro-  & fluorometano \quad \chemfig{H_3C-\ac{F}} \\
+Cl & Cloro  & cloro-   & cloroetano \quad \chemfig{H_3C-CH_2-\ac{Cl}} \\
+Br & Bromo  & bromo-   & bromometano \quad \chemfig{H_3C-\ac{Br}} \\
+I  & Yodo   & yodo-    & yodometano \quad \chemfig{H_3C-\ac{I}} \\
+\end{longtable}
+\end{center}
+
+Por eso \mbox{--COX} no es un solo compuesto: es la plantilla de todos los haluros de
+acilo. Si X es Cl, el compuesto es un \textbf{cloruro de acilo}; si X es Br, un
+\textbf{bromuro de acilo}.
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{El grupo --COOH desglosado átomo por átomo}
+\subsection*{\textcolor{blueunam}{El grupo --COOH desglosado átomo por átomo}}
+
+\mbox{--COOH} condensa cuatro símbolos seguidos y parece un solo bloque. Son tres
+átomos con roles distintos. El átomo central es el \textbf{carbono}, resaltado:
+
+\begin{center}
+\schemestart
+\chemname{%
+\chemfig{-\ac{C}(=[2]O)-O-H}%
+}{%
+\ac{C} = carbono central (no lleva H)\\
+O superior = carbonilo \mbox{(C=O)}\\
+O-H = hidroxilo, el H que se ioniza%
+}
+\schemestop
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{longtable}{C{1.8cm} C{2.5cm} L{9.0cm}}
+\toprule
+\textbf{Parte} & \textbf{Átomo(s)} & \textbf{Qué hace} \\
+\midrule\endhead\bottomrule\endlastfoot
+\mbox{C} & 1 carbono & Átomo central. 4 enlaces ocupados: cadena, doble con O, simple con O del OH. No le queda ninguno para H. \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\mbox{=O} & 1 oxígeno & Enlace doble con el C. Esto es el \textbf{carbonilo}. No lleva H. \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\mbox{OH} & O $+$ H & Enlace simple con el C. Este O sí lleva H. Es el H que se ioniza en agua. \\
+\end{longtable}
+\end{center}
+
+Comparación con grupos que parecen similares pero son distintos:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{C{3.0cm} C{4.5cm} L{6.0cm}}
+\toprule
+\textbf{Grupo} & \textbf{Estructura} & \textbf{Diferencia clave} \\
+\midrule\endhead\bottomrule\endlastfoot
+Aldehído \mbox{--CHO}
+  & \scalebox{0.9}{\chemfig{-\ac{C}(=[2]O)-H}}
+  & El C central lleva H. Solo en C1. \\
+Carboxilo \mbox{--COOH}
+  & \scalebox{0.9}{\chemfig{-\ac{C}(=[2]O)-O-H}}
+  & El C central no lleva H: lleva \mbox{OH}. Solo en C1. \\
+Cetona \mbox{--CO--}
+  & \scalebox{0.9}{\chemfig{-\ac{C}(=[2]O)-}}
+  & El C central no lleva H: dos cadenas. Siempre interno. \\
+\end{longtable}
+\end{center}
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Prefijos iso-, sec-, tert-, neo-: origen y significado}
+\subsection*{\textcolor{blueunam}{Prefijos iso-, sec-, tert-, neo-: origen y significado}}
+
+Estos prefijos son \textbf{nombres comunes}, no IUPAC. Vienen del siglo XIX. IUPAC los
+tolera para compuestos simples y los reemplaza con nombres sistemáticos en los complejos.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{C{1.4cm} L{3.8cm} L{3.8cm} C{3.5cm}}
+\toprule
+\textbf{Prefijo} & \textbf{Qué describe} & \textbf{Origen} & \textbf{IUPAC equivalente} \\
+\midrule\endhead\bottomrule\endlastfoot
+iso-
+  & Una rama \ce{CH3} en el penúltimo C. Cadena termina en isopropilo.
+  & Griego \textit{isos} (igual). Kolbe, 1862.
+  & 2-metil- \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+sec-
+  & Unión en un C \textbf{secundario} (unido a 2 C).
+  & Latín \textit{secundarius}. Gerhardt, 1856.
+  & (butan-2-il) \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+tert-
+  & Unión en un C \textbf{terciario} (unido a 3 C).
+  & Latín \textit{tertiarius}. Mismo origen.
+  & (2-metilpropan-2-il) \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+neo-
+  & Dos ramas \ce{CH3} en el mismo C penúltimo.
+  & Griego \textit{neos} (nuevo). Primer isómero nuevo del pentano.
+  & 2,2-dimetil- \\
+\end{longtable}
+\end{center}
+
+\begin{center}
+\schemestart
+\chemname{\scalebox{0.8}{\chemfig{CH_3-CH(-[2]CH_3)-CH_2-CH_3}}}{Isopentano\\\small 2-metilbutano}
+\quad
+\chemname{\scalebox{0.8}{\chemfig{CH_3-C(-[2]CH_3)(-[6]CH_3)-CH_3}}}{Neopentano\\\small 2,2-dimetilpropano}
+\quad
+\chemname{\scalebox{0.8}{\chemfig{CH_3-CH_2-CH(-[2]CH_3)-}}}{\textit{sec}-butilo\\\small (butan-2-il)}
+\quad
+\chemname{\scalebox{0.8}{\chemfig{CH_3-C(-[2]CH_3)(-[6]CH_3)-}}}{\textit{tert}-butilo\\\small (2-metilpropan-2-il)}
+\schemestop
+\end{center}
+
+\begin{tcolorbox}[colback=col1, colframe=blueunam, left=4pt, right=4pt, top=4pt, bottom=4pt]
+Con 5 o más carbonos, iso- y neo- se vuelven ambiguos: puede haber más de dos isómeros
+posibles. Los nombres sistemáticos con localizadores no tienen ese problema.
+\end{tcolorbox}
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Cómo se elige la cadena principal}
+\subsection*{\textcolor{blueunam}{Cómo se elige la cadena principal}}
+
+La cadena principal no es cualquier cadena. Hay criterios en orden de prioridad. Se
+aplican uno por uno hasta resolver la ambigüedad.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{longtable}{C{0.8cm} L{5.5cm} L{7.5cm}}
+\toprule
+\textbf{Paso} & \textbf{Criterio} & \textbf{Por qué} \\
+\midrule\endhead\bottomrule\endlastfoot
+1 & Contiene el grupo funcional principal & El sufijo define la familia; la cadena debe incluirlo \\
+2 & La más larga & Más C = nombre más descriptivo \\
+3 & Más dobles o triples enlaces & Las insaturaciones tienen prioridad sobre enlaces simples \\
+4 & Más ramificaciones & Más sustituyentes = nombre más completo \\
+5 & Localizadores de menor suma & Criterio de conjunto \\
+6 & Primera diferencia: el localizador menor & Primer número que difiere entre los dos extremos \\
+\end{longtable}
+\end{center}
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Cómo se numeran los carbonos: regla del número más bajo}
+\subsection*{\textcolor{blueunam}{Cómo se numeran los carbonos: regla del número más bajo}}
+
+Una vez elegida la cadena, se numera desde el extremo que dé los \textbf{localizadores
+más bajos}. Se prueban los dos extremos y se comparan.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{L{5.5cm} C{2.5cm} C{2.5cm} C{2.0cm}}
+\toprule
+\textbf{Molécula} & \textbf{Desde A} & \textbf{Desde B} & \textbf{Gana} \\
+\midrule\endhead\bottomrule\endlastfoot
+\scalebox{0.8}{\chemfig{-[1](-[2])-[-1]-[1]-[-1]}} \quad (metilpentano)
+  & metilo en C2 $\to$ \{2\} & metilo en C4 $\to$ \{4\} & A \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\scalebox{0.8}{\chemfig{=[1]-[-1]-[1]-[-1]}} \quad (buteno)
+  & doble en C1 $\to$ \{1\} & doble en C3 $\to$ \{3\} & A \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Dos sustituyentes iguales en C2 y C4
+  & \{2,4\} & \{2,4\} & empate: primer diferencia \\
+\end{longtable}
+\end{center}
+
+\begin{tcolorbox}[colback=col2, colframe=blueunam, left=4pt, right=4pt, top=4pt, bottom=4pt]
+\textbf{Casos donde el C1 está fijo:} el C del \mbox{--COOH}, del \mbox{--CHO} y del
+\mbox{--CN} siempre es C1. La numeración parte obligatoriamente de ese extremo porque
+ese C forma parte de la cadena principal y es el de mayor oxidación.
+\end{tcolorbox}
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Cómo se nombran las ramificaciones}
+\subsection*{\textcolor{blueunam}{Cómo se nombran las ramificaciones}}
+
+Una ramificación es cualquier cadena de C que cuelga de la cadena principal. Se nombra
+como grupo alquilo (prefijo + -il) con el localizador del C principal donde está unida.
+
+\textbf{Reglas de ensamblado con varias ramificaciones:}
+
+\begin{enumerate}
+\item \textbf{Orden alfabético} de prefijos en el nombre. Se ignoran di-, tri-, tetra-
+  para el orden alfabético. Se incluyen iso- y neo- (forman parte del nombre base).
+\item \textbf{Multiplicadores:} di-, tri-, tetra- para grupos idénticos simples.
+  Para grupos ramificados: bis-, tris-, tetrakis- con paréntesis.
+\item Localizador antes del nombre del sustituyente, separado por guión.
+\item Varios localizadores del mismo sustituyente: separados por coma.
+\end{enumerate}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{L{5.5cm} L{8.0cm}}
+\toprule
+\textbf{Ejemplo} & \textbf{Por qué ese orden} \\
+\midrule\endhead\bottomrule\endlastfoot
+2-etil-4-metilhexano
+  & etilo (e) antes que metilo (m): orden alfabético \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+2,3-dimetilbutano
+  & dos metilos iguales: di- (no cuenta para ordenar) \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+4-etil-2,2-dimetilheptano
+  & etilo (e) antes de dimetilo (m); el di- no altera el orden \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+2,6-bis(\textit{tert}-butil)-4-metilfenol
+  & bis- porque el sustituyente es ramificado (lleva paréntesis) \\
+\end{longtable}
+\end{center}
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Cómo leer una fórmula esqueletal}
+\subsection*{\textcolor{blueunam}{Cómo leer una fórmula esqueletal}}
+
+En la fórmula esquelatal los C y sus H no se escriben: están implícitos.
+
+\begin{enumerate}
+\item Cada \textbf{vértice} (cambio de dirección) es un C.
+\item Cada \textbf{extremo} de línea es un C.
+\item Cada C tiene 4 enlaces. Resta los dibujados a 4: esos son los H implícitos.
+\item Los \textbf{heteroátomos} (O, N, S\ldots) sí se escriben siempre.
+\item Un \textbf{doble segmento} entre vértices es un doble enlace \ce{C=C}.
+\end{enumerate}
+
+Ejemplo: \quad \chemfig{-[1]=[-1]-[1]-[-1]} \quad es but-1-eno (\ce{C4H8}).
+
+Extremo izquierdo: 1 enlace dibujado $\to$ 3~H (\ce{CH3}).
+C2: enlace doble + 1 simple = 3 dibujados $\to$ 1~H (\ce{CH}).
+C3: 2 simples = 2 dibujados $\to$ 2~H (\ce{CH2}).
+Extremo derecho: 1 enlace $\to$ 3~H (\ce{CH3}).
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Cuándo un grupo es sufijo y cuándo es prefijo}
+\subsection*{\textcolor{blueunam}{Cuándo un grupo es sufijo y cuándo es prefijo}}
+
+La tabla de prioridad (Pieza 3) tiene dos funciones: decide el sufijo y decide qué
+grupos bajan a prefijo.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{L{5.0cm} L{9.0cm}}
+\toprule
+\textbf{Situación} & \textbf{Regla} \\
+\midrule\endhead\bottomrule\endlastfoot
+Un solo grupo funcional
+  & Siempre sufijo. \ce{-OH} $\to$ -ol. \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Dos o más grupos distintos
+  & El de mayor prioridad en la tabla es sufijo. Los demás son prefijos: hidroxi-, oxo-, amino-, etc. \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Halógeno (F, Cl, Br, I)
+  & Siempre prefijo. Nunca sufijo. Sin importar qué otros grupos haya. \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Éter (\ce{-O-} entre dos cadenas)
+  & Siempre prefijo (alcoxi-). Nunca sufijo. \\
+\end{longtable}
+\end{center}
+
+Ejemplo: \ce{HO-CH2-CH2-COOH} tiene \mbox{--OH} (rango~9) y \mbox{--COOH} (rango~1).
+El \mbox{--COOH} es sufijo (-oico). El \mbox{--OH} baja a prefijo (hidroxi-).
+Nombre: \textbf{ácido 3-hidroxipropanoico}.
+
+% ------------------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{subsection}{Ejemplo integrador: nombre completo paso a paso}
+\subsection*{\textcolor{blueunam}{Ejemplo integrador: nombre completo paso a paso}}
+
+Cadena de 5~C con metilo en C2, doble enlace en C3--C4 y \mbox{--OH} en C1.
+
+\begin{center}
+\chemfig{HO-[-1]-[1]-[-1](-[6])-[1]=[-1]}
+\end{center}
+
+\begin{enumerate}
+\item \textbf{Grupo principal:} \mbox{--OH}, sufijo -ol.
+\item \textbf{Cadena principal:} 5~C que contiene OH y doble enlace. Prefijo pent-.
+\item \textbf{Numeración:} desde el extremo con OH: C1(OH), C2, C3, C4(doble), C5.
+  Conjunto \{1,3\} vs \{2,4\} desde el otro lado. Gana \{1,3\}.
+\item \textbf{Sustituyente:} metilo en C2 $\to$ 2-metil-.
+\item \textbf{Ensamblado:} 2-metil $+$ pent $+$ -3-en $+$ -1-ol.
+\item \textbf{Nombre:} \textbf{2-metilpent-3-en-1-ol}.
+\end{enumerate}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 1 — ALCANOS Y CICLOALCANOS
+% ══════════════════════════════════════════════════════
+
+\newgeometry{top=2cm, bottom=2cm, left=1.5cm, right=1.5cm}
+
+\phantomsection
+\addcontentsline{toc}{section}{Alcanos y Cicloalcanos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ALCANOS Y CICLOALCANOS}}}}
+
+\textbf{Qué son:} hidrocarburos con solo enlaces simples \ce{C-C}. Son los compuestos
+más simples y sirven de base para nombrar todos los demás.
+
+\textbf{Regla IUPAC:} prefijo $+$ \textbf{-ano}. Cicloalcanos: \textbf{ciclo-} $+$ prefijo $+$ \textbf{-ano}.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_4}}{Metano}
+\qquad
+\chemname{\chemfig{CH_3-CH_3}}{Etano}
+\qquad
+\chemname{\chemfig{CH_3-CH_2-CH_3}}{Propano}
+\qquad
+\chemname{\chemfig{*6(------)}}{Ciclohexano}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{6.5cm} L{5.5cm}}
+\toprule
+\textbf{Común / Trivial} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Gas natural (metano) & Metano             & Methane \\
+Gas LP / propano     & Propano            & Propane \\
+Isobutano            & 2-metilpropano     & 2-methylpropane \\
+Isopentano           & 2-metilbutano      & 2-methylbutane \\
+Neopentano           & 2,2-dimetilpropano & 2,2-dimethylpropane \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Ciclohexano          & Ciclohexano        & Cyclohexane \\
+Ciclopentano         & Ciclopentano       & Cyclopentane \\
+\end{longtable}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{4.5cm} L{9.0cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Metano      & Metano      & Gas natural, biogás, atmósfera de Titán \\
+Propano     & Propano     & Gas LP, combustible doméstico \\
+Butano      & Butano      & Encendedores, gas camping \\
+Hexano      & Hexano      & Disolvente de extracción, lab \\
+Ciclohexano & Ciclohexano & Disolvente industrial, síntesis de nylon \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 2 — ALQUENOS Y ALQUINOS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Alquenos y Alquinos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ALQUENOS Y ALQUINOS}}}}
+
+\textbf{Alquenos:} prefijo $+$ \textbf{-eno} $+$ localizador del C de menor número del doble enlace.
+\textbf{Alquinos:} prefijo $+$ \textbf{-ino} $+$ localizador. Misma lógica.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H_2C=CH_2}}{Eteno\\\small (etileno)}
+\qquad
+\chemname{\chemfig{HC~CH}}{Etino\\\small (acetileno)}
+\qquad
+\chemname{\chemfig{H_3C-[1]=[-1]-[1]CH_3}}{(E)-but-2-eno}
+\qquad
+\chemname{\chemfig{H_3C-[1]=[-1]H}}{Prop-1-eno}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{6.5cm} L{5.5cm}}
+\toprule
+\textbf{Común / Trivial} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Etileno      & Eteno                 & Ethylene / ethene \\
+Propileno    & Propeno               & Propylene / propene \\
+Isobutileno  & 2-metilpropeno        & Isobutylene \\
+Butadieno    & Buta-1,3-dieno        & 1,3-butadiene \\
+Isopreno     & 2-metilbuta-1,3-dieno & Isoprene \\
+Estireno     & Etenilbenceno         & Styrene \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Acetileno    & Etino                 & Acetylene / ethyne \\
+Propino      & Propino               & Propyne \\
+\end{longtable}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{4.5cm} L{9.0cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Etileno   & Eteno                 & Hormona vegetal de maduración, polietileno \\
+Propileno & Propeno               & Polipropileno, industria petroquímica \\
+Butadieno & Buta-1,3-dieno        & Caucho sintético (SBR) \\
+Isopreno  & 2-metilbuta-1,3-dieno & Monómero del caucho natural \\
+Acetileno & Etino                 & Soldadura oxiacetilénica, síntesis orgánica \\
+Estireno  & Etenilbenceno         & Monómero del poliestireno (PS, unicel) \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 3 — HALUROS DE ALQUILO
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Haluros de Alquilo}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{HALUROS DE ALQUILO}}}}
+
+\textbf{Qué son:} uno o más H reemplazados por halógeno (F, Cl, Br, I).
+
+\textbf{Regla IUPAC:} el halógeno es siempre prefijo: \textbf{fluoro-}, \textbf{cloro-},
+\textbf{bromo-}, \textbf{yodo-}. Nunca sufijo.
+
+\textbf{Nombre funcional:} alquilo $+$ ``de \{haluro\}''. Ej: cloruro de metilo.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{Cl}}}{Clorometano}
+\qquad
+\chemname{\chemfig{CH_3-CH_2-\ac{Br}}}{Bromoetano}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{CH_3-\ac{C}(-[2]CH_3)(-[6]CH_3)-\ac{I}}}}{2-yodo-2-metilpropano}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común / Funcional} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Cloruro de metilo    & Clorometano           & Methyl chloride \\
+Bromuro de metilo    & Bromometano           & Methyl bromide \\
+Cloruro de etilo     & Cloroetano            & Ethyl chloride \\
+Cloruro de vinilo    & Cloroeteno            & Vinyl chloride \\
+Cloruro de alilo     & 3-cloroprop-1-eno     & Allyl chloride \\
+Cloruro de bencilo   & (clorometil)benceno   & Benzyl chloride \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Cloroformo           & Triclorometano        & Chloroform \\
+Tetracloruro de C    & Tetraclorometano      & Carbon tetrachloride \\
+Diclorometano (DCM)  & Diclorometano         & Dichloromethane \\
+Freon-12             & Diclorodifluorometano & Dichlorodifluoromethane \\
+\end{longtable}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{5.0cm} L{8.5cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Cloroformo        & Triclorometano  & Disolvente, anestésico histórico, síntesis \\
+DCM               & Diclorometano   & Disolvente aprótico polar, extracción en lab \\
+Bromuro de metilo & Bromometano     & Fumigante agrícola (restringido) \\
+Cloruro de vinilo & Cloroeteno      & Monómero del PVC \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 4 — ALCOHOLES Y FENOLES
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Alcoholes y Fenoles}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ALCOHOLES Y FENOLES}}}}
+
+\subsection*{\textcolor{blueunam}{Alcoholes}}
+
+\textbf{Qué son:} grupo \ce{-OH} unido a un carbono no aromático.
+
+\textbf{Regla IUPAC:} cadena con el \ce{-OH} $+$ sufijo \textbf{-ol} $+$ localizador.
+Nombre funcional: alquilo $+$ ``alcohol''. Ej: alcohol isopropílico.
+
+\textbf{Clasificación según cuántos C están unidos al C que lleva el \ce{-OH}:}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{longtable}{C{2.5cm} C{3.5cm} L{4.5cm} C{3.5cm}}
+\toprule
+\textbf{Tipo} & \textbf{C unidos al C--OH} & \textbf{Estructura} & \textbf{Ejemplo} \\
+\midrule\endhead\bottomrule\endlastfoot
+Primario   & 1 & $\mathrm{R{-}CH_2{-}OH}$    & Metanol, etanol \\
+Secundario & 2 & $\mathrm{R{-}CH(OH){-}R'}$ & Propan-2-ol \\
+Terciario  & 3 & $\mathrm{R{-}C(OH)(R')(R'')}$ & 2-metilpropan-2-ol \\
+\end{longtable}
+\end{center}
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{O}H}}{Metanol}
+\qquad
+\chemname{\chemfig{CH_3-CH_2-\ac{O}H}}{Etanol}
+\qquad
+\chemname{\chemfig{CH_3-CH(-[2]\ac{O}H)-CH_3}}{Propan-2-ol}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{CH_3-C(-[2]\ac{O}H)(-[6]CH_3)-CH_3}}}{2-metilpropan-2-ol}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común / Funcional} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Alcohol metílico               & Metanol              & Methanol \\
+Alcohol etílico                & Etanol               & Ethanol \\
+Alcohol isopropílico           & Propan-2-ol          & Isopropanol \\
+Alcohol \textit{tert}-butílico & 2-metilpropan-2-ol   & \textit{tert}-butanol \\
+Glicerina / glicerol           & Propano-1,2,3-triol  & Glycerol \\
+Etilenglicol                   & Etano-1,2-diol       & Ethylene glycol \\
+Alcohol alílico                & Prop-2-en-1-ol       & Allyl alcohol \\
+Alcohol bencílico              & Fenilmetanol         & Benzyl alcohol \\
+\end{longtable}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{5.0cm} L{8.5cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Metanol      & Metanol             & Alcohol de madera, combustible, tóxico \\
+Etanol       & Etanol              & Bebidas alcohólicas, desinfectante, disolvente \\
+Isopropanol  & Propan-2-ol         & Alcohol farmacéutico, desinfectante \\
+Glicerol     & Propano-1,2,3-triol & Jabones, cosmética, alimentos \\
+Etilenglicol & Etano-1,2-diol      & Anticongelante, síntesis de PET \\
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Fenoles}}
+
+\textbf{Qué son:} grupo \ce{-OH} unido directamente al anillo aromático. Más ácidos que
+los alcoholes porque el anillo estabiliza la carga negativa del oxígeno por resonancia.
+
+\textbf{Regla IUPAC:} fenol (nombre aceptado). Derivados: sustituyentes con localizadores
+a partir de C1 (el que lleva el \ce{-OH}).
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{*6(=-=-(-\ac{O}H)=-)}}{Fenol}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{*6(=-=(-\ac{O}H)-(-CH_3)=-)}}}{2-metilfenol\\\small(\textit{o}-cresol)}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{*6(=-=-(-\ac{O}H)=(-CH_3)-)}}}{\textit{para}-cresol}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común / Trivial} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Fenol                & Fenol                    & Phenol \\
+\textit{orto}-cresol & 2-metilfenol             & 2-methylphenol \\
+\textit{meta}-cresol & 3-metilfenol             & 3-methylphenol \\
+\textit{para}-cresol & 4-metilfenol             & 4-methylphenol \\
+Catecol              & Benceno-1,2-diol         & Catechol \\
+Resorcinol           & Benceno-1,3-diol         & Resorcinol \\
+Hidroquinona         & Benceno-1,4-diol         & Hydroquinone \\
+Timol                & 2-isopropil-5-metilfenol & Thymol \\
+BHT                  & 2,6-bis(\textit{tert}-butil)-4-metilfenol & BHT \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 5 — TIOLES Y ÉTERES
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Tioles y Éteres}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{TIOLES Y ÉTERES}}}}
+
+\subsection*{\textcolor{blueunam}{Tioles}}
+
+\textbf{Qué son:} análogos sulfurados de los alcoholes. Grupo funcional: \ce{-SH}.
+
+\textbf{Regla IUPAC:} cadena $+$ \textbf{-tiol}. Nombre funcional: alquilo $+$ ``mercaptano''.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{S}H}}{Metanotiol}
+\qquad
+\chemname{\chemfig{CH_3-CH_2-\ac{S}H}}{Etanotiol}
+\qquad
+\chemname{\chemfig{*6(=-=-(-\ac{S}H)=-)}}{Bencenotiol}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común / Funcional} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Metil mercaptano    & Metanotiol  & Methanethiol \\
+Etil mercaptano     & Etanotiol   & Ethanethiol \\
+Tiofenol            & Bencenotiol & Thiophenol \\
+Cisteína (\ce{-SH}) & (aminoácido) & Cysteine \\
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Éteres}}
+
+\textbf{Qué son:} oxígeno unido a dos grupos orgánicos: $\mathrm{R{-}O{-}R'}$.
+
+\textbf{Regla IUPAC:} la cadena más corta $+$ O se convierte en prefijo \textbf{alcoxi-}
+sobre la cadena principal. Nombre funcional: dos alquilos (alfabético) $+$ ``éter''.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{O}-CH_3}}{Dimetil éter\\\small (metoximetano)}
+\qquad
+\chemname{\chemfig{CH_3-CH_2-\ac{O}-CH_2-CH_3}}{Dietil éter\\\small (etoxietano)}
+\qquad
+\chemname{\chemfig{*5(-\ac{O}----)}}{THF\\\small (oxolano)}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común / Funcional} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Éter etílico / dietil éter & Etoxietano              & Diethyl ether \\
+Dimetil éter               & Metoximetano            & Dimethyl ether \\
+Anisol                     & Metoxibenceno           & Anisole \\
+THF                        & Oxolano                 & Tetrahydrofuran \\
+Dioxano                    & 1,4-dioxano             & 1,4-dioxane \\
+MTBE                       & 2-metoxi-2-metilpropano & MTBE \\
+\end{longtable}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Epóxidos}
+\subsection*{\textcolor{blueunam}{Epóxidos}}
+
+\textbf{Qué son:} éteres cíclicos de 3 miembros. Muy reactivos por la tensión angular.
+\textbf{Regla IUPAC:} \textbf{oxirano} (base). Nombre funcional: alqueno $+$ ``óxido''.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{*3(-\ac{O}--)}}{Oxirano\\\small (óxido de etileno)}
+\qquad
+\chemname{\chemfig{*3(-\ac{O}-(-CH_3)-)}}{Metiloxirano\\\small (óxido de propileno)}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Óxido de etileno   & Oxirano      & Ethylene oxide \\
+Óxido de propileno & Metiloxirano & Propylene oxide \\
+Óxido de estireno  & Feniloxirano & Styrene oxide \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 6 — AMINAS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Aminas}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{AMINAS}}}}
+
+\textbf{Qué son:} derivados del amoniaco (\ce{NH3}). Según cuántos H reemplazó:
+primaria ($\mathrm{R{-}NH_2}$), secundaria ($\mathrm{R_2NH}$), terciaria ($\mathrm{R_3N}$), cuaternaria ($\mathrm{R_4N^+}$).
+
+\textbf{Regla IUPAC:} cadena $+$ \textbf{-amina}. Sustituyentes en N: prefijo \textbf{N-}.
+Nombre funcional: alquilos (alfabético) $+$ ``amina''.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{N}H_2}}{Metilamina}
+\qquad
+\chemname{\chemfig{CH_3-\ac{N}H-CH_3}}{Dimetilamina}
+\qquad
+\chemname{\chemfig{*6(=-=-(-\ac{N}H_2)=-)}}{Anilina}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.5cm} L{4.5cm}}
+\toprule
+\textbf{Común / Funcional} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Metilamina    & Metanamina             & Methylamine \\
+Etilamina     & Etanamina              & Ethylamine \\
+Dimetilamina  & N-metilmetanamina      & Dimethylamine \\
+Trimetilamina & N,N-dimetilmetanamina  & Trimethylamine \\
+Anilina       & Bencenamina            & Aniline \\
+\textit{orto}-toluidina      & 2-metilbencenamina   & 2-methylaniline \\
+\textit{para}-fenilendiamina & benceno-1,4-diamina  & \textit{p}-phenylenediamine \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\multicolumn{3}{l}{\textit{Sales de amonio cuaternario}} \\
+\arrayrulecolor{black}\midrule
+Cloruro de tetrametilamonio & Cloruro de N,N,N-trimetilmetanaminio & Tetramethylammonium chloride \\
+\end{longtable}
+
+\begin{tcolorbox}[colback=col1, colframe=blueunam, left=4pt, right=4pt, top=4pt, bottom=4pt]
+\textbf{Nota sobre aminas secundarias simétricas:} en dimetilamina (\ce{(CH3)2NH}), los
+dos grupos son iguales. IUPAC toma uno como cadena principal (metanamina) y el otro como
+sustituyente en el N (N-metil-). Por eso el nombre es N-metilmetanamina, no dimetanamina.
+\end{tcolorbox}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{5.0cm} L{8.5cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Anilina       & Bencenamina           & Síntesis de colorantes, fármacos, Sandmeyer \\
+Trimetilamina & N,N-dimetilmetanamina & Olor a pescado, indicador biológico \\
+Putrescina    & Butano-1,4-diamina    & Descomposición proteica \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 7 — ALDEHÍDOS Y CETONAS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Aldehídos y Cetonas}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ALDEHÍDOS Y CETONAS}}}}
+
+Ambos tienen el grupo \textbf{carbonilo} (\ce{C=O}). La diferencia:
+\textbf{aldehído}: carbonilo con al menos un H directo (\ce{R-CHO}), siempre en C1.
+\textbf{Cetona}: carbonilo entre dos grupos orgánicos ($\mathrm{R{-}CO{-}R'}$), siempre interno.
+
+\subsection*{\textcolor{blueunam}{Aldehídos}}
+
+\textbf{Regla IUPAC:} cadena $+$ \textbf{-al}. El C del \ce{-CHO} es C1; no se indica posición.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H-\ac{C}(=[2]O)-H}}{Metanal\\\small (formaldehído)}
+\qquad
+\chemname{\chemfig{CH_3-\ac{C}(=[2]O)-H}}{Etanal\\\small (acetaldehído)}
+\qquad
+\chemname{\chemfig{CH_3-CH_2-CH_2-\ac{C}(=[2]O)-H}}{Butanal}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común / Trivial} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Formaldehído / formalina & Metanal      & Formaldehyde \\
+Acetaldehído             & Etanal       & Acetaldehyde \\
+Propionaldehído          & Propanal     & Propionaldehyde \\
+Butiraldehído            & Butanal      & Butyraldehyde \\
+Benzaldehído             & Benzaldehído & Benzaldehyde \\
+Vainillina               & 4-hidroxi-3-metoxibenzaldehído & Vanillin \\
+Citral                   & 3,7-dimetil-2,6-octadienal     & Citral \\
+\end{longtable}
+
+\subsection*{\textcolor{blueunam}{Cetonas}}
+
+\textbf{Regla IUPAC:} cadena $+$ \textbf{-ona} $+$ localizador del C carbonílico.
+Nombre funcional: alquilos (alfabético) $+$ ``cetona''.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{C}(=[2]O)-CH_3}}{Propanona\\\small (acetona)}
+\qquad
+\chemname{\chemfig{CH_3-\ac{C}(=[2]O)-CH_2-CH_3}}{Butan-2-ona\\\small (MEK)}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{*6(=-=-(-\ac{C}(=[2]O)-CH_3)=-)}}}{1-feniletanona\\\small (acetofenona)}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.0cm} L{5.0cm}}
+\toprule
+\textbf{Común / Funcional} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Acetona / dimetil cetona     & Propanona           & Acetone \\
+Metil etil cetona (MEK)      & Butan-2-ona         & Methyl ethyl ketone \\
+Metil isobutil cetona (MIBK) & 4-metilpentan-2-ona & MIBK \\
+Acetofenona                  & 1-feniletanona      & Acetophenone \\
+Bencenofenona                & Difenilmetanona     & Benzophenone \\
+Ciclopentanona               & Ciclopentanona      & Cyclopentanone \\
+Ciclohexanona                & Ciclohexanona       & Cyclohexanone \\
+\end{longtable}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{5.0cm} L{8.5cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Formaldehído & Metanal        & Conservante (formalina), resinas, síntesis \\
+Acetona      & Propanona      & Disolvente universal, quitaesmalte, lab \\
+MEK          & Butan-2-ona    & Disolvente industrial, pinturas \\
+Acetofenona  & 1-feniletanona & Perfumería, síntesis farmacéutica \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 8 — ÁCIDOS CARBOXÍLICOS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Ácidos Carboxílicos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ÁCIDOS CARBOXÍLICOS}}}}
+
+\textbf{Qué son:} grupo \textbf{carboxilo} (\ce{-COOH}): carbonilo (\ce{C=O}) $+$ hidroxilo
+(\ce{-OH}) en el mismo C. El H que se ioniza es el del \ce{-OH}.
+
+\textbf{Regla IUPAC:} \textbf{ácido} $+$ cadena $+$ \textbf{-oico}. El C del \ce{-COOH} es
+C1; no se indica posición.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H-\ac{C}(=[2]O)-\ac{O}H}}{Ac. metanoico\\\small (fórmico)}
+\qquad
+\chemname{\chemfig{CH_3-\ac{C}(=[2]O)-\ac{O}H}}{Ac. etanoico\\\small (acético)}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{*6(=-=-(-\ac{C}(=[2]O)-\ac{O}H)=-)}}}{Ac. benzoico}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.0cm} L{7.5cm} L{5.0cm}}
+\toprule
+\textbf{Común / Trivial} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Ácido fórmico    & Ácido metanoico     & Formic acid \\
+Ácido acético    & Ácido etanoico      & Acetic acid \\
+Ácido propiónico & Ácido propanoico    & Propionic acid \\
+Ácido butírico   & Ácido butanoico     & Butyric acid \\
+Ácido valérico   & Ácido pentanoico    & Valeric acid \\
+Ácido caproico   & Ácido hexanoico     & Caproic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Ácido oxálico    & Ácido etanodioico   & Oxalic acid \\
+Ácido malónico   & Ácido propanodioico & Malonic acid \\
+Ácido succínico  & Ácido butanodioico  & Succinic acid \\
+Ácido glutárico  & Ácido pentanodioico & Glutaric acid \\
+Ácido adípico    & Ácido hexanodioico  & Adipic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Ácido benzoico   & Ácido bencenocarboxílico        & Benzoic acid \\
+Ácido ftálico    & Ácido benceno-1,2-dicarboxílico & Phthalic acid \\
+Ácido cinámico   & Ácido (E)-3-fenilpropenoico     & Cinnamic acid \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+Ácido acrílico   & Ácido propenoico        & Acrylic acid \\
+Ácido metacrílico & Ácido 2-metilpropenoico & Methacrylic acid \\
+\end{longtable}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{5.5cm} L{8.0cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Ácido fórmico  & Ácido metanoico          & Hormigas, conservante, curtido \\
+Ácido acético  & Ácido etanoico           & Vinagre, síntesis, disolvente \\
+Ácido butírico & Ácido butanoico          & Mantequilla rancia, olor a vómito \\
+Ácido benzoico & Ácido bencenocarboxílico & Conservante alimentario (E-210) \\
+Ácido adípico  & Ácido hexanodioico       & Síntesis de nylon-6,6 \\
+Ácido acrílico & Ácido propenoico         & Monómero de acrílicos, polímeros \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 9 — DERIVADOS DE ÁCIDOS CARBOXÍLICOS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Derivados de Ácidos Carboxílicos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{DERIVADOS DE ÁCIDOS CARBOXÍLICOS}}}}
+
+\textbf{Qué son:} el \ce{-OH} del \ce{-COOH} reemplazado por otro grupo. El carbonilo
+(\ce{C=O}) siempre se conserva.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{L{2.6cm} L{2.8cm} L{3.2cm} L{4.9cm}}
+\toprule
+\textbf{Derivado} & \textbf{Grupo} & \textbf{Sufijo IUPAC} & \textbf{Cómo se construye} \\
+\midrule\endhead\bottomrule\endlastfoot
+Éster        & \mbox{--COOR}                        & -oato de \{alquilo\}   & \{cadena\}-oato de \{alquilo\} \\
+Haluro acilo & \mbox{--COX}                         & -oílo                  & haluro de \{cadena\}-oílo \\
+Anhídrido    & \mbox{--CO--O--CO--}                 & anhídrido de\ldots     & anhídrido $+$ nombre del ácido \\
+Amida        & \mbox{--CONH\textsubscript{2}}        & -amida                 & \{cadena\}-amida \\
+Nitrilo      & \mbox{--C$\equiv$N}                  & -nitrilo               & \{cadena\}-nitrilo \\
+\end{longtable}
+\end{center}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Ésteres}
+\subsection*{\textcolor{blueunam}{Ésteres}}
+
+\textbf{Regla IUPAC:} \{cadena del ácido\}\textbf{-oato} de \{alquilo del alcohol\}.
+El nombre del ácido va primero, el alquilo del alcohol al final.
+\textbf{Nombre funcional:} ácido con -ico $\to$ ``ato de'' $+$ alquilo. Ej: acetato de etilo.
+
+\begin{center}
+\schemestart
+\chemname{\scalebox{0.85}{\chemfig{CH_3-\ac{C}(=[2]O)-\ac{O}-CH_2-CH_3}}}{Etanoato de etilo\\\small (acetato de etilo)}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{*6(=-=-(-\ac{C}(=[2]O)-\ac{O}-CH_3)=-)}}}{Benzoato de metilo}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.5cm} L{4.5cm}}
+\toprule
+\textbf{Común} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Acetato de etilo    & Etanoato de etilo   & Ethyl acetate \\
+Acetato de metilo   & Etanoato de metilo  & Methyl acetate \\
+Acetato de butilo   & Etanoato de butilo  & Butyl acetate \\
+Benzoato de metilo  & Benzoato de metilo  & Methyl benzoate \\
+Formiato de etilo   & Metanoato de etilo  & Ethyl formate \\
+Propanoato de etilo & Propanoato de etilo & Ethyl propanoate \\
+\end{longtable}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Haluros de Acilo}
+\subsection*{\textcolor{blueunam}{Haluros de Acilo}}
+
+\textbf{Regla IUPAC:} \{haluro\} de \{cadena\}\textbf{-oílo}.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{C}(=[2]O)-\ac{Cl}}}{Cloruro de etanoílo\\\small (cloruro de acetilo)}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{*6(=-=-(-\ac{C}(=[2]O)-\ac{Cl})=-)}}}{Cloruro de benzoílo}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.5cm} L{4.5cm}}
+\toprule
+\textbf{Común} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Cloruro de acetilo    & Cloruro de etanoílo   & Acetyl chloride \\
+Cloruro de propionilo & Cloruro de propanoílo & Propionyl chloride \\
+Cloruro de benzoílo   & Cloruro de benzoílo   & Benzoyl chloride \\
+Bromuro de acetilo    & Bromuro de etanoílo   & Acetyl bromide \\
+\end{longtable}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Anhídridos}
+\subsection*{\textcolor{blueunam}{Anhídridos}}
+
+\textbf{Qué son:} dos ácidos que perdieron \ce{H2O}. Resultado: $\mathrm{R{-}CO{-}O{-}CO{-}R'}$.
+\textbf{Regla IUPAC:} \textbf{anhídrido} de \{nombre del ácido\}.
+
+\begin{center}
+\schemestart
+\chemname{\scalebox{0.85}{\chemfig{CH_3-\ac{C}(=[2]O)-\ac{O}-\ac{C}(=[2]O)-CH_3}}}{Anhídrido acético}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.5cm} L{4.5cm}}
+\toprule
+\textbf{Común} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Anhídrido acético  & Anhídrido etanoico                  & Acetic anhydride \\
+Anhídrido benzoico & Anhídrido benzoico                  & Benzoic anhydride \\
+Anhídrido ftálico  & Anhídrido benceno-1,2-dicarboxílico & Phthalic anhydride \\
+Anhídrido maleico  & Anhídrido (Z)-butenodioico          & Maleic anhydride \\
+\end{longtable}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Amidas}
+\subsection*{\textcolor{blueunam}{Amidas}}
+
+\textbf{Regla IUPAC:} \{cadena\}\textbf{-amida}. Sustituyentes en N: prefijo \textbf{N-}.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{CH_3-\ac{C}(=[2]O)-\ac{N}H_2}}{Etanamida\\\small (acetamida)}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{CH_3-\ac{C}(=[2]O)-\ac{N}(-[2]CH_3)-CH_3}}}{N,N-dimetiletanamida\\\small (DMA)}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.5cm} L{4.5cm}}
+\toprule
+\textbf{Común} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Acetamida    & Etanamida            & Acetamide \\
+Formamida    & Metanamida           & Formamide \\
+Benzamida    & Benzamida            & Benzamide \\
+DMF          & N,N-dimetilformamida & DMF \\
+DMA          & N,N-dimetilacetamida & DMA \\
+Caprolactama & Azepan-2-ona         & Caprolactam \\
+\end{longtable}
+
+\begin{tcolorbox}[colback=col1, colframe=blueunam, left=4pt, right=4pt, top=4pt, bottom=4pt]
+\textbf{Nota:} la caprolactama es una \textbf{lactama} (amida cíclica de 7 miembros). Su
+nombre sistemático azepan-2-ona refleja el anillo de 7 átomos (azepano) con un carbonilo
+en C2, no una cadena abierta. Es el monómero del nylon-6.
+\end{tcolorbox}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Nitrilos}
+\subsection*{\textcolor{blueunam}{Nitrilos}}
+
+\textbf{Qué son:} grupo $-\mathrm{C{\equiv}N}$ (triple enlace C--N).
+\textbf{Regla IUPAC:} \{cadena incluyendo el C del $\mathrm{C{\equiv}N}$\}\textbf{-nitrilo}.
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{\ac{N}~\ac{C}-CH_3}}{Etanonitrilo\\\small (acetonitrilo)}
+\qquad
+\chemname{\chemfig{*6(=-=-(-\ac{C}~\ac{N})=-)}}{\small Benzonitrilo}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.5cm} L{7.5cm} L{4.5cm}}
+\toprule
+\textbf{Común} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Acetonitrilo (MeCN) & Etanonitrilo        & Acetonitrile \\
+Acrilonitrilo       & Prop-2-enenitrilo   & Acrylonitrile \\
+Benzonitrilo        & Benzonitrilo        & Benzonitrile \\
+Adiponitrilo        & Hexanodinitrilo     & Adiponitrile \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 10 — COMPUESTOS AROMÁTICOS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Compuestos Aromáticos}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{COMPUESTOS AROMÁTICOS}}}}
+
+\textbf{Base:} benceno (\ce{C6H6}). Monosustituidos: sustituyente $+$ benceno o nombre
+aceptado (tolueno, fenol, anilina). Disustituidos: números o prefijos
+\textit{orto}- (1,2), \textit{meta}- (1,3), \textit{para}- (1,4).
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{*6(=-=(-)-=)}}{Benceno}
+\qquad
+\chemname{\chemfig{*6(=-=-(-CH_3)=-)}}{Tolueno}
+\qquad
+\chemname{\scalebox{0.85}{\chemfig{*6(=-=-(-CH_3)=(-CH_3)-)}}}{\textit{orto}-xileno}
+\qquad
+\chemname{\chemfig{*6(=-=-(-CH_2-CH_3)=-)}}{Etilbenceno}
+\schemestop
+\end{center}
+
+\begin{longtable}{L{5.0cm} L{7.5cm} L{5.0cm}}
+\toprule
+\textbf{Común / Trivial} & \textbf{IUPAC} & \textbf{Inglés} \\
+\midrule\endhead\bottomrule\endlastfoot
+Benceno    & Benceno               & Benzene \\
+Tolueno    & Metilbenceno          & Toluene \\
+\textit{orto}-xileno  & 1,2-dimetilbenceno & \textit{o}-xylene \\
+\textit{meta}-xileno  & 1,3-dimetilbenceno & \textit{m}-xylene \\
+\textit{para}-xileno  & 1,4-dimetilbenceno & \textit{p}-xylene \\
+Estireno   & Etenilbenceno         & Styrene \\
+Cumeno     & (propan-2-il)benceno  & Cumene \\
+Mesitileno & 1,3,5-trimetilbenceno & Mesitylene \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\multicolumn{3}{l}{\textit{Con grupos funcionales (nombres aceptados por IUPAC)}} \\
+\arrayrulecolor{black}\midrule
+Fenol          & Fenol                     & Phenol \\
+Anilina        & Bencenamina               & Aniline \\
+Benzaldehído   & Benzaldehído              & Benzaldehyde \\
+Ácido benzoico & Ácido bencenocarboxílico  & Benzoic acid \\
+Acetofenona    & 1-feniletanona            & Acetophenone \\
+Nitrobenceno   & Nitrobenceno              & Nitrobenzene \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\multicolumn{3}{l}{\textit{Policíclicos aromáticos}} \\
+\arrayrulecolor{black}\midrule
+Naftaleno  & Naftaleno  & Naphthalene \\
+Antraceno  & Antraceno  & Anthracene \\
+Fenantreno & Fenantreno & Phenanthrene \\
+Pireno     & Pireno     & Pyrene \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\multicolumn{3}{l}{\textit{Heterocíclicos aromáticos}} \\
+\arrayrulecolor{black}\midrule
+Piridina & Piridina & Pyridine \\
+Pirrol   & Pirrol   & Pyrrole \\
+Furano   & Furano   & Furan \\
+Tiofeno  & Tiofeno  & Thiophene \\
+Imidazol & Imidazol & Imidazole \\
+Indol    & Indol    & Indole \\
+\end{longtable}
+
+\textbf{Compuestos comunes:}
+
+\begin{longtable}{L{4.0cm} L{5.0cm} L{8.5cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Dónde aparece} \\
+\midrule\endhead\bottomrule\endlastfoot
+Benceno   & Benceno               & Disolvente, monómero, carcinógeno \\
+Tolueno   & Metilbenceno          & Disolvente, pinturas, síntesis \\
+Xilenos   & Dimetilbencenos       & Disolventes industriales, síntesis PET \\
+Estireno  & Etenilbenceno         & Monómero del PS y ABS \\
+Cumeno    & (Propan-2-il)benceno  & Síntesis de fenol y acetona \\
+Naftaleno & Naftaleno             & Bolas de naftalina, síntesis de colorantes \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 11 — ISÓMEROS
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Isómeros}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{ISÓMEROS}}}}
+
+\textbf{Qué es un isómero:} misma fórmula molecular, diferente en conectividad o
+disposición espacial. El nombre IUPAC debe distinguirlos con precisión.
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Isómeros constitucionales}
+\subsection*{\textcolor{blueunam}{Isómeros constitucionales}}
+
+Misma fórmula molecular, diferente conectividad. El nombre IUPAC ya los distingue sin
+prefijo especial.
+
+\begin{longtable}{L{3.5cm} L{3.5cm} L{6.5cm}}
+\toprule
+\textbf{Fórmula molecular} & \textbf{Nombre IUPAC} & \textbf{Diferencia} \\
+\midrule\endhead\bottomrule\endlastfoot
+\multirow{2}{3.0cm}{\ce{C4H10}}
+  & Butano         & Cadena lineal de 4 C \\
+  & 2-metilpropano & Cadena de 3 C con metilo en C2 \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\multirow{2}{3.0cm}{\ce{C3H8O}}
+  & Propan-1-ol & \ce{-OH} en C1 \\
+  & Propan-2-ol & \ce{-OH} en C2 \\
+\arrayrulecolor{separador}\midrule\arrayrulecolor{black}
+\multirow{2}{3.0cm}{\ce{C3H8O}}
+  & Propan-1-ol & Alcohol (\ce{R-OH}) \\
+  & Metoxietano & Éter ($\mathrm{R{-}O{-}R'}$), diferente grupo funcional \\
+\end{longtable}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Isomería geométrica en alquenos: cis/trans y E/Z}
+\subsection*{\textcolor{blueunam}{Isomería geométrica en alquenos: \textit{cis}/\textit{trans} y E/Z}}
+
+\textbf{Por qué existe:} el doble enlace \ce{C=C} no rota libremente. Los grupos pueden
+quedar del mismo lado o lados opuestos, generando compuestos distintos.
+
+\textbf{\textit{cis}/\textit{trans}} (casos simples: cada C del doble enlace tiene H y un sustituyente):
+\textit{cis} = sustituyentes no-H al mismo lado. \textit{trans} = lados opuestos.
+
+\textbf{E/Z} (sistema general): prioridad por reglas CIP (mayor número atómico = mayor prioridad).
+\textbf{Z} (zusammen, juntos): grupos de mayor prioridad al mismo lado.
+\textbf{E} (entgegen, opuestos): grupos de mayor prioridad en lados opuestos.
+El prefijo va entre paréntesis: \textbf{(E)-but-2-eno}, \textbf{(Z)-but-2-eno}.
+
+\textbf{Asignación de prioridad CIP para E/Z:}
+\begin{enumerate}
+\item Comparar los átomos directamente unidos al C del doble enlace: mayor número atómico = mayor prioridad.
+\item Si hay empate, avanzar al siguiente átomo hasta resolver.
+\item Determinar si los grupos de mayor prioridad de cada C quedan al mismo lado (Z) o lados opuestos (E).
+\end{enumerate}
+
+\begin{center}
+\schemestart
+\chemname{\chemfig{H_3C-[1]=[2]-[-1]H}}{\textit{cis}-but-2-eno \\ (Z)-but-2-eno}
+\qquad\qquad
+\chemname{\chemfig{H_3C-[1]=[2]-[1]CH_3}}{\textit{trans}-but-2-eno \\ (E)-but-2-eno}
+\schemestop
+\end{center}
+
+\begin{tcolorbox}[colback=col1, colframe=blueunam, left=4pt, right=4pt, top=4pt, bottom=4pt]
+\textit{cis} generalmente corresponde a Z y \textit{trans} a E, pero no siempre: cuando los
+sustituyentes no son H vs alquilo, los sistemas pueden divergir. E/Z es siempre inequívoco;
+IUPAC lo prefiere.
+\end{tcolorbox}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Isomería geométrica en ciclos: cis/trans}
+\subsection*{\textcolor{blueunam}{Isomería geométrica en ciclos: \textit{cis}/\textit{trans}}}
+
+El anillo es rígido: no hay rotación libre. Los sustituyentes pueden quedar del mismo
+lado del plano del anillo (\textit{cis}) o en lados opuestos (\textit{trans}).
+El sistema E/Z \textbf{no} aplica en ciclos.
+
+\begin{longtable}{L{5.5cm} L{8.0cm}}
+\toprule
+\textbf{Nombre} & \textbf{Descripción} \\
+\midrule\endhead\bottomrule\endlastfoot
+\textit{cis}-1,2-dimetilciclohexano  & Los dos \ce{CH3} del mismo lado del anillo \\
+\textit{trans}-1,2-dimetilciclohexano & Los dos \ce{CH3} en lados opuestos \\
+\textit{cis}-4-metilciclohexanol     & \ce{CH3} y \ce{OH} del mismo lado \\
+\textit{trans}-4-metilciclohexanol   & \ce{CH3} y \ce{OH} en lados opuestos \\
+\end{longtable}
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Regioisómeros en aromáticos: orto, meta y para}
+\subsection*{\textcolor{blueunam}{Regioisómeros en aromáticos: \textit{orto}, \textit{meta} y \textit{para}}}
+
+Describe posición relativa en el anillo, \textbf{no} lado del plano.
+No confundir con \textit{cis}/\textit{trans}.
+
+\begin{longtable}{C{2.4cm} C{2.0cm} C{4.0cm} C{5.1cm}}
+\toprule
+\textbf{Prefijo} & \textbf{Posiciones} & \textbf{Descripción} & \textbf{Ejemplo} \\
+\midrule\endhead\bottomrule\endlastfoot
+\textit{orto}- (\textit{o}-) & 1,2 & C adyacentes  & \textit{o}-xileno \\
+\textit{meta}- (\textit{m}-) & 1,3 & Separados por un C & \textit{m}-xileno \\
+\textit{para}- (\textit{p}-) & 1,4 & Extremos opuestos  & \textit{p}-xileno \\
+\end{longtable}
+
+Solo con \textbf{exactamente dos} sustituyentes. Con tres o más: solo números.
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Estereoisómeros con carbono quiral: R/S}
+\subsection*{\textcolor{blueunam}{Estereoisómeros con carbono quiral: R/S}}
+
+\textbf{Carbono quiral (C*):} cuatro sustituyentes todos diferentes. Genera dos
+enantiómeros (imágenes especulares no superponibles). La molécula no es superponible
+con su imagen en el espejo.
+
+\textbf{Asignación R/S (reglas CIP):}
+\begin{enumerate}
+\item Asignar prioridad a los 4 sustituyentes: mayor número atómico = mayor prioridad (1 = mayor, 4 = menor). En empate, avanzar al siguiente átomo.
+\item Orientar la molécula con el grupo de menor prioridad (el 4) apuntando \textbf{hacia atrás} (alejándose del observador).
+\item Seguir la secuencia 1 $\to$ 2 $\to$ 3: sentido horario = \textbf{R} (\textit{rectus}), sentido antihorario = \textbf{S} (\textit{sinister}).
+\item Si el grupo 4 apunta \textbf{hacia el observador} en lugar de alejarse: realizar la asignación e \textbf{invertir el resultado}.
+\end{enumerate}
+
+El prefijo (R)- o (S)- se escribe entre paréntesis antes del nombre. Con varios C quirales:
+un localizador por cada uno. Ej: (2R,3S)-2-bromo-3-clorobutano.
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Epímeros}
+\subsection*{\textcolor{blueunam}{Epímeros}}
+
+Los epímeros son un caso particular de diastereómeros: dos estereoisómeros que difieren
+en la configuración de \textbf{un solo carbono quiral} de varios posibles. Son relevantes
+sobre todo en química de carbohidratos.
+
+Ejemplo clásico: D-glucosa y D-galactosa difieren solo en la configuración del C4.
+Son epímeros en C4 (C4-epímeros). Tienen la misma fórmula molecular y conectividad,
+pero propiedades físicas y biológicas distintas.
+
+\phantomsection
+\addcontentsline{toc}{subsection}{Tabla resumen de isómeros}
+\subsection*{\textcolor{blueunam}{Tabla resumen de isómeros}}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{L{2.8cm} L{4.0cm} L{2.8cm} L{4.0cm}}
+\toprule
+\textbf{Tipo} & \textbf{Definición} & \textbf{Indicador} & \textbf{Ejemplo} \\
+\midrule\endhead\bottomrule\endlastfoot
+Constitucional & Misma fórmula, diferente conectividad & Ninguno (IUPAC los distingue) & butano vs 2-metilpropano \\
+\textit{cis}/\textit{trans} (alqueno) & Grupos a distinto lado del doble enlace & \textit{cis}- o \textit{trans}- & \textit{cis}-but-2-eno \\
+E/Z (alqueno) & Prioridad CIP en doble enlace & (E)- o (Z)- & (E)-but-2-eno \\
+\textit{cis}/\textit{trans} (ciclo) & Sustituyentes a distinto lado del plano del anillo & \textit{cis}- o \textit{trans}- & \textit{trans}-1,2-dimetilciclohexano \\
+\textit{o}/\textit{m}/\textit{p} & Posición relativa en benceno disustituido & \textit{o}-, \textit{m}-, \textit{p}- o 1,2/1,3/1,4 & \textit{p}-xileno \\
+Enantiómeros (R/S) & Imagen especular no superponible (C*) & (R)- o (S)- & (R)-2-bromobutano \\
+Diastereómeros & Estereoisómeros que no son enantiómeros & Combinación R/S o \textit{cis}/\textit{trans} & (2R,3S) vs (2R,3R) \\
+Epímeros & Diastereómeros que difieren en un solo C* & Indicar el C: C4-epímeros & D-glucosa vs D-galactosa \\
+\end{longtable}
+
+\newpage
+
+% ══════════════════════════════════════════════════════
+%  SECCIÓN 12 — COMPUESTOS COMUNES DE LABORATORIO
+% ══════════════════════════════════════════════════════
+
+\phantomsection
+\addcontentsline{toc}{section}{Compuestos Comunes de Laboratorio}
+\section*{\centering\fontsize{12}{18}\selectfont{\textcolor{blueunam}{\textbf{COMPUESTOS COMUNES DE LABORATORIO}}}}
+
+\begin{longtable}{L{3.5cm} L{4.5cm} L{3.5cm} L{6.0cm}}
+\toprule
+\textbf{Nombre común} & \textbf{IUPAC} & \textbf{Familia} & \textbf{Uso / aparece en} \\
+\midrule\endhead\bottomrule\endlastfoot
+Metanol          & Metanol              & Alcohol         & Disolvente, combustible, tóxico \\
+Etanol           & Etanol               & Alcohol         & Desinfectante, bebidas, disolvente \\
+Isopropanol      & Propan-2-ol          & Alcohol         & Farmacéutico, desinfectante \\
+Glicerol         & Propano-1,2,3-triol  & Alcohol         & Cosméticos, jabones, alimentos \\
+Etilenglicol     & Etano-1,2-diol       & Alcohol         & Anticongelante, PET \\
+Acetona          & Propanona            & Cetona          & Disolvente universal, quitaesmalte \\
+MEK              & Butan-2-ona          & Cetona          & Disolvente industrial \\
+Éter etílico     & Etoxietano           & Éter            & Extracción, anestésico histórico \\
+THF              & Oxolano              & Éter            & Disolvente polar aprótico, lab \\
+DCM              & Diclorometano        & Haluro          & Disolvente aprótico, extracción \\
+Cloroformo       & Triclorometano       & Haluro          & Disolvente, síntesis \\
+Acetonitrilo     & Etanonitrilo         & Nitrilo         & Disolvente polar aprótico, HPLC \\
+DMF              & N,N-dimetilformamida & Amida           & Disolvente polar aprótico, síntesis \\
+DMSO             & Dimetilsulfóxido     & Sulfóxido       & Disolvente polar aprótico, criogénico \\
+Ácido acético    & Ácido etanoico       & Ác. carboxílico & Vinagre, síntesis, tampón \\
+Acetato de etilo & Etanoato de etilo    & Éster           & Disolvente, extracción, cromatografía \\
+Tolueno          & Metilbenceno         & Aromático       & Disolvente, síntesis \\
+Benceno          & Benceno              & Aromático       & Disolvente (carcinógeno), síntesis \\
+Piridina         & Piridina             & Heterocíclico   & Base, disolvente, síntesis \\
+Hexano           & Hexano               & Alcano          & Extracción de grasas, cromatografía \\
+Formalina        & Metanal (ac.)        & Aldehído        & Conservante biológico, resinas \\
+\end{longtable}
+
+\restoregeometry
