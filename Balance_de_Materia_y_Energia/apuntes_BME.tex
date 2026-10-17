@@ -1763,11 +1763,7 @@ constante, ¿cuál es el flujo de la corriente de salida?
 
 \textit{Paso 3. Ecuaciones.}
 
-\textit{Ecuaciones General.}
-Recomiendo siempre realizarla, para darte una idea de como
-se resolverá el ejercicio, además que luego es común
-confiarse que está todo a régimen permanente sin 
-formación o consumo y suele haber errores por eso.
+\textit{Ecuación general.}
 
 \[
 \cancelto{0}{\text{Acu}} = \text{Ent} - \text{Sal} + \cancelto{0}{\text{Rx}}
@@ -1828,10 +1824,11 @@ Sustituyendo los valores conocidos:
 \end{exercise}
 
 \begin{exercise}{16}{}
-Un secador recibe $500\,\mathrm{kg/h}$ de sólido húmedo. Del
-secador salen dos corrientes: una de sólido seco con un flujo de
-$480\,\mathrm{kg/h}$ y otra de vapor de agua. Si el secador opera
-en régimen permanente, ¿cuál es el flujo de la corriente de vapor?
+Un secador recibe $500\,\mathrm{kg/h}$ de sólido húmedo, compuesto
+por sólido y agua. Del secador salen dos corrientes: una de sólido
+seco con un flujo de $480\,\mathrm{kg/h}$ y otra de vapor de agua.
+Si el secador opera en régimen permanente, ¿cuál es el flujo de la
+corriente de vapor?
 
 \textit{Paso 1. DFP del proceso.}
 
@@ -1843,432 +1840,97 @@ en régimen permanente, ¿cuál es el flujo de la corriente de vapor?
 
 \begin{center}
 \renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|X|X|}
+\begin{tabularx}{\textwidth}{|c|X|X|X|}
 \hline
-\textbf{Corriente} & \textbf{$\dot{S_h}$ (kg/h)}  & \textbf{$\dot{S}$ (kg/h)} &
+\textbf{Corriente} & \textbf{$\dot{S}$ (kg/h)} &
 \textbf{$\dot{A}$ (kg/h)} & \textbf{$\dot{F}$ (kg/h)} \\
 \hline
-\corriente{1} & 500 & $\dot{S}_1$ & $\dot{A}_1$ & $\dot{F}_1$ \\
+\corriente{1} & $\dot{S}_1$ & $\dot{A}_1$ & 500 \\
 \hline
-\corriente{2} & $\dot{S_h}_2$ & 480 & $\dot{A}_2$ & $\dot{F}_2$ \\
+\corriente{2} & $\dot{S}_2$ & $\dot{A}_2$ & 480 \\
 \hline
-\corriente{3} & $\dot{S_h}_3$ & $\dot{S}_3$ & $\dot{A}_3$ & $\dot{F}_3$ \\
+\corriente{3} & $\dot{S}_3$ & $\dot{A}_3$ & $\dot{F}_3$ \\
 \hline
 \end{tabularx}
 \end{center}
 
 \textit{Paso 3. Ecuaciones.}
 
-\textit{Ecuaciones General.}
+\textit{Ecuación general.}
 \[
 \cancelto{0}{\text{Acu}} = \text{Ent} - \text{Sal} + \cancelto{0}{\text{Rx}}
 \]
-
 \[
 \text{Ent} = \text{Sal}
 \]
 
-
 \textit{Ecuaciones de total.}
 \begin{align*}
-\dot{S_h}_1 + \dot{S}_1 + \dot{A}_1 &= \dot{F}_1 \\[4pt]
-\dot{S_h}_2 + \dot{S}_2 + \dot{A}_2 &= \dot{F}_2 \\[4pt]
-\dot{S_h}_3 + \dot{S}_3 + \dot{A}_3 &= \dot{F}_3
+\dot{S}_1 + \dot{A}_1 &= \dot{F}_1 \\[4pt]
+\dot{S}_2 + \dot{A}_2 &= \dot{F}_2 \\[4pt]
+\dot{S}_3 + \dot{A}_3 &= \dot{F}_3
 \end{align*}
 
 \textit{Ecuaciones de balance.}
 \begin{align*}
-\dot{S_h}_1 &= \dot{S_h}_2 + \dot{S_h}_3 \\[4pt]
-\dot{S}_1 &= \dot{S}_2 + \dot{S}_3  \\[4pt]
-\dot{A}_1 &= \dot{A}_2 + \dot{A}_3 
+\dot{S}_1 &= \dot{S}_2 + \dot{S}_3 \\[4pt]
+\dot{A}_1 &= \dot{A}_2 + \dot{A}_3
 \end{align*}
 
-\textit{Ecuación independiente.}
+\textit{Ecuación dependiente.}
 \[
 \dot{F}_1 = \dot{F}_2 + \dot{F}_3
 \]
 
-\textit{Paso 4. Resultado.}
-\textbf{Analisis:} \\
-El problema no lo dice explícitamente, pero es claro o
-en caso de que no lo especifique se da por hecho que las
-corrientes que salen son puras, o sea solo están compuestos
-por un solo compuesto. Por lo que las ecuaciones se 
-reducen a:
+\textit{Paso 4. Análisis.}
 
-\textit{Ecuaciones de total.}
+El problema no especifica la composición del sólido húmedo, pero
+sí especifica que las corrientes de salida son puras. La corriente
+\corriente{2} es sólido seco, así que $\dot{A}_2 = 0$. La corriente
+\corriente{3} es vapor de agua, así que $\dot{S}_3 = 0$.
+
+Sustituyendo en las ecuaciones de balance:
 \begin{align*}
-\dot{S_h}_1 + \cancelto{0}{\dot{S}_1} + \cancelto{0}{\dot{A}_1} &= \dot{F}_1 \\[4pt]
-\cancelto{0}{\dot{S_h}_2} + \dot{S}_2 + \cancelto{0}{\dot{A}_2} &= \dot{F}_2 \\[4pt]
-\cancelto{0}{\dot{S_h}_3} + \cancelto{0}{\dot{S}_3} + \dot{A}_3 &= \dot{F}_3
+\dot{S}_1 &= \dot{S}_2 + \cancelto{0}{\dot{S}_3} = \dot{S}_2 \\[4pt]
+\dot{A}_1 &= \cancelto{0}{\dot{A}_2} + \dot{A}_3 = \dot{A}_3
 \end{align*}
 
-Lo que ya numéricamente sería:
+De la ecuación de total para \corriente{2}:
+\[
+\dot{S}_2 + \cancelto{0}{\dot{A}_2} = 480 \quad \Rightarrow \quad \dot{S}_2 = 480
+\]
 
+Como $\dot{S}_1 = \dot{S}_2$, entonces $\dot{S}_1 = 480$.
+
+De la ecuación de total para \corriente{1}:
+\[
+\dot{S}_1 + \dot{A}_1 = 500 \quad \Rightarrow \quad 480 + \dot{A}_1 = 500
+\quad \Rightarrow \quad \dot{A}_1 = 20
+\]
+
+Y como $\dot{A}_3 = \dot{A}_1$, entonces $\dot{A}_3 = 20$.
+
+Finalmente, de la ecuación dependiente:
+\[
+\dot{F}_3 = \dot{F}_1 - \dot{F}_2 = 500 - 480 = 20\,\frac{\mathrm{kg}}{\mathrm{h}}
+\]
+
+\textit{Paso 5. Resultado.}
+
+Sustituyendo los valores:
 \begin{align*}
+\dot{S}_1 &= 480\,\frac{\mathrm{kg}}{\mathrm{h}} \\
+\dot{A}_1 &= 20\,\frac{\mathrm{kg}}{\mathrm{h}} \\
 \dot{F}_1 &= 500\,\frac{\mathrm{kg}}{\mathrm{h}} \\[4pt]
+\dot{S}_2 &= 480\,\frac{\mathrm{kg}}{\mathrm{h}} \\
+\dot{A}_2 &= 0\,\frac{\mathrm{kg}}{\mathrm{h}} \\
 \dot{F}_2 &= 480\,\frac{\mathrm{kg}}{\mathrm{h}} \\[4pt]
-\dot{F}_3 &= \dot{A}_3
-\end{align*}
-
-Podriamos ya deducir cuanto vale $\dot{F}_3$, pero lo haremos paso a paso.
-
-\textit{Ecuaciones de balance.}
-\begin{align*}
-\dot{S_h}_1 &= \cancelto{0}{\dot{S_h}_2} + \cancelto{0}{\dot{S_h}_3} \\[4pt]
-\cancelto{0}{\dot{S}_1} &= \dot{S}_2 + \cancelto{0}{\dot{S}_3}  \\[4pt]
-\cancelto{0}{\dot{A}_1} &= \cancelto{0}{\dot{A}_2} + \dot{A}_3 
-\end{align*}
-
-Aqui no es que desaparezca materia, lo que pasa es que es una transformación
-a comparación de los anteriores ejercicios que la misma sustancia era la misma
-que salia aqui cambia la cosa, la que entra es diferente a las que salen
-(Esta mal planteado no tiene sentido porque si hago eso seria 500=0 y no tiene sentido
-tendria que ser formación y consumo ahi si ya tiene sentido mientras se forma 
-S y A se consume Sh y ahi ya si daria 500 - consumo = Salida + $\cancelto{0}{formación}$
-como Sh solo se consume hasta llegar a 0 mientras los otros dos se forman entonces 
-asi si da el balance y no aparecen errores como 500 = 0)
-Y el planteamiento de que S comensamos con 500 y terminamos con 480 no esta del todo mal,
-pero son cosas distintas el consumo de Sh = 500 por lo que ahi ya seria 0 = 0 y tiene sentido
-entra 500 se consumen 500 salen 0 
-se forma entra 0 de S se forma 480 y lo mismo para agua 
-entra 0 y se forma A3 que se despejaria de la ultima
-
-\textit{Ecuación independiente.}
-
-\begin{align*}
-\dot{F}_1 &= \dot{F}_2 + \dot{F}_3 \\[4pt]
-500\,\frac{\mathrm{kg}}{\mathrm{h}} &=  480\,\frac{\mathrm{kg}}{\mathrm{h}} + \dot{F}_3 \\[4pt]
-\dot{F}_3 &= 500\,\frac{\mathrm{kg}}{\mathrm{h}} -  480\,\frac{\mathrm{kg}}{\mathrm{h}} \\[4pt]
-\dot{F}_3 &= 20\,\frac{\mathrm{kg}}{\mathrm{h}} \\[4pt]
-\dot{F}_3 &= \dot{A}_3 = 20\,\frac{\mathrm{kg}}{\mathrm{h}}
+\dot{S}_3 &= 0\,\frac{\mathrm{kg}}{\mathrm{h}} \\
+\dot{A}_3 &= 20\,\frac{\mathrm{kg}}{\mathrm{h}} \\
+\dot{F}_3 &= 20\,\frac{\mathrm{kg}}{\mathrm{h}}
 \end{align*}
 
 \textit{Tabla final.}
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|X|X|}
-\hline
-\textbf{Corriente} & \textbf{$\dot{S_h}$ (kg/h)}  & \textbf{$\dot{S}$ (kg/h)} &
-\textbf{$\dot{A}$ (kg/h)} & \textbf{$\dot{F}$ (kg/h)} \\
-\hline
-\corriente{1} & 500 & 0 & 0 & 500 \\
-\hline
-\corriente{2} & 0 & 480 & 0 & 480 \\
-\hline
-\corriente{3} & 0 & 0 & 20 & 20 \\
-\hline
-\end{tabularx}
-\end{center}
-
-Ademas debo corregir todo el Solido 480 es $S_3$ no $S_2$ por lo que las notaciones estan al reves conque el resultado es el mismo, solo es por convencion del diagrama
-
-Quisera simplificarlo quitando el Sh, pero aun asi no daria, porque en el balance de S1=S2+S3 daria 500 = 0 + 480 no tiene sentido
-lo que quiero pensarque se queria plantear era algo parecido a: Aquí tienes el texto transcrito de la imagen:8. Un evaporador industrial se alimenta con $1200\text{ kg/h}$ de un jarabe que contiene $12\%$ en masa de sólidos solubles y el resto se puede considerar agua. Se evapora únicamente el $75\%$ del agua original de la alimentación, y todas las corrientes se encuentran aproximadamente a $100\text{ °C}$.
-donde si notas no dice solido y agua juntos si no que un porcentaje de la corriente es agua y el otro es solido, lo que hace que al hacer el balance el solido siga siendo solido y el agua siga siendo agua
-no que esten fucionados y entonces el problema se vuelve en algo de cambio de materia porque no es ya lo mismo, por lo que se tendria que plantear como dije, ambos llegas al mismo resultado, pero uno
-es basicamente con deducción y el otro con formulas reales asi como lo hice, 
-quiero fucionar o más bien ejemploficar bien 2 cosas 1 ambos problemas uno bien redactado y otro mal como este, que se puede llegar ambos al mismo resultado por analsis
-pero ocupan diferentes conceptos a la vez que son realmente lo mismo, que es importante plantear bien las ecuaciones y que puede llegar a pasar cosas como esta que no son sin reacción
-
-
-\end{exercise}
-
-\begin{exercise}{17}{}
-Una columna de destilación recibe $1000\,\mathrm{kg/h}$ de
-alimentación. La columna produce dos corrientes: destilado y fondos.
-Si el destilado tiene un flujo de $350\,\mathrm{kg/h}$ y la columna
-opera en régimen permanente, ¿cuál es el flujo de la corriente de
-fondos?
-
-\textit{Paso 1. DFP del proceso.}
-
-\begin{center}
-% \includegraphics[width=0.55\textwidth]{RUTA_AL_DIAGRAMA}
-\end{center}
-
-\textit{Paso 2. Tabla de corrientes.}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|X|}
-\hline
-\textbf{Corriente} & \textbf{$\dot{B}$ (kg/h)} &
-\textbf{$\dot{T}$ (kg/h)} & \textbf{$\dot{F}$ (kg/h)} \\
-\hline
-\corriente{1} & $\dot{B}_1$ & $\dot{T}_1$ & 1000 \\
-\hline
-\corriente{2} & $\dot{B}_2$ & $\dot{T}_2$ & 350 \\
-\hline
-\corriente{3} & $\dot{B}_3$ & $\dot{T}_3$ & $\dot{F}_3$ \\
-\hline
-\end{tabularx}
-\end{center}
-
-\textit{Paso 3. Ecuaciones.}
-
-\textit{Ecuaciones de total.}
-
-\vspace{3cm}
-
-\textit{Ecuaciones de balance.}
-
-\vspace{3cm}
-
-\textit{Ecuación independiente.}
-
-\vspace{2cm}
-
-\textit{Paso 4. Resultado.}
-
-\vspace{4cm}
-\end{exercise}
-
-\begin{exercise}{18}{}
-Un tanque contiene inicialmente $500\,\mathrm{kg}$ de agua. Se
-alimenta con una corriente de $20\,\mathrm{kg/min}$ y se descarga
-por otra corriente de $15\,\mathrm{kg/min}$. Determina si el sistema
-está en régimen permanente. Si no lo está, calcula la velocidad de
-acumulación y la masa de agua en el tanque después de $10$ minutos.
-
-\textit{Paso 1. DFP del proceso.}
-
-\begin{center}
-% \includegraphics[width=0.55\textwidth]{RUTA_AL_DIAGRAMA}
-\end{center}
-
-\textit{Paso 2. Tabla de corrientes.}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|}
-\hline
-\textbf{Corriente} & \textbf{$\dot{A}$ (kg/min)} &
-\textbf{$\dot{F}$ (kg/min)} \\
-\hline
-\corriente{1} & 20 & 20 \\
-\hline
-\corriente{2} & 15 & 15 \\
-\hline
-\end{tabularx}
-\end{center}
-
-Nota: la masa inicial en el tanque es $500\,\mathrm{kg}$ de agua.
-
-\textit{Paso 3. Ecuaciones.}
-
-\textit{Ecuaciones de total.}
-
-\vspace{2cm}
-
-\textit{Ecuación de balance.}
-
-\vspace{3cm}
-
-\textit{Paso 4. Resultado.}
-
-\vspace{4cm}
-\end{exercise}
-
-\begin{exercise}{19}{}
-A un divisor de flujo de dos salidas entran $25\,\mathrm{lb/min}$
-de una corriente acuosa líquida de etanol al $40\%$ en masa. Una
-medición física revela que el flujo de una corriente de salida es
-exactamente el doble del de la otra. Elabora dos tablas de balance:
-una en flujo y otra en composición.
-
-\textit{Paso 1. DFP del proceso.}
-
-\begin{center}
-% \includegraphics[width=0.55\textwidth]{RUTA_AL_DIAGRAMA}
-\end{center}
-
-\textit{Paso 2. Conversión de unidades.}
-
-\vspace{3cm}
-
-\textit{Paso 3. Tabla de flujos.}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|X|}
-\hline
-\textbf{Corriente} & \textbf{$\dot{A}$ (kg/h)} &
-\textbf{$\dot{E}$ (kg/h)} & \textbf{$\dot{F}$ (kg/h)} \\
-\hline
-\corriente{1} & $\dot{A}_1$ & $\dot{E}_1$ & $\dot{F}_1$ \\
-\hline
-\corriente{2} & $\dot{A}_2$ & $\dot{E}_2$ & $\dot{F}_2$ \\
-\hline
-\corriente{3} & $\dot{A}_3$ & $\dot{E}_3$ & $\dot{F}_3$ \\
-\hline
-\end{tabularx}
-\end{center}
-
-\textit{Tabla de composiciones.}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|X|}
-\hline
-\textbf{Corriente} & \textbf{$w^{A}$} & \textbf{$w^{E}$} &
-\textbf{Suma} \\
-\hline
-\corriente{1} & $w_1^A$ & $w_1^E$ & 1.00 \\
-\hline
-\corriente{2} & $w_2^A$ & $w_2^E$ & 1.00 \\
-\hline
-\corriente{3} & $w_3^A$ & $w_3^E$ & 1.00 \\
-\hline
-\end{tabularx}
-\end{center}
-
-\textit{Paso 4. Ecuaciones.}
-
-\textit{Ecuaciones de total.}
-
-\vspace{3cm}
-
-\textit{Ecuaciones de balance.}
-
-\vspace{3cm}
-
-\textit{Relación adicional.}
-
-\vspace{2cm}
-
-\textit{Paso 5. Resultado.}
-
-\vspace{4cm}
-\end{exercise}
-
-\begin{exercise}{20}{}
-Un cristalizador se alimenta con $18\,\mathrm{kg}$ de una solución
-saturada de \ce{CuSO4} al $30\%$ en masa a una temperatura elevada.
-Al enfriarse el sistema, precipitan cristales de \ce{CuSO4} anhidro
-como sólidos puros, dejando una solución remanente con una
-concentración del $15\%$ en masa de la sal. Determina la masa de
-cristales y la masa de solución remanente.
-
-\textit{Paso 1. DFP del proceso.}
-
-\begin{center}
-% \includegraphics[width=0.55\textwidth]{RUTA_AL_DIAGRAMA}
-\end{center}
-
-\textit{Paso 2. Tabla de corrientes.}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|X|}
-\hline
-\textbf{Corriente} & \textbf{$S$ (kg)} & \textbf{$A$ (kg)} &
-\textbf{$F$ (kg)} \\
-\hline
-\corriente{1} & $S_1$ & $A_1$ & 18 \\
-\hline
-\corriente{2} & $S_2$ & $A_2$ & $F_2$ \\
-\hline
-\corriente{3} & $S_3$ & $A_3$ & $F_3$ \\
-\hline
-\end{tabularx}
-\end{center}
-
-\textit{Paso 3. Ecuaciones.}
-
-\textit{Ecuaciones de total.}
-
-\vspace{3cm}
-
-\textit{Ecuaciones de balance.}
-
-\vspace{3cm}
-
-\textit{Relaciones adicionales.}
-
-\vspace{2cm}
-
-\textit{Paso 4. Resultado.}
-
-\vspace{4cm}
-\end{exercise}
-
-\begin{exercise}{21}{}
-Una corriente gaseosa de $3\,\mathrm{m^3/min}$ (a $20\,^\circ$C y
-$1\,\mathrm{atm}$) contiene $60\%$ en mol de \ce{N2} y el resto de
-\ce{CO2}. La corriente entra a una torre de absorción que opera a
-régimen permanente, donde se remueve el $70\%$ del \ce{CO2} en una
-corriente líquida. El nitrógeno no se disuelve. Determina los flujos
-másicos y molares de cada componente en la corriente gaseosa de
-salida, y su composición en fracción masa y mol.
-
-\textit{Paso 1. DFP del proceso.}
-
-\begin{center}
-% \includegraphics[width=0.55\textwidth]{RUTA_AL_DIAGRAMA}
-\end{center}
-
-\textit{Paso 2. Conversión de unidades.}
-
-\vspace{3cm}
-
-\textit{Paso 3. Tabla de flujos molares.}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\textwidth}{|c|X|X|X|}
-\hline
-\textbf{Corriente} & \textbf{$\dot{N}$ (mol/min)} &
-\textbf{$\dot{C}$ (mol/min)} & \textbf{$\dot{F}$ (mol/min)} \\
-\hline
-\corriente{1} & $\dot{N}_1$ & $\dot{C}_1$ & $\dot{F}_1$ \\
-\hline
-\corriente{2} & $\dot{N}_2$ & $\dot{C}_2$ & $\dot{F}_2$ \\
-\hline
-\corriente{3} & $\dot{N}_3$ & $\dot{C}_3$ & $\dot{F}_3$ \\
-\hline
-\end{tabularx}
-\end{center}
-
-\textit{Paso 4. Ecuaciones.}
-
-\textit{Ecuaciones de total.}
-
-\vspace{3cm}
-
-\textit{Ecuaciones de balance.}
-
-\vspace{3cm}
-
-\textit{Relaciones adicionales.}
-
-\vspace{2cm}
-
-\textit{Paso 5. Resultado.}
-
-\vspace{4cm}
-\end{exercise}
-
-\begin{exercise}{22}{}
-Una planta industrial procesa una suspensión de sólido húmedo
-mediante un filtro rotatorio seguido en serie por un secador
-rotatorio. Al filtro entran $1500\,\mathrm{kg/h}$ de una suspensión
-que contiene un $60\%$ de humedad. En el filtro se separa una
-corriente de agua líquida (filtrado), obteniéndose una torta húmeda
-con $25\%$ de humedad, la cual pasa al secador rotatorio, donde
-entra en contacto con $1800\,\mathrm{kg/h}$ de aire seco,
-evaporando agua hasta que el producto final retiene únicamente un
-$3\%$ de humedad.
-
-Determina los flujos de todas las corrientes del proceso.
-
-\textit{Paso 1. DFP del proceso.}
-
-\begin{center}
-% \includegraphics[width=0.55\textwidth]{RUTA_AL_DIAGRAMA}
-\end{center}
-
-\textit{Paso 2. Tabla de flujos másicos.}
 
 \begin{center}
 \renewcommand{\arraystretch}{1.6}
@@ -2277,36 +1939,62 @@ Determina los flujos de todas las corrientes del proceso.
 \textbf{Corriente} & \textbf{$\dot{S}$ (kg/h)} &
 \textbf{$\dot{A}$ (kg/h)} & \textbf{$\dot{F}$ (kg/h)} \\
 \hline
-\corriente{1} & $\dot{S}_1$ & $\dot{A}_1$ & 1500 \\
+\corriente{1} & 480 & 20 & 500 \\
 \hline
-\corriente{2} & $\dot{S}_2$ & $\dot{A}_2$ & $\dot{F}_2$ \\
-\hline
-\corriente{3} & $\dot{S}_3$ & $\dot{A}_3$ & $\dot{F}_3$ \\
-\hline
-\corriente{4} & $\dot{S}_4$ & $\dot{A}_4$ & 1800 \\
-\hline
-\corriente{5} & $\dot{S}_5$ & $\dot{A}_5$ & $\dot{F}_5$ \\
-\hline
-\corriente{6} & $\dot{S}_6$ & $\dot{A}_6$ & $\dot{F}_6$ \\
+\corriente{2} & 480 & 0 & 480 \\
+\corriente{3} & 0 & 20 & 20 \\
 \hline
 \end{tabularx}
 \end{center}
-
-\textit{Paso 3. Ecuaciones.}
-
-\textit{Ecuaciones de total.}
-
-\vspace{4cm}
-
-\textit{Ecuaciones de balance.}
-
-\vspace{4cm}
-
-\textit{Relaciones adicionales.}
-
-\vspace{2cm}
-
-\textit{Paso 4. Resultado.}
-
-\vspace{4cm}
 \end{exercise}
+
+\begin{notaimportante}
+\textbf{Sobre cómo se descompone una mezcla.} Una corriente que
+contiene varios componentes (como un sólido húmedo: sólido + agua)
+no se trata como un solo compuesto. Se descompone en sus
+componentes desde el inicio, y cada componente se balancea por
+separado. Si se trata como un solo compuesto, aparece la tentación
+de escribir una ``transformación'' de un compuesto en otros
+(como $\dot{S_h}_1 \to \dot{S}_2 + \dot{A}_3$), pero eso no es
+una reacción química: es una separación física. En una separación,
+ningún componente se genera ni se consume, solo se redistribuye
+entre las corrientes de salida.
+
+Esto es la diferencia entre el ejercicio 16 (sólido húmedo) y el
+ejercicio 8 del temario (evaporador de jarabe). En el evaporador,
+el enunciado dice desde el inicio qué fracción es sólido y qué
+fracción es agua, y los balances se plantean por componente sin
+dificultad. En el ejercicio 16, si el enunciado no especifica la
+composición del sólido húmedo, hay que deducirla del balance
+mismo. Pero nunca se trata como si fuera un compuesto único.
+\end{notaimportante}
+
+\begin{notafija}
+\textbf{Reglas visuales de las tablas.} Las tablas de flujos y las de
+composición se leen distinto:
+
+\begin{itemize}
+    \item \textbf{Tabla de flujos por componente:} las sumas
+    \textbf{horizontales} dan el flujo total de cada corriente
+    ($\dot{A}_i + \dot{B}_i + \dot{C}_i = \dot{F}_i$). Las sumas
+    \textbf{verticales} dan el balance por componente
+    ($\sum \dot{A}_{\text{entrada}} = \sum \dot{A}_{\text{salida}}$).
+    Las dos sumas tienen significado físico.
+
+    \item \textbf{Tabla de composición:} solo las sumas
+    \textbf{horizontales} tienen significado. Cada renglón suma 1
+    ($w_i^A + w_i^B + w_i^C = 1$). Las sumas verticales no tienen
+    sentido: no se suman fracciones del mismo componente en
+    distintas corrientes.
+
+    \item \textbf{Relación entre las dos tablas:} el flujo de un
+    componente se obtiene multiplicando su composición por el flujo
+    total de la corriente:
+    \[
+    \dot{J}_i = w_i^J \cdot \dot{F}_i
+    \qquad \text{o} \qquad
+    \dot{J}_i = \chi_i^J \cdot \dot{F}_i
+    \]
+    según se trabaje en masa o en mol.
+\end{itemize}
+\end{notafija}
