@@ -700,3 +700,180 @@ en propanona). La diferencia es de \textbf{1 electrón}, no de $2$. Un
 cambio impar no es compatible con una transferencia en pares como en los 
 procesos iónicos, así que la reacción debe pasar por un intermediario 
 radicalario: la transferencia ocurre de uno en uno.
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Balanceo de reacciones orgánicas (Método del [H])}
+\subsubsection*{\textcolor{blueunam}{Balanceo de reacciones orgánicas (Método del [H])}}
+
+En química orgánica, el balanceo de reacciones redox no suele hacerse contando electrones libres, sino utilizando el concepto de \textbf{hidrógeno naciente} o \textbf{[H]}. Este método es una adaptación directa del método del ion-electrón, pero resulta mucho más intuitivo para moléculas con esqueletos carbonados.
+
+\textbf{El equivalente químico:} un \ce{[H]} representa formalmente un protón y un electrón.
+\[
+\ce{[H] \equiv H+ + e-}
+\]
+Por lo tanto, transferir dos \ce{[H]} es exactamente lo mismo que transferir dos electrones.
+
+\textbf{Especies espectadoras y herramientas de balanceo.}
+Antes de aplicar el método, es crucial identificar a los \textbf{iones espectadores}. En las reacciones redox, iones como el potasio (\ce{K+}) o el sodio (\ce{Na+}) no participan en la transferencia de electrones; su número de oxidación no cambia. Por eso se ignoran en las semirreacciones y se trabajan solo con las especies que sí se oxidan o reducen (como el dicromato, \ce{Cr2O7^{2-}}). Al final, los espectadores vuelven a aparecer para formar las sales.
+
+\textbf{Nota importante:} a diferencia de los iones espectadores, los átomos de hidrógeno y oxígeno \textbf{nunca} se ignoran. El agua (\ce{H2O}), los protones (\ce{H+}) y los hidrógenos nacientes (\ce{[H]}) son las herramientas con las que balanceamos la masa y las cargas.
+
+\textbf{Reglas generales para el balanceo con [H]:}
+\begin{enumerate}
+    \item \textbf{Identificar la oxidación y la reducción:} 
+    \begin{itemize}
+        \item Oxidación: la molécula gana oxígeno, halógenos, o pierde hidrógenos.
+        \item Reducción: la molécula pierde oxígeno, halógenos, o gana hidrógenos.
+    \end{itemize}
+    
+    \item \textbf{Balancear los átomos (esqueleto):} asegurar que el número de carbonos, halógenos, nitrógenos y otros átomos se conserve en ambos lados. \\
+    \textit{Tip:} para no arrastrar moléculas grandes, escribe la fórmula molecular o condensada (ej. \ce{C6H5Br} en lugar de dibujar todo el anillo).
+    
+    \item \textbf{Balancear los oxígenos con \ce{H2O}:} añadir moléculas de agua donde falte oxígeno.
+    
+    \item \textbf{Balancear los hidrógenos con [H]:} añadir \ce{[H]} en el lado que necesite hidrógenos para igualar la ecuación. Cada \ce{[H]} equivale formalmente a \ce{H+ + e-}.
+    
+    \item \textbf{Balancear la carga:} en medio ácido, añadir \ce{H+} del lado que tenga la carga más negativa. En medio básico, añadir \ce{OH-} del lado que tenga la carga más positiva.
+    
+    \item \textbf{Igualar los [H] (electrones):} multiplicar las semirreacciones por los coeficientes necesarios para que los \ce{[H]} ganados en la reducción sean iguales a los perdidos en la oxidación.
+    
+    \item \textbf{Sumar y cancelar:} sumar las semirreacciones, cancelar los términos semejantes (\ce{[H]}, \ce{H2O}, \ce{H+}) y obtener la ecuación iónica neta.
+    
+    \item \textbf{Coherencia química y ajuste final:} agrupar los iones para formar las sales moleculares. Luego, verificar que los iones espectadores (como \ce{K+}, \ce{Na+}) y sus contraiones (como \ce{SO4^{2-}}) coincidan en número. Si no coinciden, ajustar los coeficientes de las sales. Finalmente, comprobar que todos los átomos (C, H, O, metales, etc.) estén balanceados.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Ejemplo: Oxidación de etanol a ácido acético con dicromato de potasio en medio ácido.}
+
+\begin{center}
+\begingroup
+\small
+\setchemfig{atom sep=1.6em}
+\schemestart
+\chemfig{CH_3-CH_2-OH}
+\+
+\ce{K2Cr2O7}
+\+
+\ce{H2SO4}
+\arrow{->}
+\chemfig{CH_3-COOH}
+\+
+\ce{Cr2(SO4)3}
+\+
+\ce{K2SO4}
+\+
+\ce{H2O}
+\schemestop
+\endgroup
+\end{center}
+
+\textbf{Paso 1: Semirreacción de Oxidación.}
+Usamos la fórmula general \ce{C2H6O} para el etanol y \ce{C2H4O2} para el ácido acético. 
+
+Primero, el esqueleto básico balanceado (carbonos):
+\[
+\ce{C2H6O -> C2H4O2}
+\]
+
+Segundo, balanceamos los oxígenos añadiendo agua en los reactivos (extremo izquierdo):
+\[
+\ce{H2O + C2H6O -> C2H4O2}
+\]
+
+Tercero, balanceamos los hidrógenos añadiendo \ce{[H]} en los productos (extremo derecho):
+\begin{equation*}
+\ce{H2O + C2H6O -> C2H4O2 + 4[H]} \tag*{\textit{(Oxidación)}}
+\end{equation*}
+\textit{Nota: el etanol pierde 4 \ce{[H]} (4 electrones).}
+
+\vspace{0.5cm}
+
+\textbf{Paso 2: Semirreacción de Reducción.}
+El dicromato (\ce{Cr2O7^{2-}}) se reduce a cromo (III). 
+
+Primero, el esqueleto básico balanceado (cromos):
+\[
+\ce{2Cr2O7^{2-} -> 4Cr^{3+}}
+\]
+
+Segundo, balanceamos los oxígenos añadiendo agua (extremo derecho):
+\[
+\ce{2Cr2O7^{2-} -> 4Cr^{3+} + 14H2O}
+\]
+
+Tercero, balanceamos la carga. Del lado de los reactivos tenemos una carga de $-4$ y del lado de los productos una carga de $+12$. Para igualar en medio ácido, añadimos $16H^+$ al extremo izquierdo de los reactivos:
+\[
+\ce{16H+ + 2Cr2O7^{2-} -> 4Cr^{3+} + 14H2O}
+\]
+
+Cuarto, verificamos los hidrógenos. En los reactivos hay $16$ hidrógenos y en los productos hay $28$ (por las $14H_2O$). Para balancear los $12$ hidrógenos faltantes, añadimos $12[H]$ al extremo izquierdo:
+\begin{equation*}
+\ce{12[H] + 16H+ + 2Cr2O7^{2-} -> 4Cr^{3+} + 14H2O} \tag*{\textit{(Reducción)}}
+\end{equation*}
+\textit{Nota: el cromo pasa de n.o. +6 a +3, ganando 12 electrones en total.}
+
+\vspace{0.5cm}
+
+\textbf{Paso 3: Igualar los [H], cancelar e integrar.}
+La oxidación produce \(4 \ce{[H]}\) y la reducción consume \(12 \ce{[H]}\). Para igualar los electrones, multiplicamos únicamente la semirreacción de oxidación por 3:
+\[
+\ce{3H2O + 3C2H6O -> 3C2H4O2 + 12[H]}
+\]
+
+Sumamos ambas semirreacciones y cancelamos los términos semejantes algebraicamente:
+\begin{itemize}
+    \item Los \(12 \ce{[H]}\) están en ambos lados, así que se eliminan por completo (quedan a 0).
+    \item Los \(\ce{H2O}\) no se eliminan del todo: hay 3 a la izquierda y 14 a la derecha. Al restar \(14 - 3 = 11\), quedan 11 moléculas de agua en el lado de los productos.
+\end{itemize}
+
+\[
+\ce{\cancelto{0}{12[H]} + 16H+ + \cancelto{0}{3H2O} + 3C2H6O + 2Cr2O7^{2-} -> 3C2H4O2 + 4Cr^{3+} + \cancelto{11}{14H2O} + \cancelto{0}{12[H]}}
+\]
+
+Agrupando los reactivos, la ecuación iónica neta es:
+\[
+\ce{16H+ + 3C2H6O + 2Cr2O7^{2-} -> 3C2H4O2 + 4Cr^{3+} + 11H2O}
+\]
+\textit{Comprobación de cargas:} a la izquierda hay $+12$ (del \(16H^+\) menos el \(-4\) de los dos dicromatos). A la derecha hay $+12$ (de los cuatro \(Cr^{3+}\)). Las cargas están balanceadas.
+
+\vspace{0.5cm}
+
+\textbf{Paso 4: Coherencia química (formar sales y ajuste final).}
+Los $16 \ce{H+}$ de la ecuación iónica provienen del ácido sulfúrico (\ce{H2SO4}). Como es un ácido diprótico (aporta dos \(H^+\) por molécula), se necesitan $8 \ce{H2SO4}$ para obtener los 16 protones. 
+
+Al armar la ecuación molecular juntando los iones, escribimos tentativamente las sales:
+\[
+\ce{3C2H6O + 2K2Cr2O7 + 8H2SO4 -> 3C2H4O2 + 2Cr2(SO4)3 + K2SO4 + 11H2O}
+\]
+
+\textbf{Ajuste final:} si observamos el potasio, del lado de los reactivos tenemos $4 \ce{K}$ (por los $2\ce{K2Cr2O7}$), pero del lado de los productos solo hay $2 \ce{K}$ (por el $\ce{K2SO4}$). Para balancear el potasio, el coeficiente del sulfato de potasio debe ser 2. Este ajuste también balancea los sulfatos (S) y oxígenos (O) de esa sal:
+\[
+\ce{3C2H6O + 2K2Cr2O7 + 8H2SO4 -> 3C2H4O2 + 2Cr2(SO4)3 + 2K2SO4 + 11H2O}
+\]
+
+\textbf{Comprobación final de átomos:}
+\begin{itemize}
+    \item \textbf{C:} $3 \times 2 = 6$ a la izquierda; $3 \times 2 = 6$ a la derecha.
+    \item \textbf{H:} $3(6) + 8(2) = 34$ a la izquierda; $3(4) + 11(2) = 34$ a la derecha.
+    \item \textbf{O:} $3(1) + 2(7) + 8(4) = 49$ a la izquierda; $3(2) + 2(12) + 2(4) + 11(1) = 49$ a la derecha.
+    \item \textbf{K:} $2 \times 2 = 4$ a la izquierda; $2 \times 2 = 4$ a la derecha.
+    \item \textbf{Cr:} $2 \times 2 = 4$ a la izquierda; $2 \times 2 = 4$ a la derecha.
+    \item \textbf{S:} $8 \times 1 = 8$ a la izquierda; $2(3) + 2(1) = 8$ a la derecha.
+\end{itemize}
+La ecuación está totalmente balanceada.
+
+\vspace{0.5cm}
+
+\textbf{Información que aporta el balanceo:}
+\begin{itemize}
+    \item \textbf{Electrones intercambiados:} Se transfirieron 12 electrones en total (evidenciados por los 12 \ce{[H]} que se cancelaron en el Paso 3).
+    \item \textbf{¿Quién se oxida?} El etanol (\ce{C2H6O}), porque pierde hidrógenos y gana oxígeno.
+    \item \textbf{¿Quién se reduce?} El dicromato (\ce{Cr2O7^{2-}}), porque el cromo pasa de n.o. +6 a +3.
+    \item \textbf{Agente reductor:} El etanol (es la especie que se oxida y provoca que la otra se reduzca).
+    \item \textbf{Agente oxidante:} El dicromato (es la especie que se reduce y provoca que la otra se oxide).
+    \item \textbf{Ecuación molecular balanceada:} 
+    \[
+    \ce{3C2H6O + 2K2Cr2O7 + 8H2SO4 -> 3C2H4O2 + 2Cr2(SO4)3 + 2K2SO4 + 11H2O}
+    \]
+\end{itemize}

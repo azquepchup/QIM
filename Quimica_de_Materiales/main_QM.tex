@@ -1,20 +1,80 @@
 \documentclass[12pt]{article}
 
 % ══════════════════════════════════════════════════════════════
+%  CODIFICACIÓN E IDIOMA
+% ══════════════════════════════════════════════════════════════
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage[defaultfam,tabular,lining]{montserrat}
+\spanishdecimal{.}
+
+% ══════════════════════════════════════════════════════════════
 %  FORMATO Y DISEÑO
 % ══════════════════════════════════════════════════════════════
 \usepackage[top=2.5cm, bottom=3.2cm, outer=3cm, inner=3cm]{geometry}
 \usepackage{ragged2e}
-\usepackage[spanish]{babel}
-\usepackage[defaultfam,tabular,lining]{montserrat}
-\usepackage[T1]{fontenc}
-\usepackage{xcolor}
-\usepackage{tocloft}
 \usepackage{setspace}
+\usepackage{tocloft}
 \usepackage{fancyhdr}
 \usepackage{caption}
 \usepackage{makeidx}
 \makeindex
+\usepackage{microtype}
+
+% ══════════════════════════════════════════════════════════════
+%  COLORES
+% ══════════════════════════════════════════════════════════════
+\usepackage{xcolor}
+\definecolor{blueunam}{RGB}{50, 70, 90}
+\definecolor{catred}{RGB}{192,57,43}
+\definecolor{anblue}{RGB}{41,128,185}
+\definecolor{col1}{RGB}{210,228,255}
+\definecolor{col2}{RGB}{200,238,210}
+\definecolor{trans}{RGB}{255,238,200}
+\definecolor{trans2}{RGB}{255,220,185}
+\definecolor{pos}{RGB}{228,218,255}
+\definecolor{especial}{RGB}{235,235,235}
+\definecolor{rojoNota}{RGB}{180, 55, 55}
+\definecolor{amarilloNota}{RGB}{200, 160, 50}
+\definecolor{azulNota}{RGB}{55, 115, 165}
+
+% ══════════════════════════════════════════════════════════════
+%  MATEMÁTICAS
+% ══════════════════════════════════════════════════════════════
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{nccmath}
+\usepackage{bbm}
+\usepackage{esint}
+\usepackage{cancel}
+\usepackage{braket}
+\usepackage{tensor}
+\setcounter{MaxMatrixCols}{30}
+\allowdisplaybreaks
+
+% ══════════════════════════════════════════════════════════════
+%  UNIDADES
+% ══════════════════════════════════════════════════════════════
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={.}, group-separator={,}}
+
+% ══════════════════════════════════════════════════════════════
+%  GRÁFICOS Y FIGURAS
+% ══════════════════════════════════════════════════════════════
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\AtBeginDocument{\shorthandoff{>}}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, decorations.markings}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 % ══════════════════════════════════════════════════════════════
 %  TABLAS
@@ -29,59 +89,28 @@
 \usepackage{multicol}
 
 % ══════════════════════════════════════════════════════════════
-%  GRÁFICOS Y FIGURAS
-% ══════════════════════════════════════════════════════════════
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{tikz}
-\AtBeginDocument{\shorthandoff{>}}
-\usetikzlibrary{shapes.geometric, arrows.meta, positioning, decorations.markings}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-
-% ══════════════════════════════════════════════════════════════
-%  MATEMÁTICAS
-% ══════════════════════════════════════════════════════════════
-\usepackage{mathtools}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsbsy}
-\usepackage{amsfonts}
-\usepackage{amstext}
-\usepackage{amscd}
-\usepackage{nccmath}
-\usepackage{bbm}
-\usepackage{esint}
-\usepackage{cancel}
-\usepackage{braket}
-\usepackage{tensor}
-\usepackage{siunitx}
-\sisetup{output-decimal-marker={.}, group-separator={,}}
-\setcounter{MaxMatrixCols}{30}
-
-% ══════════════════════════════════════════════════════════════
 %  QUÍMICA
 % ══════════════════════════════════════════════════════════════
 \usepackage{chemfig}
 \usepackage[version=4]{mhchem}
-% chemmacros v6.2a (texlive 2026) rompe el índice al cargar módulo nomenclature
-% internamente — reactivar cuando se actualice a v6.3+
+% chemmacros v6.2a (texlive 2026) rompe el índice al cargar el módulo
+% nomenclature internamente. Reactivar al actualizar a v6.3+.
 % \usepackage{chemmacros}
 % \usepackage{chemgreek}
 % \chemsetup{modules={redox,thermodynamics,isotopes,iupac}}
 \usepackage{elements}
 \usepackage{chemnum}
-% chemarr rompe el índice en combinación con tocloft — reactivar con chemmacros
+% chemarr rompe el índice en combinación con tocloft.
+% Reactivar cuando se integre chemmacros.
 % \usepackage{chemarr}
 \usepackage{chemplants}
 \usepackage{carbohydrates}
 \usepackage{chemobabel}
 \usepackage{tikzorbital}
 \usepackage{modiagram}
-% ghsystem rompe el índice vía módulo nomenclature de chemmacros
-% Usar PNGs de /usr/share/texmf-dist/tex/latex/ghsystem/pictures/ con \includegraphics
-% o cargar manualmente en documentos sin \tableofcontents
+% ghsystem rompe el índice vía módulo nomenclature de chemmacros.
+% Usar PNGs de /usr/share/texmf-dist/tex/latex/ghsystem/pictures/
+% con \includegraphics, o cargar solo en documentos sin \tableofcontents.
 % \usepackage{ghsystem}
 
 % -- Estilo ddbond: enlace deslocalizado --
@@ -129,38 +158,57 @@ postaction={decorate}
 }
 
 % ══════════════════════════════════════════════════════════════
+%  LISTAS
+% ══════════════════════════════════════════════════════════════
+% enumitem[shortlabels]: permite [a)], [1.], [label=...], resume, etc.
+% Sustituye a \usepackage{enumerate} (incompatible).
+\usepackage[shortlabels]{enumitem}
+
+% ══════════════════════════════════════════════════════════════
 %  CAJAS Y RESALTADO
 % ══════════════════════════════════════════════════════════════
 \usepackage[most]{tcolorbox}
 
 % ══════════════════════════════════════════════════════════════
-%  REFERENCIAS Y ENLACES
+%  NOTAS POR NIVEL — semáforo con línea izquierda
 % ══════════════════════════════════════════════════════════════
-\usepackage[utf8]{inputenc}
-\usepackage{csquotes}
-\usepackage[hidelinks]{hyperref}
-\usepackage{url}
-\usepackage{enumitem}
-\usepackage{fancyvrb}
-\usepackage{cleveref}
-\usepackage{witharrows}
-\usepackage{microtype}
-\usepackage[backend=biber, style=apa, language=spanish]{biblatex}
 
-\allowdisplaybreaks
+% Nivel 1: Relevante — rojo, línea gruesa
+\newtcolorbox{notafija}{
+    enhanced, breakable,
+    colback=white, colframe=rojoNota, coltext=black,
+    boxrule=0pt, leftrule=3pt, arc=0pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+    fontupper=\small
+}
+
+% Nivel 2: Importante — amarillo, línea media
+\newtcolorbox{notaimportante}{
+    enhanced, breakable,
+    colback=white, colframe=amarilloNota, coltext=black,
+    boxrule=0pt, leftrule=2pt, arc=0pt,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+    fontupper=\small\itshape
+}
+
+% Nivel 3: Normal (didáctico) — azul, línea delgada
+\newtcolorbox{notadidactica}{
+    enhanced, breakable,
+    colback=white, colframe=azulNota, coltext=black!70,
+    boxrule=0pt, leftrule=1pt, arc=0pt,
+    left=8pt, right=8pt, top=4pt, bottom=4pt,
+    fontupper=\small\itshape
+}
 
 % ══════════════════════════════════════════════════════════════
-%  COLORES
+%  COMANDO PARA CORRIENTES DE SIGNO
 % ══════════════════════════════════════════════════════════════
-\definecolor{blueunam}{RGB}{50, 70, 90}
-\definecolor{catred}{RGB}{192,57,43}
-\definecolor{anblue}{RGB}{41,128,185}
-\definecolor{col1}{RGB}{210,228,255}
-\definecolor{col2}{RGB}{200,238,210}
-\definecolor{trans}{RGB}{255,238,200}
-\definecolor{trans2}{RGB}{255,220,185}
-\definecolor{pos}{RGB}{228,218,255}
-\definecolor{especial}{RGB}{235,235,235}
+\newcommand{\corriente}[1]{%
+    \tikz[baseline=(char.base)]{%
+        \node[shape=circle, draw, inner sep=1pt, minimum size=1.4em,
+              font=\small] (char) {#1};%
+    }%
+}
 
 % ══════════════════════════════════════════════════════════════
 %  ENCABEZADO Y PIE DE PÁGINA
@@ -168,12 +216,19 @@ postaction={decorate}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[R]{\thepage}
-% -- Encabezado con materia y sección activa (descomentar para activar) --
-% \fancyhead[L]{\small\textcolor{blueunam}{Nombre de la materia}}
-% \fancyhead[R]{\small\textcolor{blueunam}{\leftmark}}
-% \renewcommand{\headrulewidth}{0.4pt}
-% \renewcommand{\headrule}{\hbox to\headwidth{\color{blueunam}\leaders\hrule height \headrulewidth\hfill}}
 \renewcommand{\headrulewidth}{0pt}
+
+% Encabezado opcional con materia y sección activa.
+% Uso en el main, después de \begin{document} y antes del primer \section:
+%   \activarEncabezado{Química de Materiales}
+% Requiere secciones numeradas (\section, no \section*).
+% Con \section* el \leftmark no se actualiza y el lado derecho queda vacío.
+\newcommand{\activarEncabezado}[1]{%
+  \fancyhead[L]{\small\textcolor{blueunam}{#1}}%
+  \fancyhead[R]{\small\textcolor{blueunam}{\nouppercase{\leftmark}}}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \renewcommand{\headrule}{\hbox to\headwidth{\color{blueunam}\leaders\hrule height \headrulewidth\hfill}}%
+}
 
 \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 
@@ -220,18 +275,44 @@ postaction={decorate}
     \begin{minipage}[t][1.8cm][t]{1.6cm}\end{minipage}}
 
 % ══════════════════════════════════════════════════════════════
-%  AMBIENTE DE EJERCICIOS
+%  AMBIENTES DE EJERCICIO (dos estilos)
 % ══════════════════════════════════════════════════════════════
+% Uso: \begin{exercise}{Título}{label} ... \end{exercise}
+%
+% Estilo A: caja con fondo gris (BME / QG2)
 \newtcbtheorem{exercise}{Ejercicio}{
-    enhanced,frame empty,interior empty,
+    enhanced, breakable,
+    colback=gray!10, colframe=gray!50,
+    boxrule=0.4pt, arc=0pt, left=0.2cm,
+    attach boxed title to top left={yshift=-2mm,xshift=-2mm},
+    coltitle=black, fonttitle=\bfseries,
+    colbacktitle=white,
+    boxed title style={boxrule=.4pt,sharp corners, colframe=gray!50}
+}{exercise}
+
+% Estilo B: solo borde izquierdo minimalista (QM)
+% Uso: \begin{exerciseline}{Título}{label} ... \end{exerciseline}
+\newtcbtheorem{exerciseline}{Ejercicio}{
+    enhanced, frame empty, interior empty,
     colframe=blueunam,
     borderline west={1pt}{0pt}{blueunam},
     left=0.2cm,
     attach boxed title to top left={yshift=-2mm,xshift=-2mm},
-    coltitle=black,
-    fonttitle=\bfseries,
+    coltitle=black, fonttitle=\bfseries,
     colbacktitle=white,
-    boxed title style={boxrule=.4pt,sharp corners}}{exercise}
+    boxed title style={boxrule=.4pt,sharp corners}
+}{exerciseline}
+
+% ══════════════════════════════════════════════════════════════
+%  REFERENCIAS, ENLACES Y CITAS
+% ══════════════════════════════════════════════════════════════
+\usepackage{csquotes}
+\usepackage{url}
+\usepackage{fancyvrb}
+\usepackage{witharrows}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage[backend=biber, style=apa, language=spanish]{biblatex}
 
 % ══════════════════════════════════════════════════════════════
 %  PIES DE FIGURA Y TABLA (APA)
@@ -243,6 +324,12 @@ postaction={decorate}
   singlelinecheck=false,font=doublespacing}
 
 \setlength{\parindent}{0pt}
+
+% ══════════════════════════════════════════════════════════════
+%  RECURSOS BIBLIOGRÁFICOS
+% ══════════════════════════════════════════════════════════════
+% Cada materia tiene su propio .bib — descomentar y ajustar:
+% \addbibresource{referencias_QM.bib}
 
 % ══════════════════════════════════════════════════════════════
 %  DOCUMENTO
@@ -275,17 +362,28 @@ postaction={decorate}
 \thispagestyle{empty}
 \newpage
 
-%---------- Apuntes ----------%
+%---------- Encabezado opcional (descomentar por documento) ----------%
+% \activarEncabezado{Química de Materiales}
+
+%---------- Fundamentos previos ----------%
 \spacing{1.5}
 \input{Fundamentos_previos}
 
 %---------- Apuntes ----------%
 \spacing{1.5}
 \input{Unidad_1}
+
+\spacing{1.5}
 \input{Unidad_2}
+
 %---------- Anexo ----------%
 \spacing{1.5}
 \input{anexo_QM}
+
+%---------- Bibliografía e índice (si aplica) ----------%
+% \newpage
+% \printbibliography
+% \printindex
 
 %---------- Final del documento ----------%
 \end{document}
