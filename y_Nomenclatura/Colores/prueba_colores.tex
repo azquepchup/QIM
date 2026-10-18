@@ -1,0 +1,351 @@
+\documentclass[10pt]{article}
+
+% ══════════════════════════════════════════════════════════════
+%  PAQUETES BÁSICOS PARA ESTE TEST VISUAL
+% ══════════════════════════════════════════════════════════════
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[margin=1.5cm, landscape]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{matrix, positioning, shadows}
+\usepackage{xcolor}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ══════════════════════════════════════════════════════════════
+%  QUÍMICA (Para los ejemplos)
+% ══════════════════════════════════════════════════════════════
+\usepackage{chemfig}
+\usepackage[version=4]{mhchem}
+
+% ══════════════════════════════════════════════════════════════
+%  DEFINICIÓN DE COLORES (PALETA SÓLIDA Y LEGIBLE)
+% ══════════════════════════════════════════════════════════════
+
+% --- Fundamentales (Texto normal) ---
+\colorlet{elemH}{black}
+\colorlet{elemC}{black}
+
+% --- No Metales y Gases Nobles ---
+\colorlet{elemN}{blue!85!black}
+\colorlet{elemO}{red!85!black}
+\colorlet{elemP}{orange!85!black}
+\colorlet{elemS}{yellow!80!black}
+\colorlet{elemSe}{orange!70!black}
+\colorlet{elemTe}{orange!85!black}
+\colorlet{elemPo}{brown!80!black}
+
+\colorlet{elemF}{green!60!black}
+\colorlet{elemCl}{green!80!black}
+\colorlet{elemBr}{brown!80!black}
+\colorlet{elemI}{purple!85!black}
+\colorlet{elemAt}{purple!60!black}
+
+\colorlet{elemHe}{cyan!80!black}
+\colorlet{elemNe}{cyan!85!black}
+\colorlet{elemAr}{teal!85!black}
+\colorlet{elemKr}{teal!75!black}
+\colorlet{elemXe}{teal!60!black}
+\colorlet{elemRn}{teal!40!black}
+
+% --- Metales Alcalinos (MolView: Violeta claro -> Morado -> Rosa Magenta) ---
+\definecolor{elemLi}{RGB}{160, 120, 220}
+\definecolor{elemNa}{RGB}{140, 80, 230}
+\definecolor{elemK}{RGB}{170, 60, 240}
+\definecolor{elemRb}{RGB}{210, 0, 200}
+\definecolor{elemCs}{RGB}{210, 0, 140}
+\definecolor{elemFr}{RGB}{240, 0, 180}
+
+% --- Metales Alcalinotérreos (MolView: Verde olivo -> Verde vibrante) ---
+\definecolor{elemBe}{RGB}{100, 120, 30}
+\definecolor{elemMg}{RGB}{60, 150, 50}
+\definecolor{elemCa}{RGB}{50, 160, 50}
+\definecolor{elemSr}{RGB}{40, 170, 40}
+\definecolor{elemBa}{RGB}{30, 130, 30}
+\definecolor{elemRa}{RGB}{20, 110, 20}
+
+% --- Grupo 13 (Cafés/Rosados) ---
+\colorlet{elemB}{brown!60!black}
+\colorlet{elemAl}{brown!70!black}
+\colorlet{elemGa}{brown!80!black}
+\colorlet{elemIn}{brown!90!black}
+\colorlet{elemTl}{red!50!black}
+
+% --- Grupo 14 (Grises Oscuros) ---
+\colorlet{elemSi}{gray!80!black}
+\colorlet{elemGe}{gray!70!black}
+\colorlet{elemSn}{gray!60!black}
+\colorlet{elemPb}{gray!50!black}
+
+% --- Grupo 15 (Azules/Violetas) ---
+\colorlet{elemAs}{violet!70!black}
+\colorlet{elemSb}{purple!80!black}
+\colorlet{elemBi}{purple!90!black}
+
+% --- Metales de Transición (Tonos metálicos oscuros) ---
+\colorlet{elemSc}{blue!50!black}
+\colorlet{elemTi}{blue!60!black}
+\colorlet{elemV}{blue!70!black}
+\colorlet{elemCr}{blue!80!black}
+\colorlet{elemMn}{blue!90!black}
+\colorlet{elemFe}{orange!60!black}
+\colorlet{elemCo}{blue!70!black}
+\colorlet{elemNi}{green!70!black}
+\colorlet{elemCu}{orange!80!black}
+\colorlet{elemZn}{teal!70!black}
+
+\colorlet{elemY}{blue!50!black}
+\colorlet{elemZr}{blue!60!black}
+\colorlet{elemNb}{blue!70!black}
+\colorlet{elemMo}{blue!80!black}
+\colorlet{elemTc}{blue!90!black}
+\colorlet{elemRu}{orange!60!black}
+\colorlet{elemRh}{blue!70!black}
+\colorlet{elemPd}{green!70!black}
+\colorlet{elemAg}{gray!70!black}
+\colorlet{elemCd}{teal!60!black}
+
+\colorlet{elemHf}{blue!50!black}
+\colorlet{elemTa}{blue!60!black}
+\colorlet{elemW}{blue!70!black}
+\colorlet{elemRe}{blue!80!black}
+\colorlet{elemOs}{orange!60!black}
+\colorlet{elemIr}{blue!70!black}
+\colorlet{elemPt}{green!70!black}
+\colorlet{elemAu}{yellow!80!black}
+\colorlet{elemHg}{teal!60!black}
+
+% --- Lantánidos (MolView: Azul cielo -> Grisáceo -> Verde -> Teal) ---
+\definecolor{elemLa}{RGB}{80, 160, 255}
+\definecolor{elemCe}{RGB}{150, 180, 180}
+\definecolor{elemPr}{RGB}{80, 180, 100}
+\definecolor{elemNd}{RGB}{80, 180, 100}
+\definecolor{elemPm}{RGB}{80, 180, 100}
+\definecolor{elemSm}{RGB}{80, 180, 100}
+\definecolor{elemEu}{RGB}{80, 180, 100}
+\definecolor{elemGd}{RGB}{80, 150, 150}
+\definecolor{elemTb}{RGB}{80, 150, 150}
+\definecolor{elemDy}{RGB}{80, 150, 150}
+\definecolor{elemHo}{RGB}{80, 160, 120}
+\definecolor{elemEr}{RGB}{80, 180, 100}
+\definecolor{elemTm}{RGB}{80, 180, 100}
+\definecolor{elemYb}{RGB}{80, 180, 100}
+\definecolor{elemLu}{RGB}{80, 180, 100}
+
+% --- Actínidos (MolView: Azul bebé -> Morado azulado -> Rosa) ---
+\definecolor{elemAc}{RGB}{80, 170, 255}
+\definecolor{elemTh}{RGB}{80, 170, 255}
+\definecolor{elemPa}{RGB}{80, 170, 255}
+\definecolor{elemU}{RGB}{80, 150, 255}
+\definecolor{elemNp}{RGB}{80, 150, 255}
+\definecolor{elemPu}{RGB}{80, 130, 255}
+\definecolor{elemAm}{RGB}{100, 100, 255}
+\definecolor{elemCm}{RGB}{130, 80, 255}
+\definecolor{elemBk}{RGB}{160, 80, 255}
+\definecolor{elemCf}{RGB}{255, 80, 200}
+\definecolor{elemEs}{RGB}{255, 80, 200}
+\definecolor{elemFm}{RGB}{255, 80, 200}
+\definecolor{elemMd}{RGB}{255, 80, 200}
+\definecolor{elemNo}{RGB}{255, 80, 200}
+\definecolor{elemLr}{RGB}{255, 80, 200}
+
+% --- Elementos Súper Pesados (Gris Oscuro Opaco) ---
+\colorlet{elemRf}{gray!60!black}
+\colorlet{elemDb}{gray!60!black}
+\colorlet{elemSg}{gray!60!black}
+\colorlet{elemBh}{gray!60!black}
+\colorlet{elemHs}{gray!60!black}
+\colorlet{elemMt}{gray!60!black}
+\colorlet{elemDs}{gray!60!black}
+\colorlet{elemRg}{gray!60!black}
+\colorlet{elemCn}{gray!60!black}
+\colorlet{elemNh}{gray!60!black}
+\colorlet{elemFl}{gray!60!black}
+\colorlet{elemMc}{gray!60!black}
+\colorlet{elemLv}{gray!60!black}
+\colorlet{elemTs}{gray!60!black}
+\colorlet{elemOg}{gray!60!black}
+
+% ══════════════════════════════════════════════════════════════
+%  MACROS PARA COLOREAR (Usando \textnormal para mantener la fuente)
+% ══════════════════════════════════════════════════════════════
+% Para texto normal: \el{O}
+\newcommand{\el}[1]{\textcolor{elem#1}{\textnormal{#1}}}
+
+% Para usar dentro de \ce{} de mhchem: \cel{O}
+\newcommand{\cel}[1]{\textcolor{elem#1}{\textnormal{#1}}}
+
+% Para usar dentro de \chemfig{}: \cfel{O}
+\newcommand{\cfel}[1]{\textcolor{elem#1}{\textnormal{#1}}}
+
+% Fix para babel español con chemfig
+\AtBeginDocument{\shorthandoff{>}}
+
+% ══════════════════════════════════════════════════════════════
+%  DOCUMENTO
+% ══════════════════════════════════════════════════════════════
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{Test Visual de Colores: Tabla Periódica}}\\[0.5cm]
+    {\large Paleta CPK sólida y gradientes por familia (Estilo MolView)}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[
+    node distance=1.5mm,
+    cell/.style={
+        rectangle, 
+        rounded corners=2pt, 
+        minimum width=1.2cm, 
+        minimum height=0.9cm, 
+        font=\bfseries\large, 
+        align=center,
+        draw=black!30,
+        thick
+    }
+]
+
+% Fila 1
+\matrix (p1) [matrix of nodes, nodes={cell}, column sep=2mm, row sep=2mm] {
+    \el{H} & & & & & & & & & & & & & & & & & \el{He} \\
+};
+
+% Fila 2
+\matrix (p2) [below=of p1, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{Li} & \el{Be} & & & & & & & & & & & \el{B} & \el{C} & \el{N} & \el{O} & \el{F} & \el{Ne} \\
+};
+
+% Fila 3
+\matrix (p3) [below=of p2, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{Na} & \el{Mg} & & & & & & & & & & & \el{Al} & \el{Si} & \el{P} & \el{S} & \el{Cl} & \el{Ar} \\
+};
+
+% Fila 4
+\matrix (p4) [below=of p3, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{K} & \el{Ca} & \el{Sc} & \el{Ti} & \el{V} & \el{Cr} & \el{Mn} & \el{Fe} & \el{Co} & \el{Ni} & \el{Cu} & \el{Zn} & \el{Ga} & \el{Ge} & \el{As} & \el{Se} & \el{Br} & \el{Kr} \\
+};
+
+% Fila 5
+\matrix (p5) [below=of p4, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{Rb} & \el{Sr} & \el{Y} & \el{Zr} & \el{Nb} & \el{Mo} & \el{Tc} & \el{Ru} & \el{Rh} & \el{Pd} & \el{Ag} & \el{Cd} & \el{In} & \el{Sn} & \el{Sb} & \el{Te} & \el{I} & \el{Xe} \\
+};
+
+% Fila 6
+\matrix (p6) [below=of p5, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{Cs} & \el{Ba} & \el{La} & \el{Hf} & \el{Ta} & \el{W} & \el{Re} & \el{Os} & \el{Ir} & \el{Pt} & \el{Au} & \el{Hg} & \el{Tl} & \el{Pb} & \el{Bi} & \el{Po} & \el{At} & \el{Rn} \\
+};
+
+% Fila 7
+\matrix (p7) [below=of p6, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{Fr} & \el{Ra} & \el{Ac} & \el{Rf} & \el{Db} & \el{Sg} & \el{Bh} & \el{Hs} & \el{Mt} & \el{Ds} & \el{Rg} & \el{Cn} & \el{Nh} & \el{Fl} & \el{Mc} & \el{Lv} & \el{Ts} & \el{Og} \\
+};
+
+% Espacio para Lantánidos y Actínidos
+\node[below=1.5cm of p7] (space) {};
+
+% Lantánidos
+\matrix (lan) [below=of space, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{La} & \el{Ce} & \el{Pr} & \el{Nd} & \el{Pm} & \el{Sm} & \el{Eu} & \el{Gd} & \el{Tb} & \el{Dy} & \el{Ho} & \el{Er} & \el{Tm} & \el{Yb} & \el{Lu} \\
+};
+
+% Actínidos
+\matrix (act) [below=of lan, matrix of nodes, nodes={cell}, column sep=2mm] {
+    \el{Ac} & \el{Th} & \el{Pa} & \el{U} & \el{Np} & \el{Pu} & \el{Am} & \el{Cm} & \el{Bk} & \el{Cf} & \el{Es} & \el{Fm} & \el{Md} & \el{No} & \el{Lr} \\
+};
+
+% Etiquetas laterales
+\node[left=0.5cm of lan, font=\bfseries\large, text=gray] {Lantánidos};
+\node[left=0.5cm of act, font=\bfseries\large, text=gray] {Actínidos};
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\begin{tabular}{ll}
+    \textbf{Notas de la paleta:} & \\
+    H y C: & Negro (Texto normal) \\
+    Alcalinos (Li-Fr): & Violeta claro $\to$ Morado $\to$ Rosa Magenta \\
+    Alcalinotérreos (Be-Ra): & Verde olivo $\to$ Verde vibrante \\
+    Metales de Transición: & Azules y tierras oscuras \\
+    Gases Nobles (He-Rn): & Cian profundo $\to$ Verde azulado (teal) oscuro \\
+    Lantánidos: & Azul cielo $\to$ Gris verdoso $\to$ Verde $\to$ Teal \\
+    Actínidos: & Azul bebé $\to$ Azul profundo $\to$ Morado $\to$ Rosa \\
+\end{tabular}
+\end{center}
+
+\vspace{1.5cm}
+
+% ══════════════════════════════════════════════════════════════
+%  EJEMPLOS DE USO
+% ══════════════════════════════════════════════════════════════
+
+\begin{center}
+    {\Large \textbf{Ejemplos de uso en \texttt{mhchem} y \texttt{chemfig}}}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{1. En \texttt{mhchem} (\texttt{\textbackslash ce\{\}}):}
+Usa el macro \texttt{\textbackslash cel\{\}} para colorear cada elemento.
+\begin{itemize}
+    \item Ácido sulfúrico: \ce{\cel{H}2\cel{S}\cel{O}4}
+    \item Permanganato de potasio: \ce{\cel{K}\cel{Mn}\cel{O}4}
+    \item Etanol: \ce{\cel{C}\cel{H}3-\cel{C}\cel{H}2-\cel{O}\cel{H}}
+    \item Reacción: \ce{\cel{Na}\cel{Cl} + \cel{Ag}\cel{N}\cel{O}3 -> \cel{Ag}\cel{Cl} v + \cel{Na}\cel{N}\cel{O}3}
+\end{itemize}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{2. En \texttt{chemfig} (\texttt{\textbackslash chemfig\{\}}):}
+Usa el macro \texttt{\textbackslash cfel\{\}} o \texttt{\textbackslash textcolor\{elemX\}\{\}} directamente dentro del nodo.
+\begin{center}
+\begin{tabular}{ccc}
+    \textbf{Etanol} & \textbf{Acetona} & \textbf{Fenol} \\
+    \vspace{0.2cm}
+    \chemfig{\cfel{C}H_3-\cfel{C}H_2-\cfel{O}H} &
+    \chemfig{\cfel{C}H_3-\cfel{C}(=[2]\cfel{O})-\cfel{C}H_3} &
+    \chemfig{*6(=-=-(-\cfel{O}H)=-)} \\
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{3. Estructuras más complejas:}
+\begin{center}
+\begin{tabular}{cc}
+    \textbf{Glicina} & \textbf{Cafeína} \\
+    \vspace{0.2cm}
+    \chemfig{\cfel{N}H_2-\cfel{C}H_2-\cfel{C}(=[2]\cfel{O})-\cfel{O}H} &
+    \chemfig{*5(=-=-(-[::+0]\cfel{N}(-[::+60]\cfel{C}H_3)-[::-60]\cfel{C}(=[::+0]\cfel{O})-[::+60]\cfel{N}(-[::+60]\cfel{C}H_3))=-)} \\
+\end{tabular}
+\end{center}
+
+\vspace{1.5cm}
+
+% ══════════════════════════════════════════════════════════════
+%  COMPARACIÓN VISUAL 
+% ══════════════════════════════════════════════════════════════
+\begin{center}
+    {\Large \textbf{Comparación Tipográfica Final}}\\[0.5cm]
+    
+    {\Huge
+    % Fórmula 1: Entorno normal
+    \ce{H2O}
+    
+    \vspace{0.5cm}
+    
+    % Fórmula 2: Con nuestros macros de color
+    \ce{\cel{H}2\cel{O}}
+    }
+
+\end{center}
+\end{document}
