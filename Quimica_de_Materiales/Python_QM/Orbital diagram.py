@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-out = '/home/azquepchup/IQM/Química de Materiales/Imagenes_QM'
+out = 'Química de Materiales/Imagenes_QM'
 os.makedirs(out, exist_ok=True)
 
 fig, axes = plt.subplots(1, 2, figsize=(10, 4))
