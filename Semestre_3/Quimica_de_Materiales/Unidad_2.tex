@@ -1026,11 +1026,13 @@ el \ce{-OH} y el \ce{H} del mismo carbono salen juntos como agua,
 y el carbono forma el doble enlace \ce{C=O} con el oxígeno del oxidante.
 
 \begin{center}
+\setchemfig{arrow coeff=2} % Alarga la flecha para que quepa el texto
 \schemestart
 \chemname{\chemfig{R-C(-[:90]H)(-[:270]OH)-R'}}{Alcohol}
-\arrow[0,2]{->[$\ce{[O]}$][$-\ce{H2O}\; -2\ce{e-}$]}
+\arrow{->[$\ce{[O]}$][$-\ce{H2O}\quad -2\ce{e-}$]}
 \chemname{\chemfig{R-C(=[:90]O)-R'}}{Carbonilo}
 \schemestop
+\setchemfig{arrow coeff=1} % Regresa al tamaño normal
 \end{center}
 
 Los electrones del enlace C--H y del enlace C--O se reorganizan:
@@ -1078,11 +1080,13 @@ No hay un tercer paso en la serie.
 
 Alcohol terciario:
 \begin{center}
+\setchemfig{arrow coeff=2} % Alarga esta flecha específica
 \schemestart
 \chemname{\chemfig{C^{\color{anblue}{+1}}(-[:90]CH3)(-[:210]CH3)(-[:330]CH3)(-[:0]OH)}}{Alcohol terciario}
-\arrow[0,2]{->[mecanismo habitual][\textbf{no ocurre}]}
+\arrow{->[mecanismo habitual][\textbf{no ocurre}]}
 \chemname{\chemfig{C^{\color{catred}{+2}}(=[:90]O)(-[:210]CH3)(-[:330]CH3)}}{Cetona + fragmento \ce{CH3}}
 \schemestop
+\setchemfig{arrow coeff=1} % Restaura el tamaño
 \end{center}
 
 Un alcohol terciario no tiene hidrógeno en el carbono del \ce{-OH}:
