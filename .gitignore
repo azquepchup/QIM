@@ -19,6 +19,8 @@
 *.nav
 *.snm
 *.vrb
+*.bcf-SAVE-ERROR
+*.bbl-SAVE-ERROR
 
 # Carpetas y configuraciones
 w_Laboratorio/
