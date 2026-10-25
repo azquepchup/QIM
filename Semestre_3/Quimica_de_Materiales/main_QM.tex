@@ -304,6 +304,19 @@ postaction={decorate}
 }{exerciseline}
 
 % ══════════════════════════════════════════════════════════════
+%  ENTORNO DE REACCIÓN (baseline centrado + reset de chemname)
+% ══════════════════════════════════════════════════════════════
+\newenvironment{reaccion}{%
+  \setchemfig{baseline=(current bounding box.center)}%
+  \chemnameinit{}%
+  \schemestart
+}{%
+  \schemestop
+  \chemnameinit{}%
+  \setchemfig{baseline=0pt}%
+}
+
+% ══════════════════════════════════════════════════════════════
 %  REFERENCIAS, ENLACES Y CITAS
 % ══════════════════════════════════════════════════════════════
 \usepackage{csquotes}

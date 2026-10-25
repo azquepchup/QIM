@@ -1,3 +1,4 @@
+# LaTeX temporales
 *.aux
 *.log
 *.fls
@@ -8,5 +9,17 @@
 *.bbl-SAVE-ERROR
 *.out
 *.toc
+*.bcf
+*.idx
+*.ilg
+*.ind
+*.run.xml
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# Carpetas y configuraciones
 w_Laboratorio/
 .vscode/

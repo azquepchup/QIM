@@ -4,35 +4,35 @@ Repositorio personal con apuntes, guías y material de estudio. Aunque el conten
 
 *English: Personal repository containing notes, guides, and study material. Although the content is focused on the Materials Chemistry and Engineering degree at UNAM, it is open and useful for anyone interested in chemistry.*
 
-**Nota / Note:** Este repositorio está en constante actualización. Poco a poco iré subiendo y puliendo el material de cada materia.
-*(This repository is constantly being updated. Little by little I will upload and polish the material for each subject.)*
+> **Nota / Note:** Este repositorio está en constante actualización. Poco a poco iré subiendo y puliendo el material de cada materia. *Lo siento porque no están completos todos los semestres aún, espero pronto tenerlos listos.*
+> *(This repository is constantly being updated. Little by little I will upload and polish the material for each subject. I am sorry that not all semesters are complete yet, I hope to have them ready soon.)*
 
-## Materias disponibles / Available Subjects
+## 🧭 ¿Cómo navegar por este repositorio? / How to navigate this repository?
 
-Aquí puedes encontrar los apuntes en formato PDF para leer o descargar directamente (haz clic en el nombre):
-*(Here you can find the notes in PDF format to read or download directly)*:
+Para que puedas encontrar y descargar los apuntes fácilmente, el repositorio está organizado en tres capas:
+*(So you can easily find and download the notes, the repository is organized in three layers):*
 
-*   [Química General II](Quimica_General_II/main_QG2.pdf)
-*   [Química de Materiales](Quimica_de_Materiales/main_QM.pdf)
-*   [Termodinámica](Thermodynamics/main_Ther.pdf)
-*   [Balance de Materia y Energía](Balance_de_Materia_y_Energia/main_BME.pdf)
-*   [Seguridad Química](Seguridad_Quimica/main_SQ.pdf)
+1. **Elige tu semestre:** Selecciona una de las carpetas de abajo. *(Choose your semester: Select one of the folders below).*
+2. **Elige la materia:** Dentro del semestre, verás una lista con las materias disponibles. *(Choose the subject: Inside the semester, you will see a list of available subjects).*
+3. **Descarga el PDF:** Al entrar a la materia, lo primero que verás será un **botón azul gigante** para descargar el PDF directo a tu celular o compu, además de información sobre el profesor y los archivos fuente. *(Download the PDF: When you enter the subject, the first thing you will see is a giant blue button to download the PDF directly to your phone or computer, as well as information about the professor and source files).*
 
-*(Nota: si algún enlace aún no funciona, es porque sigo subiendo los archivos, compilando o puliendo el código).*
-*(Note: if a link does not work yet, it is because I am still uploading the files, compiling, or polishing the code).*
+## 📖 Materias por Semestre / Subjects by Semester
 
-## Estructura del repositorio / Repository Structure
+Haz clic en el semestre que buscas:
+*(Click on the semester you are looking for):*
 
-Cada materia tiene su propia carpeta. Dentro de cada una, encontrarás:
-*(Each subject has its own folder. Inside each one, you will find):*
-*   El archivo principal de LaTeX (`main_*.tex`). *(The main LaTeX file).*
-*   Los archivos de secciones (clases, unidades, etc.). *(Section files such as classes, units, etc.).*
-*   La carpeta de imágenes utilizadas en los documentos. *(The folder containing images used in the documents).*
-*   El PDF compilado listo para leer. *(The compiled PDF ready to be read).*
-*   Scripts auxiliares de Python (como generadores de gráficas). *(Auxiliary Python scripts, such as plot generators).*
+*   [**Semestre 2**](./Semestre_2/)
+*   [**Semestre 3**](./Semestre_3/)
 
-Todas las rutas dentro del código son relativas, lo que significa que puedes descargar el repositorio en cualquier computadora y compilarlo sin necesidad de cambiar rutas absolutas.
-*(All paths within the code are relative, meaning you can download the repository on any computer and compile it without changing absolute paths).*
+*(Los semestres anteriores y posteriores se irán agregando conforme avance la carrera).*
+*(Previous and later semesters will be added as the degree progresses).*
+
+---
+
+### 🛠️ Para desarrolladores / For developers
+
+*Si solo quieres leer los apuntes en PDF, puedes ignorar esta sección.*
+*(If you just want to read the notes in PDF, you can ignore this section).*
 
 ## Requisitos e Instalación / Requirements and Installation
 
@@ -51,11 +51,14 @@ Para compilar los archivos desde el código fuente, necesitas tener instalado **
 
 ## Compilación / Compilation
 
-Para compilar cualquier archivo principal, abre la terminal en la carpeta de la materia y usa `latexmk` (el cual ya maneja las múltiples pasadas necesarias para el índice y la bibliografía):
-*(To compile any main file, open the terminal in the subject folder and use `latexmk` (which already handles the multiple passes needed for the index and bibliography))*:
+Para compilar cualquier archivo principal, abre la terminal en la carpeta de la materia correspondiente y usa `latexmk` (el cual ya maneja las múltiples pasadas necesarias para el índice y la bibliografía).
+*(To compile any main file, open the terminal in the subject folder and use `latexmk` (which already handles the multiple passes needed for the index and bibliography)).*
+
+*Ejemplo para compilar Química de Materiales:*
+*(Example to compile Materials Chemistry):*
 
 ```bash
-cd Quimica_de_Materiales
+cd Semestre_3/Quimica_de_Materiales
 latexmk -pdf main_QM.tex
 ```
 
