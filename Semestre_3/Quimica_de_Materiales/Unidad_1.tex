@@ -769,9 +769,9 @@ El efecto de resonancia estabiliza: \\
 Resonancia del Anión alílico:
 \begin{center}
 \schemestart
-\chemfig{@{a1}=_[@{db}::30]-[@{sb}::-60]@{dnl}{\color{anblue}C^{\color{anblue}-}}}
+\chemfig{@{a1}=_[@{db}::30]-[@{sb}::-60]@{dnl}{^{\color{anblue}-}}}
 \arrow{<->}
-\chemfig{@{c1}-[@{ab}::30]=_[@{pb}::-60]@{c2}{\color{anblue}C^{\color{anblue}-}}}
+\chemfig{@{c1}-[@{ab}::30]=_[@{pb}::-60]@{c2}{^{\color{anblue}-}}}
 \schemestop
 \chemmove{
 \draw[->](db)..controls +(-80:5mm) and +(-90:5mm)..(sb);}
@@ -1399,7 +1399,7 @@ $S_N1$: Se forma un carbocatión, es Unimolecular porque el paso determinante es
 
 \begin{center}
 \schemestart
-$Na^{\color{catred}+}$
+\chemfig[baseline=(current bounding box.center)]{Na^{\color{catred}+}}
 \+
 $\underbrace{\textcolor{anblue}{OH^{\color{anblue}-}}}_{\text{Nucleófilo}}$
 \quad
@@ -1900,13 +1900,13 @@ el movimiento de los electrones, no del ``hueco'' electrónico. \\
 
 \begin{center}
 \schemestart
-\chemfig{*6(=-=-(-\charge{0=\:,180=\:}{O}-[:40]H)=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=-(-\charge{0=\:,180=\:}{O}-[:40]H)=-)}
 \+
 $E^{\color{catred}+}$
 \arrow{}
-\chemname{\chemfig{*6(=-=-(=\charge{180=\:}{\textcolor{catred}{O^{\color{catred}+}}}-[:40]H)-(-[:180]H)(-[:140]E)-)}}{Complejo sigma}
+\chemname{\chemfig[baseline=(current bounding box.center)]{*6(=-=-(=\charge{180=\:}{\textcolor{catred}{O^{\color{catred}+}}}-[:40]H)-(-[:180]H)(-[:140]E)-)}}{Complejo sigma}
 \arrow{}
-\chemfig{*6(=-=-(-\charge{0=\:,180=\:}{O}-[:40]H)=(-E)-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=-(-\charge{0=\:,180=\:}{O}-[:40]H)=(-E)-)}
 \+
 $H^{\color{catred}+}$
 \schemestop
@@ -1931,65 +1931,65 @@ predecir qué compuesto predominará. \\
 \textbf{Nitración}
 \begin{center}
 \schemestart
-\chemfig{*6(=-=-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=-=-)}
 \arrow{->[\ce{HNO3}][\ce{H2SO4}, $\Delta$]}[0,1.5]
-\chemfig{*6(=-=(-NO_2)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-NO_2)-=-)}
 \schemestop
 \end{center}
 
 \textbf{Sulfonación}
 \begin{center}
 \schemestart
-\chemfig{*6(=-=-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=-=-)}
 \arrow{->[\ce{SO3}][\ce{H2SO4}]}[0,1.5]
-\chemfig{*6(=-=(-S(=[:120]O)(=[:300]O)(-OH))-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-S(=[:120]O)(=[:300]O)(-OH))-=-)}
 \schemestop
 \end{center}
 
 \textbf{Halogenación}
 \begin{center}
 \schemestart
-\chemfig{*6(=-=(-NO_2)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-NO_2)-=-)}
 \arrow{->[1-\ce{Cl2}, \ce{AlCl3}][2-\ce{Br2}, \ce{FeBr3}]}[0,1.5]
-\chemfig{*6(=-=(-Cl)-=-)}, 
-\chemfig{*6(=-=(-Br)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-Cl)-=-)}, 
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-Br)-=-)}
 \schemestop
 \end{center}
 
 \textbf{Alquilación}
 \begin{center}
 \schemestart
-\chemfig{*6(=-=-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=-=-)}
 \arrow{->[\ce{R-X}][\ce{AlCl3}]}[0,1.5]
-\chemfig{*6(=-=(-R)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-R)-=-)}
 \schemestop
 \end{center}
 
 \textbf{Acilación}
 \begin{center}
 \schemestart
-\chemfig{*6(=-=-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=-=-)}
 \arrow{->[\chemfig{R-[:30](=[:90]O)-[:330]Cl}][\ce{AlCl3}]}[0,1.5]
-\chemfig{*6(=-=(-[:30](=[:90]O)-[:330]R)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-[:30](=[:90]O)-[:330]R)-=-)}
 \schemestop
 \end{center}
 
 \textbf{Sandmeyer}
 \begin{center}
 \schemestart
-\chemfig{*6(=-=(-NO_2)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-NO_2)-=-)}
 \arrow{->[\ce{Sn}][\ce{HCl}]}[0,1.5]
-\chemfig{*6(=-=(-NH_2)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-NH_2)-=-)}
 \arrow{->[\ce{HCl}][\ce{NaNO2}]}[0,1.5]
 \schemestop
 \end{center}
 \begin{center}
 \schemestart
-\chemname[-1cm]{\chemfig{*6(=-=(-N^{\textcolor{catred}{+}}~[:0]N)-=-)}}{Sal de diazonio}
+\chemname[-1cm]{\chemfig[baseline=(current bounding box.center)]{*6(=-=(-N^{\textcolor{catred}{+}}~[:0]N)-=-)}}{Sal de diazonio}
 \+
-$\text{Cl}^{\textcolor{anblue}{-}}$
+\chemfig[baseline=(current bounding box.center)]{Cl^{\textcolor{anblue}{-}}}
 \arrow{->[\ce{CuX}][\ce{HX}]}[0,1.5]
-\chemfig{*6(=-=(-X)-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-X)-=-)}
 \schemestop
 \end{center}
 Donde \ce{X} = \ce{Cl}, \ce{Br}, \ce{CN}, \ce{I} \\
@@ -2027,7 +2027,11 @@ Donde \ce{X} = \ce{Cl}, \ce{Br}, \ce{CN}, \ce{I} \\
 \textbf{Nota:} Las descomposiciones orgánicas son raras, pero pueden darse, como en las aminas.
 \begin{center}
 \schemestart
-\chemfig{*6(=-=(-N=[:0]N^{\color{catred}+}=[:0]N^{\color{anblue}-})-=-)} \arrow{->} \chemfig{2N_2} \+ \chemfig{*6(=-=(-[:30]N-[:330]N-[:30]*6(=-=-=-))-=-)}
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-N=[:0]N^{\color{catred}+}=[:0]N^{\color{anblue}-})-=-)} 
+\arrow{->} 
+\chemfig[baseline=(current bounding box.center)]{2N_2} 
+\+ 
+\chemfig[baseline=(current bounding box.center)]{*6(=-=(-[:30]N-[:330]N-[:30]*6(=-=-=-))-=-)}
 \schemestop
 \end{center}
 
@@ -2043,29 +2047,29 @@ Por intercambio de partícula: \\
 
 \begin{enumerate}[label=\alph*)]
     \item \schemestart
-$\underbrace{\chemfig{*6(=-=-N=-)}}_{\text{Base}}$
+$\underbrace{\chemfig[baseline=(current bounding box.center)]{*6(=-=-N=-)}}_{\text{Base}}$
 \+
-$\underbrace{\chemfig{HBr}}_{\text{Ácido}}$
+$\underbrace{\chemfig[baseline=(current bounding box.center)]{HBr}}_{\text{Ácido}}$
 \arrow{->}
-$\underbrace{\chemfig{*6(=-=-N^{\color{catred}+}(-[:90]H)=-)}}_{\text{Ácido conjugado}}$
+$\underbrace{\chemfig[baseline=(current bounding box.center)]{*6(=-=-N^{\color{catred}+}(-[:90]H)=-)}}_{\text{Ácido conjugado}}$
 \+
-$\underbrace{\chemfig{Br^{\color{anblue}-}}}_{\text{Base conjugada}}$
-\schemestop : Ácido --- Base
+$\underbrace{\chemfig[baseline=(current bounding box.center)]{Br^{\color{anblue}-}}}_{\text{Base conjugada}}$
+\schemestop : \\Ácido --- Base
     \item \schemestart
-\chemfig{Zn^{0}}
+\chemfig[baseline=(current bounding box.center)]{Zn^{0}}
 \+
-\chemfig{Cu^{\color{catred}{2+}}SO_{4}}
+\chemfig[baseline=(current bounding box.center)]{Cu^{\color{catred}{2+}}SO_{4}}
 \arrow{->}
-\chemfig{Zn^{\color{catred}{2+}}SO_{4}}
+\chemfig[baseline=(current bounding box.center)]{Zn^{\color{catred}{2+}}SO_{4}}
 \+
-\chemfig{Cu^{0}}
+\chemfig[baseline=(current bounding box.center)]{Cu^{0}}
 \schemestop : Redox
     \item \schemestart
-\chemfig{NH3}
+\chemfig[baseline=(current bounding box.center)]{NH3}
 \+
-\chemfig{BH3}
+\chemfig[baseline=(current bounding box.center)]{BH3}
 \arrow{->}
-\chemfig{H_3N-BH_3}
+\chemfig[baseline=(current bounding box.center)]{H_3N-BH_3}
 \schemestop : Ácido-base de Lewis
 
 \begin{center}
@@ -2165,19 +2169,19 @@ de oxidación comunes, por lo que quedan excluidos por definición IUPAC.
 \vspace{1cm}
 
 \schemestart
-\chemfig{@{cl1}Cl^{\color{anblue}-}-Pd^{\color{catred}{2+}}-@{cl2}Cl^{\color{anblue}-}}
+\chemfig[baseline=(current bounding box.center)]{@{cl1}Cl^{\color{anblue}-}-Pd^{\color{catred}{2+}}-@{cl2}Cl^{\color{anblue}-}}
 \+
 \chemname{%
 \begin{tikzpicture}[baseline=-0.5ex]
     \node (nh3) at (0,0) {%
-        \chemfig{P(-[:200]Ph)(<[:250]Ph)(<:[:330]Ph)}%
+        \chemfig[baseline=(current bounding box.center)]{P(-[:200]Ph)(<[:250]Ph)(<:[:330]Ph)}%
     };
     \orbital[pos={(0.1, 0.3)}, color=anblue, nelec=2, opacity=0.6, scale=0.8, rotate=90]{lobe}
     \node[above] at (0.1, 1) {\small HOMO ($n$)};
 \end{tikzpicture}%
 }{$L^0$}
 \arrow{->}
-\chemfig{@{cu2}Pd^{\color{catred}{2+}}(-[:0]Cl)(-[:180]Cl)(-[:90]@{n1}PPh_3)(-[:270]@{n2}PPh_3)}
+\chemfig[baseline=(current bounding box.center)]{@{cu2}Pd^{\color{catred}{2+}}(-[:0]Cl)(-[:180]Cl)(-[:90]@{n1}PPh_3)(-[:270]@{n2}PPh_3)}
 \schemestop
 \chemmove{
     \draw[-{Stealth}, thick] (cl1) .. controls +(90:0.8cm) .. +(-0.8, 1.2)

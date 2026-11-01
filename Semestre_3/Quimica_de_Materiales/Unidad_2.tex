@@ -64,6 +64,16 @@ se reduce a pérdida de oxígeno \ce{O} o halógenos, o ganancia de hidrógenos 
 En toda reacción redox ocurren simultáneamente una oxidación y una reducción. Una no existe sin la otra. Sin embargo, es común nombrar la reacción solo por el proceso que interesa estudiar: ``oxidación del etanol'' aunque el dicromato también se reduce, o ``reducción de la benzofenona'' aunque el 2-propanol también se oxida. Esta convención aparecerá de nuevo cuando se estudien reacciones específicas y en los ejercicios, donde a veces solo se pide analizar una de las dos partes. El nombre no implica que la otra no ocurra.
 \end{notafija}
 
+\begin{notaimportante}
+\textbf{La notación de transferencia en las flechas.} A lo largo de estos apuntes verás anotaciones como $-2\ce{e-}$, $+2\ce{e-}$, $-\ce{H2O}$ o $+\ce{H2O}$ sobre o debajo de las flechas de reacción. Esta es una convención muy útil que indica el cambio neto que sufre \textbf{nuestra molécula de interés}:
+\begin{itemize}
+    \item \textbf{Signo negativo ($-\ce{e-}$):} la molécula de interés \textbf{pierde} electrones. Es una oxidación.
+    \item \textbf{Signo positivo ($+\ce{e-}$):} la molécula de interés \textbf{gana} electrones. Es una reducción.
+    \item El mismo criterio aplica para átomos o moléculas completas (ej. $-\ce{H}$, $-\ce{H2O}$), indicando que la molécula de interés los pierde o los gana.
+\end{itemize}
+Esta notación es clave porque nos ayuda a visualizar el conteo de electrones de un vistazo, a balancear las ecuaciones y a recordar quién se oxida y quién se reduce. Aunque no escribamos explícitamente al agente oxidante o reductor en la flecha, se da por hecho que existe en el medio (el otro lado de la redox). A veces se anota al inicio de la reacción para saber con qué reacciona, pero durante el proceso se suele omitir.
+\end{notaimportante}
+
 Generalmente, si el \ce{C} se enlaza con átomos más electronegativos, hablamos de 
 oxidación. Si se enlaza con átomos menos electronegativos, hablamos de reducción. 
 (Tomando como referencia el \ce{C}). \\
@@ -229,14 +239,14 @@ $+2$.
 \ce{CH3CH2OCH2CH3 / C4H10O} (Grupo: Éter) -- Etoxietano / Dietil éter: \\
 \begin{center}
 \schemestart
-\chemfig{[:-45]-[:45]-O-[:45]-[:-45]}
+\chemfig{[:-30]-[:30]-O-[:30]-[:-30]}
 \qquad\qquad
 \chemfig{
-[:-45]C^{\color{anblue}{3-}}(-[:140]H^{\color{catred}+})(-[:220]H^{\color{catred}+})(-[:310]H^{\color{catred}+})
--[:45]C^{\color{anblue}{-}}(-[:90]H^{\color{catred}+})(-[:270]H^{\color{catred}+})
+[:-30]C^{\color{anblue}{3-}}(-[:140]H^{\color{catred}+})(-[:220]H^{\color{catred}+})(-[:310]H^{\color{catred}+})
+-[:30]C^{\color{anblue}{-}}(-[:90]H^{\color{catred}+})(-[:270]H^{\color{catred}+})
 -O^{\color{anblue}{2-}}
--[:45]C^{\color{anblue}{-}}(-[:90]H^{\color{catred}+})(-[:270]H^{\color{catred}+})
--[:-45]C^{\color{anblue}{3-}}(-[:40]H^{\color{catred}+})(-[:220]H^{\color{catred}+})(-[:310]H^{\color{catred}+})
+-[:30]C^{\color{anblue}{-}}(-[:90]H^{\color{catred}+})(-[:270]H^{\color{catred}+})
+-[:-30]C^{\color{anblue}{3-}}(-[:40]H^{\color{catred}+})(-[:230]H^{\color{catred}+})(-[:310]H^{\color{catred}+})
 }
 \schemestop
 \end{center}
@@ -329,7 +339,7 @@ reacción de combustión del metano:
 \ce{CH4}
 \+
 \ce{2O2}
-\arrow{->[$\Delta$]}
+\arrow{->[$\Delta$][$-8\ce{e-}$]}
 \ce{CO2}
 \+
 \ce{2H2O}
@@ -605,7 +615,7 @@ en la fórmula.
     en un solo paso o requiere intermediarios (radicales, carbocationes, etc.).
 \end{itemize}
 
-\textbf{Ejemplo.} La molécula \chemfig{*6(=-=(-=[:-45])-=-)} (ciclohexadieno 
+\textbf{Ejemplo.} La molécula \chemfig{*6(=-=(-=[:-30])-=-)} (ciclohexadieno 
 con sustituyente vinilo) tiene:
 \begin{itemize}
     \item Heteroátomos: $0$
@@ -650,19 +660,29 @@ no es redox neta: es una reorganización intramolecular.
 Benzofenona + 2-propanol $\longrightarrow$ Benzopinacol + Propanona \\[8pt]
 
 \begin{center}
-\begingroup
 \setchemfig{atom sep=2em}
+\chemnameinit{}
 \schemestart
-\chemname{\chemfig{O=[:270]C^{\color{catred}{+}}(-[:225]*6(=-=-=-))(-[:-45]*6(=-=-=-))}}{Benzofenona}
+2\,\chemname{\chemfig[baseline=(current bounding box.center)]{O=[:270]C^{\color{catred}{+2}}(-[:225]*6(=-=-=-))(-[:-45]*6(=-=-=-))}}{Benzofenona}
 \+
-\chemname{\chemfig{C^0(-[:90]OH)(-[:-45]CH_3)(-[:225]CH_3)}}{2-propanol}
-\arrow{->}
-\chemname{\chemfig{C^{\color{catred}{+}}(-[:135]*6(=-=-=-))(-[:225]*6(=-=-=-))(-[:270]OH)-C^{\color{catred}{+}}(-[:45]*6(=-=-=-))(-[:-45]*6(=-=-=-))(-[:90]OH)}}{Benzopinacol}
+\chemname{\chemfig[baseline=(current bounding box.center)]{C^0(-[:90]OH)(-[:-45]CH_3)(-[:225]CH_3)}}{2-propanol}
+\arrow{->[$-2\ce{e-}$]}
+\chemname{\chemfig[baseline=(current bounding box.center)]{C^{\color{catred}{+1}}(-[:135]*6(=-=-=-))(-[:225]*6(=-=-=-))(-[:270]OH)-C^{\color{catred}{+1}}(-[:45]*6(=-=-=-))(-[:-45]*6(=-=-=-))(-[:90]OH)}}{Benzopinacol}
 \+
-\chemname{\chemfig{C^{\color{catred}{2+}}(=[:90]O)(-[:-45]CH_3)(-[:225]CH_3)}}{Propanona}
+\chemname{\chemfig[baseline=(current bounding box.center)]{C^{\color{catred}{+2}}(=[:90]O)(-[:-45]CH_3)(-[:225]CH_3)}}{Propanona}
 \schemestop
-\endgroup
+\chemnameinit{}
 \end{center}
+
+En esta reacción, la oxidación y la reducción ocurren de manera simultánea 
+en un proceso global de dos electrones. El 2-propanol actúa como agente 
+reductor, oxidándose a propanona, mientras que la benzofenona se reduce a 
+benzopinacol. Dado que se requieren dos moléculas de benzofenona para 
+captar los dos electrones (y los hidrógenos) que libera el 2-propanol, 
+la transferencia neta es de 2 electrones. El mecanismo real ocurre a 
+través de la transferencia de átomos de hidrógeno (vía radicales) desde 
+el alcohol hacia la benzofenona excitada por la luz, pero el balance 
+global corresponde a una redox de dos electrones.
 
 \textbf{Nombres IUPAC:}
 \begin{itemize}
@@ -697,13 +717,13 @@ Propanona & $1$ & $0$ & $1$ & $2$ \\
 \end{tabular}
 \end{center}
 
-Las sumas no coinciden ($21 \neq 20$), así que el proceso sí es redox 
-neto. La benzofenona se reduce (baja de $20$ a $18$ al convertirse en 
-benzopinacol) y el 2-propanol se oxida (sube de $1$ a $2$ al convertirse 
-en propanona). La diferencia es de \textbf{1 electrón}, no de $2$. Un 
-cambio impar no es compatible con una transferencia en pares como en los 
-procesos iónicos, así que la reacción debe pasar por un intermediario 
-radicalario: la transferencia ocurre de uno en uno.
+Las sumas de n.o. global en reactivos y productos no coinciden exactamente 
+($21$ contra $20$). Este desfase de una unidad es un artefacto de cómo 
+la fórmula cuenta los enlaces \(\pi\) y los anillos en moléculas que se 
+dimerizan (dos moléculas se unen en una); no representa una transferencia 
+real de un solo electrón. El balance estequiométrico y el cambio de estados 
+de oxidación de los carbonos reactivos confirman que la transferencia neta 
+en esta reacción es de \textbf{2 electrones}.
 
 \phantomsection
 \addcontentsline{toc}{subsubsection}{Balanceo de reacciones orgánicas (Método del [H])}
@@ -760,7 +780,7 @@ Antes de aplicar el método, es crucial identificar a los \textbf{iones espectad
 \ce{K2Cr2O7}
 \+
 \ce{H2SO4}
-\arrow{->}
+\arrow{->[$-12\ce{e-}$]}
 \chemfig{CH_3-COOH}
 \+
 \ce{Cr2(SO4)3}
@@ -1011,9 +1031,9 @@ Alcohol primario:
 \chemnameinit{}
 \schemestart
 \chemname{\chemfig[baseline=(current bounding box.center)]{-[:45]C^{\color{anblue}{-1}}(-[:45]H)(-[:135]H)-[:-45]OH}}{Alcohol primario}
-\arrow{->[$2\ce{e-}$][]}
+\arrow{->[$-2\ce{e-}$][]}
 \chemname{\chemfig[baseline=(current bounding box.center)]{-[:45]C^{\color{catred}{+1}}(-[:45]H)=[:-45]O}}{Aldehído}
-\arrow{->[$2\ce{e-}$][]}
+\arrow{->[$-2\ce{e-}$][]}
 \chemname{\chemfig[baseline=(current bounding box.center)]{-[:45]C^{\color{catred}{+3}}(=[:-45]O)-[:90]OH}}{Ácido carboxílico}
 \schemestop
 \chemnameinit{}
@@ -1067,7 +1087,7 @@ Alcohol secundario:
 \begin{center}
 \schemestart
 \chemname{\chemfig{C^0(-[:-45]OH)(-[:90]CH3)(-[:45]H)(-[:225]CH3)}}{Alcohol secundario}
-\arrow{->[$2\ce{e-}$][]}
+\arrow{->[$-2\ce{e-}$][]}
 \chemname{\chemfig{C^{\color{catred}{+2}}(=[:0]O)(-[:135]CH3)(-[:225]CH3)}}{Cetona}
 \schemestop
 \end{center}
@@ -1103,8 +1123,8 @@ Pero hay un problema de conteo de electrones:
 \hline
 \textbf{Especie} & \textbf{n.o. del C del alcohol} & \textbf{Cambio} \\
 \hline
-Alcohol primario   & $-1 \to +1 \to +3$ & $2\ce{e-}$ por paso \\
-Alcohol secundario & $0 \to +2$         & $2\ce{e-}$ \\
+Alcohol primario   & $-1 \to +1 \to +3$ & $-2\ce{e-}$ por paso \\
+Alcohol secundario & $0 \to +2$         & $-2\ce{e-}$ \\
 Alcohol terciario  & $+1 \to +2$        & $1\ce{e-}$ (no permitido) \\
 \hline
 \end{tabular}
@@ -1146,3 +1166,334 @@ Todos los enlaces C--C y C--H se rompen. Todo el carbono llega a +4.
 caliente, la cadena se corta y cada fragmento se oxida hasta donde puede.
 También lleva a \ce{CO2}, pero no por pasos de 2 electrones.
 \end{itemize}
+
+\textbf{Ejemplo de ruptura oxidativa y electrones:}
+
+\begin{center}
+\setchemfig{atom sep=2em, compound sep=4em}
+\chemnameinit{}
+\schemestart
+\chemname{\chemfig[baseline=(current bounding box.center)]{OH-[:30]C^{\color{anblue}{-1}}-[:-30]-[:30]-[:-30]C^{\color{anblue}{-1}}-[:30]OH}}{1,4-butanodiol}
+\+
+\chemfig[baseline=(current bounding box.center)]{KMnO4}
+\arrow{-U>[\footnotesize $-8\ce{e-}$][\footnotesize \begin{tabular}{@{}c@{}}Pasa por\\ aldehído\end{tabular}][0pt][0.5][-90]}
+\chemname{\chemfig[baseline=(current bounding box.center)]{OH-[:30]C^{\color{catred}{+3}}(=[:90]O)-[:-30]-[:30]-[:-30]C^{\color{catred}{+3}}(=[:270]O)-[:30]OH}}{Ácido succínico}
+\schemestop
+\chemnameinit{}
+\setchemfig{atom sep=3em, compound sep=5em}
+\end{center}
+
+El \ce{KMnO4} concentrado y caliente es un oxidante fuerte. 
+La reacción global transfiere 8 electrones (4 por cada carbono terminal). 
+El mecanismo pasa por un aldehído como intermediario, pero al ser un 
+oxidante fuerte, no se detiene ahí y llega hasta el ácido carboxílico.
+
+Y ese punto es importante, a pesar de tener ciertos agentes las condiciones
+a las que se hagan las reacciones también influencian y dependiendo eso
+es el compuesto que obtendremos.
+
+\begin{center}
+\setchemfig{atom sep=1.2em}
+\schemestart
+    \chemfig{OH-[:30](=[:90]O)-[:-30]-[:30]-[:-30](=[:270]O)-[:30]OH}
+    \+
+    \chemfig{OH-[:30]-[:-30]-[:30]-[:-30]-[:30]OH}
+\arrow{->[$H^{\color{catred}{+}}$][]} 
+    \chemname{\chemfig{OH-[:30](=[:90]O)-[:-30]-[:30]-[:-30]@{c}(=[:270]O)-[:30]@{o}O-[:-30]-[:30]-[:-30]-[:30]-[-30]OH}}{Éster}
+    \+
+    \chemfig{OH-[:30](=[:90]O)-[:-30]-[:30]-[:-30](=[:270]O)-[:30]OH}
+\schemestop
+\chemmove{
+    \draw[red, thick] ([shift={(-0.5,-1)}]c.south west) rectangle ([shift={(0.3,0.3)}]o.north east);
+}
+\end{center}
+
+\textbf{Esterificación de Fischer y Polimerización}
+
+\begin{center}
+\setchemfig{atom sep=2.5em}
+\schemestart
+\arrow{->[$H^{\color{catred}{+}}$][$-\ce{H2O}$]} 
+\chemname{\chemfig{
+    OH-[:30](=[:90]O)-[:-30]-[:30]-[:-30](=[:270]O)-[:30]O-[:-30]-[:30]-[:-30]-[:30]-[:-30]O-[:30](=[:90]O)-[:-30]-[:30]-[:-30](=[:270]O)-[:30]OH
+}}{Oligómero (cadena en crecimiento)}
+\schemestop
+\end{center}
+
+Esta reacción de policondensación se repite múltiples veces, 
+liberando una molécula de agua en cada paso. Los monómeros de 
+1,4-butanodiol y ácido succínico se van uniendo para formar 
+cadenas cada vez más largas. Para simplificar la notación, 
+la unidad que se repite se encierra entre corchetes con un subíndice \(n\):
+
+\begin{center}
+\setchemfig{atom sep=2.5em}
+\chemnameinit{}
+\schemestart
+\arrow{->[$H^{\color{catred}{+}}$][]} 
+\chemname{\chemfig{
+    -[@{op,.5}:30](=[:90]O)-[:-30]-[:30]-[:-30](=[:270]O)-[:30]O-[:-30]-[:30]-[:-30]-[:30]-[:-30]O-[:30](=[:90]O)-[:-30]-[:30]-[:-30](=[:270]O)-[@{cl,.5}:30]
+}}{Poliéster \\ Poli(butilen succinato)}
+\schemestop
+\polymerdelim[height=25pt, depth=10pt, indice=n]{op}{cl}
+\chemnameinit{}
+\end{center}
+
+El resultado es el poli(butilen succinato) o PBS. Este polímero es de gran 
+interés actual porque es \textbf{biodegradable}: los microorganismos pueden 
+degradarlo en ambientes como el suelo o el compost, convirtiéndolo en \ce{CO2}, 
+agua y biomasa. Esto lo posiciona como un candidato clave para sustituir 
+plásticos convencionales en envases y agricultura, impulsando la economía circular.
+
+\textbf{PET}
+\begin{center}
+\setchemfig{atom sep=2.5em}
+\chemnameinit{}
+\schemestart
+\chemfig{-[@{op,.5}:-30]O-[:30]([:120]=O)-*6(-=-(-([:60]=O)-[:-30]O-[:30]-[@{cl,.5}:-30])=-=)}
+\schemestop
+\polymerdelim[height=25pt, depth=10pt, indice=n]{op}{cl}
+\chemnameinit{}
+\end{center}
+
+Vamos a utilizar análisis retrosintético para ver cómo podríamos fabricarlo.
+
+\begin{notaimportante}
+El análisis retrosintético es un proceso mental que se detona con una flecha diferente (generalmente una
+flecha de doble línea con la punta hacia atrás, como \textbf{\(\Longrightarrow\)}).
+Esta flecha denota que, a partir de una molécula objetivo, proponemos una desconexión lógica de
+enlaces para encontrar los materiales de partida (precursores) que, mediante reacciones químicas
+conocidas, nos lleven a la molécula original.
+\end{notaimportante}
+
+\begin{center}
+\setchemfig{atom sep=1.9em}
+\chemnameinit{}
+\schemestart
+\chemname{\chemfig[baseline=(current bounding box.center)]{-[@{op,.5}:-30]O-[:30]([:120]=O)-*6(-=-(-([:60]=O)-[:-30]O-[:30]-[@{cl,.5}:-30])=-=)}}{Poli(tereftalato de etileno)}
+\polymerdelim[height=25pt, depth=10pt, indice=n]{op}{cl}
+\arrow{=retro>}
+\subscheme{
+\chemname{\chemfig[baseline=(current bounding box.center)]{*6((-(=[:270]O)-[:150]OH)-=-
+(-(=[:90]O)-[:-30]OH)=-=)}}{Ácido tereftálico}
+\arrow{<-[\shortstack{\ce{Na2Cr2O7},\\\ce{H2SO4}}][$-8\ce{e-}$]}[270, 2.2]
+\chemname{\chemfig[baseline=(current bounding box.center)]{*6((--[:150]OH)-=-
+(--[:-30]OH)=-=)}}{$p$-xilendiol}
+}
+\+
+\subscheme{
+\chemname{\chemfig[baseline=(current bounding box.center)]{OH-[:-30]-[:30]-[:-30]OH}}{Etilenglicol}
+\arrow{<-[\ce{O2}, cat.][$-4\ce{e-}$]}[270, 2]
+\chemname{\chemfig{CH_3-CH_3}}{Etano}
+}
+\schemestop
+\chemnameinit{}
+\end{center}
+
+\vspace{0.5cm}
+
+Es decir, planteando la reacción de síntesis con sus condiciones:
+
+\begin{center}
+\setchemfig{atom sep=1.9em}
+\chemnameinit{}
+\schemestart
+\chemname{\chemfig[baseline=(current bounding box.center)]{-[@{op,.5}:-30]O-[:30]([:120]=O)-*6(-=-(-([:60]=O)-[:-30]O-[:30]-[@{cl,.5}:-30])=-=)}}{Poli(tereftalato de etileno)}
+\polymerdelim[height=25pt, depth=10pt, indice=n]{op}{cl}
+\arrow{<-[\ce{H2SO4}]}
+\chemname{\chemfig[baseline=(current bounding box.center)]{*6((-(=[:270]O)-[:150]OH)-=-
+(-(=[:90]O)-[:-30]OH)=-=)}}{Ácido tereftálico}
+\+
+\chemname{\chemfig[baseline=(current bounding box.center)]{OH-[:-30]-[:30]-[:-30]OH}}{Etilenglicol}
+\schemestop
+\chemnameinit{}
+\end{center}
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 13 -- 08/10/2026: Oxidación de alquenos y ruptura oxidativa}
+\subsubsection*{\textcolor{blueunam}{Clase 13 -- 08/10/2026: Oxidación de alquenos y ruptura oxidativa}}
+
+\textbf{Polibutadieno}
+
+\begin{center}
+\setchemfig{atom sep=1.9em}
+\chemnameinit{}
+\schemestart
+\chemname{\chemfig[baseline=(current bounding box.center)]{-[@{op,.5}:30]=[:-30]-[:30]-[:-30]=[:30]-[:-30]-[@{cl,.5}:30]}}{Poli(1,4-butadieno)}
+\polymerdelim[height=25pt, depth=10pt, indice=n]{op}{cl}
+\schemestop
+\chemnameinit{}
+\end{center}
+
+En esta representación esquemática se muestra la estructura del \textbf{poli(1,4-butadieno)}, 
+la forma más común de este polímero. Los enlaces dobles remanentes en la cadena principal 
+(que aquí se dibujan en un zigzag plano) son los sitios susceptibles al ataque de agentes 
+oxidantes como el \ce{KMnO4} o el \ce{O3}. Las variantes \textit{cis} y \textit{trans} que 
+se encuentran en otras fuentes comparten esta misma conectividad 1,4, pero difieren únicamente 
+en la estereoquímica de la cadena; mientras que la variante vinílica (1,2) presenta un doble 
+enlace como ramificación lateral. \\
+
+Ahora bien, oxidemos nuestra molécula y veamos qué da:
+
+\begin{center}
+\setchemfig{atom sep=1.9em}
+\chemnameinit{}
+\schemestart
+\chemname{\chemfig[baseline=(current bounding box.center)]{-[@{op,.5}:30]=[:-30]-[:30]-[:-30]=[:30]-[:-30]-[@{cl,.5}:30]}}{Poli(1,4-butadieno)}
+\polymerdelim[height=25pt, depth=10pt, indice=n]{op}{cl}
+\arrow{->[\ce{KMnO4}][Frío, diluido]}[0, 2]
+\chemname{\chemfig[baseline=(current bounding box.center)]{-[@{op,.5}:30](-[:90]OH)-[:-30](-[:270]OH)-[:30]-[:-30](-[:270]OH)-[:30](-[:90]OH)-[:-30]-[@{cl,.5}:30]}}{Poli(1,4-butadieno)}
+\polymerdelim[height=25pt, depth=10pt, indice=n]{op}{cl}
+\schemestop
+\chemnameinit{}
+\end{center}
+
+En una cadena lineal ideal de poli(1,4-butadieno), la oxidación con \ce{KMnO4} frío y diluido 
+conduce principalmente a unidades vecinales dihidroxiladas. En esas condiciones no se genera 
+ácido carboxílico por escisión completa de la cadena, porque ello requeriría romper la cadena 
+principal. No obstante, en \textbf{1,2-polibutadieno} o en superficies de \textbf{1,4-polibutadieno 
+reticulado}, la oxidación con permanganato acuoso sí puede introducir grupos carboxílicos, según 
+la concentración y la temperatura. La diferencia depende, por tanto, de la estructura del polímero 
+y de las condiciones de oxidación.
+
+Estas oxidaciones atacan los enlaces $\pi$, que son más débiles que los enlaces $\sigma$ y 
+tienen mayor densidad electrónica; el ataque ocurre en ese sitio, se rompe el enlace $\pi$ y 
+se forman enlaces hidroxilo \ce{-OH}.
+
+Primero, fijémonos en las condiciones que especifiqué. Para este punto ya sabemos que el \ce{KMnO4} 
+es un agente oxidante, pero aquí aparecen dos condiciones que no habíamos visto: \textbf{Frío, diluido}. 
+No es difícil deducir a qué se refieren, pero es importante analizar para qué sirven. Que la reacción 
+sea en frío y diluida implica que la oxidación no se llevará hasta el mayor o último estado de oxidación, 
+es decir, no oxidará la molécula por completo.
+
+La razón principal de estas condiciones es \textbf{cinética y de control selectivo}: en frío y con 
+permanganato diluido se favorece la formación del diol vecinal y se evita la sobreoxidación que 
+rompería la cadena o generaría productos carbonílicos no deseados.
+
+Mantener la molécula en este estado puede ser conveniente por motivos específicos. En este caso, 
+al no oxidarla del todo hasta llegar a un enlace \ce{C=O} (\textbf{cetona}), nos permite conservar 
+más enlaces de hidrógeno (puentes de hidrógeno). Un enlace de hidrógeno se da cuando una molécula 
+tiene un átomo muy electronegativo (como flúor, oxígeno o nitrógeno) unido a un hidrógeno, formando 
+interacciones intermoleculares del tipo \ce{X-H \cdots X-H}. Estas interacciones permiten una mejor 
+humectabilidad, polaridad superficial y compatibilidad con medios polares. Detenerse en el diol 
+conserva esos grupos \ce{-OH}; si se oxidara hasta una cetona, se perderían y disminuiría la 
+capacidad de formar puentes de hidrógeno. La mejora de solubilidad es una \textbf{consecuencia 
+deseada} de elegir el diol, no la causa mecanística de las condiciones suaves; la causa es el 
+control de la sobreoxidación.
+
+\textbf{Otro ejemplo:}
+\begin{center}
+\schemestart
+\chemname{\chemfig[baseline=(current bounding box.center)]{(-[:210])(-[:150])=(-[:30])(-[:-30])}}{2,3-dimetilbut-2-eno}
+\arrow{->[\ce{KMnO4}][Frío, diluido]}[0, 2]
+\chemname{\chemfig[baseline=(current bounding box.center)]{(-[:210])(-[:150])(-[:90]OH)-(-[:30])(-[:-30])(-[:270]OH)}}{2,3-dimetilbutano-2,3-diol}
+\schemestop
+\end{center}
+
+La dihidroxilación con \ce{KMnO4} frío y diluido es \textbf{syn} (cis): los dos grupos \ce{-OH} 
+se incorporan por la misma cara del doble enlace. El esquema en zigzag plano no refleja esta 
+estereoquímica, pero el resultado real es un \textit{cis}-diol (o un diol con retención de la 
+estereoquímica relativa).
+
+\textbf{Oxidación de glicoles}
+
+\begin{reaccion}
+    \schemestart
+    \chemname{\chemfig{(-[:210]H)(-[:150]H)(-[:90]OH)-(-[:30]H)(-[:-30]H)(-[:270]OH)}}{1,2-etanodiol}
+    \arrow{->[\ce{HIO4}]}
+    \chemname{\chemfig{(=[:90]O)(-[:210]H)(-[:-30]H)}}{Formaldehído}
+    \+
+    \chemname{\chemfig{(=[:90]O)(-[:210]H)(-[:-30]H)}}{Formaldehído}
+    \+
+    \ce{HIO3}
+    \+
+    \ce{H2O}
+    \schemestop
+\end{reaccion}
+
+\vspace{0.5cm}
+
+Este proceso se da porque pasa por una ruptura heterolítica de esta forma: \\
+
+\begin{reaccion}
+    \schemestart
+    \chemfig{(-[:210]H)(-[:150]H)(-[:100]@{O1}\Charge{30:5pt=$\delta^-$}{O}-[:120]H)-(-[:30]H)(-[:-30]H)(-[:80]O-[:60]H)}
+    \+
+    \chemfig{@{I1}\Charge{100:3pt=$\delta^+$}{I}(-[:0]O-[:30]H)(=[:80]O)(=[:180]O)(=[:270]O)}
+    \arrow{->}
+    \chemfig{(-[:210]H)(-[:150]H)(-[:100]O^{\color{catred}+}(-[50, 1.8]I(-[:30, 1.2]OH)(=[:90, 1.2]O)(=[:180, 1.2]O)(-[:-30, 1.2]@{O2}{O}^{\color{anblue}-}))-[:120]@{H2}{H})-(-[:30]H)(-[:-30]H)(-[:80]\Charge{120:5pt=$\delta^-$}{O}-[:60]H)}
+    \schemestop
+    \chemmove[line width=0.5pt,-stealth,red]{
+        \draw[shorten <=2pt, shorten >=2pt] (O1).. controls +(90:6mm) and +(180:6mm) .. (I1);
+        \draw[shorten <=2pt, shorten >=2pt] (O2).. controls +(180:6mm) and +(90:6mm) .. (H2);
+    }
+\schemestart
+\arrow{->}
+\chemfig{(-[:210]H)(-[:150]H)(-[:100]O(-[50, 1.8]@{I2}{I}(-[:30, 1.2]OH)(-[:-30, 1.2]@{O_leave}OH)(=[:90, 1.2]O)(=[:180, 1.2]O)))-(-[:30]H)(-[:-30]H)(-[:80]@{O3}O-[:60]@{H_leave}H)}
+\arrow{-U>[][\ce{H2O}]}
+\chemfig{@{C_l}(-[:210]H)(-[:150]H)(-[:100]@{O_l}O(-[@{left_OI, 0.5}:45]@{I3}{I}?(=[:45, 1.2]O)(=[:135, 1.2]O)))-[@{cc, 0.5}]@{C_r}(-[:30]H)(-[:-30]H)(-[:80]@{O4}O?)}
+\arrow{-U>[][\ce{HIO3}]}
+2\, \chemfig{(=[:90]O)(-[:210]H)(-[:-30]H)}
+\schemestop
+\chemmove[line width=0.5pt,-stealth,red]{
+\draw[shorten <=2pt, shorten >=2pt] (O3).. controls +(90:6mm) and +(290:6mm) .. (I2);
+\draw[dashed, shorten <=2pt, shorten >=2pt] (O_leave).. controls +(270:8mm) and +(180:8mm) .. (H_leave);
+\draw[shorten <=2pt, shorten >=2pt] (cc).. controls +(120:3mm) and +(60:3mm) .. (C_l);
+\draw[shorten <=2pt, shorten >=2pt] (left_OI).. controls +(150:3mm) and +(180:3mm) .. (I3);
+\draw[shorten <=2pt, shorten >=2pt] ($(O4)!0.5!(I3)$).. controls +(270:3mm) and +(180:3mm) .. (O4);
+}
+\end{reaccion}
+
+\textbf{Reacción de Malaprade}
+
+Como se observa en el mecanismo superior, la reacción se lleva a cabo con el 1,2-etanodiol, 
+que es el glicol más sencillo. Un glicol es una molécula que tiene dos grupos hidroxilo 
+(\ce{-OH}) en carbonos adyacentes.
+
+Para entender el proceso, primero fijémonos en el ataque inicial. El yodo del ácido 
+peryódico (\ce{HIO4}) se encuentra en un estado de oxidación muy alto (+7), lo que lo 
+convierte en un electrófilo potente. Los dos oxígenos del diol actúan como nucleófilos 
+y atacan al yodo. Esto da lugar a la formación de un intermediario de cinco miembros 
+llamado éster cíclico de periodato, y se libera una molécula de agua en el proceso.
+
+Después, llega el paso clave del mecanismo. El éster cíclico es inestable y colapsa de 
+forma concertada. El enlace \ce{C-C} se rompe, los enlaces \ce{O-I} también se rompen, 
+y los electrones se reorganizan para formar dos nuevos dobles enlaces carbonilo (\ce{C=O}). 
+El yodo, por su parte, se reduce a ácido yódico (\ce{HIO3}). Como resultado, se obtienen 
+dos moléculas de formaldehído.
+
+Es importante detenernos aquí para aclarar un punto fundamental sobre el tipo de 
+ruptura. Este proceso es \textbf{heterolítico}, no homolítico. Esto significa que 
+los electrones se mueven siempre en pares completos y en ningún momento se forman 
+radicales libres. Al romperse el enlace \ce{C-C}, sus dos electrones se van juntos 
+hacia uno de los carbonos, mientras que el otro carbono obtiene sus electrones del 
+enlace \ce{O-I} que también se está rompiendo. 
+
+Si en algún momento se dibujan dos flechas de media punta (o media flecha) saliendo 
+del enlace \ce{C-C}, se está representando de forma incorrecta una ruptura radicalaria 
+que no ocurre aquí. Sin embargo, es común en los cursos encontrar esta notación para 
+simplificar el dibujo; aunque es una convención extendida, no es la forma correcta 
+de representarlo.
+
+Peor aún es el caso en el que se dibujan dos flechas completas saliendo del enlace 
+\ce{C-C}. Esto es químicamente imposible porque implicaría que el enlace \ce{C-C} 
+aporta dos pares de electrones (4 electrones en total), cuando en realidad un enlace 
+simple solo contiene un par (2 electrones). Para que ambos carbonos formen sus 
+dobles enlaces \ce{C=O}, es indispensable que uno de ellos tome los electrones del 
+enlace \ce{C-C}, y el otro los del enlace \ce{O-I}. Por eso el enlace \ce{O-I} 
+también debe romperse, y no es una opción, sino una necesidad estequiométrica.
+
+Este mismo error de representación suele cometerse con los enlaces \ce{O-I}. Al igual 
+que el enlace \ce{C-C}, un enlace simple \ce{O-I} contiene únicamente un par de 
+electrones. Dibujar dos flechas completas saliendo de un enlace \ce{O-I} implicaría, 
+de nuevo, que el enlace tiene 4 electrones, lo cual es físicamente imposible. En la 
+realidad, cuando el enlace \ce{O-I} se rompe, el par de electrones se va completamente 
+hacia uno de los dos átomos: ya sea hacia el oxígeno (para formar el doble enlace 
+\ce{C=O}) o hacia el yodo (para reducirse a yodato, \ce{HIO3}).
+
+El término \textit{concertado} es una simplificación didáctica. Estudios computacionales 
+recientes (DFT)~\supercite{kolodziejczyk2023} sugieren que el proceso real podría ser 
+por etapas, con un intermedio de ``cuasi-anillo'' de siete miembros, un éster cíclico 
+de cinco miembros y varios estados de transición, aunque el resultado global se pueda 
+describir como una escisión concertada. El flujo electrónico sigue siendo heterolítico 
+y la crítica a las flechas incorrectas sigue siendo válida.

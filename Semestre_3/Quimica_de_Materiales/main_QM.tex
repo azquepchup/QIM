@@ -71,8 +71,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{tikz}
-\AtBeginDocument{\shorthandoff{>}}
-\usetikzlibrary{shapes.geometric, arrows.meta, positioning, decorations.markings}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, decorations.markings, babel, calc}
+\AtBeginDocument{\shorthandoff{<>}}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
@@ -307,14 +307,24 @@ postaction={decorate}
 %  ENTORNO DE REACCIÓN (baseline centrado + reset de chemname)
 % ══════════════════════════════════════════════════════════════
 \newenvironment{reaccion}{%
+  \begin{center}%
   \setchemfig{baseline=(current bounding box.center)}%
   \chemnameinit{}%
-  \schemestart
 }{%
-  \schemestop
   \chemnameinit{}%
   \setchemfig{baseline=0pt}%
+  \end{center}%
 }
+
+% -- Flecha retrosintética personalizada --
+\catcode`\_=11
+\definearrow3{=retro>}{%
+  \CF_arrowshiftnodes{#3}%
+  \draw[double distance=2pt, -Implies] (\CF_arrowstartnode)--(\CF_arrowendnode);
+  \expandafter[\CF_arrowcurrentstyle](\CF_arrowstartnode)--(\CF_arrowendnode);%
+  \CF_arrowdisplaylabel{#1}{0.5}+\CF_arrowstartnode{#2}{0.5}-\CF_arrowendnode
+}
+\catcode`\_=8
 
 % ══════════════════════════════════════════════════════════════
 %  REFERENCIAS, ENLACES Y CITAS
@@ -322,10 +332,14 @@ postaction={decorate}
 \usepackage{csquotes}
 \usepackage{url}
 \usepackage{fancyvrb}
-\usepackage{witharrows} 
+
+% 1. Primero cargamos biblatex
+\usepackage[backend=biber, style=chem-rsc, language=spanish, doi=true, url=true, hyperref=true]{biblatex}
+\DeclareFieldFormat{labelnumberwidth}{#1.}
+
+% 2. DESPUÉS cargamos hyperref y cleveref para que los links funcionen
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
-\usepackage[backend=biber, style=apa, language=spanish]{biblatex}
 
 % ══════════════════════════════════════════════════════════════
 %  PIES DE FIGURA Y TABLA (APA)
@@ -342,7 +356,7 @@ postaction={decorate}
 %  RECURSOS BIBLIOGRÁFICOS
 % ══════════════════════════════════════════════════════════════
 % Cada materia tiene su propio .bib — descomentar y ajustar:
-% \addbibresource{referencias_QM.bib}
+\addbibresource{referencias_QM.bib}
 
 % ══════════════════════════════════════════════════════════════
 %  DOCUMENTO
@@ -393,10 +407,11 @@ postaction={decorate}
 \spacing{1.5}
 \input{anexo_QM}
 
-%---------- Bibliografía e índice (si aplica) ----------%
-% \newpage
-% \printbibliography
-% \printindex
+%---------- Bibliografía e índice ----------%
+\newpage
+% heading=bibintoc lo pone en el índice pero sin numeración
+\printbibliography[heading=bibintoc, title={Referencias}]
+\printindex
 
 %---------- Final del documento ----------%
 \end{document}
