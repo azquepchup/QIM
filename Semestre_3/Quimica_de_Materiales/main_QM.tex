@@ -1,16 +1,17 @@
 \documentclass[12pt]{article}
 
 % ══════════════════════════════════════════════════════════════
-%  CODIFICACIÓN E IDIOMA
+%  1. CODIFICACIÓN E IDIOMA
 % ══════════════════════════════════════════════════════════════
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
 \usepackage[defaultfam,tabular,lining]{montserrat}
 \spanishdecimal{.}
 
 % ══════════════════════════════════════════════════════════════
-%  FORMATO Y DISEÑO
+%  2. FORMATO Y DISEÑO
 % ══════════════════════════════════════════════════════════════
 \usepackage[top=2.5cm, bottom=3.2cm, outer=3cm, inner=3cm]{geometry}
 \usepackage{ragged2e}
@@ -22,8 +23,12 @@
 \makeindex
 \usepackage{microtype}
 
+\usepackage[hang, flushmargin, bottom, multiple]{footmisc}
+\setlength{\skip\footins}{1cm}
+\renewcommand{\footnoterule}{\vspace*{-3pt}\noindent\rule{0.4\columnwidth}{0.4pt}\vspace*{2.6pt}}
+
 % ══════════════════════════════════════════════════════════════
-%  COLORES
+%  3. COLORES
 % ══════════════════════════════════════════════════════════════
 \usepackage{xcolor}
 \definecolor{blueunam}{RGB}{50, 70, 90}
@@ -40,7 +45,7 @@
 \definecolor{azulNota}{RGB}{55, 115, 165}
 
 % ══════════════════════════════════════════════════════════════
-%  MATEMÁTICAS
+%  4. MATEMÁTICAS
 % ══════════════════════════════════════════════════════════════
 \usepackage{amsmath}
 \usepackage{mathtools}
@@ -60,24 +65,39 @@
 \allowdisplaybreaks
 
 % ══════════════════════════════════════════════════════════════
-%  UNIDADES
+%  5. UNIDADES
 % ══════════════════════════════════════════════════════════════
 \usepackage{siunitx}
 \sisetup{output-decimal-marker={.}, group-separator={,}}
 
 % ══════════════════════════════════════════════════════════════
-%  GRÁFICOS Y FIGURAS
+%  6. GRÁFICOS Y FIGURAS (TIKZ)
 % ══════════════════════════════════════════════════════════════
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, arrows.meta, positioning, decorations.markings, babel, calc}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, decorations.markings, decorations.pathmorphing, babel, calc}
 \AtBeginDocument{\shorthandoff{<>}}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
+% -- Corte de enlace (Zigzag rojo) --
+\tikzset{
+  bond/.style={
+    draw=red, thick, -,
+    decorate,
+    decoration={zigzag, segment length=3pt, amplitude=0.5pt}
+  }
+}
+\newcommand{\cutbond}[2]{%
+  \chemmove{
+    \draw[bond] ($(#1)!0.5!(#2) + (0,-0.35)$) -- ($(#1)!0.5!(#2) + (0,0.35)$);
+  }%
+}
+
 % ══════════════════════════════════════════════════════════════
-%  TABLAS
+%  7. TABLAS
 % ══════════════════════════════════════════════════════════════
 \usepackage{array}
 \usepackage{tabularx}
@@ -89,29 +109,40 @@
 \usepackage{multicol}
 
 % ══════════════════════════════════════════════════════════════
-%  QUÍMICA
+%  8. QUÍMICA
 % ══════════════════════════════════════════════════════════════
 \usepackage{chemfig}
 \usepackage[version=4]{mhchem}
-% chemmacros v6.2a (texlive 2026) rompe el índice al cargar el módulo
-% nomenclature internamente. Reactivar al actualizar a v6.3+.
-% \usepackage{chemmacros}
-% \usepackage{chemgreek}
-% \chemsetup{modules={redox,thermodynamics,isotopes,iupac}}
+\mhchemoptions{textfontcommand=\rmfamily}
+
+\def\CFR{R}
+\def\CFRp{R'}
+\renewcommand*\printatom[1]{%
+  \ensuremath{%
+    \def\CFtmp{#1}%
+    \ifx\CFtmp\CFR
+      \mathit{#1}%
+    \else
+      \ifx\CFtmp\CFRp
+        \mathit{#1}%
+      \else
+        \mathrm{#1}%
+      \fi
+    \fi
+  }%
+}
+
 \usepackage{elements}
 \usepackage{chemnum}
-% chemarr rompe el índice en combinación con tocloft.
-% Reactivar cuando se integre chemmacros.
-% \usepackage{chemarr}
 \usepackage{chemplants}
 \usepackage{carbohydrates}
 \usepackage{chemobabel}
 \usepackage{tikzorbital}
 \usepackage{modiagram}
-% ghsystem rompe el índice vía módulo nomenclature de chemmacros.
-% Usar PNGs de /usr/share/texmf-dist/tex/latex/ghsystem/pictures/
-% con \includegraphics, o cargar solo en documentos sin \tableofcontents.
-% \usepackage{ghsystem}
+
+% ══════════════════════════════════════════════════════════════
+%  9. CONFIGURACIONES ESPECIALES DE QUÍMICA Y TIKZ
+% ══════════════════════════════════════════════════════════════
 
 % -- Estilo ddbond: enlace deslocalizado --
 \catcode`\_=11
@@ -136,10 +167,17 @@ postaction={decorate}
 }
 \catcode`\_=8
 
-% ══════════════════════════════════════════════════════════════
-%  DIAMANTE NFPA 704
-% ══════════════════════════════════════════════════════════════
-% Uso: \NFPAdiamond{salud}{inflamab}{reactividad}{especial}
+% -- Flecha retrosintética personalizada --
+\catcode`\_=11
+\definearrow3{=retro>}{%
+  \CF_arrowshiftnodes{#3}%
+  \draw[double distance=2pt, -Implies] (\CF_arrowstartnode)--(\CF_arrowendnode);
+  \expandafter[\CF_arrowcurrentstyle](\CF_arrowstartnode)--(\CF_arrowendnode);%
+  \CF_arrowdisplaylabel{#1}{0.5}+\CF_arrowstartnode{#2}{0.5}-\CF_arrowendnode
+}
+\catcode`\_=8
+
+% -- Diamante NFPA 704 --
 \newcommand{\NFPAdiamond}[4]{%
     \begin{tikzpicture}[scale=0.45, every node/.style={transform shape}]
         \draw[thick, line width=1.5pt] (0,2) -- (2,4) -- (4,2) -- (2,0) -- cycle;
@@ -158,154 +196,28 @@ postaction={decorate}
 }
 
 % ══════════════════════════════════════════════════════════════
-%  LISTAS
+%  10. LISTAS, CAJAS Y AMBIENTES PERSONALIZADOS
 % ══════════════════════════════════════════════════════════════
-% enumitem[shortlabels]: permite [a)], [1.], [label=...], resume, etc.
-% Sustituye a \usepackage{enumerate} (incompatible).
 \usepackage[shortlabels]{enumitem}
-
-% ══════════════════════════════════════════════════════════════
-%  CAJAS Y RESALTADO
-% ══════════════════════════════════════════════════════════════
 \usepackage[most]{tcolorbox}
 
-% ══════════════════════════════════════════════════════════════
-%  NOTAS POR NIVEL — semáforo con línea izquierda
-% ══════════════════════════════════════════════════════════════
-
-% Nivel 1: Relevante — rojo, línea gruesa
 \newtcolorbox{notafija}{
-    enhanced, breakable,
-    colback=white, colframe=rojoNota, coltext=black,
-    boxrule=0pt, leftrule=3pt, arc=0pt,
-    left=8pt, right=8pt, top=6pt, bottom=6pt,
-    fontupper=\small
+    enhanced, breakable, colback=white, colframe=rojoNota, coltext=black,
+    boxrule=0pt, leftrule=3pt, arc=0pt, left=8pt, right=8pt, top=6pt, bottom=6pt, fontupper=\small
 }
-
-% Nivel 2: Importante — amarillo, línea media
 \newtcolorbox{notaimportante}{
-    enhanced, breakable,
-    colback=white, colframe=amarilloNota, coltext=black,
-    boxrule=0pt, leftrule=2pt, arc=0pt,
-    left=8pt, right=8pt, top=6pt, bottom=6pt,
-    fontupper=\small\itshape
+    enhanced, breakable, colback=white, colframe=amarilloNota, coltext=black,
+    boxrule=0pt, leftrule=2pt, arc=0pt, left=8pt, right=8pt, top=6pt, bottom=6pt, fontupper=\small\itshape
 }
-
-% Nivel 3: Normal (didáctico) — azul, línea delgada
 \newtcolorbox{notadidactica}{
-    enhanced, breakable,
-    colback=white, colframe=azulNota, coltext=black!70,
-    boxrule=0pt, leftrule=1pt, arc=0pt,
-    left=8pt, right=8pt, top=4pt, bottom=4pt,
-    fontupper=\small\itshape
+    enhanced, breakable, colback=white, colframe=azulNota, coltext=black!70,
+    boxrule=0pt, leftrule=1pt, arc=0pt, left=8pt, right=8pt, top=4pt, bottom=4pt, fontupper=\small\itshape
 }
 
-% ══════════════════════════════════════════════════════════════
-%  COMANDO PARA CORRIENTES DE SIGNO
-% ══════════════════════════════════════════════════════════════
 \newcommand{\corriente}[1]{%
-    \tikz[baseline=(char.base)]{%
-        \node[shape=circle, draw, inner sep=1pt, minimum size=1.4em,
-              font=\small] (char) {#1};%
-    }%
+    \tikz[baseline=(char.base)]{\node[shape=circle, draw, inner sep=1pt, minimum size=1.4em, font=\small] (char) {#1};}%
 }
 
-% ══════════════════════════════════════════════════════════════
-%  ENCABEZADO Y PIE DE PÁGINA
-% ══════════════════════════════════════════════════════════════
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[R]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-
-% Encabezado opcional con materia y sección activa.
-% Uso en el main, después de \begin{document} y antes del primer \section:
-%   \activarEncabezado{Química de Materiales}
-% Requiere secciones numeradas (\section, no \section*).
-% Con \section* el \leftmark no se actualiza y el lado derecho queda vacío.
-\newcommand{\activarEncabezado}[1]{%
-  \fancyhead[L]{\small\textcolor{blueunam}{#1}}%
-  \fancyhead[R]{\small\textcolor{blueunam}{\nouppercase{\leftmark}}}%
-  \renewcommand{\headrulewidth}{0.4pt}%
-  \renewcommand{\headrule}{\hbox to\headwidth{\color{blueunam}\leaders\hrule height \headrulewidth\hfill}}%
-}
-
-\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
-
-% ══════════════════════════════════════════════════════════════
-%  ÍNDICE Y BIBLIOGRAFÍA
-% ══════════════════════════════════════════════════════════════
-\AtBeginDocument{
-    \renewcommand{\contentsname}{
-        \centering\fontsize{12}{18}\selectfont
-        \textcolor{blueunam}{\textbf{ÍNDICE}}
-    }
-}
-\AtBeginDocument{
-    \renewcommand{\bibname}{
-        \centering\fontsize{12}{18}\selectfont
-        \textcolor{blueunam}{\textbf{REFERENCIAS}}
-    }
-}
-\renewcommand{\cftsecfont}{\color{blueunam}}
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
-
-% ══════════════════════════════════════════════════════════════
-%  COLUMNAS PERSONALIZADAS
-% ══════════════════════════════════════════════════════════════
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-
-% ══════════════════════════════════════════════════════════════
-%  CELDAS DE TABLA DE CATIONES
-% ══════════════════════════════════════════════════════════════
-% Uso: \catcell{color}{símbolo}{Z}{carga/nombre}
-\newcommand{\catcell}[4]{%
-    \cellcolor{#1}%
-    \begin{minipage}[t][1.8cm][t]{1.6cm}%
-        \centering\vspace{3pt}%
-        {\small\textbf{#2}}\\[2pt]%
-        {\tiny\color{gray}#3}\\[3pt]%
-        {\footnotesize\color{blueunam}#4}%
-    \end{minipage}}
-
-\newcommand{\emptycell}{%
-    \cellcolor{white}%
-    \begin{minipage}[t][1.8cm][t]{1.6cm}\end{minipage}}
-
-% ══════════════════════════════════════════════════════════════
-%  AMBIENTES DE EJERCICIO (dos estilos)
-% ══════════════════════════════════════════════════════════════
-% Uso: \begin{exercise}{Título}{label} ... \end{exercise}
-%
-% Estilo A: caja con fondo gris (BME / QG2)
-\newtcbtheorem{exercise}{Ejercicio}{
-    enhanced, breakable,
-    colback=gray!10, colframe=gray!50,
-    boxrule=0.4pt, arc=0pt, left=0.2cm,
-    attach boxed title to top left={yshift=-2mm,xshift=-2mm},
-    coltitle=black, fonttitle=\bfseries,
-    colbacktitle=white,
-    boxed title style={boxrule=.4pt,sharp corners, colframe=gray!50}
-}{exercise}
-
-% Estilo B: solo borde izquierdo minimalista (QM)
-% Uso: \begin{exerciseline}{Título}{label} ... \end{exerciseline}
-\newtcbtheorem{exerciseline}{Ejercicio}{
-    enhanced, frame empty, interior empty,
-    colframe=blueunam,
-    borderline west={1pt}{0pt}{blueunam},
-    left=0.2cm,
-    attach boxed title to top left={yshift=-2mm,xshift=-2mm},
-    coltitle=black, fonttitle=\bfseries,
-    colbacktitle=white,
-    boxed title style={boxrule=.4pt,sharp corners}
-}{exerciseline}
-
-% ══════════════════════════════════════════════════════════════
-%  ENTORNO DE REACCIÓN (baseline centrado + reset de chemname)
-% ══════════════════════════════════════════════════════════════
 \newenvironment{reaccion}{%
   \begin{center}%
   \setchemfig{baseline=(current bounding box.center)}%
@@ -316,50 +228,79 @@ postaction={decorate}
   \end{center}%
 }
 
-% -- Flecha retrosintética personalizada --
-\catcode`\_=11
-\definearrow3{=retro>}{%
-  \CF_arrowshiftnodes{#3}%
-  \draw[double distance=2pt, -Implies] (\CF_arrowstartnode)--(\CF_arrowendnode);
-  \expandafter[\CF_arrowcurrentstyle](\CF_arrowstartnode)--(\CF_arrowendnode);%
-  \CF_arrowdisplaylabel{#1}{0.5}+\CF_arrowstartnode{#2}{0.5}-\CF_arrowendnode
-}
-\catcode`\_=8
+\newtcbtheorem{exercise}{Ejercicio}{
+    enhanced, breakable, colback=gray!10, colframe=gray!50, boxrule=0.4pt, arc=0pt, left=0.2cm,
+    attach boxed title to top left={yshift=-2mm,xshift=-2mm}, coltitle=black, fonttitle=\bfseries,
+    colbacktitle=white, boxed title style={boxrule=.4pt,sharp corners, colframe=gray!50}
+}{exercise}
+
+\newtcbtheorem{exerciseline}{Ejercicio}{
+    enhanced, frame empty, interior empty, colframe=blueunam,
+    borderline west={1pt}{0pt}{blueunam}, left=0.2cm,
+    attach boxed title to top left={yshift=-2mm,xshift=-2mm}, coltitle=black, fonttitle=\bfseries,
+    colbacktitle=white, boxed title style={boxrule=.4pt,sharp corners}
+}{exerciseline}
 
 % ══════════════════════════════════════════════════════════════
-%  REFERENCIAS, ENLACES Y CITAS
+%  11. ENCABEZADOS Y REFERENCIAS
 % ══════════════════════════════════════════════════════════════
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\activarEncabezado}[1]{%
+  \fancyhead[L]{\small\textcolor{blueunam}{#1}}%
+  \fancyhead[R]{\small\textcolor{blueunam}{\nouppercase{\leftmark}}}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \renewcommand{\headrule}{\hbox to\headwidth{\color{blueunam}\leaders\hrule height \headrulewidth\hfill}}%
+}
+
+\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
+
+\AtBeginDocument{
+    \renewcommand{\contentsname}{
+        \centering\fontsize{12}{18}\selectfont
+        \textcolor{blueunam}{\textbf{ÍNDICE}}
+    }
+}
+\renewcommand{\cftsecfont}{\color{blueunam}}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% -- Columnas personalizadas --
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% -- Celdas de tabla de cationes --
+\newcommand{\catcell}[4]{%
+    \cellcolor{#1}%
+    \begin{minipage}[t][1.8cm][t]{1.6cm}%
+        \centering\vspace{3pt}{\small\textbf{#2}}\\[2pt]{\tiny\color{gray}#3}\\[3pt]{\footnotesize\color{blueunam}#4}%
+    \end{minipage}}
+\newcommand{\emptycell}{\cellcolor{white}\begin{minipage}[t][1.8cm][t]{1.6cm}\end{minipage}}
+
+% -- Referencias y enlaces --
 \usepackage{csquotes}
 \usepackage{url}
+\urlstyle{same}
 \usepackage{fancyvrb}
 
-% 1. Primero cargamos biblatex
 \usepackage[backend=biber, style=chem-rsc, language=spanish, doi=true, url=true, hyperref=true]{biblatex}
 \DeclareFieldFormat{labelnumberwidth}{#1.}
 
-% 2. DESPUÉS cargamos hyperref y cleveref para que los links funcionen
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 
-% ══════════════════════════════════════════════════════════════
-%  PIES DE FIGURA Y TABLA (APA)
-% ══════════════════════════════════════════════════════════════
 \DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
-\captionsetup[table]{textfont=it,format=plain,justification=justified,
-  singlelinecheck=false,labelsep=spaced,skip=0pt}
-\captionsetup[figure]{labelsep=period,labelfont=bf,justification=justified,
-  singlelinecheck=false,font=doublespacing}
-
+\captionsetup[table]{textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
+\captionsetup[figure]{labelsep=period,labelfont=bf,justification=justified,singlelinecheck=false,font=doublespacing}
 \setlength{\parindent}{0pt}
 
-% ══════════════════════════════════════════════════════════════
-%  RECURSOS BIBLIOGRÁFICOS
-% ══════════════════════════════════════════════════════════════
-% Cada materia tiene su propio .bib — descomentar y ajustar:
 \addbibresource{referencias_QM.bib}
 
 % ══════════════════════════════════════════════════════════════
-%  DOCUMENTO
+%  12. DOCUMENTO
 % ══════════════════════════════════════════════════════════════
 \begin{document}
 
@@ -389,27 +330,24 @@ postaction={decorate}
 \thispagestyle{empty}
 \newpage
 
-%---------- Encabezado opcional (descomentar por documento) ----------%
+%---------- Encabezado opcional ----------%
 % \activarEncabezado{Química de Materiales}
 
-%---------- Fundamentos previos ----------%
+%---------- Contenido ----------%
 \spacing{1.5}
 \input{Fundamentos_previos}
 
-%---------- Apuntes ----------%
 \spacing{1.5}
 \input{Unidad_1}
 
 \spacing{1.5}
 \input{Unidad_2}
 
-%---------- Anexo ----------%
 \spacing{1.5}
 \input{anexo_QM}
 
 %---------- Bibliografía e índice ----------%
 \newpage
-% heading=bibintoc lo pone en el índice pero sin numeración
 \printbibliography[heading=bibintoc, title={Referencias}]
 \printindex
 

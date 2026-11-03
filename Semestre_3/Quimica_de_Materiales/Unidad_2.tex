@@ -1419,9 +1419,9 @@ Este proceso se da porque pasa por una ruptura heterolítica de esta forma: \\
     \schemestart
     \chemfig{(-[:210]H)(-[:150]H)(-[:100]@{O1}\Charge{30:5pt=$\delta^-$}{O}-[:120]H)-(-[:30]H)(-[:-30]H)(-[:80]O-[:60]H)}
     \+
-    \chemfig{@{I1}\Charge{100:3pt=$\delta^+$}{I}(-[:0]O-[:30]H)(=[:80]O)(=[:180]O)(=[:270]O)}
+    \chemfig{@{I1}\Charge{100:3pt=$\delta^+$}{I}(-[:0]O-[:30]H)(=[:90]O)(=[:180]O)(=[:270]O)}
     \arrow{->}
-    \chemfig{(-[:210]H)(-[:150]H)(-[:100]O^{\color{catred}+}(-[50, 1.8]I(-[:30, 1.2]OH)(=[:90, 1.2]O)(=[:180, 1.2]O)(-[:-30, 1.2]@{O2}{O}^{\color{anblue}-}))-[:120]@{H2}{H})-(-[:30]H)(-[:-30]H)(-[:80]\Charge{120:5pt=$\delta^-$}{O}-[:60]H)}
+    \chemfig{(-[:210]H)(-[:150]H)(-[:100]O^{\color{catred}+}(-[50, 1.8]I(-[:30, 1.2]OH)(=[:90, 1.2]O)(=[:180, 1.2]O)(-[:-30, 1.2]@{O2}{O}^{\color{anblue}-}))-[:120]@{H2}{H})-(-[:30]H)(-[:-30]H)(-[:80]O-[:60]H)}
     \schemestop
     \chemmove[line width=0.5pt,-stealth,red]{
         \draw[shorten <=2pt, shorten >=2pt] (O1).. controls +(90:6mm) and +(180:6mm) .. (I1);
@@ -1429,7 +1429,7 @@ Este proceso se da porque pasa por una ruptura heterolítica de esta forma: \\
     }
 \schemestart
 \arrow{->}
-\chemfig{(-[:210]H)(-[:150]H)(-[:100]O(-[50, 1.8]@{I2}{I}(-[:30, 1.2]OH)(-[:-30, 1.2]@{O_leave}OH)(=[:90, 1.2]O)(=[:180, 1.2]O)))-(-[:30]H)(-[:-30]H)(-[:80]@{O3}O-[:60]@{H_leave}H)}
+\chemfig{(-[:210]H)(-[:150]H)(-[:100]O(-[50, 1.8]@{I2}\Charge{120:5pt=$\delta^+$}{I}(-[:30, 1.2]OH)(-[:-30, 1.2]@{O_leave}OH)(=[:90, 1.2]O)(=[:180, 1.2]O)))-(-[:30]H)(-[:-30]H)(-[:80]@{O3}\Charge{0:5pt=$\delta^-$}{O}-[:60]@{H_leave}H)}
 \arrow{-U>[][\ce{H2O}]}
 \chemfig{@{C_l}(-[:210]H)(-[:150]H)(-[:100]@{O_l}O(-[@{left_OI, 0.5}:45]@{I3}{I}?(=[:45, 1.2]O)(=[:135, 1.2]O)))-[@{cc, 0.5}]@{C_r}(-[:30]H)(-[:-30]H)(-[:80]@{O4}O?)}
 \arrow{-U>[][\ce{HIO3}]}
@@ -1497,3 +1497,225 @@ por etapas, con un intermedio de ``cuasi-anillo'' de siete miembros, un éster c
 de cinco miembros y varios estados de transición, aunque el resultado global se pueda 
 describir como una escisión concertada. El flujo electrónico sigue siendo heterolítico 
 y la crítica a las flechas incorrectas sigue siendo válida.
+
+\textbf{Oxidación con \ce{O3} (ozonólisis)}
+\begin{reaccion}
+    \schemestart
+    \ce{3O2}
+    \arrow{<=>[$h\nu$][]}
+    \ce{2O3}
+    \schemestop
+\end{reaccion}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{-[@{op,.5}:0]-[:30]@{C1}(-[:120])=@{C2}-[:-30]-[@{cl,.5}:0]}}{Poli(cis-1,4-isopreno)}
+        \arrow{->[\tikzmark{O3}\ce{O3}][]}
+        \chemname{\chemfig{O=(-[:45]H)-[:-30]--[:30](=O)(-[:120])}}{3-oxobutanal}
+    \schemestop
+    \polymerdelim[height=30pt, depth=5pt, indice=n]{op}{cl}
+    \cutbond{C1}{C2}
+    \chemmove[-stealth, violet, shorten <=2pt, shorten >=2pt, remember picture, overlay]{
+        \draw (pic cs:O3) .. controls +(90:0.8) and +(90:0.8) .. ($(C1)!0.5!(C2)$);
+    }
+\end{reaccion}
+
+O ya reacomodando la molécula como comúnmente se ve:
+
+\begin{reaccion}
+    \schemestart
+        \chemfig{-[:30](=[:90]O)-[:-30]-[:30](=[:90]O)-[:-30]H}
+    \schemestop
+\end{reaccion}
+
+Sé que casi no se parecen, pero es la misma molécula. La primera es la forma en que se ve en el mecanismo
+de reacción; la puse así para que se pueda apreciar cómo se rompe y se forman los enlaces con el oxígeno,
+sin mover la molécula. Y la segunda es la forma en que se ve comúnmente.
+
+Ahora, dos cosas a aclarar. Sé que no parece obvio por qué se ``rompe'' así la molécula. 
+Primero tenemos que recordar que lo que dibujamos es un monómero repetido \(n\) veces,
+por lo que la molécula de una forma más ampliada se vería así:
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{=[@{op,.5}:0]-[:-30]-[:30]@{C1}(-[:120])=@{C2}-[:-30]--[:30](-[:120])=[@{cl,.5}:0]}}{Poli(cis-1,4-isopreno)}
+    \schemestop
+        \polymerdelim[height=30pt, depth=15pt, indice=n]{op}{cl}
+\end{reaccion}
+
+Donde, como ya vimos, los dobles enlaces se rompen, lo que deja en cada carbono que componía ese
+doble enlace un doble enlace a un oxígeno. Esto deja en un extremo de la molécula un grupo aldehído
+y en el otro extremo un grupo cetona, que es lo que se ve en la segunda molécula (o ya reordenando
+la molécula como ya lo mostré). \\
+
+\textbf{Otros ejemplos:}
+
+\begin{reaccion}
+    \schemestart
+        \chemfig{@{C1}(-[:135]R)(-[:225]R)=@{C2}(-[:45]R)(-[:-45]R)}
+        \arrow{->[\ce{O3}][]}
+        \chemfig{(-[:-45]R)(-[:225]R)=[:90]O}
+        \+
+        \chemfig{(-[:-45]R)(-[:225]R)=[:90]O}
+    \schemestop
+    \cutbond{C1}{C2}
+\end{reaccion}
+
+Si \(R = \ce{H}\), el carbono del doble enlace es terminal; la ozonólisis 
+produce dos moléculas de formaldehído (\ce{HCHO}). \\
+
+Si \(R = \ce{CH3}\), el carbono del doble enlace está sustituido; la ozonólisis 
+produce dos moléculas de acetona (\ce{CH3COCH3}).
+
+\textbf{El 6PPD y los antiozonantes en llantas}
+
+\begin{reaccion}
+    \setchemfig{atom sep=1.85em}
+    \schemestart
+        \chemname{\chemfig{*6((-NH-[:150]*6(=-=-=-))
+        =-=
+        (-NH-[:-30](-[:270])--[:-30](-[:270])-[:30])
+        -=-)}}{6PPD (Antiozonante)}
+        \arrow{->[\ce{O3}][]}
+        \chemname{\chemfig{*6((-NH-[:150]*6(=-=-=-))
+        -(=O)-=
+        (-NH-[:-30](-[:270])--[:-30](-[:270])-[:30])
+        -(=O)-=)}}{6PPD-quinona (6PPD-Q)}
+    \schemestop
+\end{reaccion}
+
+El nombre IUPAC real del 6PPD es \(N\)-(1,3-dimetilbutil)-\(N'\)-fenil-\(p\)-fenilendiamina, 
+pero comercialmente se abrevia como 6PPD. La reacción de oxidación con ozono 
+produce una quinona conocida como \textbf{6PPD-quinona} (cuyo nombre sistemático es 
+2-((4-metilpentan-2-il)amino)-5-(fenilamino)ciclohexa-2,5-dieno-1,4-diona).
+
+Este producto tiene una función muy interesante: se utiliza como recubrimiento 
+en llantas nuevas. Así, durante el almacenamiento se evita que se agrieten y 
+se mantengan en buen estado, ya que el ozono ataca preferentemente este 
+recubrimiento. Debido a esto, el 6PPD se clasifica como un \textbf{compuesto 
+sacrificial}: la molécula se destruye a sí misma para salvar al caucho. Sin embargo, 
+al mismo tiempo es un compuesto muy tóxico para los peces y otros organismos 
+acuáticos, por lo que su liberación al medio ambiente representa un problema 
+ambiental grave.
+
+\begin{notaimportante}
+\textbf{¿El 6PPD actúa como una capa de pasivación?}
+
+No. Es tentador pensar que la 6PPD-quinona podría acumularse en la superficie 
+y crear una barrera que detenga al ozono. Pero esto no ocurre porque la 
+6PPD-quinona no forma una película sólida e impermeable; son moléculas sueltas 
+que la lluvia lava fácilmente, liberándolas al ambiente. La protección del 6PPD 
+es puramente \textbf{química} (reacción de sacrificio), no física. Para crear 
+barreras físicas reales en el caucho, la industria utiliza \textbf{ceras} que 
+migran a la superficie y forman una capa impermeable continua.
+\end{notaimportante}
+
+\textbf{¿Qué es la pasivación?}
+
+La pasivación es un fenómeno de \textbf{barrera física} en el que la superficie 
+de un metal se vuelve inerte frente a la corrosión. Ocurre cuando el metal 
+reacciona con el oxígeno del aire y forma espontáneamente una capa de óxido 
+microscópica, continua y no porosa.
+
+\begin{itemize}
+    \item \textbf{Metales típicos:} Aluminio (forma \ce{Al2O3}), titanio y acero 
+    inoxidable (forma una capa rica en óxido de cromo, \ce{Cr2O3}).
+    \item \textbf{Diferencia con el 6PPD:} A diferencia del 6PPD, que se destruye 
+    para proteger el caucho, la capa pasivante es un escudo \textbf{permanente} 
+    que bloquea el avance del oxígeno hacia el interior del metal.
+    \item \textbf{Límite de la pasivación:} Puede fallar si el ambiente contiene 
+    iones cloruro (\ce{Cl-}), los cuales penetran y rompen la capa de óxido, 
+    provocando corrosión localizada (picadura).
+\end{itemize}
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 14 -- 13/10/2026: Reducción de carbonilos, alquinos y nitrilos}
+\subsubsection*{\textcolor{blueunam}{Clase 14 -- 13/10/2026: Reducción de carbonilos, alquinos y nitrilos}}
+
+\textbf{Introducción: la jerarquía del grupo carbonilo}
+
+En química orgánica, el grupo carbonilo (\ce{C=O}) no es un grupo funcional 
+aislado, sino una \textbf{estructura base} que da origen a una jerarquía 
+de compuestos. 
+
+Cuando el carbono del carbonilo está unido a dos carbonos, tenemos una 
+\textbf{cetona}. Si está unido a un carbono y un hidrógeno, es un 
+\textbf{aldehído}. Si está unido a un oxígeno, es un \textbf{ácido} o un 
+\textbf{éster}; y si está unido a un nitrógeno, es una \textbf{amida}.
+
+Esta jerarquía es crucial en las reacciones de reducción porque los 
+hidruros metálicos no son igual de fuertes. Por ejemplo, el \ce{NaBH4} 
+es un reductor suave que solo puede atacar a los aldehídos y cetonas, 
+mientras que el \ce{LiAlH4} es tan fuerte que también reduce ésteres, 
+ácidos y amidas.
+
+Veremos cómo reducir estos compuestos carbonílicos, y 
+además, cómo reducir otros grupos que no tienen oxígeno pero sí 
+enlaces múltiples (como los alquinos y los nitrilos).
+
+\textbf{Reducción de carbonilos:}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{-[:30]\charge{30:5pt=$\scriptstyle\color{anblue}1-$}{}-[:-30]OH}}{Alcohol primario}
+        \arrow{<->[$-2\ce{e-}$][$+2\ce{e-}$]}
+        \chemname{\chemfig{\charge{30:5pt=$\scriptstyle\color{catred}+$}{}(-[:-45]H)(-[:225])=[:90]O}}{Aldehído}
+        \arrow{<->[$-2\ce{e-}$][$+2\ce{e-}$]}
+        \chemname{\chemfig{\charge{25:6pt=$\scriptstyle\color{catred}3+$}{}(-[:-45]OH)(-[:225])=[:90]O}}{Ácido carboxílico}
+        \arrow{<->[$-2\ce{e-}$][$+2\ce{e-}$]}
+        \chemfig{\charge{30:5pt=$\color{catred}\xcancel{+5}$}{\phantom{O=C=O}}}
+    \schemestop
+\end{reaccion}
+
+
+Varias cosas a señalar. La que resalta a primera vista es el porqué del +5 
+tachado. Esto se debe a lo que ya habíamos visto: el carbono no puede tener 
+un estado de oxidación mayor a +4 ni menor a -4, por lo que el +5 es imposible.
+
+Otra cosa a notar es qué pasa si intentamos oxidar un carbono que ya está 
+unido a otros dos carbonos, es decir, una cetona:
+
+\begin{reaccion}
+    \schemestart
+        \chemfig{C(-[:-45]R')(-[:225]R)=[:90]O}
+    \schemestop
+\end{reaccion}
+
+La respuesta corta es que no se puede oxidar más. La respuesta larga es que 
+el carbono de la cetona ya tiene un estado de oxidación de +2 y, para oxidarlo 
+más, tendría que perder más electrones. Sin embargo, para que un carbono se 
+oxide, necesita perder hidrógenos (y el oxidante necesita agua para formar 
+intermediarios). Como este carbono está atrapado en medio de la cadena 
+(rodeado de dos grupos \(R\)) y no tiene ningún hidrógeno unido a él, 
+es un callejón sin salida para los oxidantes suaves. 
+
+Esto es importante por dos motivos:
+
+Primero, si tenemos una cadena larga (como un polímero) y queremos oxidar 
+un carbono en medio hasta llegar a ácido carboxílico, esto no será posible; 
+se quedará estancado como cetona (o requerirá una ruptura oxidativa muy drástica).
+
+\begin{reaccion}
+    \schemestart
+        \chemfig{C(-[:-45]R')(-[:225]R)=[:90]O}
+    \schemestop
+\end{reaccion}
+
+En cambio, si el carbono a oxidar está en uno de los extremos de la cadena, 
+este sí tiene un hidrógeno unido a él (es un aldehído en potencia):
+
+\begin{reaccion}
+    \schemestart
+        \chemfig{C(-[:-45]H)(-[:225]R)=[:90]O}
+    \schemestop
+\end{reaccion}
+
+Al tener ese hidrógeno, puede hidratarse y perder electrones, lo que sí 
+permite oxidarlo hasta un ácido carboxílico. 
+
+Segundo, esto nos explica la regla de los alcoholes: si oxidamos un alcohol 
+secundario, obtendremos una cetona (que ya no puede oxidarse); y si oxidamos 
+un alcohol primario, obtendremos primero un aldehído (que aún tiene un 
+hidrógeno) y luego un ácido carboxílico. Todo esto es un proceso redox: 
+si la flecha va hacia la derecha oxidamos (perdemos electrones) y si va 
+hacia la izquierda reducimos (ganamos electrones).
