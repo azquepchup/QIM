@@ -1719,3 +1719,36 @@ un alcohol primario, obtendremos primero un aldehído (que aún tiene un
 hidrógeno) y luego un ácido carboxílico. Todo esto es un proceso redox: 
 si la flecha va hacia la derecha oxidamos (perdemos electrones) y si va 
 hacia la izquierda reducimos (ganamos electrones).
+
+\textbf{Otros ejemplos de aldehidos:}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{\charge{30:5pt=$\scriptstyle\color{anblue}0$}{}(-[:-45]OH)(-[:225])-[:90]}}{Alcohol secundario}
+        \arrow{<->[$-2\ce{e-}$][$+2\ce{e-}$]}
+        \chemname{\chemfig{\charge{25:6pt=$\scriptstyle\color{catred}2+$}{}(-[:-45])(-[:225])=[:90]O}}{Cetona}
+        \arrow{->[\textbf{Combustión}][\textbf{o ruptura oxidativa}]}[0, 2.5]
+        \chemname{\chemfig{O=\charge{30:4pt=$\scriptstyle\color{catred}4+$}{C}=O}}{Dióxido de carbono (\ce{CO2})}
+    \schemestop
+\end{reaccion}
+
+Como se observa en la reacción, hay una diferencia fundamental entre los dos pasos:
+
+\textbf{Primer paso (Alcohol \(\to\) Cetona):} Es una oxidación/reducción típica 
+de grupos funcionales. El alcohol secundario (n.o. = 0) pierde dos electrones para 
+formar la cetona (n.o. = +2). Esta reacción es reversible: si aplicamos un reductor 
+como el \ce{LiAlH4} o \ce{NaBH4}, podemos devolver la cetona al alcohol.
+
+\textbf{Segundo paso (Cetona \(\to\) \ce{CO2}):} No es una oxidación simple de grupo 
+funcional, sino una \textbf{combustión} o \textbf{ruptura oxidativa}. Para que el 
+carbono pase de +2 (en la cetona) a +4 (en el \ce{CO2}), es indispensable romper 
+los enlaces C-C que lo unen a la cadena. Por lo tanto, no es un proceso reversible 
+con los hidruros metálicos comunes; se necesitan condiciones drásticas 
+(como \ce{KMnO4} concentrado y caliente, o combustión directa con \ce{O2}).
+
+\textbf{La regla del +4:} No existe una cetona ni un aldehído con un carbono 
+en estado de oxidación +4. Para que un carbono alcance el +4, debe estar unido 
+únicamente a heteroátomos (como en el \ce{CO2}, el ácido carbónico \ce{H2CO3} o 
+la urea). En el momento en que el carbono está unido a otro carbono o a un 
+hidrógeno, su estado de oxidación no puede llegar al máximo. Por eso el último 
+paso de la serie siempre implica la destrucción de la cadena carbonada.
