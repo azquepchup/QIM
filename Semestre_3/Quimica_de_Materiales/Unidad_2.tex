@@ -510,7 +510,7 @@ rastrear la carga en la red sin analizar cada carbono individual.
 \chemfig{
     *6((-F)=(
         -N=[:225]-[:270](*6(=-=-=(
-            -[:45]NH-[:-45]-[:45](*6(=-=-(
+            -[:45]\chembelow{N}{H}-[:-45]-[:45](*6(=-=-(
                 -[:90]N=[:45]-[:90](*6(=-=-(
                     -[:135]=[:225]N?
                 )=-))
@@ -1100,13 +1100,11 @@ No hay un tercer paso en la serie.
 
 Alcohol terciario:
 \begin{center}
-\setchemfig{arrow coeff=2} % Alarga esta flecha específica
 \schemestart
 \chemname{\chemfig{C^{\color{anblue}{+1}}(-[:90]CH3)(-[:210]CH3)(-[:330]CH3)(-[:0]OH)}}{Alcohol terciario}
-\arrow{->[mecanismo habitual][\textbf{no ocurre}]}
+\arrow{-/>[mecanismo habitual]}[0,2.5]
 \chemname{\chemfig{C^{\color{catred}{+2}}(=[:90]O)(-[:210]CH3)(-[:330]CH3)}}{Cetona + fragmento \ce{CH3}}
 \schemestop
-\setchemfig{arrow coeff=1} % Restaura el tamaño
 \end{center}
 
 Un alcohol terciario no tiene hidrógeno en el carbono del \ce{-OH}:
@@ -1572,14 +1570,14 @@ produce dos moléculas de acetona (\ce{CH3COCH3}).
 \begin{reaccion}
     \setchemfig{atom sep=1.85em}
     \schemestart
-        \chemname{\chemfig{*6((-NH-[:150]*6(=-=-=-))
+        \chemname{\chemfig{*6((-\chembelow{N}{H}-[:150]*6(=-=-=-))
         =-=
-        (-NH-[:-30](-[:270])--[:-30](-[:270])-[:30])
+        (-\chembelow{N}{H}-[:-30](-[:270])--[:-30](-[:270])-[:30])
         -=-)}}{6PPD (Antiozonante)}
         \arrow{->[\ce{O3}][]}
-        \chemname{\chemfig{*6((-NH-[:150]*6(=-=-=-))
+        \chemname{\chemfig{*6((-\chembelow{N}{H}-[:150]*6(=-=-=-))
         -(=O)-=
-        (-NH-[:-30](-[:270])--[:-30](-[:270])-[:30])
+        (-\chembelow{N}{H}-[:-30](-[:270])--[:-30](-[:270])-[:30])
         -(=O)-=)}}{6PPD-quinona (6PPD-Q)}
     \schemestop
 \end{reaccion}
@@ -1629,8 +1627,8 @@ microscópica, continua y no porosa.
 \end{itemize}
 
 \phantomsection
-\addcontentsline{toc}{subsubsection}{Clase 14 -- 13/10/2026: Reducción de carbonilos, alquinos y nitrilos}
-\subsubsection*{\textcolor{blueunam}{Clase 14 -- 13/10/2026: Reducción de carbonilos, alquinos y nitrilos}}
+\addcontentsline{toc}{subsubsection}{Clase 14 -- 13/10/2026: Reducción/Oxidación de carbonilos}
+\subsubsection*{\textcolor{blueunam}{Clase 14 -- 13/10/2026: Reducción/Oxidación de carbonilos}}
 
 \textbf{Introducción: la jerarquía del grupo carbonilo}
 
@@ -1724,7 +1722,7 @@ hacia la izquierda reducimos (ganamos electrones).
 
 \begin{reaccion}
     \schemestart
-        \chemname{\chemfig{\charge{30:5pt=$\scriptstyle\color{anblue}0$}{}(-[:-45]OH)(-[:225])-[:90]}}{Alcohol secundario}
+        \chemname{\chemfig{\charge{30:5pt=$\scriptstyle0$}{}(-[:-45]OH)(-[:225])-[:90]}}{Alcohol secundario}
         \arrow{<->[$-2\ce{e-}$][$+2\ce{e-}$]}
         \chemname{\chemfig{\charge{25:6pt=$\scriptstyle\color{catred}2+$}{}(-[:-45])(-[:225])=[:90]O}}{Cetona}
         \arrow{->[\textbf{Combustión}][\textbf{o ruptura oxidativa}]}[0, 2.5]
@@ -1752,3 +1750,208 @@ en estado de oxidación +4. Para que un carbono alcance el +4, debe estar unido
 la urea). En el momento en que el carbono está unido a otro carbono o a un 
 hidrógeno, su estado de oxidación no puede llegar al máximo. Por eso el último 
 paso de la serie siempre implica la destrucción de la cadena carbonada.
+
+\textbf{Ejemplo con glucosa:}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{[:-30]*6((-[@{op,.5}]O-)-(-OH)-(-OH)-(-O-[@{cl,.5}])-O-(--[:30]OH)-)}}{Esqueleto (Plana)}
+    \schemestop
+    \polymerdelim[height=30pt, depth=30pt, indice=n]{op}{cl}
+\end{reaccion}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig[cram width=2pt]{
+        ?(-[:90]-[:150,0.7]OH)-O-[:-45,0.7](-O-@{cl,.5})<[:225,0.7](-[:270,0.5]OH)
+        -[:180,,,,line width=2pt](-[:90,0.5]OH)(-)>[:135,0.7]?(@{op,.5}-[:180]O-[:180])
+        }}{Proyección de Haworth}
+    \schemestop
+    \polymerdelim[height=30pt, depth=30pt, indice=n]{op}{cl}
+\end{reaccion}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig[cram width=2pt]{
+        ?[1](-[:200]@{op,.5}{O}-[:160])<[:-50](-[:170]HO)<[:10](-[:310]OH)>[:-10]
+        (-[:20]O
+        -[:-20](-[:60]?[2](-[:190]OH))<[:10](-[:210]-[:-60]OH)<[:-10]O>[:50](-[:-20]@{cl,.5}{O}-[:20])-[:190]?[2](-[:60]OH))
+        -[:130]O-[:190]?[1](-[:150]-[:60]OH)
+        }}{Conformación de Silla (3D)}
+    \schemestop
+    \polymerdelim[height=30pt, depth=30pt, indice=n]{op}{cl}
+\end{reaccion}
+
+\textbf{¿Por qué tantas formas de dibujar la glucosa?}
+
+Aunque parezcan moléculas completamente distintas, las tres representaciones anteriores 
+son exactamente la misma unidad de glucosa. La diferencia radica en qué queremos 
+resaltar con el dibujo:
+
+\begin{itemize}
+    \item \textbf{Esqueleto (Plana):} Es la más rápida de dibujar. Solo muestra la 
+    conectividad de los átomos. Es ideal para representar cadenas largas de polímeros 
+    y ver cómo se unen las unidades.
+    
+    \item \textbf{Haworth (Perspectiva 60°):} Es un truco visual 2D para mostrar 
+    la estereoquímica. Nos dice si los grupos \ce{-OH} están arriba o abajo del 
+    plano del anillo. Es el estándar en carbohidratos.
+    
+    \item \textbf{Silla (3D):} Es la representación más fiel a la realidad. 
+    Aunque el anillo parezca deforme, es la única que muestra la verdadera 
+    geometría tridimensional.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imagenes_QM/Ciclohexano3D.png}
+    \caption{Conformación de silla en 3D (Ciclohexano).}
+\end{figure}
+
+Como se puede ver en la imagen, esa es la perspectiva desde la que se observa el anillo. 
+Si aún no logras visualizarlo en 3D, no te preocupes: a mí me costó horas entenderla, 
+pero te aseguro que es así. 
+
+Aunque en esta imagen solo muestro el ciclohexano (con un solo \ce{O}), lo hago para que 
+la imagen no se sature y se aprecie lo esencial: la geometría. Básicamente, la única 
+diferencia con la glucosa es que donde aquí hay hidrógenos, en la glucosa hay grupos 
+hidroxilo (\ce{-OH}).
+
+\textbf{¿Por qué la celulosa forma fibras fuertes y el almidón no?}
+
+La respuesta está en la silla. Si observas la imagen 3D, notarás que los enlaces 
+salen en dos direcciones:
+\begin{itemize}
+    \item \textbf{Axial:} Hacia arriba o hacia abajo (recto).
+    \item \textbf{Ecuatorial:} Hacia los lados (diagonal).
+\end{itemize}
+
+En la celulosa (enlace \(\beta(1\to4)\)), \textbf{todos} los grupos \ce{-OH} y los 
+enlaces de la cadena están en posición ecuatorial (hacia los lados). Esto permite 
+que las cadenas se empaqueten de forma lineal y recta, formando fibras muy 
+resistentes e insolubles. En cambio, en el almidón (enlace \(\alpha\)), uno de los 
+enlaces es axial, lo que obliga a la cadena a doblarse en forma de hélice. \\
+
+\textbf{Reacción:}
+ÑAM ÑAM
+
+\textbf{Solubilidad:}
+
+Depende de los enlaces de hidrógeno y la polarizabilidad. En este ejemplo, 
+aunque la celulosa no es soluble, va a tener una gran capacidad de retener 
+líquidos (formar suspensiones en el agua). Es por eso que una hoja de papel 
+no se disuelve, pero sí se empapa. \\
+
+
+El PCC es un \textbf{agente oxidante suave}:
+
+\begin{reaccion}
+    \schemestart
+        \chemfig{-[:30]-[:-30]OH}
+        \arrow{->[PCC][DCM]}
+        \chemfig{-[:30](=[:90]O)-[:-30]H}
+        \arrow{-/>[\text{Se detiene aquí}]}[0,2]
+        \chemfig{-[:30](=[:90]O)-[:-30]OH}
+    \schemestop
+\end{reaccion}
+
+Hace la oxidación sin llegar a ácido carboxílico, por lo que la reacción se 
+detiene en el aldehído.
+
+\textbf{¿Qué es el PCC y DCM?}\\ 
+PCC:
+
+\begin{reaccion}
+    \schemestart
+        \chemfig{*6(=\chembelow{\charge{90:3pt=$\scriptstyle\color{catred}+$}{N}}{H}-=-=-)}
+        \chemfig{Cr(=[:90]O)(=[:270]O)(-[:0]Cl)(-[:180]\charge{90:1pt=$\scriptstyle\color{anblue}-$}{O})}
+    \schemestop
+\end{reaccion}
+
+DCM:
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{C(-[:-25]H)(<:[:290]H)(-[:90]Cl)(<[:210]Cl)}}{Diclorometano \\ Cloruro de metileno}
+    \schemestop
+\end{reaccion}
+
+El PCC es el agente y el diclorometano es el disolvente. Es importante especificar 
+el disolvente en una reacción porque por ejemplo el \ce{KMnO4} o el \ce{Na2Cr2O7} 
+ocupan agua para disolverse, si no evidentemente no se llevara a cabo la reacción 
+o no de forma homogénea.
+
+\textbf{Ésteres}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{-[:-30]O-[:30]\charge{270:5pt=$\scriptstyle\color{catred}+3$}{}(=[:90]O)-[:-30]-[:30]-[:-30]\charge{90:5pt=$\scriptstyle\color{catred}+3$}{}(=[:270]O)-[:30]O-[:-30]}}{Succinato de dimetilo}
+        \arrow{->[\ce{LiAlH4}][THF]}
+        \chemname{\chemfig{\charge{90:2pt=$\scriptstyle\color{anblue}-$}{O}-[:30]-[:-30]-[:30]-[:-30]-[:30]\charge{90:2pt=$\scriptstyle\color{anblue}-$}{O}}}{Intermediario}
+        \arrow{->[\ce{H3O^{\color{catred}{+}}}][]}[270]
+        \chemname{\chemfig{OH-[:30]\charge{90:2pt=$\scriptstyle\color{anblue}-1$}{}-[:-30]-[:30]-[:-30]\charge{270:2pt=$\scriptstyle\color{anblue}-1$}{}-[:30]OH}}{Butano Diol}
+        \arrow{->[\ce{KMnO4}][]}[180]
+        \chemname{\chemfig{OH-[:30]\charge{270:5pt=$\scriptstyle\color{catred}+3$}{}(=[:90]O)-[:-30]-[:30]-[:-30]\charge{90:5pt=$\scriptstyle\color{catred}+3$}{}(=[:270]O)-[:30]OH}}{Ácido succínico}
+        \arrow{->[H2SO4][]}[270, 1.5]
+        \chemname{\chemfig{
+        @{op,.5}-[:30](=[:90]O)-[:-30]-[:30]-[:-30](=[:270]O)-[:30]O-[:-30]@{cl,.5}
+        }}{Oligómero (cadena en crecimiento)}
+    \schemestop
+    \polymerdelim[height=25pt, depth=10pt, indice=crecimiento]{op}{cl}
+\end{reaccion}
+
+Lo interesante de todo esto es que el \textbf{succinato de dimetilo} se puede 
+extraer de frutas verdes, por lo que teóricamente podríamos realizar esta síntesis 
+a partir de guayaba o manzana verde.
+
+No sé si lo notaron, pero además de lo obvio (en el primer paso, una reducción 
+de un éster), pasaron muchas más cosas. 
+Primero, rompimos el enlace \ce{C-O} y \ce{C=O} de los extremos para formar un 
+alcohol primario. 
+Después, volvimos a oxidar, pero ahora no formamos ésteres, formamos ácidos 
+carboxílicos, que tienen el mismo n.o., pero como es obvio, no son iguales. 
+Para al final hacer una esterificación de Fischer, que si nos damos cuenta, es 
+la misma que habíamos hecho hace 2 clases. 
+Como vimos, esta esterificación si se repite \(n\) veces puede generar un polímero, 
+un poliéster. 
+Qué loco, ¿no? Todo se va conectando, para que puedas desde manzana verde sacar 
+el poliéster, más específicamente el PBS (poli(butilen succinato)) con el que 
+podrías fabricar no sé... tu pantalón. \\
+
+\textbf{Otra reacción de oxidación para llevar a ácidos carboxílicos:}
+
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{*6((-\charge{90:3pt=$\scriptstyle\color{anblue}-3$}{C}H_3)=-=(-\charge{90:3pt=$\scriptstyle\color{anblue}-3$}{C}H_3)-=-)}}{\(p\)-xileno}
+        \arrow{->[$\Delta$][\ce{KMnO4}, $-12\ce{e-}$]}[0, 1.8]
+        \chemname{\chemfig{*6((-\charge{90:5pt=$\scriptstyle\color{catred}+3$}{}(=[:270]O)-[:150]OH)=-=(-\charge{270:5pt=$\scriptstyle\color{catred}+3$}{}(=[:90]O)-[:-30]OH)-=-)}}{Ácido tereftálico}
+    \schemestop
+\end{reaccion}
+
+Es evidente que en este proceso fueron perdidos 12 electrones ($-12\ce{e-}$) por 
+lo que hay varios intermediarios. Sin embargo, debido a que el agente oxidante es 
+fuerte y se calienta, estos intermediarios prácticamente pasan súper rápido; 
+además, no son de interés, por lo que los omito. 
+Pero existen, fueron parte del proceso, solo que no son el foco de atención.
+
+Misma pregunta que hace rato \textbf{¿Qué es el \ce{LiAlH4} y THF?} \\
+
+\ce{LiAlH4}:
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{Li^{\color{catred}{+}}}
+        \charge{45:3pt=$\scriptstyle\color{anblue}-$}{\chemleft[\chemfig{Al(<:[:-25]H)(<[:290]H)(-[:90]H)(-[:210]H)}\chemright]}}
+        {Hidruro de litio y aluminio}
+    \schemestop
+\end{reaccion}
+
+THF:
+\begin{reaccion}
+    \schemestart
+        \chemname{\chemfig{[:18]*5(---O--)}}{Tetrahidrofurano}
+    \schemestop
+\end{reaccion}
+
+\phantomsection
+\addcontentsline{toc}{subsubsection}{Clase 15 -- 15/10/2026: Reducción de nitrilos y alquinos}
+\subsubsection*{\textcolor{blueunam}{Clase 15 -- 15/10/2026: Reducción de nitrilos y alquinos}}
+
