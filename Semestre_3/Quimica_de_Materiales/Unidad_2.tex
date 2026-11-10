@@ -1833,7 +1833,36 @@ resistentes e insolubles. En cambio, en el almidón (enlace \(\alpha\)), uno de 
 enlaces es axial, lo que obliga a la cadena a doblarse en forma de hélice. \\
 
 \textbf{Reacción:}
-ÑAM ÑAM
+\begin{reaccion}
+    \schemestart
+        \chemfig[cram width=2pt]{
+        ?[1](-[:200]@{op1,.5}{O}-[:160])<[:-50](-[:170]HO)<[:10](-[:310]OH)>[:-10]
+        (-[:20]O
+        -[:-20](-[:60]?[2](-[:190]OH))<[:10](-[:210]-[:-60]OH)<[:-10]O>[:50](-[:-20]@{cl1,.5}{O}-[:20])-[:190]?[2](-[:60]OH))
+        -[:130]O-[:190]?[1](-[:150]-[:60]OH)
+        }
+        \arrow{->[\ce{NaIO4}][\qty{40}{\celsius}]}[270, 1]
+        \chemfig[cram width=2pt]{
+        (-[:-10]-[:15]O-[:-50](=[:270,0.7]O)
+        (-[:20]O
+        -[:-20](-[:60](=[:90,0.7]O)(-[:190]OH))<[:10](-[:210]-[:-60]OH)<[:-10]O>[:50](-[:-20]@{cl2,.5}{O}-[:20])-[:190](=[:90]O))
+        -[:130]O-[:190]?[1](-[:150]-[:60]OH)
+        )(-[:200]@{op2,.5}{O}-[:160])<[:-50](-[:170]HO)<[:10](=[:270,0.7]O)
+        }
+        \arrow{->[\ce{NaBH4}][]}[270, 1]
+        \chemfig[cram width=2pt]{
+        (-[:-10]-[:15]O-[:-50](-[:270,0.7]OH)
+        (-[:20]O
+        -[:-20](-[:60](-[:90,0.7]OH)(-[:190]OH))<[:10](-[:210]-[:-60]OH)<[:-10]O>[:50](-[:-20]@{cl3,.5}{O}-[:20])-[:190](-[:90,0.7]OH))
+        -[:130]O-[:190]?[1](-[:150]-[:60]OH)
+        )(-[:200]@{op3,.5}{O}-[:160])<[:-50](-[:170]HO)<[:10](-[:270,0.7]OH)
+        }
+    \schemestop
+    
+    \polymerdelim[height=30pt, depth=30pt, indice=n]{op1}{cl1}
+    \polymerdelim[height=30pt, depth=30pt, indice=n]{op2}{cl2}
+    \polymerdelim[height=30pt, depth=30pt, indice=n]{op3}{cl3}
+\end{reaccion}
 
 \textbf{Solubilidad:}
 
@@ -1955,3 +1984,305 @@ THF:
 \addcontentsline{toc}{subsubsection}{Clase 15 -- 15/10/2026: Reducción de nitrilos y alquinos}
 \subsubsection*{\textcolor{blueunam}{Clase 15 -- 15/10/2026: Reducción de nitrilos y alquinos}}
 
+\begin{itemize}
+    \item Reducción de nitrilos para detener aldehídos o aminas
+    \item Reducción de triples enlaces
+\end{itemize}
+
+Antes de comenzar, quiero aclarar un tipo de notación que es algo
+contraintuitivo.
+
+Nosotros sabemos que un triple enlace típicamente se puede ver así:
+\begin{reaccion}
+    \schemestart
+        \chemfig{-[:30]-[:-30]~[:30]-[:-30]-[:30]}
+    \schemestop
+\end{reaccion}
+
+Y sabemos que esto significa:
+\begin{reaccion}
+    \schemestart
+        \chemfig{CH_3-[:30]CH_2-[:-30]C~[:30]C-[:-30]CH_2-[:30]CH_3}
+    \schemestop
+\end{reaccion}
+
+Nada complicado y algo de toda la vida, pero a partir de aquí se emplean
+notaciones algo contraintuitivas como lo son:
+\begin{reaccion}
+    \schemestart
+        \chemfig{R-~N}
+    \schemestop
+\end{reaccion}
+
+Que parece algo raro porque se ve como una línea mega larga; más bien
+parece que el que lo escribió hizo la línea muy larga y solo puso el
+triple enlace al final de ella. Sin embargo, esto realmente se traduce a:
+\begin{reaccion}
+    \schemestart
+        \chemfig{R-C~N}
+    \schemestop
+\end{reaccion}
+
+Esta notación suele pasar sobre todo donde no se pone explícitamente un
+ángulo. Realmente la notación es la misma que la del primer ejemplo, pero
+al no tener un ángulo, no se percibe claramente dónde está el carbono.
+
+\textbf{Reducción de alquinos:}
+La reducción de un alquino permite obtener alquenos con estereoquímica
+controlada. El producto depende del agente reductor y de las condiciones.
+
+\begin{reaccion}
+\setchemfig{atom sep=1.6em}
+\schemestart
+\chemname{
+    \chemfig{
+        *6((-CH3O)-=-
+            (-[:30]~[:30]-[:30]*6(-=-(-OCH3)=-=))
+            =-=)
+    }
+}{1,2-bis(4-metoxifenil)etino}
+\arrow(.mid east--.south west){->[\ce{Na}, \ce{NH3}(l)]}[45,2]
+\chemname{
+    \chemfig{
+        *6((-CH3O)-=-
+            (-[:30]=[:-30]-[:30]*6(-=-(-OCH3)=-=))
+            =-=)
+    }
+}{(\textit{E})-1,2-bis(4-metoxifenil)eteno\\
+\small(\textit{trans})}
+\arrow(@c1.mid east--.north west){->[\ce{H2}, Lindlar]}[-45,2]
+\chemname{
+    \chemfig{
+        *6((-CH3O)-=-
+            (-[:30]=[:0]-[:-30]*6(-=-(-OCH3)=-=))
+            =-=)
+    }
+}{(\textit{Z})-1,2-bis(4-metoxifenil)eteno\\
+\small(\textit{cis})}
+\schemestop
+\chemnameinit{}
+\end{reaccion}
+
+Para este caso, con sodio en amoniaco líquido la reducción da el alqueno
+\textit{trans}. Con hidrógeno sobre catalizador de Lindlar da el isómero
+\textit{cis}. En ambos casos el triple enlace se reduce a doble y el
+esqueleto carbonado se conserva.
+
+\begin{notaimportante}
+\textbf{E/Z.}
+En cada carbono del doble enlace se asigna por prioridad CIP: gana el
+sustituyente de mayor número atómico unido directamente. Si los dos
+ganadores quedan en lados opuestos, es \textit{E}; si quedan del mismo
+lado, es \textit{Z}. Aquí \textit{E} = \textit{trans} y \textit{Z} =
+\textit{cis}, porque cada carbono lleva un H y un arilo. La asignación
+detallada se cubre en la clase de nomenclatura.
+\end{notaimportante}
+
+De las dos rutas de reducción selectiva, la siguiente que se detalla es
+la del catalizador de Lindlar, que da una configuración cis:
+
+\textbf{Envenenamiento de catalizador:} inactivar ciertas posiciones del
+catalizador para que no reaccionen. En el Lindlar, parte de los sitios de
+paladio se envenenan con acetato de plomo(II), Pb(OAc)$_2$. Los sitios
+activos restantes reducen el alquino a alqueno, pero no alcanzan a seguir
+hasta alcano.
+
+\begin{center}
+\begin{tikzpicture}[scale=1,>=Stealth,remember picture]
+    \fill[gray!25] (-3.6,-0.5) rectangle (3.6,0);
+    \draw[thick] (-3.6,-0.5) rectangle (3.6,0);
+    \node[below] at (0,-0.7) {\small \ce{CaCO3}};
+
+    \foreach \x in {-3,-2.25,-1.5,-0.75,0,0.75,1.5,2.25,3} {
+        \filldraw[fill=gray!70] (\x,0.25) circle (0.18);
+    }
+    \foreach \x in {-2.25,-0.75,1.5,2.25} {
+        \fill (\x,0.25) circle (0.18);
+    }
+
+    \foreach \x in {-3,-1.5,0,0.75,3} {
+        \draw[thick] (\x,0.43) -- (\x,0.85) node[above] {\small H};
+    }
+
+    \coordinate (PdA) at (-1.5, 0.43);
+    \coordinate (PdB) at (0.75, 0.43);
+
+    \node at (0,3.8) {%
+        \chemfig[atom sep=2.5em]{%
+            [:-30]*6((-CH3O)-=-
+                (-[:0]@{Cl}C~[:0]@{Cr}C-[:0]*6(-=-(-OCH3)=-=))
+                =-=)
+        }%
+    };
+
+    \filldraw[fill=gray!70] (-3.2,-2.6) circle (0.15);
+    \node[right] at (-3.0,-2.6) {\small Pd activo};
+    \fill (0.8,-2.6) circle (0.15);
+    \node[right] at (1.0,-2.6) {\small Pd envenenado};
+\end{tikzpicture}
+\chemmove{
+    \draw[dashed, ->, gray, shorten <=2pt, shorten >=2pt] (PdA)
+        .. controls +(90:1.2) and +(270:1.2) .. (Cl);
+    \draw[dashed, ->, gray, shorten <=2pt, shorten >=2pt] (PdB)
+        .. controls +(90:1.2) and +(270:1.2) .. (Cr);
+}
+\end{center}
+
+\begin{reaccion}
+    \schemestart
+    \arrow{->[\ce{H2}, Lindlar]}[270,1]
+        \chemfig{
+        *6(-=(-[:-30](-[:225]H)=[:0](-[:-45]H)-[:30]*6(-=-(-OCH3)=-=))
+        -
+        =-(-CH3O)=)
+    }
+    \schemestop
+\end{reaccion}
+
+\textbf{Por qué el producto es cis.} El alquino se adsorbe sobre la
+superficie de Pd: los electrones $\pi$ del triple enlace se coordinan a
+los sitios metálicos activos, y por eso la molécula queda tendida sobre
+la placa con un solo lado expuesto hacia arriba. El \ce{H2} también se
+adsorbe y se disocia en átomos de H sobre la misma superficie. Cuando los
+dos H se transfieren al triple enlace, ambos vienen del mismo lado de la
+molécula; no hay forma de que uno llegue por encima del plano molecular y
+el otro por debajo, porque el alquino está apoyado sobre la placa. La
+adición es syn por construcción del sistema heterogéneo, y el doble
+enlace queda con los dos H del mismo lado y los dos arilos del otro. Eso
+es el isómero cis.
+
+\textbf{Por qué no sigue hasta alcano.} Tiene dos motivos combinados.
+Primero, el alqueno recién formado se adsorbe con menos fuerza que el
+alquino, así que tiende a desorberse y abandonar la superficie antes de
+que llegue un segundo par de H. Segundo, el veneno reduce el número de
+sitios activos: con menos sitios disponibles, y además fragmentados en
+zonas aisladas, la probabilidad de que el alqueno encuentre dos H sobre
+sitios adyacentes cae mucho. El alqueno se va antes de que ocurra la
+segunda hidrogenación, y el producto se detiene ahí.
+
+\textbf{Relación con el envenenamiento.} Si no hubiera veneno, el alqueno
+seguiría adsorbido y terminaría como alcano. El veneno no cambia el
+mecanismo ni la estereoquímica: solo reduce la actividad de la superficie
+lo suficiente para que la reacción se detenga en la primera etapa. Por
+eso el Lindlar da cis y no trans ni alcano. \\
+
+\textbf{Ahora se detallará la reacción para la ruta trans.}
+
+\textbf{Reducción con metales disueltos (\ce{Na}/\ce{NH3}).}
+El segundo camino para reducir un alquino no usa superficie catalítica,
+sino electrones libres en disolución. El sodio metálico cede su único
+electrón de valencia y el amoniaco líquido actúa como fuente de protones.
+El resultado neto es una \textit{anti}-adición de hidrógeno: los dos H
+terminan en caras opuestas del doble enlace, y el alqueno final es
+\textit{trans}.
+
+\textbf{Mecanismo en cuatro etapas.}
+(1)~El primer electrón del \ce{Na} entra al $\pi^*$ del alquino y forma un
+radical anión. (2)~El \ce{NH3} protona el carbono que quedó con exceso de
+carga negativa, generando un radical vinílico. (3)~El segundo electrón
+del \ce{Na} entra al SOMO del radical y forma un anión vinílico.
+(4)~Una segunda protonación completa la reducción y libera el alqueno.
+
+\setchemfig{atom sep=1.5em}
+\begin{reaccion}
+\schemestart
+% Paso 1: alquino + 1er SET
+\chemfig{
+    [:-30]*6((-CH3O)-=-
+        (-[:0]@{Cl1}-[:0]@{Cr1}-[:0]*6(-=-(-OCH3)=-=))
+        =-=)
+}
+\chemmove{
+    \orbital[pos={(Cl1)}, scale=0.4, pcolor=blue!60, ncolor=red!60]{pz}
+    \orbital[pos={(Cr1)}, scale=0.4, pcolor=blue!60, ncolor=red!60]{pz}
+    \shade[ball color=blue!60] ($(Cl1)+(0,0.15)$) circle (1pt);
+    \shade[ball color=blue!60] ($(Cr1)+(0,0.15)$) circle (1pt);
+    \node[circle, draw, thick, fill=gray!20, inner sep=1pt, font=\scriptsize]
+        (Na1) at ($(Cl1)+(-1.5,1.2)$) {Na};
+    \shade[ball color=orange!80] ($(Na1)+(0.25,0)$) circle (1.2pt);
+    \draw[->, thick, orange!80, shorten <=1pt, shorten >=1pt]
+        (Na1.south east) to[bend left=25] ($(Cl1)+(0,0.35)$);
+    \node[above, orange!80, font=\scriptsize]
+        at ($(Na1)+(0.5,0.3)$) {e$^-$};
+}
+\arrow{->}[0,1.2]
+% Paso 2: radical anion (enlace de orden fraccionario)
+\chemfig{
+    [:-30]*6((-CH3O)-=-
+        (-[:0]@{Cl2}-[:0,,,,ddbond={-}]@{Cr2}-[:0]*6(-=-(-OCH3)=-=))
+        =-=)
+}
+\chemmove{
+    \orbital[pos={(Cl2)}, scale=0.4, pcolor=blue!60, ncolor=red!60]{pz}
+    \orbital[pos={(Cr2)}, scale=0.4, pcolor=red!60, ncolor=blue!60]{pz}
+    \shade[ball color=blue!60] ($(Cl2)+(0,0.12)$) circle (1pt);
+    \shade[ball color=blue!60] ($(Cl2)+(0,0.28)$) circle (1pt);
+    \shade[ball color=red!60] ($(Cr2)+(0,0.20)$) circle (1pt);
+    \node[font=\scriptsize, text=blue!80] at ($(Cl2)+(-0.3,-0.4)$) {$\ominus$};
+}
+\arrow{->[\ce{NH3}]}[270,1.2]
+% Paso 3: geometria trans (ya se ve el doblez)
+\chemfig{
+    [:-30]*6((-CH3O)-=-
+        (-[:30](-[:90]H)=[:-30]@{Cr3}-[:30]*6(-=-(-OCH3)=-=))
+        =-=)
+}
+\chemmove{
+    \orbital[pos={(Cr3)}, scale=0.4, pcolor=red!60, ncolor=blue!60]{pz}
+    \shade[ball color=red!60] ($(Cr3)+(0,0.20)$) circle (1pt);
+    \node[circle, draw, thick, fill=gray!20, inner sep=1pt, font=\scriptsize]
+        (Na2) at ($(Cr3)+(1.2,1.8)$) {Na};
+    \shade[ball color=orange!80] ($(Na2)+(-0.25,0)$) circle (1.2pt);
+    \draw[->, thick, orange!80, shorten <=1pt, shorten >=1pt]
+        (Na2.south west) to[bend right=25] ($(Cr3)+(0,0.35)$);
+    \node[above, orange!80, font=\scriptsize]
+        at ($(Na2)+(-0.5,0.3)$) {e$^-$};
+}
+\arrow{->}[180,1.2]
+% Paso 4: anion vinilico (sigue trans)
+\chemfig{
+    [:-30]*6((-CH3O)-=-
+        (-[:30](-[:90]H)=[:-30]@{Cr4}-[:30]*6(-=-(-OCH3)=-=))
+        =-=)
+}
+\chemmove{
+    \orbital[pos={(Cr4)}, scale=0.4, pcolor=red!60, ncolor=blue!60]{pz}
+    \shade[ball color=red!60] ($(Cr4)+(0,0.12)$) circle (1pt);
+    \shade[ball color=red!60] ($(Cr4)+(0,0.28)$) circle (1pt);
+    \node[font=\scriptsize, text=blue!80] at ($(Cr4)+(0.3,-0.4)$) {$\ominus$};
+}
+\arrow{->[\ce{NH3}]}[270,1.2]
+% Paso 5: alqueno trans final
+\chemfig{
+    [:-30]*6((-CH3O)-=-
+        (-[:30](-[:90]H)=[:-30](-[:270]H)-[:30]*6(-=-(-OCH3)=-=))
+        =-=)
+}
+\schemestop
+\end{reaccion}
+
+\textbf{Por qué el producto es trans.}
+Un triple enlace es rígido porque su orden de enlace es 3: los dos
+carbonos no pueden girar uno respecto al otro sin romperlo. Un doble
+enlace tampoco gira, porque su orden es 2. Pero el radical anión no está
+en ninguno de esos dos extremos: reparte tres electrones entre el orbital
+enlazante y el antienlazante, y su orden de enlace queda cerca de 1.5.
+Ese valor intermedio significa que el enlace C--C está a medio aflojar:
+suficientemente rígido para mantener la molécula unida, suficientemente
+flojo para permitir que los carbonos giren uno respecto al otro.
+(La figura lo dibuja con un trazo sólido y otro punteado para representar
+ese orden fraccionario, ni triple ni doble.) Aprovechando esa libertad,
+la molécula busca la posición más cómoda: los dos anillos aromáticos son
+voluminosos y se repelen, así que se acomodan en lados opuestos. Esa
+posición es la \textit{trans}. Cuando entra el primer H (etapa~2), el
+orden de enlace sube a 2, el doble enlace queda completo y la molécula se
+congela en la geometría que ya tenía. Las etapas~3 y~4 solo terminan la
+reducción; la geometría se decidió antes.
+
+\textbf{Contraste con el Lindlar.}
+El Lindlar da \textit{cis} porque los dos H vienen de la misma superficie
+(adición \textit{syn} forzada geométricamente). Los metales disueltos dan
+\textit{trans} porque el intermedio radical anión puede rotar antes de
+que la segunda mitad de la reacción se complete (adición \textit{anti}).
+Son dos mecanismos distintos: heterogéneo contra homogéneo por
+transferencia electrónica.
